@@ -1,0 +1,37 @@
+<!-- Site header and navigation -->
+<header class="top" role="header">
+  <div class="topbar-container container navbar-fixed-top">
+    <div class="container">
+      <a href="{{tpl:BlogURL}}" class="navbar-brand pull-left">
+	  <span class="blogTitle">{{tpl:BlogName}}</span><span class="blogTagLine hidden-xs hidden-sm"> {{tpl:BlogDescription}}</span>
+      </a>
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	  <span class="glyphicon glyphicon-align-justify"></span>
+      </button>
+      <nav class="navbar-collapse collapse" role="navigation">
+	<ul class="navbar-nav nav">
+	  <li><a href="{{tpl:BlogArchiveURL}}"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;{{tpl:lang Articles}}</a></li>
+	  <li><a href="{{tpl:BlogURL}}categories"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;{{tpl:lang Categories}}</a></li>
+	  <li><a href="{{tpl:BlogURL}}tags"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;{{tpl:lang Tags}}</a></li>
+	  <li><a href="{{tpl:BlogURL}}pages/about"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;{{tpl:lang About}}</a></li>
+	</ul>
+	<form class="navbar-form navbar-right" role="search" method="get" action="{{tpl:BlogURL}}" id="searchField">
+	  <div class="input-group">
+	    <input type="text" class="form-control" placeholder="{{tpl:lang Search}}" name="q">
+	    <span class="input-group-btn">
+	      <button class="btn btn-default" type="button" onclick="document.getElementById('searchField').submit();"><span class="glyphicon glyphicon-search"></span></button>
+	    </span>
+	  </div>
+	</form>
+      </nav>   
+    </div>
+  </div>
+</header>
+
+<div id="top">
+
+  <!-- # --BEHAVIOR-- publicTopAfterContent -->
+  {{tpl:SysBehavior behavior="publicTopAfterContent"}}
+</div>
+
+{{tpl:include src="_back-to-top.html"}}

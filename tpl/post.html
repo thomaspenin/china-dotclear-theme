@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
+<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+<meta name="dc.language" content="{{tpl:EntryLang}}" />
+<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+<meta name="dc.type" content="text" />
+<meta name="dc.format" content="text/html" />
+<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
+<tpl:EntryPrevious><link rel="previous" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+  
+{{tpl:include src="_head.html"}}
+
+</head>
+
+<body class="post dc-post">
+
+  {{tpl:EntryPingData}}
+  {{tpl:include src="_top.html"}}
+
+  <div id="post-header">
+    <div class="container">
+      <div class="col-md-9 post-title-excerpt">
+	<h1>{{tpl:EntryTitle encode_html="1"}}</h1>
+	<tpl:EntryIf extended="1"> <!-- # Excerpt if there is any -->
+	  <div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
+	</tpl:EntryIf>
+      </div>
+      <div class="col-md-3 post-metadata">
+	<span class="post-author">
+	  <p>
+	    {{tpl:lang By}} <b>{{tpl:EntryAuthorLink}}</b>,<br/>{{tpl:EntryDate format="le %d %B %Y"}}
+	    <tpl:EntryIf has_category="1">
+	      <span><br/>dans<tpl:EntryCategoriesBreadcrumb>
+		<a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> › </tpl:EntryCategoriesBreadcrumb> 
+		<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a></span>
+	    </tpl:EntryIf>
+	  </p>
+	</span>
+	<div class="comment-count">
+	  <a href="#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page">
+
+    <div class="middle" id="wrapper">
+
+    <div class="container" id="main">
+      <div class="col-md-9 post-content">
+	<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+	<!-- The blog post itself -->
+	{{tpl:EntryContent}}
+	  
+	<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+	{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+      </div>
+      <div class="col-md-3">
+	<nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
+	  <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
+	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
+	  <script type="text/javascript">
+	    $(function() {
+	      // Generate the toc
+	      $(".bs-docs-sidebar").stoc({
+		search: ".post-content",
+		depth: 3,
+		start: 1,
+		stocTitle: "",
+		stocFooter: "",
+		listType: "ul",
+		rootListId: "toc",
+		rootListClass: "nav nav-stacked",
+		subListClass: "nav nav-stacked",
+		smoothScroll: 0
+	      });
+
+	      // Chinese text should appear bigger in the generated code if it is not already the case
+	      $(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
+
+	      // Setup scrollspy for toc
+	      $('body').scrollspy({
+		target: '.bs-docs-sidebar',
+		offset: 50 // Height of the top bar
+	      });
+
+	      // "Affix" allows the sidebar to float when it is within a top and a bottom offset
+	      $('.bs-docs-sidebar').affix({
+		offset: {
+		  top: function () {
+		    return (this.top = $("#post-header").outerHeight(true));
+		  }
+		, bottom: function () {
+		    return (this.bottom = $("#comments").outerHeight(true) + $('.bottom').outerHeight(true));
+		  }
+		}
+	      })
+	    });
+	  </script>
+
+	<!-- Info box hosting the table of contents, tags, etc. -->
+	<!--{{tpl:include src="_info-box.html"}}-->
+	</nav>
+      </div>
+    </div>
+
+    <div class="container" id="pagination-posts">
+      <div class="col-md-9">
+	<div class="paginationPrevious">
+	  <tpl:EntryPrevious>
+	    <a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a>
+	  </tpl:EntryPrevious>
+	</div>
+	<div class="paginationNext">
+	  <tpl:EntryNext>
+	    <a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a>
+	  </tpl:EntryNext>
+	</div>
+      </div>
+    </div>
+
+    <div class="container" id="comments">
+      <div class="col-md-9">
+	{{tpl:include src="_comments.html"}}
+      </div>
+    </div>
+
+  </div> <!-- End #wrapper -->
+
+  {{tpl:include src="_footer.html"}}
+  </div> <!-- End #page -->
+  </div>
+</body>
+</html>

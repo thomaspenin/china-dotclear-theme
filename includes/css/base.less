@@ -1,0 +1,44 @@
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+
+body {
+  padding-top: @top-bar-height; // Because the toolbar is anchored to the top
+  font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
+  text-align: @base-text-alignment;
+  line-height: @base-line-height;
+  font-size: @base-font-size;
+}
+
+h1, h2, h3, h4 {
+  font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
+  font-weight: 400;
+  text-align: left; // Justification sometimes does wierd things with titles
+}
+
+/* Chinese text */
+.zh {
+  font-size: 1.4em;
+  line-height: 0.7em; /* This is to avoid bigger Chinese text having an impact on line spacing */
+}
+
+/* Smaller Chinese with big fonts */
+h1 .zh {
+  font-size: 1.1em;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: @tint-color;
+}
+
+// Pinyin
+py, pyb {
+  font-family: @primary-pinyin-font, @fallback-pinyin-font1, @fallback-pinyin-font2 !important;
+  font-size: 95%;
+  color: #777777;
+  /*font-weight: 700;*/
+}

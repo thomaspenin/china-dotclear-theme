@@ -1,0 +1,188 @@
+msgid "Hello"
+msgstr "Hello"
+
+msgid "More articles..."
+msgstr "More articles..."
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "About"
+msgstr "About"
+
+msgid "To display articles along their summary, choose a particular period:"
+msgstr "To display articles along their summary, choose a particular period:"
+
+msgid "All »"
+msgstr "All »"
+
+msgid "Browse the list of all articles ever published on this site"
+msgstr "Browse the list of all articles ever published on this site"
+
+msgid "View the picture full-screen"
+msgstr "View the picture full-screen"
+
+msgid "Download the source code of the theme"
+msgstr "Download the source code of the theme"
+
+msgid "Unless otherwise noticed, the license of the content of this site is"
+msgstr "Unless otherwise noticed, the license of the content of this site is"
+
+msgid "Attachments"
+msgstr "Attachments"
+
+msgid "Share"
+msgstr "Share"
+
+msgid "Articles feed"
+msgstr "Articles feed"
+
+msgid "This tag's articles Atom feed"
+msgstr "This tag's articles Atom feed"
+
+msgid "This category's articles Atom feed"
+msgstr "This category's articles Atom feed"
+
+msgid "The page you asked for does not exist."
+msgstr "The page you asked for does not exist."
+
+msgid "If you came here by clicking a link, this may not be correct."
+msgstr "If you came here by clicking a link, this may not be correct."
+
+msgid "To find what you are looking for, you may:"
+msgstr "To find what you are looking for, you may:"
+
+msgid "Browse the articles by categories or keywords"
+msgstr "Browse the articles by categories or keywords"
+
+msgid "Launch a search via the left side bar"
+msgstr "Launch a search via the left side bar"
+
+msgid "Page not found"
+msgstr "Page not found"
+
+msgid "No restriction (titles only)"
+msgstr "No restriction (titles only)"
+
+msgid "Date range choice"
+msgstr "Date range choice"
+
+msgid "All articles"
+msgstr "All articles"
+
+msgid "There are no article in this category"
+msgstr "There are no article in this category"
+
+msgid "Articles tagged with"
+msgstr "Articles tagged with"
+
+msgid "Articles by category"
+msgstr "Articles by category"
+
+msgid "Articles"
+msgstr "Articles"
+
+msgid "Read the post"
+msgstr "Read the post"
+
+msgid "Back to the top of the page"
+msgstr "Back to the top of the page"
+
+msgid "post(s)"
+msgstr "post(s)"
+
+msgid "More"
+msgstr "More"
+
+msgid "By"
+msgstr "By"
+
+msgid "Read"
+msgstr "Read"
+
+msgid "Last published articles"
+msgstr "Last published articles"
+
+msgid "Cancel the redaction of the comment"
+msgstr "Cancel the redaction of the comment\n(warning: any change will be lost)"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Name (required)"
+msgstr "Name (required)"
+
+msgid "Email (required, but will not be published)"
+msgstr "Email (required, but will not be published)"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Let a comment!"
+msgstr "Let a comment!"
+
+msgid "Reply"
+msgstr "Reply"
+
+msgid "Comments feed"
+msgstr "Comments feed"
+
+msgid "Start searching"
+msgstr "Start searching"
+
+msgid "Previous entry"
+msgstr "Previous entry"
+
+msgid "Next entry"
+msgstr "Next entry"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "They posted on the same topic"
+msgstr "Trackbacks"
+
+msgid "Sort"
+msgstr "Sort"
+
+msgid "View all"
+msgstr "View all"
+
+msgid "Tag feed"
+msgstr "Tag feed"
+
+msgid "Entry category"
+msgstr "Entry's category"
+
+msgid "Entry comments"
+msgstr "See all comments for this entry"
+
+msgid "Entry trackbacks"
+msgstr "See all trackbacks for this entry"
+
+msgid "Entry attachments"
+msgstr "See this entry's attachments"
+
+msgid "Show comments"
+msgstr "Show comments"
+
+msgid "Show pings"
+msgstr "Show pings"
+
+msgid "Be the first to comment on this entry"
+msgstr "Be the first to comment on this entry"
+
+msgid "Comments are closed"
+msgstr "Comments are closed"
+
+msgid "Go to page"
+msgstr "Go to page"
+
+msgid "wrote"
+msgstr "wrote"

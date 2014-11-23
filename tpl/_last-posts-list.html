@@ -1,0 +1,31 @@
+<!-- List of the last 10 posts that were published -->
+<tpl:Entries lastn="10" order="desc" with_pings="0">
+    <tpl:EntriesHeader>
+      <div class="post-list">
+      <h2>{{tpl:lang Last published articles}}</h2>
+      </tpl:EntriesHeader>
+	<div class="post-list-item">
+	  <h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
+	  <div class="post-wrapper">
+	    <!-- Show the excerpt if any -->
+	    <tpl:EntryIf extended="1">
+		{{tpl:EntryExcerpt}}
+	    </tpl:EntryIf>
+
+	    <!-- If there is no excerpt, show the post content -->
+	    <tpl:EntryIf extended="0">
+		{{tpl:EntryContent}}
+	    </tpl:EntryIf>
+	    <a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">{{tpl:lang More}} »</a>
+	  </div>
+	  <span class="post-author">
+	    <p>{{tpl:lang By}} <b>{{tpl:EntryAuthorLink}}</b>, {{tpl:EntryDate format="le %d %B %Y"}}</p>
+	  </span>
+	  <div class="comment-count">
+	    <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
+	  </div>
+	</div>
+    <tpl:EntriesFooter>
+    </div>
+    </tpl:EntriesFooter>
+</tpl:Entries>

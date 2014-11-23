@@ -1,0 +1,181 @@
+<div class="comments">
+
+  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/js/post.js"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+    var post_remember_str = '{{tpl:lang Remember me on this blog}}';
+    //]]>
+  </script>
+
+  <tpl:EntryIf operator="or" comments_active="1" show_comments="1">
+    <tpl:EntryIf show_comments="1">
+      <!-- Comments header -->
+      <dic class="comments-header">
+	<div id="comments" class="comments-title">{{tpl:lang Comments}}</div>
+	<tpl:EntryIf has_comment="1">
+	  <div class="comments-feed">
+	    <a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Comments feed}}">{{tpl:lang Comments feed}}</a>
+	  </div>
+	</tpl:EntryIf>
+      </div>
+
+      <!-- Loop though the comments of the current post -->
+      <tpl:Comments>
+
+	<tpl:CommentsHeader></tpl:CommentsHeader>
+
+	<div id="c{{tpl:CommentID}}" class="comment">
+	  <div class="commentAuthorPict">
+	    <img width="32" height="32" src="{{tpl:BlogThemeURL}}/img/china-icons/placeholder-32x32.png" {{tpl:CommentIfMe return="class='me'"}}/>
+<!-- 	    <img src="http://www.gravatar.com/avatar/{{tpl:CommentAuthorMailMD5}}?s=32" alt="{{tpl:CommentAuthor}}"/> -->
+	  </div>
+	  <div class="commentContent">
+	    <div class="commentHeader">
+	      <div class="commentAuthor">{{tpl:CommentAuthorLink}}</div>
+	      <div class="commentDate">{{tpl:CommentDate format="%d %B %Y"}}, {{tpl:CommentTime}}</div>
+	    </div>
+	
+	    <div class="commentText">
+	      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+	      {{tpl:CommentContent}}
+	      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+	    </div>
+	  </div>
+	</div>
+	    
+	<tpl:CommentsFooter></tpl:CommentsFooter>
+	  
+      </tpl:Comments>
+
+      <div id="feedback">
+	<tpl:SysIfFormError>
+	  <!-- If there is an error, display it and show the form as it was so that it can be updated -->
+	  <p class="error">{{tpl:SysFormError}}</p>
+	  <script type="text/javascript">
+	    $(document).ready(function() {
+	      $("#c_content").height(64);
+	      // Show the rest of the form
+	      $("#new-comment-expansion").toggle();
+	    });
+	  </script>
+	</tpl:SysIfFormError>
+	
+	<tpl:SysIfCommentPending>
+	  <!-- In case the comment is waiting for approval, tell the user -->
+	  <p class="information">{{tpl:lang Your comment has been submitted and will be reviewed for publication.}}</p>
+	</tpl:SysIfCommentPending>
+      </div>
+
+      <!-- Input area for a new comment -->
+      <form action="{{tpl:EntryURL}}#pr" method="post" id="pr">
+	<div class="comment">
+	    <div class="commentAuthorPict">
+	      <!-- TODO: let the user choose his picture and remind if asked to -->
+	      <img width="32" height="32" src="{{tpl:BlogThemeURL}}/img/china-icons/placeholder-32x32.png"/>
+<!-- 	      <img src="http://www.gravatar.com/avatar/{{tpl:CommentAuthorMailMD5}}?s=32" alt="{{tpl:CommentAuthor}}"/> -->
+	    </div>
+	    <div class="commentContent">
+	      <div class="commentForm">
+		<fieldset>
+		  <div class="commentTextInputArea">
+		    <textarea name="c_content" id="c_content" placeholder="{{tpl:lang Let a comment!}}" rows="2">{{tpl:CommentPreviewContent encode_html="1" remove_html="1"}}</textarea>
+		  </div>
+
+		  <!-- Javascript code to show the input fields -->
+		  <script type="text/javascript">
+		    $(document).ready(function() {
+		      $("#c_content").focus(function() {
+			if (!($("#new-comment-expansion").is(":visible") && $("#new-comment-expansion").parents(":hidden").length == 0)) {
+			  // Increase the height of the text area
+			  $("#c_content").height(64);
+			  // Show the rest of the form
+			  $("#new-comment-expansion").slideToggle();
+			  // Remove any error message
+			  $("#feedback .error").remove();
+			  $("#feedback .information").remove();
+			  $("#feedback .hint").remove();
+			  $("#feedback .warning").remove();
+			}
+		      });
+
+		      // Show nice tooltips on buttons
+		      $(".generic-button").tipsy({gravity: 's'});
+
+		      $("#cancelButton").click(function() {
+			// Hide the rest of the form
+			$("#new-comment-expansion").slideToggle();
+			// Clear the content and the informations
+			$("#c_name").val("");
+			$("#c_mail").val("");
+			$("#c_site").val("");
+			$("#c_content").val("");
+			$("#c_answer").val("");
+			// Remove any error message
+			$("#feedback .error").remove();
+			$("#feedback .information").remove();
+			$("#feedback .hint").remove();
+			$("#feedback .warning").remove();
+			// Reset the size of the content field
+			$("#c_content").height(24);
+		      });
+
+		      $('#submitButton').click(function() {
+			$('#pr').submit();
+		      });
+		    });
+		  </script>
+
+		  <!-- Part that will be shown when the user clicks the input field -->
+		  <div id="new-comment-expansion">
+		    <!-- For plugin makers... -->
+		    {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
+
+		    <p class="field">
+		      <input name="c_name" id="c_name" type="text" placeholder="{{tpl:lang Name (required)}}" maxlength="255"
+		    value="{{tpl:CommentPreviewName encode_html="1"}}" />
+		    </p>
+		    
+		    <p class="field">
+		      <input name="c_mail" id="c_mail" type="text" placeholder="{{tpl:lang Email (required, but will not be published)}}" maxlength="255"
+		    value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
+		    </p>
+		    
+		    <p class="field">
+		      <input name="c_site" id="c_site" type="text" placeholder="{{tpl:lang Website}}" maxlength="255"
+		    value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+		    </p>
+
+		    <?php
+		      // This is to avoid PHP complaining that the values are not set with the captcha plugin
+		      if (!isset($_POST['c_question_hash']))
+		      {
+			$_POST['c_question_hash'] = "";
+		      }
+		      if (!isset($_POST['c_answer']))
+		      {
+			$_POST['c_answer'] = "";
+		      }
+		    ?>
+
+		    <!-- For plugin makers... -->
+		    {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
+		  
+		    <div class="new-comment-controls">
+		      <div class="new-comment-buttons">
+			<span class="generic-button" id="cancelButton" title="{{tpl:lang Cancel the redaction of the comment}}">
+			  <a>{{tpl:lang Cancel}}</a>
+			</span>
+			<span class="generic-button submitButton" id="submitButton">
+			  <a>{{tpl:lang Send}}</a>
+			</span>
+		      </div>
+		    </div>
+		  </div>
+		</fieldset>
+	      </div>
+	    </div>
+	  </div>
+      </form>
+    </tpl:EntryIf>
+  </tpl:EntryIf>
+</div>

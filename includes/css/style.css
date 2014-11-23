@@ -1,0 +1,573 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/* White */
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/* Generic font */
+/* Chinese font */
+@font-face {
+  font-family: 'KaiTi';
+  src: url('../fonts/KaiTi.ttf') format('truetype');
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+body {
+  padding-top: 50px;
+  font-family: "Lato", "Arial", "Kaiti", sans-serif;
+  text-align: justify;
+  line-height: 25px;
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lato", "Arial", "Kaiti", sans-serif;
+  font-weight: 400;
+  text-align: left;
+}
+/* Chinese text */
+.zh {
+  font-size: 1.4em;
+  line-height: 0.7em;
+  /* This is to avoid bigger Chinese text having an impact on line spacing */
+}
+/* Smaller Chinese with big fonts */
+h1 .zh {
+  font-size: 1.1em;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #228b22;
+}
+py,
+pyb {
+  font-family: "Ubuntu", "arial unicode ms", sans-serif !important;
+  font-size: 95%;
+  color: #777777;
+  /*font-weight: 700;*/
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #1d771d;
+  border-color: #1d771d;
+}
+.btn-primary {
+  background-color: #228b22;
+  border-color: #1d771d;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.top .navbar-brand {
+  display: inline-block;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 140%;
+  background: #373737 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
+  background-size: 32px 32px;
+  padding-left: 46px;
+  color: #CCC;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.top .topbar-container {
+  width: 100%;
+  background-color: #373737;
+}
+.top .navbar-brand:hover {
+  background: #272727 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
+  background-size: 32px 32px;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.top .navbar-brand .blogTitle {
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 130%;
+  padding-right: 5px;
+}
+.top .navbar-brand .blogTagLine {
+  vertical-align: middle;
+  line-height: 50px;
+  font-family: "Damion", cursive;
+}
+.top .navbar-form {
+  padding-right: 15px;
+  /* The search field is directly sticked to the right of the page */
+}
+.top .container {
+  padding: 0;
+}
+.top .navbar-toggle {
+  color: #32CD32;
+  font-size: 32px;
+  margin: 3px;
+  padding: 2px 5px;
+  line-height: 32px;
+  background-color: transparent;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.top .navbar-toggle:hover {
+  background-color: #272727;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.top .navbar-nav {
+  margin: 0;
+}
+.top .navbar-nav li a {
+  color: #CCC;
+  font-family: 'Lato', sans-serif;
+  background-color: transparent;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.top .navbar-nav li a:hover {
+  background-color: #272727;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.middle {
+  background-color: #CCC;
+}
+.middle .container {
+  background-color: #FFF;
+  padding-bottom: 20px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.bottom {
+  background-color: #474747;
+}
+.bottom .container {
+  background-color: #373737;
+  padding-bottom: 10px;
+}
+.bottom #poweredBy {
+  text-align: center;
+  padding: 10px;
+  background-color: #272727;
+  color: #CCC;
+}
+.bottom .container h3 {
+  color: #999;
+}
+.bottom .container p {
+  color: #666;
+}
+.content-license {
+  font-style: italic;
+}
+.content-license a {
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+}
+.content-license a:hover {
+  text-decoration: none;
+}
+.license-cc {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/license/cc-32.png") no-repeat;
+  background-size: 16px 16px;
+}
+.license-cc-by {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/license/by-32.png") no-repeat;
+  background-size: 16px 16px;
+}
+.license-cc-nc {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/license/nc-32.png") no-repeat;
+  background-size: 16px 16px;
+}
+.license-cc-sa {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/license/sa-32.png") no-repeat;
+  background-size: 16px 16px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.home #more-articles-btn {
+  margin-top: 20px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+#post-header {
+  background-color: #474747;
+}
+#post-header .container {
+  background-color: #228b22;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#post-header .post-excerpt {
+  font-size: 18px;
+}
+#post-header .post-metadata {
+  font-size: 13px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.banner {
+  background-color: #474747;
+}
+.banner .container {
+  background-color: #ffffff;
+  width: 1170;
+  min-height: 350;
+  padding: 0;
+}
+.banner a:link,
+.banner a:visited,
+.banner a:hover,
+.banner a:active {
+  color: #ffffff;
+}
+.banner .modal a:link,
+.banner .modal a:visited,
+.banner .modal a:hover,
+.banner .modal a:active {
+  color: #228b22;
+}
+.banner .modal {
+  text-align: left;
+}
+.banner a.carousel-credit {
+  text-decoration: none;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  text-align: center;
+  outline: none;
+}
+.banner a.carousel-credit:hover {
+  opacity: 1;
+}
+/*.banner .carousel-caption h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+.banner .carousel-caption h3 {
+  text-align: center;
+  font-size: 36px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+}
+.banner .carousel-caption h3 .caption-container {
+  display: inline-block;
+  text-align: left;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+#category-summary {
+  background-color: #C0C0C0;
+}
+#category-summary .media-object {
+  border-radius: 10px;
+}
+#category-summary .content {
+  padding: 15px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/* Styling of the button that allows the user to go back to the top of the page */
+#back-to-top {
+  position: fixed;
+  left: 50%;
+  margin-left: 595px;
+  /* Half of the page (585px) + a 10px margin */
+  bottom: 10px;
+  display: none;
+  /*hide the button first*/
+  padding: 0;
+}
+#back-to-top a {
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  display: block;
+  width: 64px;
+  height: 64px;
+  color: white;
+  background-color: #373737;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  border-radius: 10px;
+}
+#back-to-top a:hover {
+  background-color: #272727;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+#back-to-top span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 64px;
+  height: 64px;
+  font-size: 30px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/* External links (i.e. default) */
+.middle a[href^="http"]:after {
+  display: inline-block;
+  background-image: url("../images/external-link.png");
+  background-size: 13px 10px;
+  width: 13px;
+  height: 10px;
+  content: "";
+}
+/* Internal links */
+.middle a[href^="http://voyage-est.com"]:after,
+.middle a[href^="http://www.voyage-est.com"]:after,
+.middle a[href^="http://localhost"]:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.post-list .post-list-item {
+  border-bottom: 1px solid #C0C0C0;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #b3b3b3;
+}
+.post-list div.comment-count {
+  position: absolute;
+  margin-bottom: 0;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 23px;
+  text-align: center;
+  font-weight: bold;
+  background: url("../images/comments/comments-sign.png") no-repeat bottom right;
+  background-size: 26px 23px;
+}
+.post-list .comment-count:hover {
+  background: url("../images/comments/comments-sign-hover.png") no-repeat bottom right;
+  background-size: 26px 23px;
+}
+.post-list .comment-count a {
+  display: inline-block;
+  width: 26px;
+  height: 23px;
+  padding-top: 6px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+.post-list .comment-count a:hover {
+  color: white;
+}
+.fixed {
+  position: fixed;
+}
+.bs-docs-sidebar.affix {
+  position: fixed;
+  /* to stop the div from scrolling */
+  top: 50px;
+}
+.bs-docs-sidebar.affix-bottom {
+  position: relative;
+  /* to stop the div from scrolling */
+  bottom: 0;
+  /* to fix the div at the top its containing element */
+}
+/* sidebar */
+.bs-docs-sidebar {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* all links */
+.bs-docs-sidebar .nav > li > a {
+  color: #999;
+  border-left: 2px solid transparent;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 400;
+}
+/* nested links */
+.bs-docs-sidebar .nav .nav > li > a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+/* active & hover links */
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: #563d7c;
+  text-decoration: none;
+  background-color: transparent;
+  border-left-color: #563d7c;
+}
+/* all active links */
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  font-weight: 700;
+}
+/* nested active links */
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+  font-weight: 500;
+}
+/* hide inactive nested list */
+.bs-docs-sidebar .nav ul.nav {
+  display: none;
+}
+/* show active nested list */
+.bs-docs-sidebar .nav > .active > ul.nav {
+  display: block;
+}

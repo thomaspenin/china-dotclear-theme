@@ -1,0 +1,194 @@
+msgid "Hello"
+msgstr "Coucou"
+
+msgid "More articles..."
+msgstr "Plus d'articles..."
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Tags"
+msgstr "Mots clés"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "To display articles along their summary, choose a particular period:"
+msgstr "Pour afficher les articles avec leur résumé, choisissez une période&nbsp;:"
+
+msgid "All »"
+msgstr "Tous »"
+
+msgid "Browse the list of all articles ever published on this site"
+msgstr "Parcourir la liste de tous les articles publiés sur ce site"
+
+msgid "View the picture full-screen"
+msgstr "Voir l'image en plein écran"
+
+msgid "Download the source code of the theme"
+msgstr "Télécharger le code source du thème"
+
+msgid "Unless otherwise noticed, the license of the content of this site is"
+msgstr "Sauf précision contraire, le contenu de ce site est fourni sous licence"
+
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+msgid "Share"
+msgstr "Partager"
+
+msgid "Articles feed"
+msgstr "Fil des articles"
+
+msgid "This tag's articles Atom feed"
+msgstr "Flux Atom des articles associés à ce mot clé"
+
+msgid "This category's articles Atom feed"
+msgstr "Flux Atom des articles de cette catégorie"
+
+msgid "The page you asked for does not exist."
+msgstr "La page que vous avez demandé n'existe pas."
+
+msgid "If you came here by clicking a link, this may not be correct."
+msgstr "Si vous êtes arrivé en suivant un lien, il se peut que celui-ci soit erroné."
+
+msgid "To find what you are looking for, you may:"
+msgstr "Pour trouver ce que vous cherchez, vous pouvez :"
+
+msgid "Browse the articles by categories or keywords"
+msgstr "Naviguer dans les articles par catégories ou mot-clés"
+
+msgid "Launch a search via the left side bar"
+msgstr "Lancer une recherche via la barre latérale gauche"
+
+msgid "Page not found"
+msgstr "Page inconnue"
+
+msgid "No restriction (titles only)"
+msgstr "Indifférente (titres seuls)"
+
+msgid "Date range choice"
+msgstr "Choix d'une période"
+
+msgid "All articles"
+msgstr "Tous les articles"
+
+msgid "There are no article in this category"
+msgstr "Il n'y a pas d'article dans cette catégorie"
+
+msgid "Articles by category"
+msgstr "Articles par catégorie"
+
+msgid "Articles tagged with"
+msgstr "Articles avec le mot-clé"
+
+msgid "Articles"
+msgstr "Articles"
+
+msgid "Read the post"
+msgstr "Lire l'article"
+
+msgid "Back to the top of the page"
+msgstr "Retour en haut de la page"
+
+msgid "Post count"
+msgstr "Nombre d'articles"
+
+msgid "post(s)"
+msgstr "article(s)"
+
+msgid "Ascendant order"
+msgstr "Ordre croissant"
+
+msgid "More"
+msgstr "Suite"
+
+msgid "By"
+msgstr "Par"
+
+msgid "Read"
+msgstr "Lire"
+
+msgid "Last published articles"
+msgstr "Derniers articles publiés"
+
+msgid "Cancel the redaction of the comment"
+msgstr "Annuler la rédaction du commentaire (attention: tout changement sera perdu)"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Name (required)"
+msgstr "Nom (requis)"
+
+msgid "Email (required, but will not be published)"
+msgstr "E-mail (requis, mais ne sera pas publié)"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Let a comment!"
+msgstr "Laissez un commentaire !"
+
+msgid "Reply"
+msgstr "Répondre"
+
+msgid "Comments feed"
+msgstr "Fil des commentaires"
+
+msgid "Start searching"
+msgstr "Lancer la recherche"
+
+msgid "Previous entry"
+msgstr "Article précédent"
+
+msgid "Next entry"
+msgstr "Article suivant"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Categories"
+msgstr "Catégories"
+
+msgid "They posted on the same topic"
+msgstr "Ailleurs"
+
+msgid "Sort"
+msgstr "Trier"
+
+msgid "View all"
+msgstr "Voir tout"
+
+msgid "Tag feed"
+msgstr "Flux du mot-clé"
+
+msgid "Entry category"
+msgstr "Cet article appartient à la catégorie"
+
+msgid "Entry comments"
+msgstr "Voir les commentaires sur cet article"
+
+msgid "Entry trackbacks"
+msgstr "Voir les rétroliens sur cet article"
+
+msgid "Entry attachments"
+msgstr "Voir les pièces jointes à cet article"
+
+msgid "Show comments"
+msgstr "Afficher les commentaires sur cet article"
+
+msgid "Show pings"
+msgstr "Afficher les rétroliens de cet article"
+
+msgid "Be the first to comment on this entry"
+msgstr "Soyez le premier à commenter cet article"
+
+msgid "Comments are closed"
+msgstr "Les commentaires sont fermés"
+
+msgid "Go to page"
+msgstr "Aller en page"
+
+msgid "wrote"
+msgstr "a écrit"

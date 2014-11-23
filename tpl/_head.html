@@ -31,6 +31,11 @@
 <script type="text/javascript">
   $(document).ready(function()
   {
+    // Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+      delay: { "show": 1000, "hide": 0 }
+    });
+    
     // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
     transformPinyin();
 

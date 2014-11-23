@@ -221,23 +221,23 @@ pyb {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.bottom {
+.footer {
   background-color: #474747;
 }
-.bottom .container {
+.footer .container {
   background-color: #373737;
   padding-bottom: 10px;
 }
-.bottom #poweredBy {
+.footer #poweredBy {
   text-align: center;
   padding: 10px;
   background-color: #272727;
   color: #CCC;
 }
-.bottom .container h3 {
+.footer .container h3 {
   color: #999;
 }
-.bottom .container p {
+.footer .container p {
   color: #666;
 }
 .content-license {
@@ -358,16 +358,9 @@ pyb {
 .banner a.carousel-credit:hover {
   opacity: 1;
 }
-/*.banner .carousel-caption h3 {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}*/
 .banner .carousel-caption h3 {
   text-align: center;
-  font-size: 36px;
+  font-size: 30px;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
 }
 .banner .carousel-caption h3 .caption-container {
@@ -386,9 +379,6 @@ pyb {
 }
 #category-summary .media-object {
   border-radius: 10px;
-}
-#category-summary .content {
-  padding: 15px;
 }
 /*
  * "China" theme for Dotclear
@@ -570,4 +560,24 @@ pyb {
 /* show active nested list */
 .bs-docs-sidebar .nav > .active > ul.nav {
   display: block;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+#tagline {
+  background-color: #c0c0c0;
+  /*padding-top: 20px;
+  padding-left: 10px;*/
+  padding-bottom: 0;
+  /* padding-right: 10px;
+  text-align: center;*/
+}
+#tagline h2 {
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

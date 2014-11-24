@@ -131,4 +131,39 @@ class tplMyPagination {
 		return $p;
 	}
 }
+
+// --- Alias management ---
+
+// Register our alias handler
+$core->url->register('alias','','^(.*)$',array('urlAlias','alias'));
+
+/**
+ * Object in charge of intercepting URL aliases and loading the right template file from the theme
+ */
+class urlAlias extends dcUrlHandlers
+{
+  public static function alias($args)
+  {
+    // Global Dotclear core object
+    global $core;
+
+    // In case we are dealing with pagination, our args will look like "mon_tpl/page/2"
+    if (preg_match('/(?P<name>\w+)\/page\/(?P<digit>\d+)/', $args, $matches) == 1)
+    {
+      // Name of the template
+      $args = $matches['name'];
+      $GLOBALS["_page_number"] = $matches['digit'];
+    }
+
+    // The template shall be named after the URL alias that was provided
+    $tpl = $args.'.html';
+
+    // If the template exists, serve it, otherwise return 404
+    if ($core->tpl->getFilePath($tpl))
+      self::serveDocument($tpl);
+    else
+      self::p404();
+  }
+}
+
 ?>

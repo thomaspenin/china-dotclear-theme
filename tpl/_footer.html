@@ -9,7 +9,10 @@
     </div>
     <div class="col-md-3">
       <h3>Catégories d'articles</h3>
-      <p>Content for the second footer section.</p>
+      <!-- Only consider the first-level categories -->
+      <tpl:Categories level="1">
+      <p><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></p>
+      </tpl:Categories>
     </div>
     <div class="col-md-3">
       <h3>Suivez-moi&nbsp;!</h3>
@@ -19,7 +22,7 @@
     </div>
     <div class="col-md-3">
       <h3>Téléchargement</h3>
-      <p>Thème</p>
+      <p><a href="{{tpl:BlogURL}}theme_download">Thème</a></p>
       <p>Outils</p>
     </div>
   </div>

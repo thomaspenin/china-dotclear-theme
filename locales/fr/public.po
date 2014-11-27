@@ -1,6 +1,12 @@
 msgid "Hello"
 msgstr "Coucou"
 
+msgid "No comment"
+msgstr "Aucun commentaire"
+
+msgid "1 comment"
+msgstr "1 commentaire"
+
 msgid "More articles..."
 msgstr "Plus d'articles..."
 

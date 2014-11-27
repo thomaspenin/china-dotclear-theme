@@ -1,6 +1,12 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "No comment"
+msgstr "No comment"
+
+msgid "1 comment"
+msgstr "1 comment"
+
 msgid "More articles..."
 msgstr "More articles..."
 

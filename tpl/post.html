@@ -52,9 +52,7 @@
       </tpl:EntryIf>
       <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
       <p class="post-metadata">{{tpl:lang By}} <b>{{tpl:EntryAuthorDisplayName}}</b> &bull; {{tpl:EntryDate format="le %d %B %Y"}}</p>
-      <div class="comment-count">
-	<a href="#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}} <span class="glyphicon glyphicon-chevron-down"></span></a>
-      </div>
+      <a class="comment-count" href="#comments" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}} <span class="glyphicon glyphicon-chevron-down"></span></a>
       </div>
     </div>
   </div>
@@ -119,16 +117,33 @@
 		    return (this.top = $("#post-header").outerHeight(true) + $("#post-excerpt").outerHeight(true));
 		  }
 		, bottom: function () {
-		    return (this.bottom = $("#comments").outerHeight(true) + $('.bottom').outerHeight(true));
+		    return (this.bottom = $("#comments").outerHeight(true) + $('.footer').outerHeight(true)
+                                        + $("#pagination-posts").outerHeight(true) + $("#post-footer").outerHeight(true)
+                                        + 20 /* Padding of the container */);
 		  }
 		}
 	      })
 	    });
 	  </script>
-
-	<!-- Info box hosting the table of contents, tags, etc. -->
-	<!--{{tpl:include src="_info-box.html"}}-->
 	</nav>
+      </div>
+    </div>
+
+    <div class="container" id="post-footer">
+      <div class="col-md-9 post-tags">
+	<h3>{{tpl:lang Tags}}</h3>
+	<p><tpl:EntryTags>
+	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a>
+	</tpl:EntryTags></p>
+      </div>
+      <div class="col-md-3 post-share">
+	<h3>{{tpl:lang Share}}</h3>
+	<!-- Buttons from simplesharebuttons.com -->
+	<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
+	<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
+	<a href="https://plus.google.com/share?url={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/google.png" alt="Google+" title="Google+" /></a>
+	<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
+	<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
       </div>
     </div>
 

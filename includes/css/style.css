@@ -319,14 +319,30 @@ pyb {
   text-align: center;
   margin-bottom: 12px;
 }
-#post-header .comment-count {
+#post-header a.comment-count {
+  display: inline-block;
   position: absolute;
   padding: 5px 8px;
   bottom: 0;
   right: 0;
+  outline: none;
   background-color: #373737;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
 }
-#post-header .comment-count .glyphicon {
+#post-header a.comment-count:hover {
+  text-decoration: none;
+  background-color: #272727;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+#post-header a.comment-count .glyphicon {
   font-size: 12px;
 }
 #post-header .post-category {
@@ -348,6 +364,70 @@ pyb {
 }
 #post-excerpt .container p {
   margin: 0;
+}
+#post-footer {
+  background-color: #ffffff;
+}
+#post-footer h3 {
+  margin-top: 10px;
+}
+#post-footer .post-tags a {
+  display: inline-block;
+  padding: 5px 8px;
+  background-color: #228b22;
+  color: white;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+#post-footer .post-tags a:not(:first-child) {
+  margin-left: 5px;
+}
+#post-footer .post-tags a:hover {
+  text-decoration: none;
+  background-color: #1d771d;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+#post-footer .post-share a:hover > img {
+  filter: brightness(80%);
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+  -o-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  -webkit-transition: all 250ms linear;
+  -moz-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  -ms-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+#post-footer .post-share a:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}
+#post-footer .post-share a > img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(1);
+  -webkit-filter: brightness(1);
+  -moz-filter: brightness(1);
+  -o-filter: brightness(1);
+  -ms-filter: brightness(1);
+  -webkit-transition: all 250ms linear;
+  -moz-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  -ms-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+#pagination-posts {
+  background-color: #ffffff;
 }
 /*
  * "China" theme for Dotclear

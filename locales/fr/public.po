@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Coucou"
 
+msgid "Jump to comments section"
+msgstr "Afficher la section des commentaires"
+
 msgid "No comment"
 msgstr "Aucun commentaire"
 

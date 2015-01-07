@@ -131,10 +131,16 @@
 
     <div class="container" id="post-footer">
       <div class="col-md-9 post-tags">
-	<h3>{{tpl:lang Tags}}</h3>
-	<p><tpl:EntryTags>
+	<tpl:EntryTags>
+	  <tpl:TagsHeader>
+	    <h3>{{tpl:lang Tags}}</h3>
+	    <p>
+	  </tpl:TagsHeader>
 	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a>
-	</tpl:EntryTags></p>
+	  <tpl:TagsFooter>
+	    </p>
+	  <tpl:TagsFooter>
+	</tpl:EntryTags>
       </div>
       <div class="col-md-3 post-share">
 	<h3>{{tpl:lang Share}}</h3>

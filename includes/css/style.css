@@ -22,6 +22,7 @@
  */
 /* White */
 /* White */
+/* Light gray */
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -86,6 +87,25 @@ pyb {
   font-size: 95%;
   color: #777777;
   /*font-weight: 700;*/
+}
+/* Text fields */
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  border-color: #8b8b8b;
+}
+input.form-control:focus,
+input:focus,
+textarea:focus {
+  border-color: #228b22;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px #228b22;
+}
+input,
+textarea {
+  color: #333333;
+  border: 1px solid #bebebe;
+  border-radius: 3px 3px 3px 3px;
 }
 /*
  * "China" theme for Dotclear
@@ -242,11 +262,12 @@ pyb {
   color: #666;
 }
 .content-license {
+  display: inline-block;
   font-style: italic;
 }
 .content-license a {
   display: inline-block;
-  height: 16px;
+  height: 100%;
   vertical-align: middle;
 }
 .content-license a:hover {
@@ -693,4 +714,45 @@ pyb {
   text-align: center;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.comments #new-comment-expansion {
+  display: none;
+  /* Hidden by default, will be expanded with javascript */
+}
+.comments .comments-feed {
+  margin-top: 15px;
+}
+.comments .media-list li {
+  padding: 10px;
+}
+.comments .media-list li:nth-child(even) {
+  background-color: #eeeeee;
+}
+.comments textarea {
+  height: 66px;
+  resize: vertical;
+}
+.comments input,
+.comments textarea {
+  padding: 0.3em 0.6em;
+  width: 100%;
+}
+.comments input#c_remember {
+  width: 18px;
+}
+.comments .new-comment-buttons {
+  text-align: right;
+}
+.comments #cancelButton {
+  margin-right: 5px;
+}
+.comments label {
+  font-weight: 400;
 }

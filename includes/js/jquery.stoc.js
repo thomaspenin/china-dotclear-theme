@@ -2,7 +2,7 @@
 * jQuery Plugin: Table of Contents with Smooth Scrolling
 * @link http://www.1stwebdesigner.com/css/jquery-plugin-smooth-scrolling/
 * @author Rochester Oliveira
-* Modified by Thomas Penin
+* Modified (mostly bug fixing) by Thomas Penin
 */
 
 (function($){
@@ -20,17 +20,17 @@
       subListClass: "",      // Class to apply to the sub-level lists
       smoothScroll: 1        // If scrolling shall be smooth or not
     };
-	
+
 	//let's extend our plugin with default or user options when defined
 	var options = $.extend(defaults, options);
-	
+
     return this.each(function() {
 		//"cache" our target and search objects
 		obj = $(this); //target
 		src = $(options.search); //search
 		//let's declare some variables. We need this var declaration to create them as local variables (not global)
 		var appHTML = "", tagNumber = 0, txt = "", id = "", before = "", after = "", previous = options.start, start = options.start, depth = options.depth, i = 0, srcTags = "h" + options.start, cacheHN = "";
-		
+
 		//which tags we will search
 		while ( depth > 1) {
 			start++; //we will just get our start level and numbers higher than it
@@ -41,8 +41,8 @@
 			//we will cache our current H element
 			cacheHN = $(this);
 			//if we are on h1, 2, 3...
-			tagNumber = ( cacheHN.get(0).tagName ).substr(1);			
-			
+			tagNumber = ( cacheHN.get(0).tagName ).substr(1);
+
 			//sets the needed id to the element
 			id = cacheHN.attr('id');
 			if (id == undefined || id == "") { //if it doesn't have only, of course
@@ -51,7 +51,7 @@
 			}
 			//our current text
 			txt = cacheHN.text();
-			
+
 			switch(true) { //with switch(true) we can do comparisons in each case
 				case (tagNumber > previous) : //it means that we went down one level (e.g. from h2 to h3)
 						appHTML = appHTML + "<" + options.listType + " class='" + options.subListClass +"'><li>"+ before +"<a href=\"#"+ id + "\">" + txt + "</a>";
@@ -68,7 +68,7 @@
 						appHTML = appHTML + "<li>"+ before +"<a href=\"#"+ id + "\">" + txt + "</a>";
 					break;
 			}
-			i++;			
+			i++;
 		});
 		//corrects our last item, because it may have some opened ul's
 		while(tagNumber != options.start && tagNumber > 0) {
@@ -80,7 +80,7 @@
 		  appHTML = options.stocTitle + "<"+ options.listType + " id='" + options.rootListId + "' class='" + options.rootListClass + "'>" + appHTML + "</" + options.listType + ">" + options.stocFooter;
 		  obj.prepend(appHTML);
 		}
-		
+
 		//our pretty smooth scrolling here
 		// acctually I've just compressed the code so you guys will think that I'm the man . Source: http://css-tricks.com/snippets/jquery/smooth-scrolling/
 		if (options.smoothScroll == 1) {

@@ -56,6 +56,7 @@ body {
   text-align: justify;
   line-height: 25px;
   font-size: 16px;
+  background-color: #cccccc;
 }
 h1,
 h2,
@@ -242,9 +243,6 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.footer {
-  background-color: #474747;
-}
 .footer .container {
   background-color: #373737;
   padding-bottom: 10px;
@@ -318,9 +316,6 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-#post-header {
-  background-color: #474747;
-}
 #post-header a {
   color: #ffffff;
 }
@@ -457,9 +452,6 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.banner {
-  background-color: #474747;
-}
 .banner .container {
   background-color: #ffffff;
   width: 1170;

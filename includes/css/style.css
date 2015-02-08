@@ -148,7 +148,9 @@ textarea {
 .top .navbar-brand {
   display: inline-block;
   height: 50px;
-  padding: 0 20px;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 10px;
   font-size: 140%;
   background: #373737 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
@@ -179,6 +181,7 @@ textarea {
   padding-right: 5px;
 }
 .top .navbar-brand .blogTagLine {
+  padding-right: 10px;
   vertical-align: middle;
   line-height: 50px;
   font-family: "Damion", cursive;

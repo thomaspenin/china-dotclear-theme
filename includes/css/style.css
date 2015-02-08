@@ -145,7 +145,7 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.top .navbar-brand {
+#top .navbar-brand {
   display: inline-block;
   height: 50px;
   padding: 0;
@@ -162,10 +162,10 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .topbar-container {
+#top .topbar-container {
   width: 100%;
 }
-.top .navbar-brand:hover {
+#top .navbar-brand:hover {
   background: #272727 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   -webkit-transition: background-color 250ms linear;
@@ -174,26 +174,26 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .navbar-brand .blogTitle {
+#top .navbar-brand .blogTitle {
   vertical-align: middle;
   line-height: 50px;
   font-size: 130%;
   padding-right: 5px;
 }
-.top .navbar-brand .blogTagLine {
+#top .navbar-brand .blogTagLine {
   padding-right: 10px;
   vertical-align: middle;
   line-height: 50px;
   font-family: "Damion", cursive;
 }
-.top #searchField {
+#top #searchField {
   margin-right: -6px;
 }
-.top .container {
+#top .container {
   padding: 0;
   background-color: #373737;
 }
-.top .navbar-toggle {
+#top .navbar-toggle {
   color: #cccccc;
   font-size: 32px;
   height: 50px;
@@ -209,7 +209,7 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .navbar-toggle:hover {
+#top .navbar-toggle:hover {
   background-color: #272727;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -217,10 +217,10 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .navbar-nav {
+#top .navbar-nav {
   margin: 0;
 }
-.top .navbar-nav li a {
+#top .navbar-nav li a {
   padding-top: 0;
   padding-bottom: 0;
   height: 50px;
@@ -233,15 +233,15 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .navbar-nav li a span {
+#top .navbar-nav li a span {
   display: inline-block;
   height: 50px;
   line-height: 50px;
 }
-.top .navbar-form {
+#top .navbar-form {
   box-shadow: none;
 }
-.top .navbar-nav li a:hover {
+#top .navbar-nav li a:hover {
   background-color: #272727;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -249,7 +249,7 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
-.top .navbar-collapse {
+#top .navbar-collapse {
   border-top: 0;
 }
 /*
@@ -269,59 +269,59 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.footer {
+#footer {
   padding: 0;
 }
-.footer .container {
+#footer .container {
   background-color: #373737;
   padding-bottom: 10px;
 }
-.footer #poweredBy {
+#footer #poweredBy {
   text-align: center;
   padding: 10px;
   background-color: #272727;
   color: #CCC;
 }
-.footer .container h3 {
+#footer .container h3 {
   color: #999;
 }
-.footer .container p {
+#footer .container p {
   color: #666;
 }
-.content-license {
+#footer .content-license {
   display: inline-block;
   font-style: italic;
 }
-.content-license a {
+#footer .content-license a {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-.content-license a:hover {
+#footer .content-license a:hover {
   text-decoration: none;
 }
-.license-cc {
+#footer .license-cc {
   display: inline-block;
   width: 16px;
   height: 16px;
   background: url("../images/license/cc-32.png") no-repeat;
   background-size: 16px 16px;
 }
-.license-cc-by {
+#footer .license-cc-by {
   display: inline-block;
   width: 16px;
   height: 16px;
   background: url("../images/license/by-32.png") no-repeat;
   background-size: 16px 16px;
 }
-.license-cc-nc {
+#footer .license-cc-nc {
   display: inline-block;
   width: 16px;
   height: 16px;
   background: url("../images/license/nc-32.png") no-repeat;
   background-size: 16px 16px;
 }
-.license-cc-sa {
+#footer .license-cc-sa {
   display: inline-block;
   width: 16px;
   height: 16px;

@@ -91,7 +91,16 @@
     margin: 0;
 }
 
+.top .navbar li {
+ // display: table-cell;
+}
+
 .top .navbar-nav li a {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: @top-bar-height;
+ // vertical-align: middle;
+ // line-height: @top-bar-height;
   color: @top-bar-text-color;
   font-family: 'Lato', sans-serif;
   background-color: transparent;
@@ -100,6 +109,16 @@
   -o-transition: background-color 250ms linear;
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
+}
+
+.top .navbar-nav li a span {
+  display: inline-block;
+  height: @top-bar-height;
+  line-height: @top-bar-height;
+}
+
+.top .navbar-form {
+  box-shadow: none;
 }
 
 .top .navbar-nav li a:hover {

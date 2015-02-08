@@ -221,6 +221,9 @@ textarea {
   margin: 0;
 }
 .top .navbar-nav li a {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 50px;
   color: #cccccc;
   font-family: 'Lato', sans-serif;
   background-color: transparent;
@@ -229,6 +232,14 @@ textarea {
   -o-transition: background-color 250ms linear;
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
+}
+.top .navbar-nav li a span {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+}
+.top .navbar-form {
+  box-shadow: none;
 }
 .top .navbar-nav li a:hover {
   background-color: #272727;

@@ -1,6 +1,6 @@
 <!-- Site header and navigation -->
 <header class="top" role="header">
-  <div class="topbar-container container navbar-fixed-top">
+  <div class="navbar-fixed-top">
     <div class="container">
       <a href="{{tpl:BlogURL}}" data-toggle="tooltip" data-placement="bottom" title="Retourner sur la page d'accueil" class="navbar-brand pull-left">
 	  <span class="blogTitle">{{tpl:BlogName}}</span><span class="blogTagLine hidden-xs hidden-sm"> {{tpl:BlogDescription}}</span>
@@ -27,11 +27,5 @@
     </div>
   </div>
 </header>
-
-<div id="top">
-
-  <!-- # --BEHAVIOR-- publicTopAfterContent -->
-  {{tpl:SysBehavior behavior="publicTopAfterContent"}}
-</div>
 
 {{tpl:include src="_back-to-top.html"}}

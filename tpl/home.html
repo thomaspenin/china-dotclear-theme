@@ -65,157 +65,157 @@
   </script>
 </head>
 
-<body class="home">
-<div id="page">
-{{tpl:include src="_top.html"}}
+<body>
+  <div id="page" class="container">
+    <!-- Top bar present on all pages -->
+    {{tpl:include src="_top.html"}}
 
-<!-- Site banner -->
+    <!-- Banner (home page only) -->
     <div class="banner">
-        <div class="container">
+      <div id="homeCarousel" class="carousel slide">
+	<!-- Indicators -->
+	<ol class="carousel-indicators hidden-xs">
+	  <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+	  <li data-target="#homeCarousel" data-slide-to="1"></li>
+	  <li data-target="#homeCarousel" data-slide-to="2"></li>
+	  <li data-target="#homeCarousel" data-slide-to="3"></li>
+	</ol>
 
-	  <div id="homeCarousel" class="carousel slide">
-	    <!-- Indicators -->
-	    <ol class="carousel-indicators hidden-xs">
-	      <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-	      <li data-target="#homeCarousel" data-slide-to="1"></li>
-	      <li data-target="#homeCarousel" data-slide-to="2"></li>
-	      <li data-target="#homeCarousel" data-slide-to="3"></li>
-	    </ol>
-
-	    <!-- Wrapper for slides -->
-	    <div class="carousel-inner">
-	      <div class="item active">
-		<img src="{{tpl:BlogThemeURL}}/includes/images/carousel/welcome.png" alt="...">
-		<div class="carousel-caption">
-		  <h3><span class="caption-container">Tradition,<br/>Modernité</span></h3>
-		  <p></p>
-		</div>
-	      </div>
-	      <div class="item">
-		<img src="{{tpl:BlogThemeURL}}/includes/images/carousel/travel.png" alt="...">
-		<div class="carousel-caption">
-		  <h3><span class="caption-container">Voyage,<br/>Impressions</span></h3>
-		</div>
-		<a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
-	      </div>
-	    <div class="item">
-		<img src="{{tpl:BlogThemeURL}}/includes/images/carousel/civilization.png" alt="...">
-		<div class="carousel-caption">
-		  <h3><span class="caption-container">Civilisation,<br/>Vie quotidienne</span></h3>
-		</div>
-		<a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
-	      </div>
-	      <div class="item">
-		<img src="{{tpl:BlogThemeURL}}/includes/images/carousel/language.png" alt="...">
-		<div class="carousel-caption">
-		  <h3><span class="caption-container">Langue,<br/>Littérature</span></h3>
-		</div>
-		<a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
-	      </div>
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+	  <div class="item active">
+	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/welcome.png" alt="...">
+	    <div class="carousel-caption">
+	      <h3><span class="caption-container">Tradition,<br/>Modernité</span></h3>
+	      <p></p>
 	    </div>
-
-	    <!-- Controls -->
-	    <a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
-	      <span class="glyphicon glyphicon-chevron-left"></span>
-	    </a>
-	    <a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
-	      <span class="glyphicon glyphicon-chevron-right"></span>
-	    </a>
 	  </div>
+	  <div class="item">
+	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/travel.png" alt="...">
+	    <div class="carousel-caption">
+	      <h3><span class="caption-container">Voyage,<br/>Impressions</span></h3>
+	    </div>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	  </div>
+	<div class="item">
+	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/civilization.png" alt="...">
+	    <div class="carousel-caption">
+	      <h3><span class="caption-container">Civilisation,<br/>Vie quotidienne</span></h3>
+	    </div>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	  </div>
+	  <div class="item">
+	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/language.png" alt="...">
+	    <div class="carousel-caption">
+	      <h3><span class="caption-container">Langue,<br/>Littérature</span></h3>
+	    </div>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	  </div>
+	</div>
 
-	<!-- Modal for image credits (where needed) -->
-	<div class="modal fade credit-modal" id="credit2" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/kimon/709588049">Spirit Way, Ming Xiaoling Mausoleum</a> originalement créée par <a href="https://www.flickr.com/photos/kimon/">Kimon Berlin</a> (license <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>)</div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-	      </div>
+	<!-- Controls -->
+	<a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
+	  <span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
+	  <span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+      </div>
+
+      <!-- Modal for image credits (where needed) -->
+      <div class="modal fade credit-modal" id="credit2" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/kimon/709588049">Spirit Way, Ming Xiaoling Mausoleum</a> originalement créée par <a href="https://www.flickr.com/photos/kimon/">Kimon Berlin</a> (license <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>)</div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
-	<div class="modal fade credit-modal" id="credit3" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/makzhou/5098855312">Lunch feast on a wedding day</a> originalement créée par <a href="https://www.flickr.com/photos/makzhou/">makzhou</a> (license <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)</div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-	      </div>
+      </div>
+      <div class="modal fade credit-modal" id="credit3" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/makzhou/5098855312">Lunch feast on a wedding day</a> originalement créée par <a href="https://www.flickr.com/photos/makzhou/">makzhou</a> (license <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)</div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
-	<div class="modal fade credit-modal" id="credit4" tabindex="-1" role="dialog" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/83732213@N00/8198924387">“仁义教化”@钻石之叶</a> originalement créée par <a href="https://www.flickr.com/photos/83732213@N00/">Zhang Ting</a> (license <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)</div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-	      </div>
+      </div>
+      <div class="modal fade credit-modal" id="credit4" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/83732213@N00/8198924387">“仁义教化”@钻石之叶</a> originalement créée par <a href="https://www.flickr.com/photos/83732213@N00/">Zhang Ting</a> (license <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)</div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
       </div>
     </div>
+  
 
-    <!-- Middle content section -->
-    <div class="middle">
+  <!-- Middle content section -->
+  <div class="middle">
 
-	<!-- Tagline of the site -->
-	<div class="container" id="tagline">
-	  <h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
+      <!-- Tagline of the site -->
+      <div id="tagline">
+	<h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
+      </div>
+    
+      <!-- We only consider categories of the first level -->
+      <tpl:Categories level="1">
+	<tpl:CategoriesHeader>
+	  <!-- Presentation of the main categories -->
+	  <div class="container" id="category-summary">
+	</tpl:CategoriesHeader>
+	<div class="col-md-6 content">
+	  <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
+	  <div class="category-description">{{tpl:CategoryDescription}}</div>
 	</div>
+	<tpl:CategoriesFooter>
+	  </div>
+	</tpl:CategoriesFooter> 
+      </tpl:Categories>
       
-	<!-- We only consider categories of the first level -->
-	<tpl:Categories level="1">
-	  <tpl:CategoriesHeader>
-	    <!-- Presentation of the main categories -->
-	    <div class="container" id="category-summary">
-	  </tpl:CategoriesHeader>
-	  <div class="col-md-6 content">
-	    <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
-	    <div class="category-description">{{tpl:CategoryDescription}}</div>
-	  </div>
-	  <tpl:CategoriesFooter>
-	    </div>
-	  </tpl:CategoriesFooter> 
-	</tpl:Categories>
-	
-        <div class="container">
-	  <div class="col-md-8 content">
-            {{tpl:include src="_last-posts-list.html"}}
-	    <button type="button" id="more-articles-btn" class="btn btn-primary">{{tpl:lang More articles...}}</button>
-          </div>
-	  <div class="col-md-4">
-	    <tpl:Entries type="page" url="welcome">
-	      <div id="p{{tpl:EntryID}}" class="post">
-		<h2>{{tpl:EntryTitle encode_html="1"}}</h1>
-
-		<!-- # Entry with an excerpt if there is any -->
-		<tpl:EntryIf extended="1">
-		  <div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
-		</tpl:EntryIf>
-	    
-		<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
-		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-
-		<div class="post-content">  
-		  <!-- The blog post itself -->
-		  {{tpl:EntryContent}}
-		</div>
-		
-		<!-- # --BEHAVIOR-- publicEntryAfterContent -->
-		{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
-	      </div>
-	    </tpl:Entries>
-	  </div>
-	  <div>
-	    <h2>{{tpl:lang Tags}}</h2>
-	    {{tpl:include src="_tag-cloud.html"}}
-	  </div>
+      <div>
+	<div class="col-md-8 content">
+	  {{tpl:include src="_last-posts-list.html"}}
+	  <button type="button" id="more-articles-btn" class="btn btn-primary">{{tpl:lang More articles...}}</button>
 	</div>
-    </div>
+	<div class="col-md-4">
+	  <tpl:Entries type="page" url="welcome">
+	    <div id="p{{tpl:EntryID}}" class="post">
+	      <h2>{{tpl:EntryTitle encode_html="1"}}</h1>
 
-{{tpl:include src="_footer.html"}}
-</div> <!-- End #page -->
+	      <!-- # Entry with an excerpt if there is any -->
+	      <tpl:EntryIf extended="1">
+		<div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
+	      </tpl:EntryIf>
+	  
+	      <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+	      {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+	      <div class="post-content">  
+		<!-- The blog post itself -->
+		{{tpl:EntryContent}}
+	      </div>
+	      
+	      <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+	      {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+	    </div>
+	  </tpl:Entries>
+	</div>
+	<div>
+	  <h2>{{tpl:lang Tags}}</h2>
+	  {{tpl:include src="_tag-cloud.html"}}
+	</div>
+      </div>
+  </div>
+
+    <!-- Footer (present on all pages) -->
+    {{tpl:include src="_footer.html"}}
+  </div> <!-- End #page -->
 </body>
 </html>

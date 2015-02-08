@@ -51,12 +51,17 @@
  * License: GNU/GPL
  */
 body {
-  padding-top: 50px;
   font-family: "Lato", "Arial", "Kaiti", sans-serif;
   text-align: justify;
   line-height: 25px;
   font-size: 16px;
   background-color: #cccccc;
+}
+#page {
+  background-color: white;
+  padding: 0;
+  box-shadow: 1px 1px 12px #888888;
+  padding-top: 50px;
 }
 h1,
 h2,
@@ -173,15 +178,15 @@ textarea {
   line-height: 50px;
   font-family: "Damion", cursive;
 }
-.top .navbar-form {
-  padding-right: 15px;
-  /* The search field is directly sticked to the right of the page */
+.top #searchField {
+  margin-right: -6px;
 }
 .top .container {
   padding: 0;
+  background-color: #373737;
 }
 .top .navbar-toggle {
-  color: #32CD32;
+  color: #CCC;
   font-size: 32px;
   margin: 3px;
   padding: 2px 5px;
@@ -230,10 +235,9 @@ textarea {
  * License: GNU/GPL
  */
 .middle {
-  background-color: #CCC;
+  background-color: #fff;
 }
-.middle .container {
-  background-color: #FFF;
+.middle #category-summary {
   padding-bottom: 20px;
 }
 /*
@@ -306,7 +310,7 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.home #more-articles-btn {
+#more-articles-btn {
   margin-top: 20px;
 }
 /*
@@ -319,7 +323,7 @@ textarea {
 #post-header a {
   color: #ffffff;
 }
-#post-header .container {
+#post-header {
   background-color: #228b22;
   color: #ffffff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -505,7 +509,7 @@ textarea {
  * License: GNU/GPL
  */
 #category-summary {
-  background-color: #C0C0C0;
+  background-color: #BBBBBB;
 }
 #category-summary .media-object {
   border-radius: 10px;
@@ -699,11 +703,13 @@ textarea {
  * License: GNU/GPL
  */
 #tagline {
-  background-color: #c0c0c0;
+  background-color: #bbbbbb;
   padding-bottom: 0;
 }
 #tagline h2 {
   text-align: center;
+  margin-top: 0;
+  padding-top: 20px;
   padding-bottom: 0;
   margin-bottom: 0;
 }

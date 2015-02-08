@@ -29,14 +29,15 @@
 
 </head>
 
-<body class="post dc-post">
-
+<body>
   {{tpl:EntryPingData}}
-  {{tpl:include src="_top.html"}}
+  
+  <div id="page" class="container">
+    <!-- Top bar present on all pages -->
+    {{tpl:include src="_top.html"}}
 
-  <!-- Header of the post -->
-  <div id="post-header">
-    <div class="container">
+    <!-- Header of the post -->
+    <div id="post-header">
       <tpl:EntryIf has_category="1">
       <div class="post-category">
 	<a href="{{tpl:BlogURL}}"><span class="glyphicon glyphicon-home"></span></a> › <tpl:EntryCategoriesBreadcrumb><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> › </tpl:EntryCategoriesBreadcrumb><a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
@@ -53,12 +54,9 @@
       <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
       <p class="post-metadata">{{tpl:lang By}} <b>{{tpl:EntryAuthorDisplayName}}</b> &bull; {{tpl:EntryDate format="le %d %B %Y"}}</p>
       <a class="comment-count" href="#comments" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}} <span class="glyphicon glyphicon-chevron-down"></span></a>
-      </div>
     </div>
-  </div>
 
-  <div id="page">
-    <div class="middle" id="wrapper">
+    <div class="middle">
 
     <!-- Post excerpt if there is any -->
     <tpl:EntryIf extended="1">
@@ -173,11 +171,10 @@
 	{{tpl:include src="_comments.html"}}
       </div>
     </div>
-
-  </div> <!-- End #wrapper -->
-
-  {{tpl:include src="_footer.html"}}
-  </div> <!-- End #page -->
   </div>
+
+    <!-- Footer (present on all pages) -->
+    {{tpl:include src="_footer.html"}}
+  </div> <!-- End #page -->
 </body>
 </html>

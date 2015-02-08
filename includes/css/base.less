@@ -7,12 +7,18 @@
  */
 
 body {
-  padding-top: @top-bar-height; // Because the toolbar is anchored to the top
   font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
   text-align: @base-text-alignment;
   line-height: @base-line-height;
   font-size: @base-font-size;
   background-color: @default-background-color;
+}
+
+#page {
+  background-color: white;
+  padding: 0;
+  box-shadow: 1px 1px 12px #888888;
+  padding-top: @top-bar-height; // Because the toolbar is anchored to the top
 }
 
 h1, h2, h3, h4 {

@@ -6,20 +6,50 @@
  * License: GNU/GPL
  */
 
-// Define the colors used throughout the theme
+/*
+ * Theme color palette
+ */
 
-@default-background-color: #ccc;
+// Grays
+@white: #ffffff;
+@very-light-gray: #dedede;
+@light-gray: #cccccc;
+@gray: #808080;
+@medium-gray: #505050;
+@strong-gray: #373737;
+@very-strong-gray: #272727;
+@black: #000000;
 
-@top-bar-color: #373737;
-@top-bar-color-hover: #272727;
+// Greens
+@light-green: #32cd32;
+@green: #228b22;
+
+/*
+ * Base colors
+ */
+
+@default-background-color: @light-gray;
+// Color for the pinyin identified as such
+@pinyin-text-color: @gray;
+@page-background-color: @white;
 
 // Main tint color: it is used for links, buttons and other actionable items
-@tint-color: #228B22;
+@tint-color: @green;
+
+/*
+ * Top bar colors
+ */
+
+@top-bar-text-color: @light-gray;
+@top-bar-background-color-hover: @very-strong-gray;
+@top-bar-background-color: @strong-gray;
+
+
 
 // Banner
-@banner-link-color: #FFFFFF; /* White */
+@banner-link-color: @white;
 //@banner-page-bg-color: #474747;
-@banner-bg-color: #FFFFFF;
+@banner-bg-color: @white;
 
 // Tagline
 @tagline-bg-color: #BBBBBB;
@@ -29,15 +59,18 @@
 
 @post-header-bg-color: @tint-color;
 //@post-header-page-bg-color: @banner-page-bg-color;
-@post-header-text-color: #FFFFFF;
-@post-header-link-color: #FFFFFF; /* White */
+@post-header-text-color: @white;
+@post-header-link-color: @white;
 
 @post-excerpt-bg-color: #C0C0C0;
-@post-footer-bg-color: #FFFFFF;
-@post-pagination-bg-color: #FFFFFF;
+@post-footer-bg-color: @white;
+@post-pagination-bg-color: @white;
 
 @post-metadata-bg-color: #474747;
-@post-metadata-page-bg-color: #FFFFFF;
+@post-metadata-page-bg-color: @white;
 
 // Comments
 @comments-stripes-color: #eeeeee; /* Light gray */
+
+// Footer
+@footer-background-color: @strong-gray;

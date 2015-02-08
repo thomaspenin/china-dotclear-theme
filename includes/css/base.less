@@ -15,7 +15,7 @@ body {
 }
 
 #page {
-  background-color: white;
+  background-color: @page-background-color;
   padding: 0;
   box-shadow: 1px 1px 12px #888888;
   padding-top: @top-bar-height; // Because the toolbar is anchored to the top
@@ -46,8 +46,7 @@ a:link, a:visited, a:hover, a:active {
 py, pyb {
   font-family: @primary-pinyin-font, @fallback-pinyin-font1, @fallback-pinyin-font2 !important;
   font-size: 95%;
-  color: #777777;
-  /*font-weight: 700;*/
+  color: @pinyin-text-color;
 }
 
 /* Text fields */

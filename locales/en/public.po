@@ -1,6 +1,24 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "Home page"
+msgstr "Home page"
+
+msgid "Browse the list of articles published on the site"
+msgstr "Browse the list of articles published on the site"
+
+msgid "Browse the different categories"
+msgstr "Browse the different categories"
+
+msgid "Search for articles using keywords"
+msgstr "Search for articles using keywords"
+
+msgid "Know more about the site and its author"
+msgstr "Know more about the site and its author"
+
+msgid "Search (verb)"
+msgstr "Search"
+
 msgid "Jump to comments section"
 msgstr "Jump to comments section"
 

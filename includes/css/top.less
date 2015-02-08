@@ -11,10 +11,10 @@
   height: @top-bar-height;
   padding: 0 20px;
   font-size: 140%;
-  background: #373737 url("@{images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background: @top-bar-background-color url("@{images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   padding-left: 46px;
-  color: #CCC;
+  color: @top-bar-text-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -24,11 +24,10 @@
 
 .top .topbar-container {
   width: 100%;
-  background-color: @top-bar-color;
 }
 
 .top .navbar-brand:hover {
-  background: @top-bar-color-hover url("@{images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background: @top-bar-background-color-hover url("@{images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -50,25 +49,22 @@
   font-family: @title-font, cursive;
 }
 
-
-.top .navbar-form {
-  //padding-right: 15px; /* The search field is directly sticked to the right of the page */
-}
-
 .top #searchField {
   margin-right: -6px;
 }
 
-
 .top .container {
-    padding: 0;
-  background-color: #373737;
+  padding: 0;
+  background-color: @top-bar-background-color;
 }
 
 .top .navbar-toggle {
-  color: #CCC;
+  color: @top-bar-text-color;
   font-size: 32px;
-  margin: 3px;
+  height: @top-bar-height;
+  width: @top-bar-height; // Square
+  border-radius: 0;
+  margin: 0;
   padding: 2px 5px;
   line-height: 32px;
   background-color: transparent;
@@ -80,7 +76,7 @@
 }
 
 .top .navbar-toggle:hover {
-  background-color: @top-bar-color-hover;
+  background-color: @top-bar-background-color-hover;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -93,7 +89,7 @@
 }
 
 .top .navbar-nav li a {
-  color: #CCC;
+  color: @top-bar-text-color;
   font-family: 'Lato', sans-serif;
   background-color: transparent;
   -webkit-transition: background-color 250ms linear;
@@ -104,10 +100,14 @@
 }
 
 .top .navbar-nav li a:hover {
-  background-color: @top-bar-color-hover;
+  background-color: @top-bar-background-color-hover;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
+}
+
+.top .navbar-collapse {
+  border-top: 0;
 }

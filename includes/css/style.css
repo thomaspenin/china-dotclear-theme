@@ -20,8 +20,15 @@
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-/* White */
-/* White */
+/*
+ * Theme color palette
+ */
+/*
+ * Base colors
+ */
+/*
+ * Top bar colors
+ */
 /* Light gray */
 /*
  * "China" theme for Dotclear
@@ -58,7 +65,7 @@ body {
   background-color: #cccccc;
 }
 #page {
-  background-color: white;
+  background-color: #ffffff;
   padding: 0;
   box-shadow: 1px 1px 12px #888888;
   padding-top: 50px;
@@ -91,8 +98,7 @@ py,
 pyb {
   font-family: "Ubuntu", "arial unicode ms", sans-serif !important;
   font-size: 95%;
-  color: #777777;
-  /*font-weight: 700;*/
+  color: #808080;
 }
 /* Text fields */
 input:hover,
@@ -147,7 +153,7 @@ textarea {
   background: #373737 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   padding-left: 46px;
-  color: #CCC;
+  color: #cccccc;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -156,7 +162,6 @@ textarea {
 }
 .top .topbar-container {
   width: 100%;
-  background-color: #373737;
 }
 .top .navbar-brand:hover {
   background: #272727 url("../images/logo/orchid-64.png") no-repeat 10px 50%;
@@ -186,9 +191,12 @@ textarea {
   background-color: #373737;
 }
 .top .navbar-toggle {
-  color: #CCC;
+  color: #cccccc;
   font-size: 32px;
-  margin: 3px;
+  height: 50px;
+  width: 50px;
+  border-radius: 0;
+  margin: 0;
   padding: 2px 5px;
   line-height: 32px;
   background-color: transparent;
@@ -210,7 +218,7 @@ textarea {
   margin: 0;
 }
 .top .navbar-nav li a {
-  color: #CCC;
+  color: #cccccc;
   font-family: 'Lato', sans-serif;
   background-color: transparent;
   -webkit-transition: background-color 250ms linear;
@@ -227,6 +235,9 @@ textarea {
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
 }
+.top .navbar-collapse {
+  border-top: 0;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -237,9 +248,6 @@ textarea {
 .middle {
   background-color: #fff;
 }
-.middle #category-summary {
-  padding-bottom: 20px;
-}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -247,6 +255,9 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
+.footer {
+  padding: 0;
+}
 .footer .container {
   background-color: #373737;
   padding-bottom: 10px;
@@ -310,7 +321,12 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-#more-articles-btn {
+#home-content {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+}
+#home-content #more-articles-btn {
   margin-top: 20px;
 }
 /*
@@ -510,6 +526,9 @@ textarea {
  */
 #category-summary {
   background-color: #BBBBBB;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
 }
 #category-summary .media-object {
   border-radius: 10px;

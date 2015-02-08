@@ -179,7 +179,7 @@
 	</tpl:CategoriesFooter> 
       </tpl:Categories>
       
-      <div>
+      <div class="container" id="home-content">
 	<div class="col-md-8 content">
 	  {{tpl:include src="_last-posts-list.html"}}
 	  <button type="button" id="more-articles-btn" class="btn btn-primary">{{tpl:lang More articles...}}</button>
@@ -207,7 +207,7 @@
 	    </div>
 	  </tpl:Entries>
 	</div>
-	<div>
+	<div class="col-md-4">
 	  <h2>{{tpl:lang Tags}}</h2>
 	  {{tpl:include src="_tag-cloud.html"}}
 	</div>

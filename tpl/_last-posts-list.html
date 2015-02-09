@@ -1,7 +1,7 @@
 <!-- List of the last 10 posts that were published -->
 <tpl:Entries lastn="10" order="desc" with_pings="0">
     <tpl:EntriesHeader>
-      <div class="post-list">
+      <div class="post-list" id="pl">
       <h2>{{tpl:lang Last published articles}}</h2>
       </tpl:EntriesHeader>
 	<div class="post-list-item">
@@ -26,6 +26,13 @@
 	  </div>
 	</div>
     <tpl:EntriesFooter>
+      <tpl:Pagination>
+	<p class="pagination"><tpl:PaginationIf end="0"><a href="{{tpl:PaginationURL offset="+1"}}#pl" class="prev">&#171;
+	{{tpl:lang previous entries}}</a> - </tpl:PaginationIf>
+	{{tpl:lang page}} {{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}
+	<tpl:PaginationIf start="0"> - <a href="{{tpl:PaginationURL offset="-1"}}#pl" class="next">{{tpl:lang next entries}}
+	&#187;</a></tpl:PaginationIf></p>
+      </tpl:Pagination>
     </div>
     </tpl:EntriesFooter>
 </tpl:Entries>

@@ -147,6 +147,10 @@ class urlAlias extends dcUrlHandlers
     // Global Dotclear core object
     global $core;
 
+    // Handle the particular case of pagination on the main page
+    if (preg_match('/\/page\/(?P<digit>\d+)/', $args, $matches) == 1)
+      self::home($args);
+
     // In case we are dealing with pagination, our args will look like "mon_tpl/page/2"
     if (preg_match('/(?P<name>\w+)\/page\/(?P<digit>\d+)/', $args, $matches) == 1)
     {

@@ -262,6 +262,9 @@ textarea {
 .middle {
   background-color: #fff;
 }
+.middle > .container {
+  padding: 0;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -630,10 +633,9 @@ textarea {
  * License: GNU/GPL
  */
 .post-list .post-list-item {
-  border-bottom: 1px solid #C0C0C0;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid #b3b3b3;
+  border-bottom: 1px solid #cccccc;
 }
 .post-list div.comment-count {
   position: absolute;
@@ -659,7 +661,7 @@ textarea {
   text-align: center;
   text-decoration: none;
   color: black;
-  font-size: 13px;
+  font-size: 12px;
 }
 .post-list .comment-count a:hover {
   color: white;

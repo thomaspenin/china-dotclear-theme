@@ -115,7 +115,7 @@
 		    return (this.top = $("#post-header").outerHeight(true) + $("#post-excerpt").outerHeight(true));
 		  }
 		, bottom: function () {
-		    return (this.bottom = $("#comments").outerHeight(true) + $('.footer').outerHeight(true)
+		    return (this.bottom = $("#comments").outerHeight(true) + 					    $('#footer').outerHeight(true)
                                         + $("#pagination-posts").outerHeight(true) + $("#post-footer").outerHeight(true)
                                         + 20 /* Padding of the container */);
 		  }

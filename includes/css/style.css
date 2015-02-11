@@ -90,9 +90,11 @@ h1 .zh {
 }
 a:link,
 a:visited,
-a:hover,
 a:active {
   color: #228b22;
+}
+a:hover {
+  color: #1d771d;
 }
 py,
 pyb {
@@ -357,12 +359,7 @@ textarea {
  * License: GNU/GPL
  */
 #home-content {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 20px;
-}
-#home-content #more-articles-btn {
-  margin-top: 20px;
+  padding: 0;
 }
 /*
  * "China" theme for Dotclear
@@ -683,6 +680,9 @@ textarea {
 }
 .post-list .comment-count a:hover {
   color: white;
+}
+.post-list > nav {
+  text-align: center;
 }
 .fixed {
   position: fixed;

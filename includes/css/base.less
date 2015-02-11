@@ -38,8 +38,12 @@ h1 .zh {
   font-size: 1.1em;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link, a:visited, a:active {
   color: @tint-color;
+}
+
+a:hover {
+  color: darken(@tint-color, 5%);
 }
 
 // Pinyin

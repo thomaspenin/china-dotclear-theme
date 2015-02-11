@@ -61,6 +61,7 @@ class tplMyThemeAdditions {
 
 # Add new pagination
 $core->tpl->addValue('PaginationLinks', array('tplMyPagination', 'PaginationLinks'));
+
 class tplMyPagination {
 	public static function PaginationLinks($attr)
 	{
@@ -85,9 +86,9 @@ class tplMyPagination {
 					$url .= $s."q=".$_GET["q"];
 				}
 				$linkDesc = "Page &nbsp;".$linkText;
-				return "<span><a href=\"".$url."\" title=\"".$linkDesc."\">".$linkText."</a></span>";
+				return "<li><a href=\"".$url."\" title=\"".$linkDesc."\">".$linkText."</a></li>";
 			} else {
-				return "<span class=\"this\">".$linkText."</span>";
+				return "<li class=\"active\"><a href=\"\#\">".$linkText."</a></li>";
 			}
 		}
 		
@@ -118,11 +119,11 @@ class tplMyPagination {
 			echo makePageLink(1,1);
 			$min_page = max($current - ($nb_sequence - 1) / 2, 2);
 			$max_page = min($current + ($nb_sequence - 1) / 2, $nb_pages - 1);
-			if ($min_page > 2) { echo "<span class=\"etc\">...</span>"; }
+			if ($min_page > 2) { echo "<li class=\"etc\">...</li>"; }
 			for ($i = $min_page; $i <= $max_page ; $i++) {
 				echo makePageLink($i,$i);
 			}
-			if ($max_page < $nb_pages - 1) { echo "<span class=\"etc\">...</span>"; }
+			if ($max_page < $nb_pages - 1) { echo "<li class=\"etc\">...</li>"; }
 			echo makePageLink($nb_pages,$nb_pages);
 		}
 		
@@ -149,7 +150,10 @@ class urlAlias extends dcUrlHandlers
 
     // Handle the particular case of pagination on the main page
     if (preg_match('/\/page\/(?P<digit>\d+)/', $args, $matches) == 1)
+    {
       self::home($args);
+      return;
+    }
 
     // In case we are dealing with pagination, our args will look like "mon_tpl/page/2"
     if (preg_match('/(?P<name>\w+)\/page\/(?P<digit>\d+)/', $args, $matches) == 1)

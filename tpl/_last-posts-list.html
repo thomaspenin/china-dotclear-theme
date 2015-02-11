@@ -25,14 +25,45 @@
 	    <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
 	  </div>
 	</div>
-    <tpl:EntriesFooter>
-      <tpl:Pagination>
-	<p class="pagination"><tpl:PaginationIf end="0"><a href="{{tpl:PaginationURL offset="+1"}}#pl" class="prev">&#171;
-	{{tpl:lang previous entries}}</a> - </tpl:PaginationIf>
-	{{tpl:lang page}} {{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}
-	<tpl:PaginationIf start="0"> - <a href="{{tpl:PaginationURL offset="-1"}}#pl" class="next">{{tpl:lang next entries}}
-	&#187;</a></tpl:PaginationIf></p>
-      </tpl:Pagination>
-    </div>
+
+      <tpl:EntriesFooter>
+	<!-- Navigation across the different pages -->
+	<tpl:Pagination>
+	  <nav>
+	    <ul class="pagination">
+	      <tpl:PaginationIf start="1">
+	      <li class="disabled">
+		<a href="#" aria-label="Previous">
+		  <span aria-hidden="true">&laquo;</span>
+		</a>
+	      </li>
+	      </tpl:PaginationIf>
+	      <tpl:PaginationIf start="0">
+	      <li>
+		<a href="{{tpl:PaginationURL offset="-1"}}#pl" aria-label="Previous">
+		  <span aria-hidden="true">&laquo;</span>
+		</a>
+	      </li>
+	      </tpl:PaginationIf> 
+	      {{tpl:PaginationLinks max="5"}}
+	      <tpl:PaginationIf end="1">
+	      <li class="disabled">
+		<a href="#" aria-label="Next">
+		  <span aria-hidden="true">&raquo;</span>
+		</a>
+	      </li>
+	      </tpl:PaginationIf>
+	      <tpl:PaginationIf end="0">
+	      <li>
+		<a href="{{tpl:PaginationURL offset="+1"}}#pl" aria-label="Next">
+		  <span aria-hidden="true">&raquo;</span>
+		</a>
+	      </li>
+	      </tpl:PaginationIf>
+	    </ul>
+	  </nav>
+	</tpl:Pagination>
+
+      </div>
     </tpl:EntriesFooter>
 </tpl:Entries>

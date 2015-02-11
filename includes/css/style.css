@@ -138,6 +138,24 @@ textarea {
   background-color: #228b22;
   border-color: #1d771d;
 }
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #1d771d;
+  border-color: #1d771d;
+  color: #ffffff;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #228b22;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  color: #1d771d;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------

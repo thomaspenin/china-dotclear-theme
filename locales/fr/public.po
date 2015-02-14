@@ -131,7 +131,7 @@ msgid "Ascendant order"
 msgstr "Ordre croissant"
 
 msgid "More"
-msgstr "Suite"
+msgstr "Lire la suite"
 
 msgid "By"
 msgstr "Par"

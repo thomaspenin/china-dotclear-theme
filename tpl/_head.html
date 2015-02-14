@@ -16,8 +16,6 @@
 <script src="{{tpl:BlogThemeURL}}/includes/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 <!-- Script to resize Chinese text -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.ba-replacetext.js"></script>
-<!-- Load script for text excerpts -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.dotdotdot.js"></script>
 <!-- Load pinyin definitions -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.pinyin.js"></script>
 
@@ -41,12 +39,6 @@
 
     // Transform Chinese in the content but avoid some cases
     $("body *").find(':not(pre):not(code):not(char):not(.blogTitle)').replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
-
-    // Wrapping of post excerpt
-    $(".post-wrapper").dotdotdot({
-      after: "a.read-more",
-      height: 100
-    });
 
     // Code for the button allowing the user to go back to top
     var pxShow      = 10; //height on which the button will show

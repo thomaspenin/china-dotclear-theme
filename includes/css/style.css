@@ -648,38 +648,21 @@ textarea {
  * License: GNU/GPL
  */
 .post-list .post-list-item {
-  overflow: hidden;
-  position: relative;
+  padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
 }
-.post-list div.comment-count {
-  position: absolute;
-  margin-bottom: 0;
-  right: 0;
-  bottom: 0;
-  width: 26px;
-  height: 23px;
-  text-align: center;
-  font-weight: bold;
-  background: url("../images/comments/comments-sign.png") no-repeat bottom right;
-  background-size: 26px 23px;
+.post-list .post-list-item-footer {
+  color: #808080;
 }
-.post-list .comment-count:hover {
-  background: url("../images/comments/comments-sign-hover.png") no-repeat bottom right;
-  background-size: 26px 23px;
+.post-list .post-metadata {
+  text-align: right;
+  font-size: 80%;
 }
-.post-list .comment-count a {
-  display: inline-block;
-  width: 26px;
-  height: 23px;
-  padding-top: 6px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
+.post-list .post-metadata .glyphicon {
+  margin-right: 0.1ex;
 }
-.post-list .comment-count a:hover {
-  color: white;
+.post-list .post-metadata .glyphicon-comment {
+  margin-left: 1ex;
 }
 .post-list > nav {
   text-align: center;

@@ -1,5 +1,12 @@
 <div class="comments">
 
+  <div class="comment-list-header row">
+    <div class="col-xs-6"><h3>{{tpl:lang Comments}}</h3></div>
+    <div class="comments-feed col-xs-6">
+	<a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Comments feed}}"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Comments feed}}</a>
+    </div>
+  </div>
+
   <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/post.js"></script>
   <script type="text/javascript">
     //<![CDATA[
@@ -17,13 +24,20 @@
 
 	<li id="c{{tpl:CommentID}}" class="media">
 	  <a class="pull-left media-top" href="#">
-	    <img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/comments/placeholder.png" {{tpl:CommentIfMe return="class='me'"}}/>
+	    <span {{tpl:CommentIfMe return="class='comment-image me'"}}/>
 	  </a>
 	  <div class="media-body">
-	    <h4 class="media-heading">{{tpl:CommentAuthorLink}} &bull; {{tpl:CommentDate format="%d %B %Y"}}, {{tpl:CommentTime}}</h4>
-	    {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
-	    {{tpl:CommentContent}}
-	    {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+	    <div class="row">
+	      <div class="comment-author col-xs-6"><h4>{{tpl:CommentAuthorLink}}</h4></div>
+	      <div class="comment-metadata col-xs-6">
+		<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{tpl:CommentDate format="%d %B %Y"}} {{tpl:lang at}} {{tpl:CommentTime}}
+	      </div>
+	    </div>
+	    <div class="comment-text">
+	      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+	      {{tpl:CommentContent}}
+	      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+	    </div>
 	  </div>
 	</li>
 	    
@@ -34,7 +48,7 @@
       <!-- Input area for a new comment -->
 	<li class="media">
 	  <a class="pull-left media-top" href="#">
-	    <img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/comments/placeholder.png"/>
+	    <span/>
 	  </a>
 	  <div class="media-body">
 	    <!-- To inform the user if something went wrong -->
@@ -151,11 +165,6 @@
 	  </div>
 	</li>
       </ul>
-
-      <div class="comments-feed">
-	<a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Comments feed}}">{{tpl:lang Comments feed}}</a>
-      </div>
-
     </tpl:EntryIf>
   </tpl:EntryIf>
 </div>

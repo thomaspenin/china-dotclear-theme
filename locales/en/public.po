@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "at"
+msgstr "at"
+
 msgid "Home page"
 msgstr "Home page"
 

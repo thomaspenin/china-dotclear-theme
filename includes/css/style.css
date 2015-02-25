@@ -36,12 +36,25 @@
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
+/*
+ * Home page
+ */
+/*
+ * Archives
+ */
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
 /* Generic font */
 /* Chinese font */
-@font-face {
+/*@font-face {
   font-family: 'KaiTi';
-  src: url('../fonts/KaiTi.ttf') format('truetype');
-}
+  src: url('@{fonts-folder-path}/KaiTi.ttf') format('truetype');
+}*/
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -59,7 +72,7 @@
 body {
   font-family: "Lato", "Arial", "Kaiti", sans-serif;
   text-align: justify;
-  line-height: 25px;
+  line-height: 26px;
   font-size: 16px;
   background-color: #cccccc;
 }
@@ -496,6 +509,14 @@ textarea {
 #pagination-posts {
   background-color: #ffffff;
 }
+.archives .date-range-picker {
+  background-color: #cccccc;
+  padding: 20px 30px;
+}
+.archives .posts-list {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -503,12 +524,6 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.banner .container {
-  background-color: #ffffff;
-  width: 1170;
-  min-height: 350;
-  padding: 0;
-}
 .banner a:link,
 .banner a:visited,
 .banner a:hover,
@@ -556,7 +571,7 @@ textarea {
  * License: GNU/GPL
  */
 #category-summary {
-  background-color: #BBBBBB;
+  background-color: #cccccc;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 20px;
@@ -646,24 +661,24 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.post-list .post-list-item {
+.posts-list .posts-list-item {
   padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
 }
-.post-list .post-list-item-footer {
+.posts-list .posts-list-item-footer {
   color: #808080;
 }
-.post-list .post-metadata {
+.posts-list .post-metadata {
   text-align: right;
   font-size: 80%;
 }
-.post-list .post-metadata .glyphicon {
+.posts-list .post-metadata .glyphicon {
   margin-right: 0.1ex;
 }
-.post-list .post-metadata .glyphicon-comment {
+.posts-list .post-metadata .glyphicon-comment {
   margin-left: 1ex;
 }
-.post-list > nav {
+.posts-list > nav {
   text-align: center;
 }
 .fixed {
@@ -738,7 +753,7 @@ textarea {
  * License: GNU/GPL
  */
 #tagline {
-  background-color: #bbbbbb;
+  background-color: #cccccc;
   padding-bottom: 0;
 }
 #tagline h2 {

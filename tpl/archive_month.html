@@ -34,13 +34,13 @@
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="post-header">
+    <div id="post-header">
       <h1 class="post-title"><a href="{{tpl:ArchiveURL}}">{{tpl:lang Articles publiés en}} {{tpl:ArchiveDate format="%B %Y"}}</a></h1>
     </div>
 
-    <div class="middle">
+    <div class="archives middle">
 
-      <div class="content-info">
+      <div class="date-range-picker">
 	<div class="period-picker">
 	  <div class="previous-period">
 	    <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev">&#171; {{tpl:ArchiveDate encode_html="1"}}</a></tpl:ArchivePrevious>
@@ -70,46 +70,8 @@
 	</div>
       </div>
 
-      <div class="post-list">
-	<tpl:Entries>
-	  <div class="post-list-item">
-	    <h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
-
-	    <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
-	    {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-
-	    <div >
-	      <!-- Show the excerpt if any -->
-	      <tpl:EntryIf extended="1">
-		  {{tpl:EntryExcerpt}}
-		  <a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">{{tpl:lang More}} »</a>
-	      </tpl:EntryIf>
-
-	      <!-- If there is no excerpt, show the post content -->
-	      <tpl:EntryIf extended="0">
-		  {{tpl:EntryContent}}
-	      </tpl:EntryIf>
-	    </div>
-	    <span class="post-author">
-	      <p>{{tpl:lang By}} <b>{{tpl:EntryAuthorLink}}</b>, {{tpl:EntryDate format="le %d %B %Y"}}</p>
-	    </span>
-	    <div class="comment-count">
-	      <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
-	    </div>
-
-	    <!-- # --BEHAVIOR-- publicEntryAfterContent -->
-	    {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
-
-	  </div>
-	
-	  <tpl:EntriesFooter>
-	    <hr class="clear" />
-	    <tpl:Pagination>
-	      <p class="pagination content-info">{{tpl:PaginationLinks max="5"}}</p>
-	    </tpl:Pagination>
-	  </tpl:EntriesFooter>
-	</tpl:Entries>
-      </div>
+      <!-- Include the list of the posts that were published in this time frame -->
+      {{tpl:include src="_posts-list.html"}}
     
     </div>
 

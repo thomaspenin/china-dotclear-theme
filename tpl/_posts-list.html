@@ -1,9 +1,8 @@
 <tpl:Entries>
     <tpl:EntriesHeader>
-      <div class="post-list" id="pl">
-      <h2>{{tpl:lang Last published articles}}</h2>
+      <div class="posts-list" id="pl">
       </tpl:EntriesHeader>
-	<div class="post-list-item">
+	<div class="posts-list-item">
 	  <h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
 	  <div class="post-wrapper">
 	    <!-- Show the excerpt if any -->
@@ -12,7 +11,7 @@
 	    <tpl:EntryIf extended="0">{{tpl:EntryContent remove_html="0" cut_string="400"}}</tpl:EntryIf>
 	    
 	  </div>
-	  <div class="post-list-item-footer row">
+	  <div class="posts-list-item-footer row">
 	    <div class="post-read-more col-md-6"><a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">»&nbsp;{{tpl:lang More}}</a></div>
 	    <div class="post-metadata col-md-6">
 	    <span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{tpl:EntryDate format="%d %B %Y"}}

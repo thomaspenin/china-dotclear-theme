@@ -43,6 +43,28 @@
 	<div class="col-md-6 content">
 	  <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
 	  <div class="category-description">{{tpl:CategoryDescription}}</div>
+	  <tpl:CategoryFirstChildren>
+	    <tpl:CategoriesHeader>
+	      <div class="subcategories">
+	      <ul>
+	    </tpl:CategoriesHeader>
+	    <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
+	      <tpl:CategoryFirstChildren>
+		<tpl:CategoriesHeader>
+		  <div class="subsubcategories">
+		  <ul>
+		</tpl:CategoriesHeader>
+		<li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
+		<tpl:CategoriesFooter>
+		  </ul>
+		  </div>
+		</tpl:CategoriesFooter>
+	      </tpl:CategoryFirstChildren>
+	    <tpl:CategoriesFooter>
+	      </ul>
+	      </div>
+	    </tpl:CategoriesFooter>
+	  </tpl:CategoryFirstChildren>
 	</div>
 	<tpl:CategoriesFooter>
 	  </div>

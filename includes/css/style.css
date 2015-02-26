@@ -51,10 +51,10 @@
  */
 /* Generic font */
 /* Chinese font */
-/*@font-face {
+@font-face {
   font-family: 'KaiTi';
-  src: url('@{fonts-folder-path}/KaiTi.ttf') format('truetype');
-}*/
+  src: url('../fonts/KaiTi.ttf') format('truetype');
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -516,6 +516,16 @@ textarea {
 .archives .posts-list {
   padding-left: 15px;
   padding-right: 15px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+#category-summary .subcategories {
+  margin-left: 100px;
 }
 /*
  * "China" theme for Dotclear

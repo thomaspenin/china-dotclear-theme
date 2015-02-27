@@ -9,7 +9,6 @@
 body {
   font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
   text-align: @base-text-alignment;
-  line-height: @base-line-height;
   font-size: @base-font-size;
   background-color: @default-background-color;
 }
@@ -29,13 +28,13 @@ h1, h2, h3, h4 {
 
 /* Chinese text */
 .zh {
-  font-size: 1.4em;
-  line-height: 0.7em; /* This is to avoid bigger Chinese text having an impact on line spacing */
+  font-size: 140%;
+  line-height: 70%; /* This is to avoid bigger Chinese text having an impact on line spacing */
 }
 
 /* Smaller Chinese with big fonts */
 h1 .zh {
-  font-size: 1.1em;
+  font-size: 110%;
 }
 
 a:link, a:visited, a:active {

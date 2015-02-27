@@ -72,8 +72,7 @@
 body {
   font-family: "Lato", "Arial", "Kaiti", sans-serif;
   text-align: justify;
-  line-height: 26px;
-  font-size: 16px;
+  font-size: 160%;
   background-color: #cccccc;
 }
 #page {
@@ -92,13 +91,13 @@ h4 {
 }
 /* Chinese text */
 .zh {
-  font-size: 1.4em;
-  line-height: 0.7em;
+  font-size: 140%;
+  line-height: 70%;
   /* This is to avoid bigger Chinese text having an impact on line spacing */
 }
 /* Smaller Chinese with big fonts */
 h1 .zh {
-  font-size: 1.1em;
+  font-size: 110%;
 }
 a:link,
 a:visited,

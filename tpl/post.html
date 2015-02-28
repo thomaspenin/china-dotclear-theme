@@ -153,16 +153,16 @@
 
     <div class="container" id="pagination-posts">
       <div class="col-md-9">
-	<div class="paginationPrevious">
-	  <tpl:EntryPrevious>
-	    <a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a>
-	  </tpl:EntryPrevious>
-	</div>
-	<div class="paginationNext">
-	  <tpl:EntryNext>
-	    <a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a>
-	  </tpl:EntryNext>
-	</div>
+	<nav>
+	  <ul class="pager">
+	    <tpl:EntryPrevious>
+	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
+	    </tpl:EntryPrevious>
+	    <tpl:EntryNext>
+	      <li class="next"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}} <span aria-hidden="true">&rarr;</span></a></li>
+	    </tpl:EntryNext>
+	  </ul>
+	</nav>
       </div>
     </div>
 

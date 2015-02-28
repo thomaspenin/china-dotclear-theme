@@ -372,6 +372,9 @@ textarea {
 #home-content {
   padding: 0;
 }
+#home-content .welcome img {
+  border-radius: 10px;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------

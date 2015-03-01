@@ -855,3 +855,43 @@ textarea {
 .comments .comments-feed a:hover {
   text-decoration: none;
 }
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.tag0 {
+  font-size: 0.7em;
+}
+.tag10 {
+  font-size: 0.8em;
+}
+.tag20 {
+  font-size: 0.9em;
+}
+.tag30 {
+  font-size: 1em;
+}
+.tag40 {
+  font-size: 1.1em;
+}
+.tag50 {
+  font-size: 1.2em;
+}
+.tag60 {
+  font-size: 1.3em;
+}
+.tag70 {
+  font-size: 1.4em;
+}
+.tag80 {
+  font-size: 1.5em;
+}
+.tag90 {
+  font-size: 1.6em;
+}
+.tag100 {
+  font-size: 1.7em;
+}

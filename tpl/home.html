@@ -206,9 +206,18 @@
 	    </div>
 	  </tpl:Entries>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 tag-cloud">
 	  <h2>{{tpl:lang Tags}}</h2>
 	  {{tpl:include src="_tag-cloud.html"}}
+	</div>
+	<div class="col-md-4 sidebar">
+	  <div id="blognav">
+	    {{tpl:Widgets type="nav"}}
+	  </div> <!-- End #blognav -->
+
+	  <div id="blogextra">
+	    {{tpl:Widgets type="extra"}}
+	  </div> <!-- End #blogextra -->
 	</div>
       </div>
   </div>

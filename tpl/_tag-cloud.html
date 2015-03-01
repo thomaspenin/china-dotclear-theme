@@ -2,9 +2,7 @@
 <div class=".tag-cloud">
   <tpl:Tags type="tag">
     <tpl:TagsHeader></tpl:TagsHeader>
-      
-	<span class="label label-default"><a href="{{tpl:TagURL}}">{{tpl:TagID}}</a></span>
-      
+	<span class="tag{{tpl:TagRoundPercent}}"><a href="{{tpl:TagURL}}">{{tpl:TagID}}</a></span>
     <tpl:TagsFooter></ul></tpl:TagsFooter>
   </tpl:Tags>
 </div>

@@ -292,6 +292,7 @@ textarea {
  */
 .middle {
   background-color: #fff;
+  min-height: 800px;
 }
 .middle > .container {
   padding: 0;
@@ -530,6 +531,20 @@ textarea {
  */
 #category-summary .subcategories {
   margin-left: 100px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.file-list {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
 }
 /*
  * "China" theme for Dotclear

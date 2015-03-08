@@ -584,6 +584,25 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
+.widget.links ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.widget.links ul li {
+  background-image: url("../images/links/link-bullet-32.png");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 0px center;
+  padding-left: 20px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
 .banner a:link,
 .banner a:visited,
 .banner a:hover,
@@ -699,7 +718,7 @@ textarea {
 /* External links (i.e. default) */
 .middle a[href^="http"]:after {
   display: inline-block;
-  background-image: url("../images/external-link.png");
+  background-image: url("../images/links/external-link.png");
   background-size: 13px 10px;
   width: 13px;
   height: 10px;

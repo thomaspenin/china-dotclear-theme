@@ -74,11 +74,12 @@ body {
   text-align: justify;
   font-size: 160%;
   background-color: #cccccc;
+  color: #373737;
 }
 #page {
   background-color: #ffffff;
   padding: 0;
-  box-shadow: 1px 1px 12px #888888;
+  box-shadow: 1px 1px 12px #808080;
   padding-top: 50px;
 }
 h1,
@@ -291,7 +292,6 @@ textarea {
  * License: GNU/GPL
  */
 .middle {
-  background-color: #fff;
   min-height: 800px;
 }
 .middle > .container {
@@ -443,7 +443,7 @@ textarea {
   right: 0;
 }
 #post-excerpt .container {
-  background-color: #c0c0c0;
+  background-color: #cccccc;
   font-size: 18px;
   padding: 20px 30px;
 }

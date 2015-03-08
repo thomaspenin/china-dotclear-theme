@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "Sub-categories"
+msgstr "Sub-categories"
+
 msgid "at"
 msgstr "at"
 

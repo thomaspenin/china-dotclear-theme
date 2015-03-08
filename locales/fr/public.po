@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Coucou"
 
+msgid "Sub-categories"
+msgstr "Sous-catégories"
+
 msgid "at"
 msgstr "à"
 

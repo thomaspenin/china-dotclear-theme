@@ -38,8 +38,8 @@
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <!-- Header of the post -->
-    <div id="post-header">
+    <!-- Title -->
+    <div class="page-title">
       <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
     </div>
 
@@ -95,7 +95,7 @@
 		$('.bs-docs-sidebar').affix({
 		  offset: {
 		    top: function () {
-		      return (this.top = $("#post-header").outerHeight(true) + $("#post-excerpt").outerHeight(true));
+		      return (this.top = $(".page-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
 		    }
 		  , bottom: function () {
 		      return (this.bottom = $('.footer').outerHeight(true) + 20 /* Padding of the container */);

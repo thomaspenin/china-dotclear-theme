@@ -36,8 +36,8 @@
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <!-- Header of the post -->
-    <div id="post-header">
+    <!-- Title -->
+    <div class="page-title post-title">
       <tpl:EntryIf has_category="1">
       <div class="post-category">
 	<a href="{{tpl:BlogURL}}"><span class="glyphicon glyphicon-home"></span></a> › <tpl:EntryCategoriesBreadcrumb><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> › </tpl:EntryCategoriesBreadcrumb><a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
@@ -112,7 +112,7 @@
 	      $('.bs-docs-sidebar').affix({
 		offset: {
 		  top: function () {
-		    return (this.top = $("#post-header").outerHeight(true) + $("#post-excerpt").outerHeight(true));
+		    return (this.top = $(".post-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
 		  }
 		, bottom: function () {
 		    return (this.bottom = $("#comments").outerHeight(true) + 					    $('#footer').outerHeight(true)

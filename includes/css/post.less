@@ -6,34 +6,14 @@
  * License: GNU/GPL
  */
 
-// *** Post header ***
+// *** Post header (specialization of page header) ***
 
-#post-header a {
-  color: @post-header-link-color;
-}
-
-#post-header {
-  background: @post-header-bg-color url("@{images-folder-path}/title/Title-background.png") no-repeat left bottom;
-  background-size: cover;
-  color: @post-header-text-color;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  padding-top: 28px;
-  padding-bottom: 28px;
-  position: relative;
-  min-height: 150px;
-}
-
-#post-header h1 {
-  text-align: center;
-  margin-top: 10px;
-}
-
-#post-header .post-metadata {
+.post-title .post-metadata {
   text-align: center;
   margin-bottom: 12px;
 }
 
-#post-header a.comment-count {
+.post-title a.comment-count {
   display: inline-block;
   position: absolute;
   padding: 5px 8px;
@@ -48,7 +28,7 @@
   transition: background-color 250ms linear;
 }
 
-#post-header a.comment-count:hover {
+.post-title a.comment-count:hover {
   text-decoration:none;
   background-color: @top-bar-background-color-hover;
   -webkit-transition: background-color 250ms linear;
@@ -58,18 +38,18 @@
   transition: background-color 250ms linear;
 }
 
-#post-header a.comment-count .glyphicon {
+.post-title a.comment-count .glyphicon {
   font-size: 12px;
 }
 
-#post-header .post-category {
+.post-title .post-category {
   position: absolute;
   padding: 5px 8px;
   top: 0;
   left: 0;
 }
 
-#post-header .post-navigation {
+.post-title .post-navigation {
   position: absolute;
   padding: 5px 8px;
   top: 0;

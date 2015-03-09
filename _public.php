@@ -226,4 +226,21 @@ class tplListFilesTpl
   }
 }
 
+// --- Retrieve the current version of the theme ---
+
+$core->tpl->addValue('ThemeVersion',array('tplThemeVersionTpl','ThemeVersion'));
+ 
+class tplThemeVersionTpl
+{
+  public static function ThemeVersion($attr)
+  {
+    // Global Dotclear core object
+    global $core;
+    // Get the version of the current theme
+    $version = $core->themes->moduleInfo($core->blog->settings->system->theme,"version");
+    
+    return $version;
+  }
+}
+
 ?>

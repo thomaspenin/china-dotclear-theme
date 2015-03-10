@@ -590,10 +590,29 @@ textarea {
   margin: 0px;
 }
 .widget.links ul li {
-  background-image: url("../images/links/link-bullet-32.png");
+  background-image: url("../images/links/link-bullet.svg");
   background-size: 16px 16px;
   background-repeat: no-repeat;
-  background-position: 0px center;
+  background-position: 0px 3px;
+  padding-left: 20px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.widget.lastcomments ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.widget.lastcomments ul li {
+  background-image: url("../images/comments/comment-sign.svg");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 0px 5px;
   padding-left: 20px;
 }
 /*

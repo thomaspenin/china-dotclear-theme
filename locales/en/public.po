@@ -1,6 +1,12 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "Subscribe to the comment feed for this article only"
+msgstr "Subscribe to the comment feed for this article only"
+
+msgid "INFO_HTML_TAGS_REMOVED"
+msgstr "For security reasons, all HTML tags but links are removed from the comments.<br/>I may therefore manually edit your comments after your submission so that, for instance, pinyin can be rendered '<py>ma3</py>' instead of 'ma3'."
+
 msgid "Sub-categories"
 msgstr "Sub-categories"
 

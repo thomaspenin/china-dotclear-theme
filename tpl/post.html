@@ -69,7 +69,7 @@
 
     <div class="container" id="main">
 
-      <div class="col-md-9 post-content">
+      <div class="col-md-8 post-content">
 	<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 
@@ -78,8 +78,20 @@
 	  
 	<!-- # --BEHAVIOR-- publicEntryAfterContent -->
 	{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+
+	<!-- Pagination -->
+	<nav>
+	  <ul class="pager">
+	    <tpl:EntryPrevious>
+	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
+	    </tpl:EntryPrevious>
+	    <tpl:EntryNext>
+	      <li class="next"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}} <span aria-hidden="true">&rarr;</span></a></li>
+	    </tpl:EntryNext>
+	  </ul>
+	</nav>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
 	<nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
 	  <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
 	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
@@ -128,7 +140,12 @@
     </div>
 
     <div class="container" id="post-footer">
+      <tpl:EntryIf has_attachment="1">
+      <div class="col-md-4 post-tags">
+      </tpl:EntryIf>
+      <tpl:EntryIf has_attachment="0">
       <div class="col-md-9 post-tags">
+      </tpl:EntryIf>
 	<tpl:EntryTags>
 	  <tpl:TagsHeader>
 	    <h3>{{tpl:lang Tags}}</h3>
@@ -137,10 +154,29 @@
 	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a>
 	  <tpl:TagsFooter>
 	    </p>
-	  <tpl:TagsFooter>
+	  </tpl:TagsFooter>
 	</tpl:EntryTags>
       </div>
+      <tpl:EntryIf has_attachment="1">
+      <div class="col-md-4 post-attachments">
+	<tpl:Attachments>
+	  <tpl:AttachmentsHeader>
+	    <h3>{{tpl:lang Attachments}}</h3>
+	    <p>
+	  </tpl:AttachmentsHeader>
+	  <a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a>
+	  <tpl:AttachmentsFooter>
+	    </p>
+	  </tpl:AttachmentsFooter>
+	</tpl:Attachments>
+      </div>
+      </tpl:EntryIf>
+      <tpl:EntryIf has_attachment="1">
+      <div class="col-md-4 post-share">
+      </tpl:EntryIf>
+      <tpl:EntryIf has_attachment="0">
       <div class="col-md-3 post-share">
+      </tpl:EntryIf>
 	<h3>{{tpl:lang Share}}</h3>
 	<!-- Buttons from simplesharebuttons.com -->
 	<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
@@ -151,24 +187,18 @@
       </div>
     </div>
 
-    <div class="container" id="pagination-posts">
-      <div class="col-md-9">
-	<nav>
-	  <ul class="pager">
-	    <tpl:EntryPrevious>
-	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
-	    </tpl:EntryPrevious>
-	    <tpl:EntryNext>
-	      <li class="next"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}} <span aria-hidden="true">&rarr;</span></a></li>
-	    </tpl:EntryNext>
-	  </ul>
-	</nav>
-      </div>
-    </div>
-
     <div class="container" id="comments">
-      <div class="col-md-9">
+      <div class="col-md-8">
 	{{tpl:include src="_comments.html"}}
+      </div>
+      <div class="col-md-4">
+	<div class="comments-feed">
+	  <a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Comments feed}}</a>
+	</a>
+      </div>
+      <div class="alert alert-info" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{tpl:lang INFO_HTML_TAGS_REMOVED}}
       </div>
     </div>
   </div>

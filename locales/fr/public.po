@@ -5,7 +5,7 @@ msgid "Subscribe to the comment feed for this article only"
 msgstr "Souscrire au fil des commentaires de cet article"
 
 msgid "INFO_HTML_TAGS_REMOVED"
-msgstr "Pour des raisons de sécurité, tout le marquage HTML à l'exception des liens est automatiquement enlevé des commentaires.<br/>Je peux être donc amené à éditer manuellement vos commentaires après soumission pour que, par exemple, le pinyin soit rendu '<py>ma3</py>' au lieu de 'ma3'."
+msgstr "Pour des raisons de sécurité, tout le marquage HTML à l'exception des liens est automatiquement enlevé des commentaires.<br/>Je peux être donc amené à éditer manuellement ces derniers après soumission pour que, par exemple, le pinyin soit rendu '<py>ma3</py>' au lieu de 'ma3'."
 
 msgid "Sub-categories"
 msgstr "Sous-catégories"

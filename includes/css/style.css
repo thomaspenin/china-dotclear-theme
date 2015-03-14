@@ -176,6 +176,9 @@ textarea {
 .pagination > li > span:hover {
   color: #1d771d;
 }
+.close {
+  margin-left: 10px;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -440,33 +443,15 @@ textarea {
   margin: 0;
 }
 #post-footer {
-  background-color: #cccccc;
+  background-color: #c4f9c4;
+  padding-bottom: 15px;
+  border-top: 1px solid #228b22;
+  border-bottom: 1px solid #228b22;
 }
-#post-footer h3 {
-  margin-top: 10px;
-}
-#post-footer .post-tags a {
-  display: inline-block;
-  padding: 5px 8px;
-  background-color: #228b22;
-  color: white;
-  -webkit-transition: background-color 250ms linear;
-  -moz-transition: background-color 250ms linear;
-  -o-transition: background-color 250ms linear;
-  -ms-transition: background-color 250ms linear;
-  transition: background-color 250ms linear;
-}
-#post-footer .post-tags a:not(:first-child) {
-  margin-left: 5px;
-}
-#post-footer .post-tags a:hover {
-  text-decoration: none;
-  background-color: #1d771d;
-  -webkit-transition: background-color 250ms linear;
-  -moz-transition: background-color 250ms linear;
-  -o-transition: background-color 250ms linear;
-  -ms-transition: background-color 250ms linear;
-  transition: background-color 250ms linear;
+#post-footer .post-attachments ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 #post-footer .post-share a:hover > img {
   filter: brightness(80%);
@@ -502,6 +487,20 @@ textarea {
 }
 #pagination-posts {
   background-color: #ffffff;
+}
+#comments-sidebar {
+  padding-top: 20px;
+}
+#comments-sidebar .comments-feed {
+  margin-bottom: 10px;
+}
+#comments-sidebar .comments-feed a {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+#comments-sidebar .comments-feed a:hover {
+  text-decoration: none;
 }
 /*
  * "China" theme for Dotclear
@@ -872,9 +871,7 @@ textarea {
 .comments #new-comment-expansion {
   display: none;
   /* Hidden by default, will be expanded with javascript */
-}
-.comments .comments-feed {
-  margin-top: 15px;
+  padding-bottom: 10px;
 }
 .comments textarea {
   height: 66px;
@@ -927,17 +924,6 @@ textarea {
 }
 .comments .comment-list-header {
   margin-bottom: 10px;
-}
-.comments .comments-feed {
-  text-align: right;
-}
-.comments .comments-feed a {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-.comments .comments-feed a:hover {
-  text-decoration: none;
 }
 /*
  * "China" theme for Dotclear

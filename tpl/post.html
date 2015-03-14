@@ -151,7 +151,7 @@
 	    <h3>{{tpl:lang Tags}}</h3>
 	    <p>
 	  </tpl:TagsHeader>
-	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a>
+	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
 	  <tpl:TagsFooter>
 	    </p>
 	  </tpl:TagsFooter>
@@ -162,11 +162,11 @@
 	<tpl:Attachments>
 	  <tpl:AttachmentsHeader>
 	    <h3>{{tpl:lang Attachments}}</h3>
-	    <p>
+	    <ul>
 	  </tpl:AttachmentsHeader>
-	  <a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a>
+	  <li><span class="glyphicon glyphicon-file"></span>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
 	  <tpl:AttachmentsFooter>
-	    </p>
+	    </ul>
 	  </tpl:AttachmentsFooter>
 	</tpl:Attachments>
       </div>
@@ -185,13 +185,13 @@
 	<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
 	<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
       </div>
-    </div>
+</div>
 
     <div class="container" id="comments">
       <div class="col-md-8">
 	{{tpl:include src="_comments.html"}}
       </div>
-      <div class="col-md-4">
+      <div id="comments-sidebar" class="col-md-4">
 	<div class="comments-feed">
 	  <a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Comments feed}}</a>
 	</a>

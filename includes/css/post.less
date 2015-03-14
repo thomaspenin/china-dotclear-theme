@@ -70,41 +70,15 @@
 
 #post-footer {
   background-color: @post-footer-bg-color;
-  //padding: 20px 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid @green;
+  border-bottom: 1px solid @green;
 }
 
-#post-footer h3 {
-  margin-top: 10px;
-}
-
-#post-footer .post-tags {
-  
-}
-
-#post-footer .post-tags a {
-  display: inline-block;
-  padding: 5px 8px;
-  background-color: @tint-color;
-  color: white;
-  -webkit-transition: background-color 250ms linear;
-  -moz-transition: background-color 250ms linear;
-  -o-transition: background-color 250ms linear;
-  -ms-transition: background-color 250ms linear;
-  transition: background-color 250ms linear;
-}
-
-#post-footer .post-tags a:not(:first-child) {
-  margin-left: 5px;
-}
-
-#post-footer .post-tags a:hover {
-  text-decoration: none;
-  background-color: darken(@tint-color, 5%);
-  -webkit-transition: background-color 250ms linear;
-  -moz-transition: background-color 250ms linear;
-  -o-transition: background-color 250ms linear;
-  -ms-transition: background-color 250ms linear;
-  transition: background-color 250ms linear;
+#post-footer .post-attachments ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 #post-footer .post-share a:hover > img {
@@ -143,4 +117,22 @@
 
 #pagination-posts {
   background-color: @post-pagination-bg-color;
+}
+
+#comments-sidebar {
+  padding-top: 20px;
+}
+
+#comments-sidebar .comments-feed {
+  margin-bottom: 10px;
+}
+
+#comments-sidebar .comments-feed a {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#comments-sidebar .comments-feed a:hover {
+  text-decoration: none;
 }

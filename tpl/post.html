@@ -95,6 +95,7 @@
 	<nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
 	  <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
 	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
+	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.resize.js"></script>
 	  <script type="text/javascript">
 	    $(function() {
 	      // Generate the toc
@@ -121,19 +122,29 @@
 	      });
 
 	      // "Affix" allows the sidebar to float when it is within a top and a bottom offset
-	      $('.bs-docs-sidebar').affix({
+	      $('.bs-docs-sidebar').affix(refreshAffix());
+
+	      // Resizing the comments form shall have an effect on Affix
+	      $('#comments').resize(function() {
+		$('.bs-docs-sidebar').data('bs.affix').options = refreshAffix();
+	      });
+	    });
+
+	    // "Affix" allows the sidebar to float when it is within a top and a bottom offset. This methods computes the "offset" parameter for the affix() function
+	    function refreshAffix() {
+	      return {
 		offset: {
 		  top: function () {
 		    return (this.top = $(".post-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
-		  }
-		, bottom: function () {
+		  },
+		  bottom: function () {
 		    return (this.bottom = $("#comments").outerHeight(true) + 					    $('#footer').outerHeight(true)
                                         + $("#pagination-posts").outerHeight(true) + $("#post-footer").outerHeight(true)
                                         + 20 /* Padding of the container */);
 		  }
 		}
-	      })
-	    });
+	      };
+	    }
 	  </script>
 	</nav>
       </div>

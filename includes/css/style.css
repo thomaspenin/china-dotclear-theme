@@ -434,12 +434,12 @@ textarea {
   top: 0;
   right: 0;
 }
-#post-excerpt .container {
+#post-excerpt.container {
   background-color: #cccccc;
-  font-size: 18px;
-  padding: 20px 30px;
+  font-size: 17px;
+  padding: 15px;
 }
-#post-excerpt .container p {
+#post-excerpt.container p:last-child {
   margin: 0;
 }
 #post-footer {

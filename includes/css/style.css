@@ -443,10 +443,12 @@ textarea {
   margin: 0;
 }
 #post-footer {
-  background-color: #c4f9c4;
   padding-bottom: 15px;
-  border-top: 1px solid #228b22;
-  border-bottom: 1px solid #228b22;
+}
+#post-footer h3,
+#comments h3 {
+  padding-bottom: 3px;
+  border-bottom: 1px solid #cccccc;
 }
 #post-footer .post-attachments ul {
   list-style-type: none;
@@ -872,6 +874,9 @@ textarea {
   display: none;
   /* Hidden by default, will be expanded with javascript */
   padding-bottom: 10px;
+}
+.comments .media-list {
+  padding-top: 5px;
 }
 .comments textarea {
   height: 66px;

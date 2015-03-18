@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Hello"
 
+msgid "INFO_SEARCH_RESULTS"
+msgstr "Search goes through both articles and comments.<br/>If you did not find what you were looking for, you may also use tag and category navigation."
+
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Subscribe to the comment feed for this article only"
 

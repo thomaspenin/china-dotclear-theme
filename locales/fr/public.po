@@ -1,6 +1,9 @@
 msgid "Hello"
 msgstr "Coucou"
 
+msgid "INFO_SEARCH_RESULTS"
+msgstr "La recherche est effectuée sur les articles et les commentaires.<br/>Si vous ne trouvez pas ce que vous cherchez, vous pouvez essayer la navigation par tag ou par catégorie."
+
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Souscrire au fil des commentaires de cet article"
 

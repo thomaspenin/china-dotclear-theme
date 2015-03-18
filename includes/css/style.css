@@ -33,6 +33,9 @@
  * Top bar colors
  */
 /*
+ * Search
+ */
+/*
  * Post
  */
 /*
@@ -557,6 +560,21 @@ textarea {
   -moz-column-count: 3;
   /* Firefox */
   column-count: 3;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.search .search-info {
+  background-color: #cccccc;
+  font-size: 17px;
+  padding: 15px;
+}
+.search .search-sidebar {
+  padding-top: 15px;
 }
 /*
  * "China" theme for Dotclear

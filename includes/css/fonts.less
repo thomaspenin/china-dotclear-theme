@@ -9,20 +9,22 @@
 // TODO: rethink using http://www.kendraschaefer.com/2012/06/chinese-standard-web-fonts-the-ultimate-guide-to-css-font-family-declarations-for-web-design-in-simplified-chinese/
 
 // Font variables
-@primary-western-font: "Lato";
-@primary-chinese-font: "Kaiti";
+@primary-western-font: "Lato"; // Web font
+@primary-chinese-font: "KaiTi";
 @fallback-western-font1: "Arial";
 @fallback-western-font2: sans-serif;
-@title-font: "Damion";
-@primary-pinyin-font:"Ubuntu"; // Warning: may not be present
+@title-font: "Damion"; // Web font
+@primary-pinyin-font:"Ubuntu"; // Web font
 @fallback-pinyin-font1: "arial unicode ms";
 @fallback-pinyin-font2: sans-serif;
 
-/* Generic font */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
-
-/* Chinese font */
+/* Chinese font. By default, try to use the local KaiTi to spare bandwidth */
 @font-face {
   font-family: 'KaiTi';
-  src: url('@{fonts-folder-path}/KaiTi.ttf') format('truetype');
+  src:
+    local('KaiTi'),   // Win
+    local('楷体'),    // Win
+    local('STKaiti'), // Mac
+    local('华文楷体'), // Mac
+    url('@{fonts-folder-path}/KaiTi.ttf') format('truetype');
 }

@@ -527,8 +527,11 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-#category-summary .subcategories {
+.categories #category-summary .subcategories {
   margin-left: 100px;
+}
+.categories #category-summary {
+  background-color: #ffffff;
 }
 /*
  * "China" theme for Dotclear

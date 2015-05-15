@@ -317,6 +317,10 @@ textarea {
   background-color: #373737;
   padding-bottom: 10px;
 }
+#footer .footer-menu.container {
+  padding-left: 0;
+  padding-right: 0;
+}
 #footer #poweredBy {
   text-align: center;
   padding: 10px;

@@ -8,10 +8,29 @@
 
 .archives .date-range-picker {
   background-color: @date-range-picker-bg-color;
-  padding: 20px 30px;
+  padding: 20px 15px;
 }
 
 .archives .posts-list {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.archives .all-posts-list {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.archives .all-posts-list .month-posts {
+  padding-bottom: 15px;
+}
+
+// On desktops, the list of articles is shown on two columns
+@media (min-width: 992px) {
+  .archives .all-posts-list {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
 }

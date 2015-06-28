@@ -561,6 +561,19 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
+.category #category-summary .subcategories {
+  margin-left: 100px;
+}
+.category #category-summary {
+  padding: 15px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
 .tags .posts-list {
   padding-left: 15px;
   padding-right: 15px;

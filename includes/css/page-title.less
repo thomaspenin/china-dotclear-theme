@@ -14,7 +14,9 @@
   padding-top: 28px;
   padding-bottom: 28px;
   position: relative;
-  min-height: 150px;
+  display: table; // For the case there is only one h1 (see below)
+  width: 100%;
+  height: 150px;
 }
 
 .page-title a {
@@ -24,4 +26,10 @@
 .page-title h1 {
   text-align: center;
   margin-top: 10px;
+}
+
+// Center vertically when only one h1
+.page-title h1:only-child {
+  display: table-cell;
+  vertical-align: middle;
 }

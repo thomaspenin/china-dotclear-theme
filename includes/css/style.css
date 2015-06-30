@@ -51,6 +51,9 @@
  * Archives
  */
 /*
+ * Theme download page
+ */
+/*
  * "China" theme for Dotclear
  * --------------------------
  * Author: Thomas PENIN
@@ -581,12 +584,32 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.file-list {
-  -webkit-column-count: 3;
-  /* Chrome, Safari, Opera */
-  -moz-column-count: 3;
-  /* Firefox */
-  column-count: 3;
+.download #download-pitch.container {
+  background-color: #cccccc;
+  font-size: 17px;
+  padding: 15px;
+}
+.download .footnote {
+  padding-top: 15px;
+  color: #808080;
+}
+@media (min-width: 768px) {
+  .download .file-list {
+    -webkit-column-count: 2;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    /* Firefox */
+    column-count: 2;
+  }
+}
+@media (min-width: 992px) {
+  .download .file-list {
+    -webkit-column-count: 3;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 3;
+    /* Firefox */
+    column-count: 3;
+  }
 }
 /*
  * "China" theme for Dotclear

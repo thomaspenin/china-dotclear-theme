@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-<title>{{tpl:lang Theme download}} - {{tpl:BlogName encode_html="1"}}</title>
+<title>{{tpl:lang Tags}} - {{tpl:BlogName encode_html="1"}}</title>
 
 {{tpl:include src="_head.html"}}
 
@@ -20,9 +20,15 @@
       <div class="page-title">
 	<h1>{{tpl:lang Tags}}</h1>
       </div>
+      
+      <div id="tag-info" class="container">
+        <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{tpl:lang The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles.}}</p>
+      </div>
 
-      <div>
-	{{tpl:include src="_tag-cloud.html"}}
+      <div class="tag-cloud-container container">
+        <div class="tag-cloud-frame col-md-6 col-md-offset-3">
+          {{tpl:include src="_tag-cloud.html"}}
+	</div>
       </div>
     </div>
 

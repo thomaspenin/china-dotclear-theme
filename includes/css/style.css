@@ -303,8 +303,10 @@ textarea {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-.middle {
-  min-height: 800px;
+@media (min-width: 768px) {
+  .middle {
+    min-height: 800px;
+  }
 }
 .middle > .container {
   padding: 0;

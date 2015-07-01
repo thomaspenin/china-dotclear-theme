@@ -58,8 +58,8 @@ msgstr "Mots clés"
 msgid "About"
 msgstr "À propos"
 
-msgid "To display articles along their summary, choose a particular period:"
-msgstr "Pour afficher les articles avec leur résumé, choisissez une période&nbsp;:"
+msgid "To see articles' summaries, choose a period:"
+msgstr "Pour afficher le résumé des articles, choisissez une période&nbsp;:"
 
 msgid "All »"
 msgstr "Tous »"

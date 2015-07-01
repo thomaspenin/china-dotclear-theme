@@ -41,11 +41,11 @@
     <div class="archives middle">
 
       <div class="date-range-picker">
-	<div class="period-picker">
-	  <div class="previous-period">
+	<div class="period-picker container">
+	  <div class="previous-period col-md-4">
 	    <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev">&#171; {{tpl:ArchiveDate encode_html="1"}}</a></tpl:ArchivePrevious>
 	  </div>
-	  <div class="choice-period">
+	  <div class="choice-period col-md-4">
 	    <tpl:Archives>
 	      <tpl:ArchivesHeader>
 		<form method="get" action="{{tpl:BlogArchiveURL}}" id="archives">
@@ -64,7 +64,7 @@
 	      </tpl:ArchivesFooter>
 	    </tpl:Archives>
 	  </div>
-	  <div class="next-period">
+	  <div class="next-period col-md-4">
 	    <tpl:ArchiveNext><a href="{{tpl:ArchiveURL}}" class="next">{{tpl:ArchiveDate encode_html="1"}} &#187;</a></tpl:ArchiveNext>
 	  </div>
 	</div>

@@ -521,7 +521,20 @@ textarea {
  */
 .archives .date-range-picker {
   background-color: #cccccc;
-  padding: 20px 15px;
+  padding: 20px 0;
+}
+.archives .period-picker.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.archives .previous-period {
+  text-align: left;
+}
+.archives .choice-period {
+  text-align: center;
+}
+.archives .next-period {
+  text-align: right;
 }
 .archives .posts-list {
   padding-left: 15px;
@@ -534,6 +547,10 @@ textarea {
 }
 .archives .all-posts-list .month-posts {
   padding-bottom: 15px;
+  overflow: hidden;
+  /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 @media (min-width: 992px) {
   .archives .all-posts-list {

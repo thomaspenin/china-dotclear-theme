@@ -53,10 +53,9 @@
     <div class="archives middle">
 
       <div class="date-range-picker">
-	<p>{{tpl:lang To display articles along their summary, choose a particular period:}}</p>
-	<div class="period-picker">
-	  <div class="previous-period"></div>
-	  <div class="choice-period">
+	<div class="period-picker container">
+	  <div class="previous-period col-md-4">{{tpl:lang To see articles' summaries, choose a period:}}</div>
+	  <div class="choice-period col-md-4">
 	    <tpl:Archives>
 	      <tpl:ArchivesHeader>
 	      
@@ -76,7 +75,7 @@
 	      </tpl:ArchivesFooter>
 	    </tpl:Archives>
 	  </div>
-	  <div class="next-period"></div>
+	  <div class="next-period col-md-4"></div>
 	</div>
       </div>
 

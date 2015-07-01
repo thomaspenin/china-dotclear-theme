@@ -55,8 +55,8 @@ msgstr "Tags"
 msgid "About"
 msgstr "About"
 
-msgid "To display articles along their summary, choose a particular period:"
-msgstr "To display articles along their summary, choose a particular period:"
+msgid "To see articles' summaries, choose a period:"
+msgstr "To see articles' summaries, choose a period:"
 
 msgid "All »"
 msgstr "All »"

@@ -8,7 +8,24 @@
 
 .archives .date-range-picker {
   background-color: @date-range-picker-bg-color;
-  padding: 20px 15px;
+  padding: 20px 0;
+}
+
+.archives .period-picker.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.archives .previous-period {
+  text-align: left;
+}
+
+.archives .choice-period {
+  text-align: center;
+}
+
+.archives .next-period {
+  text-align: right;
 }
 
 .archives .posts-list {
@@ -24,6 +41,11 @@
 
 .archives .all-posts-list .month-posts {
   padding-bottom: 15px;
+  
+  // Avoid splitting over multiple columns
+  overflow: hidden; /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 
 // On desktops, the list of articles is shown on two columns

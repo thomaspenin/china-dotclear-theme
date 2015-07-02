@@ -896,6 +896,13 @@ textarea {
 .posts-list > nav {
   text-align: center;
 }
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
 .fixed {
   position: fixed;
 }

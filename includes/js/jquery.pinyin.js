@@ -4,8 +4,6 @@
  * Author: Thomas PENIN
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
- * --------------------------
- * Based on the "dcChristmas" theme version 1.0 by Mathieu M (http://www.html-edition.com/)
  */
 
 /*!

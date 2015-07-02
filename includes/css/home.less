@@ -18,3 +18,19 @@
   padding-bottom: 5px;
   border-bottom: 1px solid @light-gray;
 }
+
+// Do not show some elements when printing
+@media print
+{
+  #home-content .welcome {
+    display: none;
+  }
+  
+  #home-content .tag-cloud {
+    display: none;
+  }
+  
+  #home-content .sidebar {
+    display: none;
+  }
+}

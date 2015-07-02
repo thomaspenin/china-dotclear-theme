@@ -133,3 +133,11 @@
 #top .navbar-collapse {
   border-top: 0;
 }
+
+// Do not display the top bar when printing
+@media print
+{
+  #top {
+    display: none;
+  }
+}

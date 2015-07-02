@@ -56,3 +56,11 @@
     column-count: 2;
   }
 }
+
+// Do not show some elements when printing
+@media print
+{
+  .archives .date-range-picker {
+    display: none;
+  }
+}

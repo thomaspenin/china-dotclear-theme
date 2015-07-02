@@ -81,3 +81,11 @@
   background: url("@{images-folder-path}/license/sa-32.png") no-repeat;
   background-size: 16px 16px;
 }
+
+// Do not display the footer when printing
+@media print
+{
+  #footer {
+    display: none;
+  }
+}

@@ -139,3 +139,35 @@
 #comments-sidebar .comments-feed a:hover {
   text-decoration: none;
 }
+
+// Do not display certain elements when printing
+@media print
+{
+  .post-title .post-category {
+    display: none;
+  }
+  
+  .post-title .post-navigation {
+    display: none;
+  }
+  
+  .post-title a.comment-count {
+    display: none;
+  }
+  
+  .previous-next-posts {
+    display: none;
+  }
+  
+  #post-footer {
+    display: none;
+  }
+  
+  #comments {
+    display: none;
+  }
+  
+  #comments-sidebar {
+    display: none;
+  }
+}

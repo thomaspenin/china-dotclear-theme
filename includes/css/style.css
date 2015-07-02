@@ -296,6 +296,11 @@ textarea {
 #top .navbar-collapse {
   border-top: 0;
 }
+@media print {
+  #top {
+    display: none;
+  }
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -381,6 +386,11 @@ textarea {
   background: url("../images/license/sa-32.png") no-repeat;
   background-size: 16px 16px;
 }
+@media print {
+  #footer {
+    display: none;
+  }
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -397,6 +407,17 @@ textarea {
 #home-content h2 {
   padding-bottom: 5px;
   border-bottom: 1px solid #cccccc;
+}
+@media print {
+  #home-content .welcome {
+    display: none;
+  }
+  #home-content .tag-cloud {
+    display: none;
+  }
+  #home-content .sidebar {
+    display: none;
+  }
 }
 /*
  * "China" theme for Dotclear
@@ -517,6 +538,29 @@ textarea {
 #comments-sidebar .comments-feed a:hover {
   text-decoration: none;
 }
+@media print {
+  .post-title .post-category {
+    display: none;
+  }
+  .post-title .post-navigation {
+    display: none;
+  }
+  .post-title a.comment-count {
+    display: none;
+  }
+  .previous-next-posts {
+    display: none;
+  }
+  #post-footer {
+    display: none;
+  }
+  #comments {
+    display: none;
+  }
+  #comments-sidebar {
+    display: none;
+  }
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -564,6 +608,11 @@ textarea {
     -moz-column-count: 2;
     /* Firefox */
     column-count: 2;
+  }
+}
+@media print {
+  .archives .date-range-picker {
+    display: none;
   }
 }
 /*
@@ -777,6 +826,11 @@ textarea {
   display: inline-block;
   text-align: left;
 }
+@media print {
+  .banner {
+    display: none;
+  }
+}
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -867,6 +921,12 @@ textarea {
   width: 0;
   height: 0;
   content: "";
+}
+@media print {
+  .middle a[href^="http"]:after {
+    display: none;
+    content: "";
+  }
 }
 /*
  * "China" theme for Dotclear

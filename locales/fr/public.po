@@ -56,7 +56,7 @@ msgid "Home"
 msgstr "Accueil"
 
 msgid "Tags"
-msgstr "Mots clés"
+msgstr "Mots-clés"
 
 msgid "About"
 msgstr "À propos"

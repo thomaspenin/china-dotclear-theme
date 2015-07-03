@@ -182,6 +182,11 @@ textarea {
 .close {
   margin-left: 10px;
 }
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
+}
 /*
  * "China" theme for Dotclear
  * --------------------------

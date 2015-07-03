@@ -145,6 +145,17 @@ textarea {
   border: 1px solid #bebebe;
   border-radius: 3px 3px 3px 3px;
 }
+char {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background: url("../images/char-matrix/char-matrix.png") no-repeat;
+  background-size: 64px 64px;
+  line-height: 64px;
+  font-size: 64px;
+  text-align: center;
+  margin: 3px;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------

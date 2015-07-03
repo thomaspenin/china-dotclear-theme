@@ -57,6 +57,9 @@
   * Tags page
   */
 /*
+ * Miniplayer
+ */
+/*
  * "China" theme for Dotclear
  * --------------------------
  * Author: Thomas PENIN
@@ -1156,4 +1159,17 @@ textarea {
 }
 .tag100 {
   font-size: 1.7em;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.miniplayer .playButton {
+  cursor: pointer;
+}
+.miniplayer .playButton:hover {
+  color: #228b22;
 }

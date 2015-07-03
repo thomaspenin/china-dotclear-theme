@@ -22,6 +22,8 @@
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.pinyin.js"></script>
 <!-- Cookie management for the "remember me" functionality -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/../default/js/jquery.cookie.js"></script>
+<!-- Load script to prepare the media players -->
+<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.player.js"></script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{tpl:BlogThemeURL}}/includes/images/logo/orchid-64.png" />
@@ -56,7 +58,10 @@
     jQuery('#back-to-top a').click(function() {
       jQuery('html, body').animate({scrollTop:0}, scrollSpeed);
       return false;
-    }); 
+    });
+    
+    // Prepare the audio players
+    prepareAudioPlayers();
   })
 </script>
 

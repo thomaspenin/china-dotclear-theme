@@ -948,9 +948,12 @@ char {
   content: "";
 }
 @media print {
-  .middle a[href^="http"]:after {
+  /* .middle a[href^="http"]:after {
     display: none;
     content: "";
+  }*/
+  a[href]:after {
+    content: none;
   }
 }
 /*

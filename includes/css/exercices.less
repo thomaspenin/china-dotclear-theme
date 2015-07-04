@@ -1,0 +1,92 @@
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+
+ol.exercices {
+  counter-reset: my-counter; /* Initiate a counter */
+  margin-left: 0; /* Remove the default left margin */
+  padding-left: 0; /* Remove the default left padding */
+}
+
+ol.exercices > li.exercice {
+  position: relative; /* Create a positioning context */
+  margin: 0 0 10px 2em; /* Give each list item a left margin to make room for the numbers */
+  padding: 3px; /* Add some spacing around the content */
+  padding-left: 8px;
+  list-style: none; /* Disable the normal item numbering */
+}
+
+ol.exercices > li.exercice:before {
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  position: absolute;
+  top:0;
+  left:-2em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 2em;
+  padding: 4px;
+  border-radius: 3px;
+  color: #fff;
+  background: @exercice-number-bg-color;
+  font-weight: bold;
+  text-align: center;
+}
+
+.exercices .answer {
+  margin-top: 5px;
+  border-radius: 5px;
+  color: @exercice-answer-color;
+}
+
+.exercices .answer .expandable {
+  background: @exercice-answer-bg-color;
+  border-radius: 3px;
+  box-shadow: 0 4px 4px -4px #555555 inset;
+  padding: 5px;
+}
+
+.exercices .answer ul,
+.exercices .answer ol {
+  padding-left: 20px;
+  
+}
+
+.exercices .question ul,
+.exercices .question ol {
+  padding-left: 25px;
+  margin-top: 3px;
+}
+
+.exercices .arrow {
+  display: inline-block;
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+
+.exercices .visibilityToggle {
+  position: absolute;
+  background: @exercice-answer-bg-color;
+  padding: 3px 5px;
+  bottom: 0;
+  right: 0;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+}
+
+.exercices .visibilityToggle {
+  color: @exercice-answer-toggle-color;
+}
+
+.exercices .visibilityToggle:hover {
+  color: @exercice-answer-toggle-hover-color;
+  cursor: pointer;
+}

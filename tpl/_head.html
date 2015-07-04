@@ -24,6 +24,8 @@
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/../default/js/jquery.cookie.js"></script>
 <!-- Load script to prepare the media players -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.player.js"></script>
+<!-- Load script to prepare the exercices -->
+<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.exercices.js"></script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{tpl:BlogThemeURL}}/includes/images/logo/orchid-64.png" />
@@ -62,6 +64,9 @@
     
     // Prepare the audio players
     prepareAudioPlayers();
+    
+    // Configure excercices
+    configureExercices();
   })
 </script>
 

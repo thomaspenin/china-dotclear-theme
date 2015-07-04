@@ -23,7 +23,17 @@
  * Theme color palette
  */
 /*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+/*
  * Base colors
+ */
+/*
+ * Home page
  */
 /*
  * Page title
@@ -32,20 +42,16 @@
  * Top bar colors
  */
 /*
+ * Back to top
+ */
+/*
  * Search
  */
 /*
  * Post
  */
 /*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: http://www.voyage-est.com
- * License: GNU/GPL
- */
-/*
- * Home page
+ * Footer
  */
 /*
  * Archives
@@ -1432,7 +1438,7 @@ ol.exercices > li.exercice:before {
   color: #228b22;
 }
 .exercices .answer .expandable {
-  background: #dff0d8;
+  background: #c4f9c4;
   border-radius: 3px;
   box-shadow: 0 4px 4px -4px #555555 inset;
   padding: 5px;
@@ -1455,7 +1461,7 @@ ol.exercices > li.exercice:before {
 }
 .exercices .visibilityToggle {
   position: absolute;
-  background: #dff0d8;
+  background: #c4f9c4;
   padding: 3px 5px;
   bottom: 0;
   right: 0;

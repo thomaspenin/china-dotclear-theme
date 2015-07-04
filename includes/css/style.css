@@ -1293,6 +1293,7 @@ char {
   background-color: #e0e0e0;
   border: 1px solid #d69eff;
   position: relative;
+  text-align: left;
 }
 .vocabulary:before {
   font-family: "Glyphicons Halflings";

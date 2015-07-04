@@ -1458,3 +1458,30 @@ ol.exercices > li.exercice:before {
   color: #1d771d;
   cursor: pointer;
 }
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+figure {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+figure .figure-frame {
+  text-align: center;
+  color: #505050;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px;
+  max-width: 100%;
+  height: auto;
+  font-size: 95%;
+}

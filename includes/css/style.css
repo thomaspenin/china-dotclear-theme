@@ -743,6 +743,16 @@ char {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
+.p404 .warning {
+  margin: 15px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
 .page-title {
   background: #228b22 url("../images/title/Title-background.png") no-repeat left bottom;
   background-size: cover;
@@ -948,10 +958,6 @@ char {
   content: "";
 }
 @media print {
-  /* .middle a[href^="http"]:after {
-    display: none;
-    content: "";
-  }*/
   a[href]:after {
     content: none;
   }

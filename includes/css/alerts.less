@@ -1,0 +1,175 @@
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+
+/* Error and information messages */
+
+.error, .information, .hint, .warning, .vocabulary {
+  margin: 12px auto 5px;
+  padding: 8px;
+  padding-left: 32px;
+  border-radius: 4px;
+}
+
+.error {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  position: relative;
+  font-weight: bold;
+  color: #a94442;
+}
+
+.information:before {
+  font-family: "Glyphicons Halflings";
+  font-weight: normal;
+  font-style: normal;
+  color: #a94442;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  text-decoration: inherit;
+  content: "\e083"
+}
+
+.information {
+  background-color: #d9edf7;
+  border: 1px solid #bce8f1;
+  position: relative;
+}
+
+.information:before {
+  font-family: "Glyphicons Halflings";
+  font-weight: normal;
+  font-style: normal;
+  color: #31708f;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  text-decoration: inherit;
+  content: "\e086"
+}
+
+.hint {
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  position: relative;
+}
+
+.hint:before {
+  font-family: "Glyphicons Halflings";
+  font-weight: normal;
+  font-style: normal;
+  color: #3c763d;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  text-decoration: inherit;
+  content: "\e084"
+}
+
+.warning {
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  position: relative;
+}
+
+.warning:before {
+  font-family: "Glyphicons Halflings";
+  font-weight: normal;
+  font-style: normal;
+  color: #8a6d3b;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  text-decoration: inherit;
+  content: "\e101"
+}
+
+.vocabulary,
+.vocabulary.three-cols {
+  //background: url(img/china-icons/vocabulary.png) no-repeat 8px 8px;
+  border-left: 2px solid #800080;
+  border-right: 2px solid #800080;
+  background-color: #e0e0e0;
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  -moz-column-count: 3; /* Firefox */
+  -webkit-column-count: 3; /* Safari and Chrome */
+  column-count: 3;
+}
+
+.vocabulary.one-col {
+  -moz-column-count: 1; /* Firefox */
+  -webkit-column-count: 1; /* Safari and Chrome */
+  column-count: 1;
+}
+
+.vocabulary.two-cols {
+  -moz-column-count: 2; /* Firefox */
+  -webkit-column-count: 2; /* Safari and Chrome */
+  column-count: 2;
+}
+
+.vocabulary.four-cols {
+  -moz-column-count: 4; /* Firefox */
+  -webkit-column-count: 4; /* Safari and Chrome */
+  column-count: 4;
+}
+
+.vocabulary.five-cols {
+  -moz-column-count: 5; /* Firefox */
+  -webkit-column-count: 5; /* Safari and Chrome */
+  column-count: 5;
+}
+
+/* The first p/ul/ol child of a message has no top margin */
+.error p:first-child, 
+.information p:first-child, 
+.hint p:first-child, 
+.warning p:first-child,
+.vocabulary p:first-child,
+.error ul:first-child, 
+.information ul:first-child, 
+.hint ul:first-child, 
+.warning ul:first-child,
+.vocabulary ul:first-child,
+.error ol:first-child, 
+.information ol:first-child, 
+.hint ol:first-child, 
+.warning ol:first-child,
+.vocabulary ol:first-child {
+  margin-top: 0;
+}
+
+/* The last p/ul/ol child of a message has no bottom margin */
+.error p:last-child, 
+.information p:last-child, 
+.hint p:last-child, 
+.warning p:last-child,
+.vocabulary p:last-child,
+.error ul:last-child, 
+.information ul:last-child, 
+.hint ul:last-child, 
+.warning ul:last-child,
+.vocabulary ul:last-child,
+.error ol:last-child, 
+.information ol:last-child, 
+.hint ol:last-child, 
+.warning ol:last-child,
+.vocabulary ol:last-child {
+  margin-bottom: 0;
+}
+
+ul.error, ul.information, ul.hint, ul.warning, ul.vocabulary,
+ol.error, ol.information, ol.hint, ol.warning, ol.vocabulary {
+  padding-left: 48px;
+}
+
+div.error ul:first-child, div.information ul:first-child, div.hint ul:first-child, div.warning ul:first-child, div.vocabulary ul:first-child,
+div.error ol:first-child, div.information ol:first-child, div.hint ol:first-child, div.warning ol:first-child, div.vocabulary ol:first-child {
+  padding-left: 16px;
+}

@@ -1271,29 +1271,10 @@ char {
   text-decoration: inherit;
   content: "\e209";
 }
-.vocabulary,
-.vocabulary.three-cols {
+.vocabulary {
   background-color: #e0e0e0;
   border: 1px solid #d69eff;
   position: relative;
-  -moz-column-count: 3;
-  /* Firefox */
-  -webkit-column-count: 3;
-  /* Safari and Chrome */
-  column-count: 3;
-}
-.vocabulary > p {
-  overflow: hidden;
-  /* fix for Firefox */
-  break-inside: avoid-column;
-  -webkit-column-break-inside: avoid;
-}
-.vocabulary.one-col {
-  -moz-column-count: 1;
-  /* Firefox */
-  -webkit-column-count: 1;
-  /* Safari and Chrome */
-  column-count: 1;
 }
 .vocabulary:before {
   font-family: "Glyphicons Halflings";
@@ -1306,26 +1287,29 @@ char {
   text-decoration: inherit;
   content: "\e043";
 }
-.vocabulary.two-cols {
-  -moz-column-count: 2;
-  /* Firefox */
-  -webkit-column-count: 2;
-  /* Safari and Chrome */
-  column-count: 2;
+@media (min-width: 768px) {
+  .vocabulary {
+    -moz-column-count: 2;
+    /* Firefox */
+    -webkit-column-count: 2;
+    /* Safari and Chrome */
+    column-count: 2;
+  }
 }
-.vocabulary.four-cols {
-  -moz-column-count: 4;
-  /* Firefox */
-  -webkit-column-count: 4;
-  /* Safari and Chrome */
-  column-count: 4;
+@media (min-width: 992px) {
+  .vocabulary {
+    -moz-column-count: 3;
+    /* Firefox */
+    -webkit-column-count: 3;
+    /* Safari and Chrome */
+    column-count: 3;
+  }
 }
-.vocabulary.five-cols {
-  -moz-column-count: 5;
-  /* Firefox */
-  -webkit-column-count: 5;
-  /* Safari and Chrome */
-  column-count: 5;
+.vocabulary > p {
+  overflow: hidden;
+  /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 /* The first p/ul/ol child of a message has no top margin */
 .error p:first-child,

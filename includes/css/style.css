@@ -498,6 +498,9 @@ char {
 #post-excerpt.container p:last-child {
   margin: 0;
 }
+.post-content p:first-child {
+  margin-top: 15px;
+}
 #post-footer {
   padding-bottom: 15px;
 }

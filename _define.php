@@ -13,9 +13,9 @@
 if (!defined('DC_RC_PATH')) { return; }
 
 $this->registerModule(
-	/* Name */			"China2",
+	/* Name */			"China",
 	/* Description*/		"A custom theme for my Chinese blog",
 	/* Author */			"Thomas Penin",
-	/* Version */			'2.0 preview'
+	/* Version */			'2.0.0'
 );
 ?>

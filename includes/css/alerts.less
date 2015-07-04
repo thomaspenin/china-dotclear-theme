@@ -86,26 +86,42 @@
   left: 8px;
   top: 8px;
   text-decoration: inherit;
-  content: "\e101"
+  content: "\e209"
 }
 
 .vocabulary,
 .vocabulary.three-cols {
-  //background: url(img/china-icons/vocabulary.png) no-repeat 8px 8px;
-  border-left: 2px solid #800080;
-  border-right: 2px solid #800080;
   background-color: #e0e0e0;
-  border-top: 1px solid #cfcfcf;
-  border-bottom: 1px solid #cfcfcf;
+  border: 1px solid #d69eff;
+  position: relative;
   -moz-column-count: 3; /* Firefox */
   -webkit-column-count: 3; /* Safari and Chrome */
   column-count: 3;
+}
+
+.vocabulary > p {
+  // Avoid splitting over multiple columns
+  overflow: hidden; /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 
 .vocabulary.one-col {
   -moz-column-count: 1; /* Firefox */
   -webkit-column-count: 1; /* Safari and Chrome */
   column-count: 1;
+}
+
+.vocabulary:before {
+  font-family: "Glyphicons Halflings";
+  font-weight: normal;
+  font-style: normal;
+  color: #800080;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  text-decoration: inherit;
+  content: "\e043"
 }
 
 .vocabulary.two-cols {

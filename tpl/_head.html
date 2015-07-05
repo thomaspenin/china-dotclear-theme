@@ -26,6 +26,8 @@
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.player.js"></script>
 <!-- Load script to prepare the exercices -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.exercices.js"></script>
+<!-- Load script to create pinyin tooltips when hovering "ch" or "chb" tags -->
+<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.chinese.js"></script>
 
 <!-- Google Analytics -->
 <script>
@@ -44,13 +46,16 @@
 <script type="text/javascript">
   $(document).ready(function()
   {
+    // Prepare the pinyin that should appear when hovering <ch> or <chb> tags
+    preparePinyinOnHover();
+    
+    // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
+    transformPinyin();
+    
     // Initialize tooltips
     $('[data-toggle="tooltip"]').tooltip({
       delay: { "show": 1000, "hide": 0 }
     });
-    
-    // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
-    transformPinyin();
 
     // Transform Chinese in the content but avoid some cases
     $("body *").find(':not(pre):not(code):not(char):not(.blogTitle)').replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");

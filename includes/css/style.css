@@ -112,8 +112,15 @@ h2,
 h3,
 h4 {
   font-family: "Lato", "Arial", "KaiTi", sans-serif;
-  font-weight: 400;
   text-align: left;
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+h4 {
+  font-weight: bold;
 }
 /* Chinese text */
 .zh {

@@ -172,6 +172,10 @@ char {
   text-align: center;
   margin: 3px;
 }
+.table-centered {
+  margin: 0 auto !important;
+  float: none !important;
+}
 /*
  * "China" theme for Dotclear
  * --------------------------

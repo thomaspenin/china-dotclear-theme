@@ -8,7 +8,7 @@
 	    <!-- Show the excerpt if any -->
 	    <tpl:EntryIf extended="1">{{tpl:EntryExcerpt remove_html="0"}}</tpl:EntryIf>
 	    <!-- If there is no excerpt, show the post content -->
-	    <tpl:EntryIf extended="0">{{tpl:EntryContent remove_html="0" cut_string="400"}}</tpl:EntryIf>
+	    <tpl:EntryIf extended="0">{{tpl:EntryContent remove_html="1" cut_string="400"}}</tpl:EntryIf>
 	    
 	  </div>
 	  <div class="posts-list-item-footer row">

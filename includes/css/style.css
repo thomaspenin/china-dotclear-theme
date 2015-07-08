@@ -515,7 +515,9 @@ char {
 #post-excerpt.container p:last-child {
   margin: 0;
 }
-.post-content p:first-child {
+.post-content > p:first-child,
+.post-content > img:first-child,
+.post-content > figure:first-child {
   margin-top: 15px;
 }
 #post-footer {
@@ -1496,6 +1498,7 @@ ol.exercices > li.exercice:before {
  * License: GNU/GPL
  */
 figure {
+  text-align: center;
   max-width: 100%;
   height: auto;
   margin-bottom: 15px;
@@ -1504,7 +1507,6 @@ figure {
   width: min-content;
 }
 figure .figure-frame {
-  text-align: center;
   color: #505050;
   background-color: transparent;
   border: 1px solid #cccccc;

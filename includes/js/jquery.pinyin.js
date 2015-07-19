@@ -984,6 +984,7 @@ var pinyin = {
     ru3: "rǔ",
     ru4: "rù",
     ruan1: "ruān",
+    ruan3: "ruǎn",
     rui3: "ruǐ",
     rui4: "ruì",
     run4: "rùn",

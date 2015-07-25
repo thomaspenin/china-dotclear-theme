@@ -3,6 +3,7 @@ Changelog
 
 * v2.0.2 (XXXX-XX-XX)
   - Fix "ruan3" not being transformed properly into accented pinyin
+  - Fix an issue with links display when printing articles with external references
 
 * v2.0.1 (2015-07-08)
   - Some small fixes following the move to production

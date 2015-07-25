@@ -977,8 +977,12 @@ char {
   content: "";
 }
 @media print {
-  a[href]:after {
-    content: none;
+  .middle a[href^="http"]:after,
+  a[href^="http"]:after {
+    background-size: 0 0;
+    width: 0;
+    height: 0;
+    content: "";
   }
 }
 /*

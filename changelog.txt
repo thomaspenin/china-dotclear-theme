@@ -1,7 +1,7 @@
 Changelog
 =========
 
-* v2.0.2 (XXXX-XX-XX)
+* v2.0.2 (2015-07-25)
   - Fix "ruan3" not being transformed properly into accented pinyin
   - Fix an issue with links display when printing articles with external references
   - Add a small padding to the top of posts if they start by <ul> or <ol> to be consistent with <p>

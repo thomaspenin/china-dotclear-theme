@@ -75,7 +75,8 @@ class tplListFilesTpl
   public static function ListFiles($attr, $content)
   {
     // Get the current directory
-    $dir          = getcwd() . "/" . $attr['folder'];
+    $folder       = $attr['folder'];
+    $dir          = getcwd() . "/" . $folder;
     $pattern      = $attr['pattern'];
     $resultPrefix = "<ul>";
     $resultSuffix = "</ul>";
@@ -99,7 +100,7 @@ class tplListFilesTpl
       }
       $version = substr($version, 0, -strlen($suffix));
 
-      $result .= "<li><a href='$value'>Version $version</a></li>";
+      $result .= "<li><a href='" . $folder . "/" . $value . "'>Version $version</a></li>";
     }
 
     // Concat result

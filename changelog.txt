@@ -1,7 +1,7 @@
 Changelog
 =========
 
-* v2.1 (2015-XX-XX)
+* v2.1 (2015-07-30)
   - Add support and instructions on how to associate an image with an article so that it appears in post lists
   - Remove the background of the vocabulary environment (looks more professional this way)
   - Fix the impossibility to download the theme (bad path)

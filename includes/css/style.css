@@ -269,6 +269,14 @@ char {
   line-height: 50px;
   font-family: "Damion", cursive;
 }
+@media (max-width: 767px) {
+  #top .small-screen-menu {
+    margin-top: 50px;
+  }
+  #top .small-screen-menu > nav {
+    padding-top: 15px;
+  }
+}
 #top #searchField {
   margin-right: -6px;
 }

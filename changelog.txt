@@ -5,6 +5,7 @@ Changelog
   - Add support and instructions on how to associate an image with an article so that it appears in post lists
   - Remove the background of the vocabulary environment (looks more professional this way)
   - Fix the impossibility to download the theme (bad path)
+  - Add a button to return to the top of the page (visible on smartphones) and improve the responsive menu
 
 * v2.0.2 (2015-07-25)
   - Fix "ruan3" not being transformed properly into accented pinyin

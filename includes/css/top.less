@@ -52,6 +52,18 @@
   font-family: @title-font, cursive;
 }
 
+// Adaptation for the small screen menu
+@media (max-width: 767px)
+{ 
+  #top .small-screen-menu {
+    margin-top: @top-bar-height;
+  }
+
+  #top .small-screen-menu > nav {
+    padding-top: 15px;
+  }
+}
+
 #top #searchField {
   margin-right: -6px;
 }
@@ -91,16 +103,10 @@
     margin: 0;
 }
 
-#top .navbar li {
- // display: table-cell;
-}
-
 #top .navbar-nav li a {
   padding-top: 0;
   padding-bottom: 0;
   height: @top-bar-height;
- // vertical-align: middle;
- // line-height: @top-bar-height;
   color: @top-bar-text-color;
   font-family: 'Lato', sans-serif;
   background-color: transparent;

@@ -1249,6 +1249,9 @@ char {
   padding-left: 32px;
   border-radius: 4px;
 }
+.vocabulary {
+  padding-right: 32px;
+}
 .error {
   background-color: #f2dede;
   border: 1px solid #ebccd1;
@@ -1316,21 +1319,8 @@ char {
   content: "\e209";
 }
 .vocabulary {
-  background-color: #e0e0e0;
-  border: 1px solid #d69eff;
   position: relative;
   text-align: left;
-}
-.vocabulary:before {
-  font-family: "Glyphicons Halflings";
-  font-weight: normal;
-  font-style: normal;
-  color: #800080;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  text-decoration: inherit;
-  content: "\e043";
 }
 @media (min-width: 768px) {
   .vocabulary {

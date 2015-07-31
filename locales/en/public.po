@@ -151,6 +151,9 @@ msgstr "Read"
 msgid "Last published articles"
 msgstr "Last published articles"
 
+msgid "Last comments"
+msgstr "Last comments"
+
 msgid "Cancel the redaction of the comment"
 msgstr "Cancel the redaction of the comment\n(warning: any change will be lost)"
 

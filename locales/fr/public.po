@@ -160,6 +160,9 @@ msgstr "Lire"
 msgid "Last published articles"
 msgstr "Derniers articles publiés"
 
+msgid "Last comments"
+msgstr "Derniers commentaires"
+
 msgid "Cancel the redaction of the comment"
 msgstr "Annuler la rédaction du commentaire (attention: tout changement sera perdu)"
 

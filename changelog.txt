@@ -4,6 +4,7 @@ Changelog
 * v2.2 (2015-XX-XX)
   - Harmonize the spacing within the post list that varied depending on whether an excerpt existed or nothing
   - Fix missing translations on the home page
+  - Fix "tiao2", "tiao3" and "tiao4" pinyin not being properly transformed
 
 * v2.1 (2015-07-30)
   - Add support and instructions on how to associate an image with an article so that it appears in post lists

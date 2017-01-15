@@ -60,6 +60,31 @@
     }).on('hidden.bs.modal', function () {
       $('#homeCarousel').carousel('cycle');
     });
+    
+    /*var row=$('.portfolio');
+    $.each(row, function() {
+        var maxh=0;
+        $.each($(this).find('div[class^="col-"]'), function() {
+            if($(this).height() > maxh)
+                maxh=$(this).height();
+        });
+        $.each($(this).find('div[class^="col-"]'), function() {
+            $(this).height(maxh);
+        });
+    });*/
+    
+    // Or use this to Open link in same window (similar to target=_blank)
+    $(".thumbnail .link").click(function() {
+        window.location = $(this).find("a.entry-link").attr("href");
+        return false;
+    });
+ /*
+    // Show URL on Mouse Hover
+    $(".thumbnail .link").hover(function() {
+        window.status = $(this).find("a.entry-link").attr("href");
+    }, function() {
+        window.status = "";
+    });*/
   })
   </script>
 </head>
@@ -156,7 +181,7 @@
   
 
   <!-- Middle content section -->
-  <div class="middle">
+  <div class="middle home">
 
       <!-- Tagline of the site -->
       <div id="tagline">
@@ -169,8 +194,8 @@
 	  <!-- Presentation of the main categories -->
 	  <div class="container" id="category-summary">
 	</tpl:CategoriesHeader>
-	<div class="col-md-6 content">
-	  <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
+	<div class="col-sm-6 content">
+	  <h3><a href="#category-{{tpl:CategoryShortURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
 	  <div class="category-description">{{tpl:CategoryDescription}}</div>
 	</div>
 	<tpl:CategoriesFooter>
@@ -178,48 +203,80 @@
 	</tpl:CategoriesFooter> 
       </tpl:Categories>
       
-      <div class="container" id="home-content">
-	<div class="col-md-8 content">
-	  <h2>{{tpl:lang Last published articles}}</h2>
-	  {{tpl:include src="_posts-list.html"}}
-	</div>
-	<div class="col-md-4 welcome">
-	  <tpl:Entries type="page" url="welcome">
-	    <div id="p{{tpl:EntryID}}" class="post">
-	      <h2>{{tpl:EntryTitle encode_html="1"}}</h2>
-
-	      <!-- # Entry with an excerpt if there is any -->
-	      <tpl:EntryIf extended="1">
-		<div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
-	      </tpl:EntryIf>
-	  
-	      <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
-	      {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-
-	      <div class="post-content">  
-		<!-- The blog post itself -->
-		{{tpl:EntryContent}}
-	      </div>
-	      
-	      <!-- # --BEHAVIOR-- publicEntryAfterContent -->
-	      {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
-	    </div>
-	  </tpl:Entries>
-	</div>
-	<div class="col-md-4 tag-cloud">
-	  <h2>{{tpl:lang Tags}}</h2>
-	  {{tpl:include src="_tag-cloud.html"}}
-	</div>
-	<div class="col-md-4 sidebar">
-	  <div id="blognav">
-	    {{tpl:Widgets type="nav"}}
-	  </div> <!-- End #blognav -->
-
-	  <div id="blogextra">
-	    {{tpl:Widgets type="extra"}}
-	  </div> <!-- End #blogextra -->
-	</div>
+      <div id="home-content">
+        <div class="posts-list container">
+          <tpl:Categories level="1">
+            <div class="title-row row">
+              <div id="category-{{tpl:CategoryShortURL}}" class="col-xs-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"> <small class="hidden-xs">Articles datés des évènements relatés</small></tpl:CategoryIf></h2></div>
+              <div class="col-xs-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="hidden-xs"> dans {{tpl:CategoryTitle}}</span>&nbsp;<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></div>
+            </div>
+            <div class="thumbnail-row row">
+            <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
+            
+              <!-- On small viewport, potential issue if the cards have not the same size when back to the line -->
+              <tpl:LoopPosition start="2" modulo="2">
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix visible-xs-block"></div>
+              </tpl:LoopPosition>
+              
+              <div class="col-sm-3 col-xs-6 posts-thumbnail-item">
+                <div class="thumbnail">
+                  <div class="link">
+                    <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
+                      <div class="defer-image image-ratio:4x3">
+                        <div data-src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_LARGE_IMAGE"}}" data-alt="{{tpl:EntryTitle}}"></div>
+                      </div>
+                    </tpl:MyMetaIf>
+                    <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="false">
+                      <tpl:CategoryIf url="Carnets-de-voyage">
+                        <div class="defer-image image-ratio:4x3">
+                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/travel-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                        </div>
+                      </tpl:CategoryIf>
+                      <tpl:CategoryIf url="Blog">
+                        <div class="defer-image image-ratio:4x3">
+                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/blog-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                        </div>
+                      </tpl:CategoryIf>
+                      <tpl:CategoryIf url="Civilisation">
+                        <div class="defer-image image-ratio:4x3">
+                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/civilization-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                        </div>
+                      </tpl:CategoryIf>
+                      <tpl:CategoryIf url="Langue">
+                        <div class="defer-image image-ratio:4x3">
+                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/language-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                        </div>
+                      </tpl:CategoryIf>
+                    </tpl:MyMetaIf>
+                    <div class="caption">
+                      <h3><a class="entry-link" href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
+                    </div>
+                  </div>  
+                  <div class="category">
+                    <tpl:EntryIf has_category="1">
+                      <a href="{{tpl:EntryCategoryURL}}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;{{tpl:EntryCategory}}</a>
+                    </tpl:EntryIf>
+                  </div>
+                  <div class="posts-thumbnail-item-footer row">
+                    <div class="post-metadata-left col-xs-8">
+                      <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
+                    </div>
+                    <div class="post-metadata-right col-xs-4">
+                      <a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><span class='facebook icon-bold'></span></a>
+                      <a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><span class='twitter icon-bold'></span></a>
+                      <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tpl:Entries>
+            </div>
+          </tpl:Categories>
+        </div>
       </div>
+
+     
   </div>
 
     <!-- Footer (present on all pages) -->

@@ -1,3 +1,4 @@
+@import "../fonts/orchid-font.css";
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -96,31 +97,39 @@
  */
 body {
   font-family: "Lato", "Arial", "KaiTi", sans-serif;
-  text-align: justify;
-  font-size: 160%;
-  background-color: #cccccc;
+  text-align: left;
+  font-size: 1.5em;
+  background-color: #ffffff;
   color: #373737;
+  line-height: 1.45;
 }
 #page {
   background-color: #ffffff;
   padding: 0;
-  box-shadow: 1px 1px 12px #808080;
   padding-top: 50px;
+}
+p {
+  margin-bottom: 1.3em;
 }
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Lato", "Arial", "KaiTi", sans-serif;
-  text-align: left;
+  font-weight: inherit;
+  line-height: 1.2;
 }
-h1,
-h2,
+h1 {
+  margin-top: 0;
+  font-size: 2.441em;
+}
+h2 {
+  font-size: 1.953em;
+}
 h3 {
-  font-weight: 400;
+  font-size: 1.563em;
 }
 h4 {
-  font-weight: bold;
+  font-size: 1.25em;
 }
 /* Chinese text */
 .zh {
@@ -372,6 +381,7 @@ char {
  */
 #footer {
   padding: 0;
+  border-top: 2px solid #228b22;
 }
 #footer .container {
   background-color: #373737;
@@ -390,8 +400,9 @@ char {
 #footer .container h3 {
   color: #999;
 }
-#footer .container p {
-  color: #666;
+#footer .container .footer-sub-h3 {
+  color: #dedede;
+  font-size: 0.66em;
 }
 #footer .content-license {
   display: inline-block;
@@ -433,6 +444,35 @@ char {
   background: url("../images/license/sa-32.png") no-repeat;
   background-size: 16px 16px;
 }
+#footer-about .media {
+  border-bottom: 1px solid #505050;
+}
+#footer-about-profile {
+  margin-top: 24px;
+  margin-right: 5px;
+  filter: drop-shadow(1px 1px 5px #272727);
+}
+#footer-about-description p {
+  color: #dedede;
+}
+#footer-about-description a.twitter-link {
+  color: #dedede;
+}
+#footer .container .footer-sub-h3 a.twitter-link:hover {
+  color: #b8b8b8;
+}
+#footer-about-links {
+  color: #dedede;
+  margin-top: 10px;
+  font-size: 125%;
+}
+#footer-about-links a {
+  color: #dedede;
+}
+#footer-about-links a:hover {
+  color: #b8b8b8;
+  text-decoration: none;
+}
 @media print {
   #footer {
     display: none;
@@ -448,23 +488,27 @@ char {
 #home-content {
   padding: 0;
 }
-#home-content .welcome img {
-  border-radius: 10px;
+.home.middle {
+  background-color: #dedede;
 }
-#home-content h2 {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #cccccc;
+#home-content .posts-list .title-row {
+  font-size: 0;
 }
-@media print {
-  #home-content .welcome {
-    display: none;
-  }
-  #home-content .tag-cloud {
-    display: none;
-  }
-  #home-content .sidebar {
-    display: none;
-  }
+#home-content .posts-list .category-title {
+  float: none;
+  display: inline-block;
+  font-size: 14px;
+}
+#home-content .posts-list .all-articles {
+  float: none;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: right;
+  font-size: 14px;
+  padding-bottom: 12px;
+}
+#home-content .posts-list .all-articles a:hover {
+  text-decoration: none;
 }
 /*
  * "China" theme for Dotclear
@@ -1016,16 +1060,121 @@ char {
 .posts-list .posts-list-item-footer {
   color: #808080;
 }
+.posts-list .thumbnail-row {
+  padding-left: 7px;
+  padding-right: 8px;
+}
+.posts-list .posts-thumbnail-item {
+  padding-left: 8px;
+  padding-right: 7px;
+}
+.posts-list .posts-thumbnail-item .thumbnail {
+  border-radius: 3px;
+  padding: 0;
+  border: none;
+  box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.posts-list .posts-thumbnail-item img {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.posts-list .posts-thumbnail-item .caption h3 {
+  margin: 0;
+  font-size: 130%;
+}
+.posts-list .posts-thumbnail-item .caption a {
+  color: #373737;
+}
+.posts-list .posts-thumbnail-item .caption a:hover {
+  color: #373737;
+  text-decoration: none;
+}
+.posts-list .posts-thumbnail-item .category {
+  border-top-left-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  background-color: rgba(39, 39, 39, 0.85);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  font-size: 80%;
+}
+.posts-list .posts-thumbnail-item .category:hover {
+  background-color: #272727;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+.posts-list .posts-thumbnail-item .category a {
+  display: inline-block;
+  padding: 5px 9px;
+  color: #ffffff;
+}
+.posts-list .posts-thumbnail-item .category a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.posts-list .posts-thumbnail-item .link:hover {
+  cursor: pointer;
+}
+.posts-list .posts-thumbnail-item .thumbnail:hover {
+  box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.posts-list .posts-thumbnail-item h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+.posts-list .posts-thumbnail-item-footer {
+  color: #808080;
+  padding: 9px 0;
+  border-top: 1px solid #cccccc;
+  font-size: 80%;
+  margin: 0;
+}
+.posts-list .posts-thumbnail-item-footer div[class*='col-'] {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.posts-list .post-metadata-left {
+  text-align: left;
+}
+.posts-list .post-metadata-right {
+  text-align: right;
+}
+.posts-list .post-metadata-right a {
+  color: #808080;
+}
+.posts-list .post-metadata-right a:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}
+.posts-list .post-metadata-right a:hover {
+  color: #272727;
+  text-decoration: none;
+}
+.posts-list .post-metadata-right a .icon-bold {
+  font-size: 100%;
+  margin-left: 0.8ex;
+}
 .posts-list .post-metadata {
   text-align: right;
   font-size: 80%;
 }
-.posts-list .post-metadata .glyphicon {
+.posts-list .post-metadata .glyphicon,
+.posts-list .posts-thumbnail-item-footer .glyphicon {
   margin-right: 0.1ex;
 }
 .posts-list .post-metadata .glyphicon-comment,
-.posts-list .post-metadata .glyphicon-time {
-  margin-left: 1ex;
+.posts-list .post-metadata .glyphicon-time,
+.posts-list .posts-thumbnail-item-footer .glyphicon-comment {
+  margin-left: 0.8ex;
 }
 .posts-list > nav {
   text-align: center;
@@ -1508,23 +1657,125 @@ ol.exercices > li.exercice:before {
  * Website: http://www.voyage-est.com
  * License: GNU/GPL
  */
-figure {
-  text-align: center;
-  max-width: 100%;
-  height: auto;
+figure,
+figure > div {
+  display: table;
   margin-bottom: 15px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
 }
-figure .figure-frame {
-  color: #505050;
-  background-color: transparent;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  display: inline-block;
-  padding: 4px;
+figure img {
+  display: block;
   max-width: 100%;
   height: auto;
-  font-size: 95%;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+figure > *:only-child img {
+  border-radius: 4px;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 4px;
+}
+figcaption {
+  text-align: center;
+  font-size: 80%;
+  color: #505050;
+  display: table-caption;
+  caption-side: bottom;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 4px;
+}
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: http://www.voyage-est.com
+ * License: GNU/GPL
+ */
+.no-js .defer-image {
+  display: none;
+}
+.defer-image > img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+}
+.defer-image.is-loading {
+  position: relative;
+  background: #EEE;
+}
+/* Image aspect ratios - % is relative to width. */
+.image-ratio\:1x2 > div {
+  padding-top: 200%;
+}
+.image-ratio\:9x16 > div {
+  padding-top: 177.777%;
+}
+.image-ratio\:2x3 > div {
+  padding-top: 150%;
+}
+.image-ratio\:3x4 > div {
+  padding-top: 133.333%;
+}
+.image-ratio\:1x1 > div {
+  padding-top: 100%;
+}
+.image-ratio\:4x3 > div {
+  padding-top: 75%;
+}
+.image-ratio\:3x2 > div {
+  padding-top: 66.66%;
+}
+.image-ratio\:16x9 > div {
+  padding-top: 56.25%;
+}
+.image-ratio\:2x1 > div {
+  padding-top: 50%;
+}
+@keyframes bobble {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+.defer-image.is-loading::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0 -0.5em;
+  background: rgba(125, 125, 125, 0.5);
+  border-radius: 100%;
+  animation: bobble 2s cubic-bezier(0.6, 1, 1, 1) infinite;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.defer-image.is-loaded > img {
+  animation: fadeIn 1s both;
 }

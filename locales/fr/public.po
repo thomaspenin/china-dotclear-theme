@@ -1,6 +1,18 @@
 msgid "Hello"
 msgstr "Coucou"
 
+msgid "Follow me on Twitter"
+msgstr "Suivez-moi sur Twitter"
+
+msgid "View my LinkedIn profile"
+msgstr "Consultez mon profile LinkedIn"
+
+msgid "Drop me a mail!"
+msgstr "Contactez-moi par mail"
+
+msgid "More..."
+msgstr "Plus..."
+
 msgid "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
 msgstr "Le nuage de mots clés représente les concepts couverts par les articles publiés sur le site. Plus le mot clé est écrit gros, plus le concept qu'il représente est important. Vous pouvez cliquer sur un mot clé pour obtenir les articles correspondants."
 

@@ -1,10 +1,20 @@
 Changelog
 =========
 
-* v2.2 (2015-XX-XX)
+* v2.3.1 (2017-01-15)
+  - Fix the category label being hidden on the tiles of the home page
+
+* v2.3 (2016-07-14)
+  - Fix a regression with responsive image sizes in Firefox, which now make them work properly for Chrome as a nice side-effect (what a long-overdue bug!)
+  - Lazy loading of thumbnails on the home page, which allows reserving their size and avoid layout re-computation once they are loaded
+  - Fix a reflow bug for thumbnails on the home page for small screens when on the first line the first card was higher than the second one
+  - Update screenshot for the Dotclear theme picker
+
+* v2.2 (2016-03-20)
   - Harmonize the spacing within the post list that varied depending on whether an excerpt existed or nothing
   - Fix missing translations on the home page
   - Fix "tiao2", "tiao3" and "tiao4" pinyin not being properly transformed
+  - Fully reworked the home page, with post thumbnails for the last posts per category and add a streamlined welcome part
 
 * v2.1 (2015-07-30)
   - Add support and instructions on how to associate an image with an article so that it appears in post lists

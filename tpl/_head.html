@@ -26,6 +26,8 @@
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.exercices.js"></script>
 <!-- Load script to create pinyin tooltips when hovering "ch" or "chb" tags -->
 <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.chinese.js"></script>
+<!-- Load script to lazy load images -->
+<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/img-lazy-loading.js"></script>
 
 <!-- Google Analytics -->
 <script>
@@ -80,6 +82,12 @@
     
     // Configure excercices
     configureExercices();
+    
+    // Lazy-load the images
+    var placeholders = document.querySelectorAll('.defer-image');
+    for (var i = 0, len = placeholders.length; i < len; i++) {
+        deferImage(placeholders[i]);
+    }
   })
 </script>
 

@@ -12,27 +12,33 @@ body {
   font-size: @base-font-size;
   background-color: @default-background-color;
   color: @strong-gray;
+  line-height: 1.45;
 }
 
 #page {
   background-color: @page-background-color;
   padding: 0;
-  box-shadow: 1px 1px 12px @page-shadow;
+  //box-shadow: 1px 1px 12px @page-shadow;
   padding-top: @top-bar-height; // Because the toolbar is anchored to the top
 }
 
+p {margin-bottom: 1.3em;}
+
 h1, h2, h3, h4 {
-  font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
-  text-align: left; // Justification sometimes does weird things with titles
+  font-weight: inherit;
+  line-height: 1.2;
 }
 
-h1, h2, h3 {
-  font-weight: 400;
+h1 {
+  margin-top: 0;
+  font-size: 2.441em;
 }
 
-h4 {
-  font-weight: bold;
-}
+h2 {font-size: 1.953em;}
+
+h3 {font-size: 1.563em;}
+
+h4 {font-size: 1.25em;}
 
 /* Chinese text */
 .zh {

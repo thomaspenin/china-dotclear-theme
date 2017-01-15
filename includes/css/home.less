@@ -10,27 +10,29 @@
   padding: 0;
 }
 
-#home-content .welcome img {
-  border-radius: 10px;
+.home.middle {
+  background-color: @very-light-gray;
 }
 
-#home-content h2 {
-  padding-bottom: 5px;
-  border-bottom: 1px solid @light-gray;
+#home-content .posts-list .title-row {
+  font-size: 0;
 }
 
-// Do not show some elements when printing
-@media print
-{
-  #home-content .welcome {
-    display: none;
-  }
-  
-  #home-content .tag-cloud {
-    display: none;
-  }
-  
-  #home-content .sidebar {
-    display: none;
-  }
+#home-content .posts-list .category-title {
+  float: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+#home-content .posts-list .all-articles {
+  float: none;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: right;
+  font-size: 14px;
+  padding-bottom: 12px;
+}
+
+#home-content .posts-list .all-articles a:hover {
+  text-decoration: none;
 }

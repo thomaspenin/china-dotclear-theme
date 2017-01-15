@@ -8,6 +8,7 @@
 
 #footer {
   padding: 0;
+  border-top: 2px solid @green;
 }
 
 #footer .container {
@@ -31,8 +32,9 @@
     color: #999;
 }
 
-#footer .container p {
-    color: #666;
+#footer .container .footer-sub-h3 {
+  color: @very-light-gray;
+  font-size: 0.66em;
 }
 
 #footer .content-license {
@@ -81,6 +83,47 @@
   background: url("@{images-folder-path}/license/sa-32.png") no-repeat;
   background-size: 16px 16px;
 }
+
+// --- "About" part of the footer ---
+
+#footer-about .media {
+  border-bottom: 1px solid @medium-gray;
+}
+
+#footer-about-profile {
+  margin-top: 24px;
+  margin-right: 5px;
+  filter: drop-shadow(1px 1px 5px @very-strong-gray);
+}
+
+#footer-about-description p {
+  color: @very-light-gray;
+}
+
+#footer-about-description a.twitter-link {
+  color: @very-light-gray;
+}
+
+#footer .container .footer-sub-h3 a.twitter-link:hover {
+  color: darken(@very-light-gray, 15%);
+}
+
+#footer-about-links {
+  color: @very-light-gray;
+  margin-top: 10px;
+  font-size: 125%;
+}
+
+#footer-about-links a {
+  color: @very-light-gray;
+}
+
+#footer-about-links a:hover {
+  color: darken(@very-light-gray, 15%);
+  text-decoration: none;
+}
+
+// --- Print ---
 
 // Do not display the footer when printing
 @media print

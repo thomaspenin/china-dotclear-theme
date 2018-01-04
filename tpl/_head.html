@@ -1,17 +1,17 @@
 <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Base font -->
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <!-- Font for pinyin -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <!-- Cursive font for the tagline -->
-<link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 <!-- Bootstrap CSS -->
 <link href="{{tpl:BlogThemeURL}}/includes/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Theme CSS -->
 <link href="{{tpl:BlogThemeURL}}/includes/css/style.css" rel="stylesheet">
 <!-- Javascript, jQuery must come FIRST for Boostrap plugins to work -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Bootstrap JS plugins -->
 <script src="{{tpl:BlogThemeURL}}/includes/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 <!-- Script to resize Chinese text -->
@@ -48,10 +48,10 @@
   {
     // Prepare the pinyin that should appear when hovering <ch> or <chb> tags
     preparePinyinOnHover();
-    
+
     // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
     transformPinyin();
-    
+
     // Initialize tooltips
     $('[data-toggle="tooltip"]').tooltip({
       delay: { "show": 1000, "hide": 0 }
@@ -76,13 +76,13 @@
       jQuery('html, body').animate({scrollTop:0}, scrollSpeed);
       return false;
     });
-    
+
     // Prepare the audio players
     prepareAudioPlayers();
-    
+
     // Configure excercices
     configureExercices();
-    
+
     // Lazy-load the images
     var placeholders = document.querySelectorAll('.defer-image');
     for (var i = 0, len = placeholders.length; i < len; i++) {

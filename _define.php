@@ -5,7 +5,7 @@
 # "China" theme for Dotclear
 # --------------------------
 # Author: Thomas PENIN
-# Website: http://www.voyage-est.com
+# Website: https://www.voyage-est.com
 # License: GNU/GPL
 #
 # -- END LICENSE BLOCK ------------------------------------
@@ -16,6 +16,6 @@ $this->registerModule(
 	/* Name */			"China",
 	/* Description*/		"A custom theme for my Chinese blog",
 	/* Author */			"Thomas Penin",
-	/* Version */			'2.3.1'
+	/* Version */			'2.4.0'
 );
 ?>

@@ -60,7 +60,7 @@
     }).on('hidden.bs.modal', function () {
       $('#homeCarousel').carousel('cycle');
     });
-    
+
     /*var row=$('.portfolio');
     $.each(row, function() {
         var maxh=0;
@@ -72,7 +72,7 @@
             $(this).height(maxh);
         });
     });*/
-    
+
     // Or use this to Open link in same window (similar to target=_blank)
     $(".thumbnail .link").click(function() {
         window.location = $(this).find("a.entry-link").attr("href");
@@ -178,7 +178,7 @@
 	</div>
       </div>
     </div>
-  
+
 
   <!-- Middle content section -->
   <div class="middle home">
@@ -187,7 +187,7 @@
       <div id="tagline">
 	<h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
       </div>
-    
+
       <!-- We only consider categories of the first level -->
       <tpl:Categories level="1">
 	<tpl:CategoriesHeader>
@@ -202,7 +202,7 @@
 	  </div>
 	</tpl:CategoriesFooter> 
       </tpl:Categories>
-      
+
       <div id="home-content">
         <div class="posts-list container">
           <tpl:Categories level="1">
@@ -212,13 +212,13 @@
             </div>
             <div class="thumbnail-row row">
             <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
-            
+
               <!-- On small viewport, potential issue if the cards have not the same size when back to the line -->
               <tpl:LoopPosition start="2" modulo="2">
                 <!-- Add the extra clearfix for only the required viewport -->
                 <div class="clearfix visible-xs-block"></div>
               </tpl:LoopPosition>
-              
+
               <div class="col-sm-3 col-xs-6 posts-thumbnail-item">
                 <div class="thumbnail">
                   <div class="link">
@@ -252,7 +252,7 @@
                     <div class="caption">
                       <h3><a class="entry-link" href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
                     </div>
-                  </div>  
+                  </div>
                   <div class="category">
                     <tpl:EntryIf has_category="1">
                       <a href="{{tpl:EntryCategoryURL}}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;{{tpl:EntryCategory}}</a>
@@ -263,8 +263,8 @@
                       <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                     </div>
                     <div class="post-metadata-right col-xs-4">
-                      <a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><span class='facebook icon-bold'></span></a>
-                      <a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><span class='twitter icon-bold'></span></a>
+                      <a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><span class='facebook icon-bold'></span></a>
+                      <a href="https://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><span class='twitter icon-bold'></span></a>
                       <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
                     </div>
                   </div>
@@ -276,7 +276,7 @@
         </div>
       </div>
 
-     
+
   </div>
 
     <!-- Footer (present on all pages) -->

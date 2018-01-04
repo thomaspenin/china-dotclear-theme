@@ -5,7 +5,7 @@
 # "China" theme for Dotclear
 # --------------------------
 # Author: Thomas PENIN
-# Website: http://www.voyage-est.com
+# Website: https://www.voyage-est.com
 # License: GNU/GPL
 # -- END LICENSE BLOCK ------------------------------------
 
@@ -63,13 +63,13 @@ class urlAlias extends dcUrlHandlers
  * where "folder" is the path to the folder to inspect, "pattern" a regular expression
  * that the file names have to meet, "prefix" and "suffix" parts of the file name that
  * have to be removed to be added to the result.
- * Return results are an <ul> list, where each item is named "Version XX" ("XX" 
+ * Return results are an <ul> list, where each item is named "Version XX" ("XX"
  * corresponding to the name of the file removing the prefix and suffix) and is a link
  * pointing to the original file.
  */
 
 $core->tpl->addBlock('ListFiles',array('tplListFilesTpl','ListFiles'));
- 
+
 class tplListFilesTpl
 {
   public static function ListFiles($attr, $content)
@@ -111,7 +111,7 @@ class tplListFilesTpl
 // --- Retrieve the current version of the theme ---
 
 $core->tpl->addValue('ThemeVersion',array('tplThemeVersionTpl','ThemeVersion'));
- 
+
 class tplThemeVersionTpl
 {
   public static function ThemeVersion($attr)
@@ -120,7 +120,7 @@ class tplThemeVersionTpl
     global $core;
     // Get the version of the current theme
     $version = $core->themes->moduleInfo($core->blog->settings->system->theme,"version");
-    
+
     return $version;
   }
 }

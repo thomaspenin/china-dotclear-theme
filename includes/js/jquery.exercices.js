@@ -2,7 +2,7 @@
  * "China" theme for Dotclear
  * --------------------------
  * Author: Thomas PENIN
- * Website: http://www.voyage-est.com
+ * Website: https://www.voyage-est.com
  * License: GNU/GPL
  */
 

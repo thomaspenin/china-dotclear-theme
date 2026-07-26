@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: "OrchidFontbold";
-  src: url("../fonts/orchid-font-bold.ttf") format('truetype');
+  src: url("index.php?tf=includes/fonts/orchid-font-bold.ttf") format('truetype');
 }
 
 span.icon-bold {

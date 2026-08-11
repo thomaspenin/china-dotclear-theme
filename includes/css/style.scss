@@ -12,7 +12,7 @@
 @import "theme-colors";
 @import "fonts";
 @import "layout";
-@import "@{fonts-folder-path}/orchid-font.css";
+@import url("#{$fonts-folder-path}/orchid-font.css");
 
 // Base styles
 @import "base";

@@ -6,10 +6,5 @@
  * License: GNU/GPL
  */
 
-.miniplayer .playButton {
-  cursor: pointer;
-}
-
-.miniplayer .playButton:hover {
-  color: @player-hover-color;
-}
+$images-folder-path: "index.php?tf=includes/images";
+$fonts-folder-path: "index.php?tf=includes/fonts";

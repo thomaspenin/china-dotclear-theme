@@ -20,7 +20,7 @@
   bottom: 0;
   right: 0;
   outline: none;
-  background-color: @top-bar-background-color;
+  background-color: $top-bar-background-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -30,7 +30,7 @@
 
 .post-title a.comment-count:hover {
   text-decoration:none;
-  background-color: @top-bar-background-color-hover;
+  background-color: $top-bar-background-color-hover;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -59,7 +59,7 @@
 // *** Post excerpt ***
 
 #post-excerpt.container {
-  background-color: @post-excerpt-bg-color;
+  background-color: $post-excerpt-bg-color;
   font-size: 17px;
   padding: 15px;
 }
@@ -87,7 +87,7 @@
 #post-footer h3,
 #comments h3 {
   padding-bottom: 3px;
-  border-bottom: 1px solid @light-gray;
+  border-bottom: 1px solid $light-gray;
 }
 
 #post-footer .post-attachments ul {
@@ -131,7 +131,7 @@
 }
 
 #pagination-posts {
-  background-color: @post-pagination-bg-color;
+  background-color: $post-pagination-bg-color;
 }
 
 #comments-sidebar {

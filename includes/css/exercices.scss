@@ -33,7 +33,7 @@ ol.exercices > li.exercice:before {
   padding: 4px;
   border-radius: 3px;
   color: #fff;
-  background: @exercice-number-bg-color;
+  background: $exercice-number-bg-color;
   font-weight: bold;
   text-align: center;
 }
@@ -41,11 +41,11 @@ ol.exercices > li.exercice:before {
 .exercices .answer {
   margin-top: 5px;
   border-radius: 5px;
-  color: @exercice-answer-color;
+  color: $exercice-answer-color;
 }
 
 .exercices .answer .expandable {
-  background: @exercice-answer-bg-color;
+  background: $exercice-answer-bg-color;
   border-radius: 3px;
   box-shadow: 0 4px 4px -4px #555555 inset;
   padding: 5px;
@@ -73,7 +73,7 @@ ol.exercices > li.exercice:before {
 
 .exercices .visibilityToggle {
   position: absolute;
-  background: @exercice-answer-bg-color;
+  background: $exercice-answer-bg-color;
   padding: 3px 5px;
   bottom: 0;
   right: 0;
@@ -83,10 +83,10 @@ ol.exercices > li.exercice:before {
 }
 
 .exercices .visibilityToggle {
-  color: @exercice-answer-toggle-color;
+  color: $exercice-answer-toggle-color;
 }
 
 .exercices .visibilityToggle:hover {
-  color: @exercice-answer-toggle-hover-color;
+  color: $exercice-answer-toggle-hover-color;
   cursor: pointer;
 }

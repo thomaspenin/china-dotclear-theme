@@ -6,10 +6,9 @@
  * License: GNU/GPL
  */
 
-.categories #category-summary .subcategories {
-  margin-left: 100px;
-}
+// Base typography
+$base-font-size: 1.5em;
+$base-text-alignment: left;
 
-.categories #category-summary {
-  background-color: @white;
-}
+// Element sizes
+$top-bar-height: 50px;

@@ -1,0 +1,20 @@
+{
+  "name": "china-dotclear-theme",
+  "version": "1.0.0",
+  "description": "A China-inspired theme for the blog \"Voyage vers l'Est\"",
+  "private": true,
+  "scripts": {
+    "build:css": "sass includes/css/style.scss includes/css/style.css",
+    "deploy": "./deploy.sh dev",
+    "deploy:dev": "./deploy.sh dev",
+    "deploy:prod": "./deploy.sh prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomaspenin/china-dotclear-theme.git"
+  },
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "sass": "^1.102.0"
+  }
+}

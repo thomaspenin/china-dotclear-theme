@@ -1,0 +1,106 @@
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: https://www.voyage-est.com
+ * License: GNU/GPL
+ */
+
+// Description: colors attached to the main items of the theme, based on the colors defined in colors.less
+
+
+
+/*
+ * Base colors
+ */
+
+$default-background-color: $white;
+$page-background-color: $white;
+$page-shadow: $gray;
+$pinyin-text-color: $gray;
+
+/*
+ * Home page
+ */
+
+$banner-link-color: $white;
+$banner-modal-link-color: $tint-color;
+$tagline-bg-color: $light-gray;
+$category-summary-bg-color: $light-gray;
+
+/*
+ * Page title
+ */
+
+$page-title-bg-color: $tint-color;
+$page-title-text-color: $white;
+$page-title-link-color: $white;
+
+/*
+ * Top bar colors
+ */
+
+$top-bar-text-color: $light-gray;
+$top-bar-background-color-hover: $very-strong-gray;
+$top-bar-background-color: $strong-gray;
+
+/*
+ * Back to top
+ */
+ 
+$back-to-top-bg-color: $strong-gray;
+$back-to-top-hover-color: $very-strong-gray;
+
+/*
+ * Search
+ */
+
+$search-info-bg-color: $light-gray;
+
+/*
+ * Post
+ */
+
+$post-excerpt-bg-color: $light-gray;
+$post-pagination-bg-color: $white;
+
+/*
+ * Footer
+ */
+ 
+$footer-background-color: $strong-gray;
+
+/*
+ * Archives
+ */
+
+$date-range-picker-bg-color: $light-gray;
+
+/*
+ * Theme download page
+ */
+ 
+ $download-pitch-bg-color: $light-gray;
+ $footnote-text-color: $gray;
+ 
+ /*
+  * Tags page
+  */
+  
+$tag-info-bg-color: $light-gray;
+
+/*
+ * Miniplayer
+ */
+ 
+ $player-hover-color: $tint-color;
+ 
+/*
+ * Exercice
+ */
+ 
+$exercice-number-bg-color: $tint-color;
+$exercice-answer-color: $tint-color;
+$exercice-answer-bg-color: $very-light-green;
+$exercice-answer-toggle-color: $tint-color;
+$exercice-answer-toggle-hover-color: darken($tint-color, 5%);

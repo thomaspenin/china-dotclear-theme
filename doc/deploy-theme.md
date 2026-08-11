@@ -12,9 +12,11 @@ Use the root-level `deploy.sh` script to deploy the theme into your local Dotcle
 2. Run the deployment script:
 
    ```bash
-   ./deploy.sh
+   npm run deploy
    ```
 
-   The script defaults to the dev environment. You can also pass `dev` explicitly. The `prod` environment is not implemented yet.
+   This deploys to the dev environment. You can also run `npm run deploy:dev` explicitly, or `npm run deploy:prod` for production (not implemented yet).
+
+   Alternatively, call the script directly: `./deploy.sh [dev|prod]`.
 
 The script replaces the existing `themes/china` folder in the Dotclear installation without touching other themes.

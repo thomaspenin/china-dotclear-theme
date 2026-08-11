@@ -7,19 +7,19 @@
  */
 
 body {
-  font-family: @primary-western-font, @fallback-western-font1, @primary-chinese-font, @fallback-western-font2;
-  text-align: @base-text-alignment;
-  font-size: @base-font-size;
-  background-color: @default-background-color;
-  color: @strong-gray;
+  font-family: $primary-western-font, $fallback-western-font1, $primary-chinese-font, $fallback-western-font2;
+  text-align: $base-text-alignment;
+  font-size: $base-font-size;
+  background-color: $default-background-color;
+  color: $strong-gray;
   line-height: 1.45;
 }
 
 #page {
-  background-color: @page-background-color;
+  background-color: $page-background-color;
   padding: 0;
-  //box-shadow: 1px 1px 12px @page-shadow;
-  padding-top: @top-bar-height; // Because the toolbar is anchored to the top
+  //box-shadow: 1px 1px 12px $page-shadow;
+  padding-top: $top-bar-height; // Because the toolbar is anchored to the top
 }
 
 p {margin-bottom: 1.3em;}
@@ -47,18 +47,18 @@ h4 {font-size: 1.25em;}
 }
 
 a:link, a:visited, a:active {
-  color: @tint-color;
+  color: $tint-color;
 }
 
 a:hover {
-  color: darken(@tint-color, 5%);
+  color: darken($tint-color, 5%);
 }
 
 // Pinyin
 py, pyb {
-  font-family: @primary-pinyin-font, @fallback-pinyin-font1, @fallback-pinyin-font2 !important;
+  font-family: $primary-pinyin-font, $fallback-pinyin-font1, $fallback-pinyin-font2 !important;
   font-size: 95%;
-  color: @pinyin-text-color;
+  color: $pinyin-text-color;
 }
 
 /* Text fields */
@@ -73,8 +73,8 @@ textarea:focus {
 input.form-control:focus,
 input:focus,
 textarea:focus {
-  border-color: @tint-color;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px @tint-color;
+  border-color: $tint-color;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px $tint-color;
 }
 
 input,
@@ -90,7 +90,7 @@ char {
   display: inline-block;
   width: 64px;
   height: 64px;
-  background: url("@{images-folder-path}/char-matrix/char-matrix.png") no-repeat;
+  background: url("#{$images-folder-path}/char-matrix/char-matrix.png") no-repeat;
   background-size: 64px 64px;
   line-height: 64px;
   font-size: 64px;

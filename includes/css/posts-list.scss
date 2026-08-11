@@ -9,7 +9,7 @@
 .posts-list .posts-list-item {
   padding-bottom: 20px;
   padding-top: 20px;
-  border-bottom: 1px solid @light-gray;
+  border-bottom: 1px solid $light-gray;
 }
 
 .posts-list .posts-list-item .media-object {
@@ -21,7 +21,7 @@
 }
 
 .posts-list .posts-list-item-footer {
-  color: @gray;
+  color: $gray;
 }
 
 .posts-list .thumbnail-row {
@@ -52,11 +52,11 @@
 }
 
 .posts-list .posts-thumbnail-item .caption a {
-  color: @strong-gray;
+  color: $strong-gray;
 }
 
 .posts-list .posts-thumbnail-item .caption a:hover {
-  color: @strong-gray;
+  color: $strong-gray;
   text-decoration: none;
 }
 
@@ -65,7 +65,7 @@
   position: absolute;
   top: 0;
   left: 8px;
-  background-color: fadeout(@very-strong-gray, 15%);
+  background-color: transparentize($very-strong-gray, 0.15);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -75,7 +75,7 @@
 }
 
 .posts-list .posts-thumbnail-item .category:hover {
-  background-color: @very-strong-gray;
+  background-color: $very-strong-gray;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -86,12 +86,12 @@
 .posts-list .posts-thumbnail-item .category a {
   display: inline-block;
   padding: 5px 9px;
-  color: @white;
+  color: $white;
 }
 
 .posts-list .posts-thumbnail-item .category a:hover {
   text-decoration: none;
-  color: @white;
+  color: $white;
 }
 
 .posts-list .posts-thumbnail-item .link:hover {
@@ -108,9 +108,9 @@
 }
 
 .posts-list .posts-thumbnail-item-footer {
-  color: @gray;
+  color: $gray;
   padding: 9px 0;
-  border-top: 1px solid @light-gray;
+  border-top: 1px solid $light-gray;
   font-size: 80%;
   margin: 0;
 }
@@ -129,7 +129,7 @@
 }
 
 .posts-list .post-metadata-right a {
-  color: @gray;
+  color: $gray;
 }
 
 .posts-list .post-metadata-right a:after {
@@ -139,7 +139,7 @@
 }
 
 .posts-list .post-metadata-right a:hover {
-  color: @very-strong-gray;
+  color: $very-strong-gray;
   text-decoration: none;
 }
 

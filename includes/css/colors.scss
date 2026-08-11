@@ -1,0 +1,29 @@
+/*
+ * "China" theme for Dotclear
+ * --------------------------
+ * Author: Thomas PENIN
+ * Website: https://www.voyage-est.com
+ * License: GNU/GPL
+ */
+
+/*
+ * Theme color palette
+ */
+
+// Grays
+$white:            #ffffff;
+$very-light-gray:  #dedede;
+$light-gray:       #cccccc;
+$gray:             #808080;
+$medium-gray:      #505050;
+$strong-gray:      #373737;
+$very-strong-gray: #272727;
+$black:            #000000;
+
+// Greens
+$very-light-green: #c4f9c4;
+$light-green:      #32cd32;
+$green:            #228b22;
+
+// Main tint color: it is used for links, buttons and other actionable items
+$tint-color: $green;

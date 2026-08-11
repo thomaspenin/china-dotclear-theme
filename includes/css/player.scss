@@ -6,9 +6,10 @@
  * License: GNU/GPL
  */
 
-// Base typography
-@base-font-size: 1.5em;
-@base-text-alignment: left;
+.miniplayer .playButton {
+  cursor: pointer;
+}
 
-// Element sizes
-@top-bar-height: 50px;
+.miniplayer .playButton:hover {
+  color: $player-hover-color;
+}

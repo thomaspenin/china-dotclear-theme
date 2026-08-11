@@ -78,14 +78,15 @@ cp -R "$script_dir/tpl" "$staging_dir/"
 cp -R "$script_dir/smilies" "$staging_dir/"
 cp -R "$script_dir/locales" "$staging_dir/"
 
-# Compile SCSS to CSS
+# Compile SCSS to CSS for the deployed theme
 printf 'Compiling stylesheets...\n'
 mkdir -p "$staging_dir/includes/css"
-"$script_dir/node_modules/.bin/sass" "$script_dir/includes/css/style.scss" "$staging_dir/includes/css/style.css"
+"$script_dir/node_modules/.bin/sass" --source-map "$script_dir/includes/css/style.scss" "$staging_dir/includes/css/style.css"
 
 rsync -a \
   --exclude '*.scss' \
   --exclude '*.sh' \
+  --exclude '*.css.map' \
   "$script_dir/includes/" \
   "$staging_dir/includes/"
 

@@ -6,6 +6,8 @@
  * License: GNU/GPL
  */
 
+@use "sass:color";
+
 body {
   font-family: $primary-western-font, $fallback-western-font1, $primary-chinese-font, $fallback-western-font2;
   text-align: $base-text-alignment;
@@ -51,7 +53,7 @@ a:link, a:visited, a:active {
 }
 
 a:hover {
-  color: darken($tint-color, 5%);
+  color: color.adjust($tint-color, $lightness: -5%);
 }
 
 // Pinyin
@@ -67,7 +69,7 @@ input:hover,
 textarea:hover,
 input:focus,
 textarea:focus {
-  border-color: darken(rgb(190, 190, 190), 20%);
+  border-color: color.adjust(rgb(190, 190, 190), $lightness: -20%);
 }
 
 input.form-control:focus,

@@ -6,23 +6,25 @@
  * License: GNU/GPL
  */
 
+@use "sass:color";
+
 // Use the right colors for buttons
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-  background-color: darken($tint-color, 5%);
-  border-color: darken($tint-color, 5%);
+  background-color: color.adjust($tint-color, $lightness: -5%);
+  border-color: color.adjust($tint-color, $lightness: -5%);
  }
  
 .btn-primary {
   background-color: $tint-color;
-  border-color: darken($tint-color, 5%);
+  border-color: color.adjust($tint-color, $lightness: -5%);
 }
 
 // Use the right colors for pagination controls
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-  background-color: darken($tint-color, 5%);
-  border-color: darken($tint-color, 5%);
+  background-color: color.adjust($tint-color, $lightness: -5%);
+  border-color: color.adjust($tint-color, $lightness: -5%);
   color: $white;
 }
 
@@ -31,7 +33,7 @@
 }
 
 .pagination > li > a:hover, .pagination > li > span:hover {
-  color: darken($tint-color, 5%);
+  color: color.adjust($tint-color, $lightness: -5%);
 }
 
 // Close control on info shall not be too "close" from the text

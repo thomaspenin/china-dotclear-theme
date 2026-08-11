@@ -4,7 +4,7 @@
   "description": "A China-inspired theme for the blog \"Voyage vers l'Est\"",
   "private": true,
   "scripts": {
-    "build:css": "sass includes/css/style.scss includes/css/style.css",
+    "build:css": "sass --no-source-map includes/css/style.scss includes/css/style.css",
     "deploy": "./deploy.sh dev",
     "deploy:dev": "./deploy.sh dev",
     "deploy:prod": "./deploy.sh prod"

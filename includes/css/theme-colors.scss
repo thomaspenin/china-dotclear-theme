@@ -6,6 +6,8 @@
  * License: GNU/GPL
  */
 
+@use "sass:color";
+
 // Description: colors attached to the main items of the theme, based on the colors defined in colors.less
 
 
@@ -103,4 +105,4 @@ $exercice-number-bg-color: $tint-color;
 $exercice-answer-color: $tint-color;
 $exercice-answer-bg-color: $very-light-green;
 $exercice-answer-toggle-color: $tint-color;
-$exercice-answer-toggle-hover-color: darken($tint-color, 5%);
+$exercice-answer-toggle-hover-color: color.adjust($tint-color, $lightness: -5%);

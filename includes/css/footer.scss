@@ -1,3 +1,7 @@
+@use "colors";
+@use "paths";
+@use "theme-colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -10,11 +14,11 @@
 
 #footer {
   padding: 0;
-  border-top: 2px solid $green;
+  border-top: 2px solid colors.$green;
 }
 
 #footer .container {
-    background-color: $footer-background-color;
+    background-color: theme-colors.$footer-background-color;
     padding-bottom: 10px;
 }
 
@@ -35,7 +39,7 @@
 }
 
 #footer .container .footer-sub-h3 {
-  color: $very-light-gray;
+  color: colors.$very-light-gray;
   font-size: 0.66em;
 }
 
@@ -58,7 +62,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("#{$images-folder-path}/license/cc-32.png") no-repeat;
+  background: url("#{paths.$images-folder-path}/license/cc-32.png") no-repeat;
   background-size: 16px 16px;
 }
 
@@ -66,7 +70,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("#{$images-folder-path}/license/by-32.png") no-repeat;
+  background: url("#{paths.$images-folder-path}/license/by-32.png") no-repeat;
   background-size: 16px 16px;
 }
 
@@ -74,7 +78,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("#{$images-folder-path}/license/nc-32.png") no-repeat;
+  background: url("#{paths.$images-folder-path}/license/nc-32.png") no-repeat;
   background-size: 16px 16px;
 }
 
@@ -82,46 +86,46 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("#{$images-folder-path}/license/sa-32.png") no-repeat;
+  background: url("#{paths.$images-folder-path}/license/sa-32.png") no-repeat;
   background-size: 16px 16px;
 }
 
 // --- "About" part of the footer ---
 
 #footer-about .media {
-  border-bottom: 1px solid $medium-gray;
+  border-bottom: 1px solid colors.$medium-gray;
 }
 
 #footer-about-profile {
   margin-top: 24px;
   margin-right: 5px;
-  filter: drop-shadow(1px 1px 5px $very-strong-gray);
+  filter: drop-shadow(1px 1px 5px colors.$very-strong-gray);
 }
 
 #footer-about-description p {
-  color: $very-light-gray;
+  color: colors.$very-light-gray;
 }
 
 #footer-about-description a.twitter-link {
-  color: $very-light-gray;
+  color: colors.$very-light-gray;
 }
 
 #footer .container .footer-sub-h3 a.twitter-link:hover {
-  color: color.adjust($very-light-gray, $lightness: -15%);
+  color: color.adjust(colors.$very-light-gray, $lightness: -15%);
 }
 
 #footer-about-links {
-  color: $very-light-gray;
+  color: colors.$very-light-gray;
   margin-top: 10px;
   font-size: 125%;
 }
 
 #footer-about-links a {
-  color: $very-light-gray;
+  color: colors.$very-light-gray;
 }
 
 #footer-about-links a:hover {
-  color: color.adjust($very-light-gray, $lightness: -15%);
+  color: color.adjust(colors.$very-light-gray, $lightness: -15%);
   text-decoration: none;
 }
 

@@ -1,3 +1,5 @@
+@use "colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -52,10 +54,10 @@ bottom: 0;          /* to fix the div at the top its containing element */
 .bs-docs-sidebar .nav>.active>a, 
 .bs-docs-sidebar .nav>li>a:hover, 
 .bs-docs-sidebar .nav>li>a:focus {
-    color: $tint-color;                 
+    color: colors.$tint-color;                 
     text-decoration: none;          
     background-color: transparent;  
-    border-left-color: $tint-color; 
+    border-left-color: colors.$tint-color; 
 }
 /* all active links */
 .bs-docs-sidebar .nav>.active>a, 

@@ -1,3 +1,5 @@
+@use "paths";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -26,5 +28,5 @@ $fallback-pinyin-font2: sans-serif;
     local('楷体'),    // Win
     local('STKaiti'), // Mac
     local('华文楷体'), // Mac
-    url('#{$fonts-folder-path}/KaiTi.ttf') format('truetype');
+    url('#{paths.$fonts-folder-path}/KaiTi.ttf') format('truetype');
 }

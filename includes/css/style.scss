@@ -7,46 +7,47 @@
  */
 
 // Variables
-@import "paths";
-@import "colors";
-@import "theme-colors";
-@import "fonts";
-@import "layout";
-@import url("#{$fonts-folder-path}/orchid-font.css");
+@use "sass:meta";
+@use "paths";
+@use "colors";
+@use "theme-colors";
+@use "fonts";
+@use "layout";
+@import url("#{paths.$fonts-folder-path}/orchid-font.css");
 
 // Base styles
-@import "base";
-@import "bootstrap-customization";
-@import "top";
-@import "middle";
-@import "footer";
+@include meta.load-css("base");
+@include meta.load-css("bootstrap-customization");
+@include meta.load-css("top");
+@include meta.load-css("middle");
+@include meta.load-css("footer");
 
 // Page types
-@import "home";
-@import "post";
-@import "archives";
-@import "categories";
-@import "category";
-@import "tags";
-@import "theme_download";
-@import "search";
-@import "404";
+@include meta.load-css("home");
+@include meta.load-css("post");
+@include meta.load-css("archives");
+@include meta.load-css("categories");
+@include meta.load-css("category");
+@include meta.load-css("tags");
+@include meta.load-css("theme_download");
+@include meta.load-css("search");
+@include meta.load-css("404");
 
 // Specific items
-@import "page-title";
-@import "link-list";
-@import "last-comments";
-@import "banner";
-@import "category-summary";
-@import "back-to-top";
-@import "links";
-@import "posts-list";
-@import "toc";
-@import "tagline";
-@import "comments";
-@import "tag-cloud";
-@import "player";
-@import "alerts";
-@import "exercices";
-@import "figure";
-@import "image-lazy-loading";
+@include meta.load-css("page-title");
+@include meta.load-css("link-list");
+@include meta.load-css("last-comments");
+@include meta.load-css("banner");
+@include meta.load-css("category-summary");
+@include meta.load-css("back-to-top");
+@include meta.load-css("links");
+@include meta.load-css("posts-list");
+@include meta.load-css("toc");
+@include meta.load-css("tagline");
+@include meta.load-css("comments");
+@include meta.load-css("tag-cloud");
+@include meta.load-css("player");
+@include meta.load-css("alerts");
+@include meta.load-css("exercices");
+@include meta.load-css("figure");
+@include meta.load-css("image-lazy-loading");

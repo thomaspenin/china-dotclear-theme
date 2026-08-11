@@ -1,3 +1,5 @@
+@use "theme-colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -25,7 +27,7 @@
   width: 64px;
   height: 64px;
   color: white;
-  background-color: $back-to-top-bg-color;
+  background-color: theme-colors.$back-to-top-bg-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -35,7 +37,7 @@
 }
 
 #back-to-top a:hover {
-  background-color: $back-to-top-hover-color;
+  background-color: theme-colors.$back-to-top-hover-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;

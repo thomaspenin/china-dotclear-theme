@@ -1,3 +1,5 @@
+@use "theme-colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -7,7 +9,7 @@
  */
 
 .search .search-info {
-  background-color: $search-info-bg-color;
+  background-color: theme-colors.$search-info-bg-color;
   font-size: 17px;
   padding: 15px;
 }

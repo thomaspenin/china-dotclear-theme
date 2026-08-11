@@ -1,3 +1,6 @@
+@use "paths";
+@use "theme-colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -7,9 +10,9 @@
  */
 
 .page-title {
-  background: $page-title-bg-color url("#{$images-folder-path}/title/Title-background.png") no-repeat left bottom;
+  background: theme-colors.$page-title-bg-color url("#{paths.$images-folder-path}/title/Title-background.png") no-repeat left bottom;
   background-size: cover;
-  color: $page-title-text-color;
+  color: theme-colors.$page-title-text-color;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   padding-top: 28px;
   padding-bottom: 28px;
@@ -20,7 +23,7 @@
 }
 
 .page-title a {
-  color: $page-title-link-color;
+  color: theme-colors.$page-title-link-color;
 }
 
 .page-title h1 {

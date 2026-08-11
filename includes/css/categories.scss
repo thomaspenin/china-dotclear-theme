@@ -1,3 +1,5 @@
+@use "colors";
+
 /*
  * "China" theme for Dotclear
  * --------------------------
@@ -11,5 +13,5 @@
 }
 
 .categories #category-summary {
-  background-color: $white;
+  background-color: colors.$white;
 }

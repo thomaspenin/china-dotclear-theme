@@ -6,11 +6,6 @@
   padding: 15px;
 }
 
-.download .footnote {
-  padding-top: 15px;
-  color: colors.$footnote-text-color;
-}
-
 // On tablet, display versions on 2 columns
 @media (min-width: 768px) {
   .download .file-list {

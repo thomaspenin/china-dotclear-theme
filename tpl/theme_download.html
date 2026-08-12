@@ -7,9 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-    <title>
-      {{tpl:lang China Theme Download}} - {{tpl:BlogName encode_html="1"}}
-    </title>
+    <title>{{tpl:lang China Theme}} - {{tpl:BlogName encode_html="1"}}</title>
 
     {{tpl:include src="_head.html"}}
   </head>
@@ -22,7 +20,7 @@
       <div class="download middle">
         <!-- Title -->
         <div class="page-title">
-          <h1>{{tpl:lang China Theme Download}}</h1>
+          <h1>{{tpl:lang China Theme}}</h1>
         </div>
 
         <div id="download-pitch" class="container">
@@ -34,70 +32,27 @@
         </div>
 
         <div class="container" id="main">
-          <div class="col-md-6">
-            <h2>Version 1 <small>"Happiness Red"</small></h2>
+          <div class="col-md-12">
+            <h2>{{tpl:lang Download the theme}}</h2>
             <p>
-              <img
-                width="448"
-                height="429"
-                src="{{tpl:BlogThemeURL}}/includes/images/theme-versions/screenshot_1.x.jpg"
-                class="img-responsive center-block img-thumbnail"
-                alt="Screenshot v1.x"
-              />
+              {{tpl:lang The theme is available on GitHub, under the MIT license
+              (see below). You can either download the latest release or clone
+              the repository to get the latest development version.}}
             </p>
-            <p>
-              This first version of the theme was derived from the
-              <a href="https://blog.html-edition.com/billet/160">dcChristmas</a>
-              theme, originally written by
-              <a href="https://www.html-edition.com">Mathieu M.</a>. As its
-              parent, it is available under the terms of the <b>GNU/GPL</b>.
-            </p>
-            <div class="alert alert-info" role="alert">
-              This version was tested with Dotclear 2.5 to 2.7. There is no
-              guarantee it will keep working with a later version of the
-              software.
-            </div>
-            <p>Select a release to download:</p>
-            <div class="file-list">
-              <tpl:ListFiles
-                folder="../Archives_china_theme"
-                pattern="/^china_1..*.tar.gz/"
-                prefix="china_"
-                suffix=".tar.gz"
-              ></tpl:ListFiles>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h2>Version 2 <small>"Green Orchid"</small></h2>
-            <p>
-              <img
-                width="448"
-                height="429"
-                src="{{tpl:BlogThemeURL}}/includes/images/theme-versions/screenshot_2.x.jpg"
-                class="img-responsive center-block img-thumbnail"
-                alt="Screenshot v2.x"
-              />
-            </p>
-            <p>
-              This is the <b>current</b> version of the theme and a complete
-              rewrite, still available under the terms of the <b>GNU/GPL</b
-              ><sup><a href="#footnote1">1</a></sup
-              >, featuring an improved and modernized responsive,
-              mobile-friendly design.
-            </p>
-            <div class="alert alert-info" role="alert">
-              This version was developed and tested with Dotclear &geq; 2.7 and
-              may not work with previous Dotclear versions.
-            </div>
-            <p>Select a release to download:</p>
-            <div class="file-list">
-              <tpl:ListFiles
-                folder="../Archives_china_theme"
-                pattern="/^china_2..*.tar.gz/"
-                prefix="china_"
-                suffix=".tar.gz"
-              ></tpl:ListFiles>
-            </div>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/thomaspenin/china-dotclear-theme/releases/latest"
+                  >Download the latest release</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/thomaspenin/china-dotclear-theme.git"
+                  >Clone the repository</a
+                >
+              </li>
+            </ul>
           </div>
           <div class="col-md-12">
             <h2>
@@ -149,12 +104,6 @@
                 with some bug fixing of my own.
               </li>
             </ul>
-          </div>
-          <div class="footnote col-md-12">
-            <p id="footnote1">
-              <sup>1</sup> If you need this theme under a more business-friendly
-              license, please contact me.
-            </p>
           </div>
         </div>
       </div>

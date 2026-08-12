@@ -55,59 +55,6 @@ class urlAlias extends dcUrlHandlers
   }
 }
 
-// --- List files in a folder matching a given pattern ---
-
-/*
- * <tpl:ListFiles folder="../test" pattern="/^china_.*.tar.gz/" prefix="china_"
- * suffix=".tar.gz"}}><tpl:ListFiles>
- * where "folder" is the path to the folder to inspect, "pattern" a regular expression
- * that the file names have to meet, "prefix" and "suffix" parts of the file name that
- * have to be removed to be added to the result.
- * Return results are an <ul> list, where each item is named "Version XX" ("XX"
- * corresponding to the name of the file removing the prefix and suffix) and is a link
- * pointing to the original file.
- */
-
-$core->tpl->addBlock('ListFiles',array('tplListFilesTpl','ListFiles'));
-
-class tplListFilesTpl
-{
-  public static function ListFiles($attr, $content)
-  {
-    // Get the current directory
-    $folder       = $attr['folder'];
-    $dir          = getcwd() . "/" . $folder;
-    $pattern      = $attr['pattern'];
-    $resultPrefix = "<ul>";
-    $resultSuffix = "</ul>";
-    $result       = "";
-    $prefix       = $attr['prefix'];
-    $suffix       = $attr['suffix'];
-
-    // List the files
-    $files = scandir($dir);
-
-    // Filter to keep the theme files
-    $filtered_files = preg_grep($pattern, $files);
-
-    // Print the list
-    foreach ($filtered_files as $value)
-    {
-      $version = $value;
-
-      if (substr($value, 0, strlen($prefix)) == $prefix) {
-	$version = substr($version, strlen($prefix));
-      }
-      $version = substr($version, 0, -strlen($suffix));
-
-      $result .= "<li><a href='" . $folder . "/" . $value . "'>Version $version</a></li>";
-    }
-
-    // Concat result
-    return $resultPrefix . $result . $resultSuffix;
-  }
-}
-
 // --- Retrieve the current version of the theme ---
 
 $core->tpl->addValue('ThemeVersion',array('tplThemeVersionTpl','ThemeVersion'));

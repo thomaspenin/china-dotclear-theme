@@ -111,6 +111,11 @@ blockquote {
   font-size: $body-font-size;
 }
 
+.footnote {
+  padding-top: 15px;
+  color: colors.$footnote-text-color;
+}
+
 // Lead paragraph
 
 .lead {

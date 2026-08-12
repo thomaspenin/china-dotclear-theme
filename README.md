@@ -4,10 +4,11 @@ A China-inspired theme for the blog "Voyage vers l'Est"
 
 ## Documentation
 
-* [Setup a development environment](./doc/dev-env-setup.md)
-* Setup a production environment (TODO)
-* [Deploy the theme](./doc/deploy-theme.md) (works for both dev and prod environments)
-* Use the theme (TODO)
+- [Setup a development environment](./doc/dev-env-setup.md)
+- Setup a production environment (TODO)
+- [Deploy the theme](./doc/deploy-theme.md) (works for both dev and prod environments)
+- Entries markup
+  - [Footnotes](./doc/entries-markup.md#footnotes)
 
 ## License and third-parties
 

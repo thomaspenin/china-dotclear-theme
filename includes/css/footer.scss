@@ -1,6 +1,5 @@
 @use "colors";
 @use "paths";
-@use "theme-colors";
 
 /*
  * "China" theme for Dotclear
@@ -14,11 +13,11 @@
 
 #footer {
   padding: 0;
-  border-top: 2px solid colors.$green;
+  border-top: 2px solid colors.$footer-border-color;
 }
 
 #footer .container {
-    background-color: theme-colors.$footer-background-color;
+    background-color: colors.$footer-background-color;
     padding-bottom: 10px;
 }
 
@@ -30,16 +29,16 @@
 #footer #poweredBy {
   text-align: center;
   padding: 10px;
-  background-color: #272727;
-  color: #CCC;
+  background-color: colors.$footer-powered-by-background-color;
+  color: colors.$footer-powered-by-text-color;
 }
 
 #footer .container h3 {
-    color: #999;
+    color: colors.$footer-h3-color;
 }
 
 #footer .container .footer-sub-h3 {
-  color: colors.$very-light-gray;
+  color: colors.$footer-sub-h3-color;
   font-size: 0.66em;
 }
 
@@ -93,39 +92,39 @@
 // --- "About" part of the footer ---
 
 #footer-about .media {
-  border-bottom: 1px solid colors.$medium-gray;
+  border-bottom: 1px solid colors.$footer-border-color;
 }
 
 #footer-about-profile {
   margin-top: 24px;
   margin-right: 5px;
-  filter: drop-shadow(1px 1px 5px colors.$very-strong-gray);
+  filter: drop-shadow(1px 1px 5px colors.$footer-border-color);
 }
 
 #footer-about-description p {
-  color: colors.$very-light-gray;
+  color: colors.$footer-sub-h3-color;
 }
 
 #footer-about-description a.twitter-link {
-  color: colors.$very-light-gray;
+  color: colors.$footer-sub-h3-color;
 }
 
 #footer .container .footer-sub-h3 a.twitter-link:hover {
-  color: color.adjust(colors.$very-light-gray, $lightness: -15%);
+  color: color.adjust(colors.$footer-sub-h3-color, $lightness: -15%);
 }
 
 #footer-about-links {
-  color: colors.$very-light-gray;
+  color: colors.$footer-sub-h3-color;
   margin-top: 10px;
   font-size: 125%;
 }
 
 #footer-about-links a {
-  color: colors.$very-light-gray;
+  color: colors.$footer-sub-h3-color;
 }
 
 #footer-about-links a:hover {
-  color: color.adjust(colors.$very-light-gray, $lightness: -15%);
+  color: color.adjust(colors.$footer-sub-h3-color, $lightness: -15%);
   text-decoration: none;
 }
 

@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -9,7 +9,7 @@
  */
 
 #category-summary {
-  background-color: theme-colors.$category-summary-bg-color;
+  background-color: colors.$category-summary-bg-color;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 20px;

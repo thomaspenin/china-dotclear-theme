@@ -27,7 +27,7 @@
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   background-color: color.adjust(colors.$tint-color, $lightness: -5%);
   border-color: color.adjust(colors.$tint-color, $lightness: -5%);
-  color: colors.$white;
+  color: colors.$page-background-color;
 }
 
 .pagination > li > a, .pagination > li > span {

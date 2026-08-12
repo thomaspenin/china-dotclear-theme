@@ -10,7 +10,6 @@
 @use "sass:meta";
 @use "paths";
 @use "colors";
-@use "theme-colors";
 @use "fonts";
 @use "layout";
 @import url("#{paths.$fonts-folder-path}/orchid-font.css");

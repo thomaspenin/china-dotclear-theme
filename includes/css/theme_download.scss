@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -9,14 +9,14 @@
  */
 
 .download #download-pitch.container {
-  background-color: theme-colors.$download-pitch-bg-color;
+  background-color: colors.$download-pitch-bg-color;
   font-size: 17px;
   padding: 15px;
 }
 
 .download .footnote {
   padding-top: 15px;
-  color: theme-colors.$footnote-text-color;
+  color: colors.$footnote-text-color;
 }
 
 // On tablet, display versions on 2 columns

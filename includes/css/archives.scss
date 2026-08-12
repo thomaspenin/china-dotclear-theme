@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -9,7 +9,7 @@
  */
 
 .archives .date-range-picker {
-  background-color: theme-colors.$date-range-picker-bg-color;
+  background-color: colors.$date-range-picker-bg-color;
   padding: 20px 0;
 }
 

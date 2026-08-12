@@ -1,5 +1,4 @@
 @use "colors";
-@use "theme-colors";
 
 /*
  * "China" theme for Dotclear
@@ -10,7 +9,7 @@
  */
 
 .tags #tag-info {
-  background-color: theme-colors.$tag-info-bg-color;
+  background-color: colors.$tag-info-bg-color;
   padding: 15px;
 }
 
@@ -20,8 +19,8 @@
 }
 
 .tags .tag-cloud-frame {
-  border: 1px solid colors.$light-gray;
-  background-color: colors.$very-light-gray;
+  border: 1px solid colors.$tag-info-bg-color;
+  background-color: colors.$tag-info-bg-color;
   padding: 10px;
   border-radius: 2px;
 }

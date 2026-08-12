@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -12,14 +12,14 @@
 .banner a:visited,
 .banner a:hover,
 .banner a:active {
-  color: theme-colors.$banner-link-color;
+  color: colors.$banner-link-color;
 }
 
 .banner .modal a:link,
 .banner .modal a:visited,
 .banner .modal a:hover,
 .banner .modal a:active {
-  color: theme-colors.$banner-modal-link-color;
+  color: colors.$banner-modal-link-color;
 }
 
 .banner .modal {

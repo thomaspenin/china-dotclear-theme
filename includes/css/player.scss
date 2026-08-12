@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -13,5 +13,5 @@
 }
 
 .miniplayer .playButton:hover {
-  color: theme-colors.$player-hover-color;
+  color: colors.$player-hover-color;
 }

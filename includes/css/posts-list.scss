@@ -13,7 +13,7 @@
 .posts-list .posts-list-item {
   padding-bottom: 20px;
   padding-top: 20px;
-  border-bottom: 1px solid colors.$light-gray;
+  border-bottom: 1px solid colors.$posts-list-item-border-color;
 }
 
 .posts-list .posts-list-item .media-object {
@@ -25,7 +25,7 @@
 }
 
 .posts-list .posts-list-item-footer {
-  color: colors.$gray;
+  color: colors.$post-metadata-color;
 }
 
 .posts-list .thumbnail-row {
@@ -56,11 +56,11 @@
 }
 
 .posts-list .posts-thumbnail-item .caption a {
-  color: colors.$strong-gray;
+  color: colors.$post-title-color;
 }
 
 .posts-list .posts-thumbnail-item .caption a:hover {
-  color: colors.$strong-gray;
+  color: colors.$post-title-hover-color;
   text-decoration: none;
 }
 
@@ -69,7 +69,7 @@
   position: absolute;
   top: 0;
   left: 8px;
-  background-color: color.adjust(colors.$very-strong-gray, $alpha: -0.15);
+  background-color: color.adjust(colors.$post-title-color, $alpha: -0.15);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -79,7 +79,7 @@
 }
 
 .posts-list .posts-thumbnail-item .category:hover {
-  background-color: colors.$very-strong-gray;
+  background-color: colors.$post-title-hover-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -90,12 +90,12 @@
 .posts-list .posts-thumbnail-item .category a {
   display: inline-block;
   padding: 5px 9px;
-  color: colors.$white;
+  color: colors.$post-title-color;
 }
 
 .posts-list .posts-thumbnail-item .category a:hover {
   text-decoration: none;
-  color: colors.$white;
+  color: colors.$post-title-hover-color;
 }
 
 .posts-list .posts-thumbnail-item .link:hover {
@@ -112,9 +112,9 @@
 }
 
 .posts-list .posts-thumbnail-item-footer {
-  color: colors.$gray;
+  color: colors.$post-metadata-color;
   padding: 9px 0;
-  border-top: 1px solid colors.$light-gray;
+  border-top: 1px solid colors.$posts-list-item-border-color;
   font-size: 80%;
   margin: 0;
 }
@@ -133,7 +133,7 @@
 }
 
 .posts-list .post-metadata-right a {
-  color: colors.$gray;
+  color: colors.$post-metadata-color;
 }
 
 .posts-list .post-metadata-right a:after {
@@ -143,7 +143,7 @@
 }
 
 .posts-list .post-metadata-right a:hover {
-  color: colors.$very-strong-gray;
+  color: colors.$post-metadata-hover-color;
   text-decoration: none;
 }
 

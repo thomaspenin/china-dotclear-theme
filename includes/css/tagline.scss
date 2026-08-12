@@ -1,4 +1,4 @@
-@use "theme-colors";
+@use "colors";
 
 /*
  * "China" theme for Dotclear
@@ -9,7 +9,7 @@
  */
 
 #tagline {
-  background-color: theme-colors.$tagline-bg-color;
+  background-color: colors.$tagline-bg-color;
   padding-bottom: 0;
 }
 

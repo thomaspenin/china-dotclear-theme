@@ -2,7 +2,7 @@
 @use "fonts";
 @use "layout";
 @use "paths";
-@use "theme-colors";
+
 
 /*
  * "China" theme for Dotclear
@@ -14,59 +14,192 @@
 
 @use "sass:color";
 
+// --- Variables ---
+
+// Base typography
+$base-font-size:      62.5%;  // To easily map to pixels
+$base-text-alignment: left;   // For more readability
+$body-font-size:      2.1rem; // 21px
+$body-line-spacing:   3.0rem; // 30px => better lisibility + space for bigger Chinese
+
+// --- Base element styling ---
+
+html {
+  font-size: $base-font-size;
+}
+
 body {
   font-family: fonts.$primary-western-font, fonts.$fallback-western-font1, fonts.$primary-chinese-font, fonts.$fallback-western-font2;
-  text-align: layout.$base-text-alignment;
-  font-size: layout.$base-font-size;
-  background-color: theme-colors.$default-background-color;
-  color: colors.$strong-gray;
-  line-height: 1.45;
+  text-align: $base-text-alignment;
+  font-size: $body-font-size;
+  font-weight: 300;
+  background-color: transparent;
+  color: colors.$body-background-color;
+  line-height: $body-line-spacing;
 }
 
 #page {
-  background-color: theme-colors.$page-background-color;
+  background-color: colors.$page-background-color;
   padding: 0;
-  //box-shadow: 1px 1px 12px $page-shadow;
   padding-top: layout.$top-bar-height; // Because the toolbar is anchored to the top
 }
 
-p {margin-bottom: 1.3em;}
+p {
+  margin-bottom: 1.5rem;
+  margin-top: 1.2rem;
+}
 
-h1, h2, h3, h4 {
-  font-weight: inherit;
-  line-height: 1.2;
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  margin-top: 2.5rem;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 2.441em;
+  font-size: 3.5rem;
+  line-height: 4.8rem;
 }
 
-h2 {font-size: 1.953em;}
+h2 {
+  font-size: 2.8rem;
+  line-height: 3.7rem;
+}
 
-h3 {font-size: 1.563em;}
+h3 {
+  font-size: 2.3rem;
+  line-height: 3.2rem;
+}
 
-h4 {font-size: 1.25em;}
+h4 {
+  color: colors.$h4-text-color;
+  font-size: 2.1rem;
+  line-height: 3rem;
+}
 
-/* Chinese text */
+u {
+  text-decoration-color: colors.$tint-color;
+  -webkit-text-decoration-color: colors.$tint-color;
+}
+
+del {
+  color: colors.$del-text-color;
+}
+
+pre {
+  font-family: fonts.$primary-code-font, fonts.$fallback-code-font;
+  font-size: 100%; // To compensate bootstrap
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 3.0rem;
+  background-color: colors.$pre-background-color;
+  border-radius: 4px;
+}
+
+code {
+  color: colors.$code-text-color;
+  background-color: colors.$code-background-color;
+  font-size: 80%;
+}
+
+pre {
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+blockquote {
+  border-left: 4px solid colors.$tint-color;
+  margin-left: 2px; // To compensate the border width
+  padding-left: 2.0rem;
+  padding-right: 0;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  font-size: $body-font-size;
+}
+
+// Lead paragraph
+
+.lead {
+  font-size: 2.3rem;
+  line-height: 3.2rem;
+}
+
+// Custom colored bullets (one day, this will be easy with the ::marker pseudo-element). The :not(.nav) exception is to play well with Bootstrap nav items
+
+ul:not(.nav) {
+  list-style: none;
+}
+
+ul:not(.nav) > li::before {
+  content: "•";
+  color: colors.$tint-color;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul:not(.nav) > li > ul > li::before {
+  content: "○";
+}
+
+ul:not(.nav) > li > ul > li > ul > li::before {
+  content: "▪";
+}
+
+// Custom colored list numbers (one day, this will be easy with the ::marker pseudo-element)
+
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol > li::before {
+  content: "." counters(li,  ".");
+  color: colors.$tint-color;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
+}
+
+ol > li {
+  counter-increment: li;
+}
+
+// Chinese text
+
 .zh {
-  font-size: 140%;
-  line-height: 70%; /* This is to avoid bigger Chinese text having an impact on line spacing */
+  font-size: 125%;
+  line-height: 65%; /* This is to avoid bigger Chinese text having an impact on line spacing */
 }
+
+// Links
 
 a:link, a:visited, a:active {
   color: colors.$tint-color;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  outline: 0;
 }
 
 a:hover {
-  color: color.adjust(colors.$tint-color, $lightness: -5%);
+  color: color.adjust(colors.$tint-color, $lightness: -15%);
+  text-decoration: underline;
+  transition: color 0.25s ease;
 }
 
 // Pinyin
 py, pyb {
   font-family: fonts.$primary-pinyin-font, fonts.$fallback-pinyin-font1, fonts.$fallback-pinyin-font2 !important;
   font-size: 95%;
-  color: theme-colors.$pinyin-text-color;
+  color: colors.$pinyin-text-color;
+  font-weight: 300;
 }
 
 /* Text fields */
@@ -75,7 +208,7 @@ input:hover,
 textarea:hover,
 input:focus,
 textarea:focus {
-  border-color: color.adjust(rgb(190, 190, 190), $lightness: -20%);
+  border-color: colors.$tint-color;
 }
 
 input.form-control:focus,
@@ -87,8 +220,8 @@ textarea:focus {
 
 input,
 textarea {
-  color: rgb(51, 51, 51);
-  border: 1px solid rgb(190, 190, 190);
+  color: colors.$input-text-color;
+  border: 1px solid colors.$input-border-color;
   border-radius: 3px 3px 3px 3px;
 }
 

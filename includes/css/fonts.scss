@@ -19,6 +19,8 @@ $title-font: "Damion"; // Web font
 $primary-pinyin-font:"Ubuntu"; // Web font
 $fallback-pinyin-font1: "arial unicode ms";
 $fallback-pinyin-font2: sans-serif;
+$primary-code-font: "Inconsolata";   // Web font
+$fallback-code-font: monospace;      // Default monospace local font
 
 /* Chinese font. By default, try to use the local KaiTi to spare bandwidth */
 @font-face {

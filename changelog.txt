@@ -3,6 +3,8 @@ Changelog
 
 * v3.0 (yyyy-mm-dd)
   - Port the style from less to sass and adapt deployment script to generate the CSS
+  - Update the base style for a better visibility
+  - No longer embed a KaiTi font. In addition to be legally cleaner, it avoids a large download
 
 * v2.5.0 (2026-07-26)
   - Fix compatibility issue with Dotclear ≥ 2.36

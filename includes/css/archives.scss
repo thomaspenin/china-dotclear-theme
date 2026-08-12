@@ -1,13 +1,5 @@
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 .archives .date-range-picker {
   background-color: colors.$date-range-picker-bg-color;
   padding: 20px 0;
@@ -43,7 +35,7 @@
 
 .archives .all-posts-list .month-posts {
   padding-bottom: 15px;
-  
+
   // Avoid splitting over multiple columns
   overflow: hidden; /* fix for Firefox */
   break-inside: avoid-column;
@@ -60,8 +52,7 @@
 }
 
 // Do not show some elements when printing
-@media print
-{
+@media print {
   .archives .date-range-picker {
     display: none;
   }

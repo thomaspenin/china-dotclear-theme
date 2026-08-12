@@ -1,13 +1,5 @@
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 ol.exercices {
   counter-reset: my-counter; /* Initiate a counter */
   margin-left: 0; /* Remove the default left margin */
@@ -26,8 +18,8 @@ ol.exercices > li.exercice:before {
   content: counter(my-counter);
   counter-increment: my-counter;
   position: absolute;
-  top:0;
-  left:-2em;
+  top: 0;
+  left: -2em;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -56,7 +48,6 @@ ol.exercices > li.exercice:before {
 .exercices .answer ul,
 .exercices .answer ol {
   padding-left: 20px;
-  
 }
 
 .exercices .question ul,
@@ -67,10 +58,7 @@ ol.exercices > li.exercice:before {
 
 .exercices .arrow {
   display: inline-block;
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .exercices .visibilityToggle {

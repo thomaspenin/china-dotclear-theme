@@ -10,27 +10,86 @@
       <h3>Catégories d'articles</h3>
       <!-- Only consider the first-level categories -->
       <tpl:Categories level="1">
-      <p><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></p>
+        <p>
+          <a href="{{tpl:CategoryURL}}"
+            >{{tpl:CategoryTitle encode_html="1"}}</a
+          >
+        </p>
       </tpl:Categories>
     </div>
     <div id="footer-about" class="col-md-6">
-      <div class="media"><span class="pull-left"><img id="footer-about-profile" alt="author" class="media-object" src="{{tpl:BlogThemeURL}}/includes/images/about/profile-chinese-circled-128.png" height="64" width="64" /> </span>
-      <div id="footer-about-description" class="media-body">
-      <h3>Thomas Penin <span class="footer-sub-h3">| <a href="{{tpl:BlogURL}}pages/about">{{tpl:lang More...}}</a></span></h3>
-      <p>Passionné de voyages, de langue et de culture chinoises, je vous invite à travers mes articles à découvrir des aspects insoupçonnés de l'Empire du Milieu, et du Monde Chinois en général. Embarquez avec moi pour un fantastique <b>Voyage vers l'Est</b>&nbsp;!</p>
-      </div>
+      <div class="media">
+        <span class="pull-left"
+          ><img
+            id="footer-about-profile"
+            alt="author"
+            class="media-object"
+            src="{{tpl:BlogThemeURL}}/includes/images/about/profile-chinese-circled-128.png"
+            height="64"
+            width="64"
+          />
+        </span>
+        <div id="footer-about-description" class="media-body">
+          <h3>
+            Thomas Penin
+            <span class="footer-sub-h3"
+              >|
+              <a href="{{tpl:BlogURL}}pages/about"
+                >{{tpl:lang More...}}</a
+              ></span
+            >
+          </h3>
+          <p>
+            Passionné de voyages, de langue et de culture chinoises, je vous
+            invite à travers mes articles à découvrir des aspects insoupçonnés
+            de l'Empire du Milieu, et du Monde Chinois en général. Embarquez
+            avec moi pour un fantastique <b>Voyage vers l'Est</b>&nbsp;!
+          </p>
+        </div>
       </div>
       <div id="footer-about-links">
         <p>
-          <a href="{{tpl:BlogFeedURL}}" data-toggle="tooltip" data-placement="top" title="{{tpl:lang Articles feed}}"><span class='rss icon-bold'></span></a>
-          <a href="https://fr.linkedin.com/in/thomas-penin-a12103ab" data-toggle="tooltip" data-placement="top" title="{{tpl:lang View my LinkedIn profile}}"><span class='linkedin icon-bold'></span></a>
+          <a
+            href="{{tpl:BlogFeedURL}}"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="{{tpl:lang Articles feed}}"
+            ><span class="rss icon-bold"></span
+          ></a>
+          <a
+            href="https://fr.linkedin.com/in/thomas-penin-a12103ab"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="{{tpl:lang View my LinkedIn profile}}"
+            ><span class="linkedin icon-bold"></span
+          ></a>
         </p>
       </div>
     </div>
   </div>
 
   <div id="poweredBy" class="container">
-    {{tpl:SysPoweredBy}}&nbsp;&#149;&nbsp;Thème <a href="{{tpl:BlogURL}}theme_download" title="{{tpl:lang Version}} {{tpl:ThemeVersion}}"><em>China</em></a> créé avec <span class="glyphicon glyphicon-heart-empty"></span> par <a href="{{tpl:BlogURL}}pages/about">Thomas Penin</a><br/><span class="content-license">{{tpl:lang Unless otherwise noticed, the license of the content of this site is}} <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr"><span class="license-cc" title="CC"></span>&nbsp;<span class="license-cc-by" title="BY"></span>&nbsp;<span class="license-cc-nc" title="NC"></span>&nbsp;<span class="license-cc-sa" title="SA"></span></a></span>
+    {{tpl:SysPoweredBy}}&nbsp;&#149;&nbsp;Thème
+    <a
+      href="{{tpl:BlogURL}}theme_download"
+      title="{{tpl:lang Version}} {{tpl:ThemeVersion}}"
+      ><em>China</em></a
+    >
+    créé avec <span class="glyphicon glyphicon-heart-empty"></span> par
+    <a href="{{tpl:BlogURL}}pages/about">Thomas Penin</a><br /><span
+      class="content-license"
+      >{{tpl:lang Unless otherwise noticed, the license of the content of this
+      site is}}
+      <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr"
+        ><span class="license-cc" title="CC"></span>&nbsp;<span
+          class="license-cc-by"
+          title="BY"
+        ></span
+        >&nbsp;<span class="license-cc-nc" title="NC"></span>&nbsp;<span
+          class="license-cc-sa"
+          title="SA"
+        ></span></a
+    ></span>
   </div>
 </footer>
 

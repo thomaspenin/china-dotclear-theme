@@ -10,7 +10,9 @@
  */
 
 .page-title {
-  background: colors.$page-title-bg-color url("#{paths.$images-folder-path}/title/Title-background.png") no-repeat left bottom;
+  background: colors.$page-title-bg-color
+    url("#{paths.$images-folder-path}/title/Title-background.png") no-repeat
+    left bottom;
   background-size: cover;
   color: colors.$page-title-text-color;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);

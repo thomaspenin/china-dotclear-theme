@@ -1,14 +1,6 @@
 @use "colors";
 @use "paths";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 @use "sass:color";
 
 #footer {
@@ -17,8 +9,8 @@
 }
 
 #footer .container {
-    background-color: colors.$footer-background-color;
-    padding-bottom: 10px;
+  background-color: colors.$footer-background-color;
+  padding-bottom: 10px;
 }
 
 #footer .footer-menu.container {
@@ -34,7 +26,7 @@
 }
 
 #footer .container h3 {
-    color: colors.$footer-h3-color;
+  color: colors.$footer-h3-color;
 }
 
 #footer .container .footer-sub-h3 {
@@ -131,8 +123,7 @@
 // --- Print ---
 
 // Do not display the footer when printing
-@media print
-{
+@media print {
   #footer {
     display: none;
   }

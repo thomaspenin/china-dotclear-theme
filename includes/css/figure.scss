@@ -1,13 +1,5 @@
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 figure,
 figure > div /* remove in future version, once all "figure-frame" removed */ {
   display: table;
@@ -42,7 +34,7 @@ figcaption {
   color: colors.$figure-caption-color;
   display: table-caption;
   caption-side: bottom;
-  
+
   border-bottom: 1px solid colors.$figure-border-color;
   border-left: 1px solid colors.$figure-border-color;
   border-right: 1px solid colors.$figure-border-color;

@@ -1,14 +1,6 @@
 @use "colors";
 @use "paths";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 .comments #new-comment-expansion {
   display: none; /* Hidden by default, will be expanded with javascript */
   padding-bottom: 10px;
@@ -49,12 +41,15 @@
   display: inline-block;
   width: 32px;
   height: 32px;
-  background: transparent url("#{paths.$images-folder-path}/comments/comments-placeholder-64.png") no-repeat;
+  background: transparent
+    url("#{paths.$images-folder-path}/comments/comments-placeholder-64.png")
+    no-repeat;
   background-size: 32px 32px;
 }
 
 .comments .media-top span.me {
-  background: transparent url("#{paths.$images-folder-path}/comments/comments-me-64.png") no-repeat;
+  background: transparent
+    url("#{paths.$images-folder-path}/comments/comments-me-64.png") no-repeat;
   background-size: 32px 32px;
 }
 
@@ -71,7 +66,8 @@
 // No arrow for external links when looking at the author of a comment
 .comments .comment-author a:after {
   background-size: 0 0;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   content: "";
 }
 

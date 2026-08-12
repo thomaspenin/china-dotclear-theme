@@ -1,11 +1,3 @@
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 /*!
  * @instructions To create exercices, use code like the following one in the Dotclear XHTML editor:
  * 		   <ol>
@@ -27,30 +19,29 @@
  * @discussion To be called when the document is ready
  */
 function configureExercices() {
-  $(".answer").each(function(index) {
-      // Move the content of the answer to a new div that can be collapsed
-      var answerContent = $(this).contents();
-      $(this).prepend('<div class="expandable"></div>');
-      var expandableSection = $(this).children(".expandable");
-      expandableSection.append(answerContent);
+  $(".answer").each(function (index) {
+    // Move the content of the answer to a new div that can be collapsed
+    var answerContent = $(this).contents();
+    $(this).prepend('<div class="expandable"></div>');
+    var expandableSection = $(this).children(".expandable");
+    expandableSection.append(answerContent);
 
-      // Add a new node to allow expanding/minimizing the questions
-      $(this).before('<div class="visibilityToggle">Correction&nbsp;<span class="arrow">&laquo;</span></div>');
-      var visibilityToggle = $(this).prev();
-      //var visibilityToggle = $(this).children(".visibilityToggle");
-      visibilityToggle.click(function() {
-	
-	var isVisible = expandableSection.is(':visible')
-	expandableSection.slideToggle();
-	
-	// Change the aspect of the button indicating the move
-	if (isVisible)
-	  visibilityToggle.find(".arrow").text("«");
-	else
-	  visibilityToggle.find(".arrow").text("»");
-      });
+    // Add a new node to allow expanding/minimizing the questions
+    $(this).before(
+      '<div class="visibilityToggle">Correction&nbsp;<span class="arrow">&laquo;</span></div>',
+    );
+    var visibilityToggle = $(this).prev();
+    //var visibilityToggle = $(this).children(".visibilityToggle");
+    visibilityToggle.click(function () {
+      var isVisible = expandableSection.is(":visible");
+      expandableSection.slideToggle();
 
-      // Collapse the answer without animation so that it is hidden by default
-      expandableSection.toggle();
+      // Change the aspect of the button indicating the move
+      if (isVisible) visibilityToggle.find(".arrow").text("«");
+      else visibilityToggle.find(".arrow").text("»");
     });
+
+    // Collapse the answer without animation so that it is hidden by default
+    expandableSection.toggle();
+  });
 }

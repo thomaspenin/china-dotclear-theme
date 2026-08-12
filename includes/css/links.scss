@@ -1,18 +1,11 @@
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 /* External links (i.e. default) */
 
 .middle a[href^="http"]:after {
   display: inline-block;
   background-image: url("index.php?tf=includes/images/links/external-link.png");
   background-size: 13px 10px;
-  width: 13px; height: 10px;
+  width: 13px;
+  height: 10px;
   content: "";
 }
 
@@ -22,17 +15,18 @@
 .middle a[href^="https://www.voyage-est.com"]:after,
 .middle a[href^="http://localhost"]:after {
   background-size: 0 0;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   content: "";
 }
 
 // Do not show external link that way for print
-@media print
-{
+@media print {
   .middle a[href^="http"]:after,
   a[href^="http"]:after {
     background-size: 0 0;
-    width: 0; height: 0;
+    width: 0;
+    height: 0;
     content: "";
   }
 }

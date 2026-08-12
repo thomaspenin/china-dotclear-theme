@@ -1,14 +1,10 @@
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 /* Error and information messages */
 
-.error, .information, .hint, .warning, .vocabulary {
+.error,
+.information,
+.hint,
+.warning,
+.vocabulary {
   margin: 12px auto 5px;
   padding: 8px;
   padding-left: 32px;
@@ -36,7 +32,7 @@
   left: 8px;
   top: 8px;
   text-decoration: inherit;
-  content: "\e083"
+  content: "\e083";
 }
 
 .information {
@@ -54,7 +50,7 @@
   left: 8px;
   top: 8px;
   text-decoration: inherit;
-  content: "\e086"
+  content: "\e086";
 }
 
 .hint {
@@ -72,7 +68,7 @@
   left: 8px;
   top: 8px;
   text-decoration: inherit;
-  content: "\e084"
+  content: "\e084";
 }
 
 .warning {
@@ -90,7 +86,7 @@
   left: 8px;
   top: 8px;
   text-decoration: inherit;
-  content: "\e209"
+  content: "\e209";
 }
 
 .vocabulary {
@@ -99,8 +95,7 @@
 }
 
 // On tablets, show vocabulary on 2 columns
-@media (min-width: 768px)
-{  
+@media (min-width: 768px) {
   .vocabulary {
     -moz-column-count: 2; /* Firefox */
     -webkit-column-count: 2; /* Safari and Chrome */
@@ -109,8 +104,7 @@
 }
 
 // On desktop, show vocabulary on 3 columns
-@media (min-width: 992px)
-{
+@media (min-width: 992px) {
   .vocabulary {
     -moz-column-count: 3; /* Firefox */
     -webkit-column-count: 3; /* Safari and Chrome */
@@ -126,49 +120,65 @@
 }
 
 /* The first p/ul/ol child of a message has no top margin */
-.error p:first-child, 
-.information p:first-child, 
-.hint p:first-child, 
+.error p:first-child,
+.information p:first-child,
+.hint p:first-child,
 .warning p:first-child,
 .vocabulary p:first-child,
-.error ul:first-child, 
-.information ul:first-child, 
-.hint ul:first-child, 
+.error ul:first-child,
+.information ul:first-child,
+.hint ul:first-child,
 .warning ul:first-child,
 .vocabulary ul:first-child,
-.error ol:first-child, 
-.information ol:first-child, 
-.hint ol:first-child, 
+.error ol:first-child,
+.information ol:first-child,
+.hint ol:first-child,
 .warning ol:first-child,
 .vocabulary ol:first-child {
   margin-top: 0;
 }
 
 /* The last p/ul/ol child of a message has no bottom margin */
-.error p:last-child, 
-.information p:last-child, 
-.hint p:last-child, 
+.error p:last-child,
+.information p:last-child,
+.hint p:last-child,
 .warning p:last-child,
 .vocabulary p:last-child,
-.error ul:last-child, 
-.information ul:last-child, 
-.hint ul:last-child, 
+.error ul:last-child,
+.information ul:last-child,
+.hint ul:last-child,
 .warning ul:last-child,
 .vocabulary ul:last-child,
-.error ol:last-child, 
-.information ol:last-child, 
-.hint ol:last-child, 
+.error ol:last-child,
+.information ol:last-child,
+.hint ol:last-child,
 .warning ol:last-child,
 .vocabulary ol:last-child {
   margin-bottom: 0;
 }
 
-ul.error, ul.information, ul.hint, ul.warning, ul.vocabulary,
-ol.error, ol.information, ol.hint, ol.warning, ol.vocabulary {
+ul.error,
+ul.information,
+ul.hint,
+ul.warning,
+ul.vocabulary,
+ol.error,
+ol.information,
+ol.hint,
+ol.warning,
+ol.vocabulary {
   padding-left: 48px;
 }
 
-div.error ul:first-child, div.information ul:first-child, div.hint ul:first-child, div.warning ul:first-child, div.vocabulary ul:first-child,
-div.error ol:first-child, div.information ol:first-child, div.hint ol:first-child, div.warning ol:first-child, div.vocabulary ol:first-child {
+div.error ul:first-child,
+div.information ul:first-child,
+div.hint ul:first-child,
+div.warning ul:first-child,
+div.vocabulary ul:first-child,
+div.error ol:first-child,
+div.information ol:first-child,
+div.hint ol:first-child,
+div.warning ol:first-child,
+div.vocabulary ol:first-child {
   padding-left: 16px;
 }

@@ -1,13 +1,5 @@
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 // *** Post header (specialization of page header) ***
 
 .post-title .post-metadata {
@@ -31,7 +23,7 @@
 }
 
 .post-title a.comment-count:hover {
-  text-decoration:none;
+  text-decoration: none;
   background-color: colors.$top-bar-background-color-hover;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -113,7 +105,8 @@
 
 #post-footer .post-share a:after {
   background-size: 0 0;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   content: "";
 }
 
@@ -155,32 +148,31 @@
 }
 
 // Do not display certain elements when printing
-@media print
-{
+@media print {
   .post-title .post-category {
     display: none;
   }
-  
+
   .post-title .post-navigation {
     display: none;
   }
-  
+
   .post-title a.comment-count {
     display: none;
   }
-  
+
   .previous-next-posts {
     display: none;
   }
-  
+
   #post-footer {
     display: none;
   }
-  
+
   #comments {
     display: none;
   }
-  
+
   #comments-sidebar {
     display: none;
   }

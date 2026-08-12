@@ -3,14 +3,6 @@
 @use "paths";
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 #top .navbar-brand {
   display: inline-block;
   height: layout.$top-bar-height;
@@ -18,7 +10,8 @@
   padding-left: 20px;
   padding-right: 10px;
   font-size: 140%;
-  background: colors.$top-bar-background-color url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background: colors.$top-bar-background-color
+    url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   padding-left: 46px;
   color: colors.$top-bar-text-color;
@@ -34,7 +27,8 @@
 }
 
 #top .navbar-brand:hover {
-  background: colors.$top-bar-background-color-hover url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background: colors.$top-bar-background-color-hover
+    url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -44,7 +38,7 @@
 }
 
 #top .navbar-brand .blogTitle {
-  vertical-align:middle;
+  vertical-align: middle;
   line-height: layout.$top-bar-height;
   font-size: 130%;
   padding-right: 5px;
@@ -52,14 +46,13 @@
 
 #top .navbar-brand .blogTagLine {
   padding-right: 10px;
-  vertical-align:middle;
+  vertical-align: middle;
   line-height: layout.$top-bar-height;
   font-family: fonts.$title-font, cursive;
 }
 
 // Adaptation for the small screen menu
-@media (max-width: 767px)
-{ 
+@media (max-width: 767px) {
   #top .small-screen-menu {
     margin-top: layout.$top-bar-height;
   }
@@ -105,7 +98,7 @@
 }
 
 #top .navbar-nav {
-    margin: 0;
+  margin: 0;
 }
 
 #top .navbar-nav li a {
@@ -113,7 +106,7 @@
   padding-bottom: 0;
   height: layout.$top-bar-height;
   color: colors.$top-bar-text-color;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: transparent;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
@@ -146,8 +139,7 @@
 }
 
 // Do not display the top bar when printing
-@media print
-{
+@media print {
   #top {
     display: none;
   }

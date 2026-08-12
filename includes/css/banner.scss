@@ -46,7 +46,7 @@
 .banner .carousel-caption h3 {
   text-align: center;
   font-size: 30px;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8)
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .banner .carousel-caption h3 .caption-container {
@@ -55,8 +55,7 @@
 }
 
 // Do not show the banner when printing
-@media print
-{
+@media print {
   .banner {
     display: none;
   }

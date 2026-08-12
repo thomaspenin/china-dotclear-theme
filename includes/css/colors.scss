@@ -2,14 +2,6 @@
 @use "sass:color";
 
 /*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
-/*
  * Theme color palette
  */
 
@@ -74,7 +66,7 @@ $top-bar-background-color: palette.$strong-gray;
 /*
  * Back to top
  */
- 
+
 $back-to-top-bg-color: palette.$strong-gray;
 $back-to-top-hover-color: palette.$very-strong-gray;
 
@@ -104,7 +96,7 @@ $post-footer-border-color: palette.$light-gray;
 /*
  * Footer
  */
- 
+
 $footer-background-color: palette.$strong-gray;
 $footer-border-color: palette.$medium-gray;
 $footer-powered-by-background-color: palette.$medium-gray;
@@ -121,31 +113,31 @@ $date-range-picker-bg-color: palette.$light-gray;
 /*
  * Theme download page
  */
- 
- $download-pitch-bg-color: palette.$light-gray;
- $footnote-text-color: palette.$gray;
 
- /*
+$download-pitch-bg-color: palette.$light-gray;
+$footnote-text-color: palette.$gray;
+
+/*
   * Categories page
   */
 $category-summary-bg-color: palette.$light-gray;
- 
- /*
+
+/*
   * Tags page
   */
-  
+
 $tag-info-bg-color: palette.$light-gray;
 
 /*
  * Miniplayer
  */
- 
- $player-hover-color: $tint-color;
- 
+
+$player-hover-color: $tint-color;
+
 /*
  * Exercice
  */
- 
+
 $exercice-number-bg-color: $tint-color;
 $exercice-answer-color: $tint-color;
 $exercice-answer-bg-color: palette.$very-light-green;

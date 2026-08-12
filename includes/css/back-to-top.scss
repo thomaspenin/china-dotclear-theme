@@ -1,13 +1,5 @@
 @use "colors";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
 /* Styling of the button that allows the user to go back to the top of the page */
 
 #back-to-top {
@@ -46,8 +38,8 @@
 }
 
 #back-to-top span {
-  display:table-cell;
-  vertical-align:middle;
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
   width: 64px;
   height: 64px;

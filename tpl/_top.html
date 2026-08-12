@@ -2,41 +2,117 @@
 <header id="top" role="header">
   <div class="navbar-fixed-top">
     <div class="container">
-      <a href="{{tpl:BlogURL}}" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Home page}}" class="navbar-brand pull-left">
-	  <span class="blogTitle">{{tpl:BlogName}}</span><span class="blogTagLine hidden-xs hidden-sm"> {{tpl:BlogDescription}}</span>
+      <a
+        href="{{tpl:BlogURL}}"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        title="{{tpl:lang Home page}}"
+        class="navbar-brand pull-left"
+      >
+        <span class="blogTitle">{{tpl:BlogName}}</span
+        ><span class="blogTagLine hidden-xs hidden-sm">
+          {{tpl:BlogDescription}}</span
+        >
       </a>
-      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+      >
         <span class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
-      <button class="navbar-toggle" onclick="jQuery('html, body').animate({scrollTop:0}, 0);" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Back to the top of the page}}">
+      <button
+        class="navbar-toggle"
+        onclick="jQuery('html, body').animate({ scrollTop: 0 }, 0)"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        title="{{tpl:lang Back to the top of the page}}"
+      >
         <span class="glyphicon glyphicon-chevron-up"></span>
       </button>
       <div class="small-screen-menu">
         <nav class="navbar-collapse collapse" role="navigation">
           <ul class="navbar-nav nav">
             <li>
-              <a href="{{tpl:BlogArchiveURL}}" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Browse the list of articles published on the site}}"><span class="glyphicon glyphicon-edit"></span><span class="hidden-sm hidden-md visible-lg-inline visible-xs-inline">&nbsp;&nbsp;&nbsp;{{tpl:lang Articles}}</span></a>
+              <a
+                href="{{tpl:BlogArchiveURL}}"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="{{tpl:lang Browse the list of articles published on the site}}"
+                ><span class="glyphicon glyphicon-edit"></span
+                ><span
+                  class="hidden-sm hidden-md visible-lg-inline visible-xs-inline"
+                  >&nbsp;&nbsp;&nbsp;{{tpl:lang Articles}}</span
+                ></a
+              >
             </li>
             <li>
-              <a href="{{tpl:BlogURL}}categories" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Browse the different categories}}"><span class="glyphicon glyphicon-globe"></span><span class="hidden-sm hidden-md visible-lg-inline visible-xs-inline">&nbsp;&nbsp;&nbsp;{{tpl:lang Categories}}</span></a>
+              <a
+                href="{{tpl:BlogURL}}categories"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="{{tpl:lang Browse the different categories}}"
+                ><span class="glyphicon glyphicon-globe"></span
+                ><span
+                  class="hidden-sm hidden-md visible-lg-inline visible-xs-inline"
+                  >&nbsp;&nbsp;&nbsp;{{tpl:lang Categories}}</span
+                ></a
+              >
             </li>
             <li>
-              <a href="{{tpl:BlogURL}}tags" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Search for articles using keywords}}"><span class="glyphicon glyphicon-tags"></span><span class="hidden-sm hidden-md visible-lg-inline visible-xs-inline">&nbsp;&nbsp;&nbsp;{{tpl:lang Tags}}</span></a>
+              <a
+                href="{{tpl:BlogURL}}tags"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="{{tpl:lang Search for articles using keywords}}"
+                ><span class="glyphicon glyphicon-tags"></span
+                ><span
+                  class="hidden-sm hidden-md visible-lg-inline visible-xs-inline"
+                  >&nbsp;&nbsp;&nbsp;{{tpl:lang Tags}}</span
+                ></a
+              >
             </li>
             <li>
-              <a href="{{tpl:BlogURL}}pages/about" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Know more about the site and its author}}"><span class="glyphicon glyphicon-user"></span><span class="hidden-sm hidden-md visible-lg-inline visible-xs-inline">&nbsp;&nbsp;&nbsp;{{tpl:lang About}}</span></a>
+              <a
+                href="{{tpl:BlogURL}}pages/about"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="{{tpl:lang Know more about the site and its author}}"
+                ><span class="glyphicon glyphicon-user"></span
+                ><span
+                  class="hidden-sm hidden-md visible-lg-inline visible-xs-inline"
+                  >&nbsp;&nbsp;&nbsp;{{tpl:lang About}}</span
+                ></a
+              >
             </li>
           </ul>
-          <form class="navbar-form navbar-right" role="search" method="get" action="{{tpl:BlogURL}}" id="searchField">
+          <form
+            class="navbar-form navbar-right"
+            role="search"
+            method="get"
+            action="{{tpl:BlogURL}}"
+            id="searchField"
+          >
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="{{tpl:lang Search (verb)}}" name="q">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="{{tpl:lang Search (verb)}}"
+                name="q"
+              />
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" onclick="document.getElementById('searchField').submit();"><span class="glyphicon glyphicon-search"></span></button>
+                <button
+                  class="btn btn-default"
+                  type="button"
+                  onclick="document.getElementById('searchField').submit()"
+                >
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
               </span>
             </div>
           </form>
         </nav>
-      </div>  
+      </div>
     </div>
   </div>
 </header>

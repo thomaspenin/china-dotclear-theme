@@ -1,0 +1,81 @@
+:root {
+  color-scheme: light dark;
+
+  --color-accent: #228b22;
+  --color-accent-hover: #176117;
+  --color-accent-active: #1f7d1f;
+
+  --color-text-primary: #373737;
+  --color-text-muted: #808080;
+  --color-text-strong: #505050;
+  --color-text-on-dark: #dedede;
+  --color-text-code: #c7254e;
+  --color-text-footnote: #808080;
+
+  --color-surface-page: #ffffff;
+  --color-surface-subtle: #f5f5f5;
+  --color-surface-soft: #cccccc;
+  --color-surface-muted: #dedede;
+  --color-surface-code-inline: #f9f2f4;
+  --color-surface-topbar: #373737;
+  --color-surface-topbar-hover: #272727;
+  --color-surface-footer: #373737;
+  --color-surface-footer-powered: #505050;
+
+  --color-border-default: #cccccc;
+  --color-border-strong: #505050;
+  --color-shadow-page: #808080;
+
+  --color-post-title: #373737;
+  --color-post-title-hover: #272727;
+  --color-post-metadata: #808080;
+  --color-post-metadata-hover: #272727;
+  --color-post-category-overlay: rgba(55, 55, 55, 0.85);
+
+  --color-footer-heading: #dedede;
+  --color-footer-subheading: #dedede;
+  --color-footer-subheading-hover: #b8b8b8;
+
+  --color-answer-bg: #c4f9c4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #59b759;
+    --color-accent-hover: #82cb82;
+    --color-accent-active: #4cab4c;
+
+    --color-text-primary: #dadada;
+    --color-text-muted: #ababab;
+    --color-text-strong: #c5c5c5;
+    --color-text-on-dark: #e8e8e8;
+    --color-text-code: #ff8aa7;
+    --color-text-footnote: #b5b5b5;
+
+    --color-surface-page: #1c201b;
+    --color-surface-subtle: #232823;
+    --color-surface-soft: #2f352f;
+    --color-surface-muted: #2a302a;
+    --color-surface-code-inline: #352730;
+    --color-surface-topbar: #111511;
+    --color-surface-topbar-hover: #1a1f1a;
+    --color-surface-footer: #141914;
+    --color-surface-footer-powered: #232b23;
+
+    --color-border-default: #3a443a;
+    --color-border-strong: #4b554b;
+    --color-shadow-page: #101310;
+
+    --color-post-title: #e0e0e0;
+    --color-post-title-hover: #f3f3f3;
+    --color-post-metadata: #a9b0a9;
+    --color-post-metadata-hover: #f0f3f0;
+    --color-post-category-overlay: rgba(224, 224, 224, 0.2);
+
+    --color-footer-heading: #e8e8e8;
+    --color-footer-subheading: #c8d1c8;
+    --color-footer-subheading-hover: #eaf5ea;
+
+    --color-answer-bg: #223822;
+  }
+}

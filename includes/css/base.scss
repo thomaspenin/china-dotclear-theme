@@ -2,7 +2,6 @@
 @use "fonts";
 @use "layout";
 @use "paths";
-@use "sass:color";
 
 // --- Variables ---
 
@@ -182,7 +181,7 @@ a:active {
 }
 
 a:hover {
-  color: color.adjust(colors.$tint-color, $lightness: -15%);
+  color: colors.$tint-color-hover;
   text-decoration: underline;
   transition: color 0.25s ease;
 }

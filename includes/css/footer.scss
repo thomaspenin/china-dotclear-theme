@@ -1,8 +1,6 @@
 @use "colors";
 @use "paths";
 
-@use "sass:color";
-
 #footer {
   padding: 0;
   border-top: 2px solid colors.$footer-border-color;
@@ -102,7 +100,7 @@
 }
 
 #footer .container .footer-sub-h3 a.twitter-link:hover {
-  color: color.adjust(colors.$footer-sub-h3-color, $lightness: -15%);
+  color: colors.$footer-sub-h3-hover-color;
 }
 
 #footer-about-links {
@@ -116,7 +114,7 @@
 }
 
 #footer-about-links a:hover {
-  color: color.adjust(colors.$footer-sub-h3-color, $lightness: -15%);
+  color: colors.$footer-sub-h3-hover-color;
   text-decoration: none;
 }
 

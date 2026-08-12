@@ -1,5 +1,4 @@
 @use "colors";
-@use "sass:color";
 
 // Use the right colors for buttons
 
@@ -8,13 +7,13 @@
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  background-color: color.adjust(colors.$tint-color, $lightness: -5%);
-  border-color: color.adjust(colors.$tint-color, $lightness: -5%);
+  background-color: colors.$tint-color-active;
+  border-color: colors.$tint-color-active;
 }
 
 .btn-primary {
   background-color: colors.$tint-color;
-  border-color: color.adjust(colors.$tint-color, $lightness: -5%);
+  border-color: colors.$tint-color-active;
 }
 
 // Use the right colors for pagination controls
@@ -25,8 +24,8 @@
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: color.adjust(colors.$tint-color, $lightness: -5%);
-  border-color: color.adjust(colors.$tint-color, $lightness: -5%);
+  background-color: colors.$tint-color-active;
+  border-color: colors.$tint-color-active;
   color: colors.$page-background-color;
 }
 
@@ -37,7 +36,7 @@
 
 .pagination > li > a:hover,
 .pagination > li > span:hover {
-  color: color.adjust(colors.$tint-color, $lightness: -5%);
+  color: colors.$tint-color-active;
 }
 
 // Close control on info shall not be too "close" from the text

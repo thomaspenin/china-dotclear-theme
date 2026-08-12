@@ -1,132 +1,135 @@
 @use "palette";
-@use "sass:color";
 
 /*
  * Theme color palette
  */
 
 // Main tint color: it is used for links, buttons and other actionable items
-$tint-color: palette.$green;
+$tint-color: var(--color-accent);
+$tint-color-hover: var(--color-accent-hover);
+$tint-color-active: var(--color-accent-active);
 // Color for the pinyin identified as such
-$pinyin-text-color: palette.$gray;
+$pinyin-text-color: var(--color-text-muted);
 // Color for text marked as deleted
-$del-text-color: palette.$gray;
+$del-text-color: var(--color-text-muted);
 // Color of the code inside paragraphs
-$code-text-color: palette.$rose;
+$code-text-color: var(--color-text-code);
 // Background color of the code inside paragraphs
-$code-background-color: palette.$light-rose;
+$code-background-color: var(--color-surface-code-inline);
 
 // Color for the background of the top navigation bar
-$top-bar-background-color: palette.$white;
+$top-bar-background-color: var(--color-surface-topbar);
 // Base font color for the top navigation bar
-$top-bar-text-color: palette.$gray;
+$top-bar-text-color: var(--color-text-on-dark);
 // Hover font color for the top navigation bar
-$top-bar-text-hover-color: palette.$medium-gray;
+$top-bar-text-hover-color: var(--color-text-on-dark);
 
 /*
  * Base colors
  */
 
-$default-background-color: palette.$white;
-$body-background-color: palette.$strong-gray;
-$page-background-color: palette.$white;
-$page-shadow: palette.$gray;
-$pinyin-text-color: palette.$gray;
-$input-text-color: palette.$strong-gray;
-$input-border-color: palette.$medium-gray;
-$h4-text-color: palette.$medium-gray;
-$pre-background-color: palette.$extremely-light-gray;
+$default-background-color: var(--color-surface-page);
+$body-background-color: var(--color-text-primary);
+$page-background-color: var(--color-surface-page);
+$page-shadow: var(--color-shadow-page);
+$pinyin-text-color: var(--color-text-muted);
+$input-text-color: var(--color-text-primary);
+$input-border-color: var(--color-border-strong);
+$h4-text-color: var(--color-text-strong);
+$pre-background-color: var(--color-surface-subtle);
 
 /*
  * Home page
  */
 
-$banner-link-color: palette.$white;
+$banner-link-color: var(--color-surface-page);
 $banner-modal-link-color: $tint-color;
-$tagline-bg-color: palette.$light-gray;
-$category-summary-bg-color: palette.$light-gray;
-$home-middle-background-color: palette.$very-light-gray;
+$tagline-bg-color: var(--color-surface-soft);
+$category-summary-bg-color: var(--color-surface-soft);
+$home-middle-background-color: var(--color-surface-muted);
 
 /*
  * Page title
  */
 
 $page-title-bg-color: $tint-color;
-$page-title-text-color: palette.$white;
-$page-title-link-color: palette.$white;
+$page-title-text-color: var(--color-surface-page);
+$page-title-link-color: var(--color-surface-page);
 
 /*
  * Top bar colors
  */
 
-$top-bar-text-color: palette.$light-gray;
-$top-bar-background-color-hover: palette.$very-strong-gray;
-$top-bar-background-color: palette.$strong-gray;
+$top-bar-text-color: var(--color-text-on-dark);
+$top-bar-background-color-hover: var(--color-surface-topbar-hover);
+$top-bar-background-color: var(--color-surface-topbar);
 
 /*
  * Back to top
  */
 
-$back-to-top-bg-color: palette.$strong-gray;
-$back-to-top-hover-color: palette.$very-strong-gray;
+$back-to-top-bg-color: var(--color-surface-topbar);
+$back-to-top-hover-color: var(--color-surface-topbar-hover);
 
 /*
  * Post list
  */
-$posts-list-item-border-color: palette.$light-gray;
-$post-title-color: palette.$strong-gray;
-$post-title-hover-color: palette.$very-strong-gray;
-$post-metadata-color: palette.$gray;
-$post-metadata-hover-color: palette.$very-strong-gray;
+$posts-list-item-border-color: var(--color-border-default);
+$post-title-color: var(--color-post-title);
+$post-title-hover-color: var(--color-post-title-hover);
+$post-title-overlay-color: var(--color-post-category-overlay);
+$post-metadata-color: var(--color-post-metadata);
+$post-metadata-hover-color: var(--color-post-metadata-hover);
 
 /*
  * Search
  */
 
-$search-info-bg-color: palette.$light-gray;
+$search-info-bg-color: var(--color-surface-soft);
 
 /*
  * Post
  */
 
-$post-excerpt-bg-color: palette.$light-gray;
-$post-pagination-bg-color: palette.$white;
-$post-footer-border-color: palette.$light-gray;
+$post-excerpt-bg-color: var(--color-surface-soft);
+$post-pagination-bg-color: var(--color-surface-page);
+$post-footer-border-color: var(--color-border-default);
 
 /*
  * Footer
  */
 
-$footer-background-color: palette.$strong-gray;
-$footer-border-color: palette.$medium-gray;
-$footer-powered-by-background-color: palette.$medium-gray;
-$footer-powered-by-text-color: palette.$light-gray;
-$footer-h3-color: palette.$very-light-gray;
-$footer-sub-h3-color: palette.$very-light-gray;
+$footer-background-color: var(--color-surface-footer);
+$footer-border-color: var(--color-border-strong);
+$footer-powered-by-background-color: var(--color-surface-footer-powered);
+$footer-powered-by-text-color: var(--color-text-on-dark);
+$footer-h3-color: var(--color-footer-heading);
+$footer-sub-h3-color: var(--color-footer-subheading);
+$footer-sub-h3-hover-color: var(--color-footer-subheading-hover);
 
 /*
  * Archives
  */
 
-$date-range-picker-bg-color: palette.$light-gray;
+$date-range-picker-bg-color: var(--color-surface-soft);
 
 /*
  * Theme download page
  */
 
-$download-pitch-bg-color: palette.$light-gray;
-$footnote-text-color: palette.$gray;
+$download-pitch-bg-color: var(--color-surface-soft);
+$footnote-text-color: var(--color-text-footnote);
 
 /*
   * Categories page
   */
-$category-summary-bg-color: palette.$light-gray;
+$category-summary-bg-color: var(--color-surface-soft);
 
 /*
   * Tags page
   */
 
-$tag-info-bg-color: palette.$light-gray;
+$tag-info-bg-color: var(--color-surface-soft);
 
 /*
  * Miniplayer
@@ -140,13 +143,13 @@ $player-hover-color: $tint-color;
 
 $exercice-number-bg-color: $tint-color;
 $exercice-answer-color: $tint-color;
-$exercice-answer-bg-color: palette.$very-light-green;
+$exercice-answer-bg-color: var(--color-answer-bg);
 $exercice-answer-toggle-color: $tint-color;
-$exercice-answer-toggle-hover-color: color.adjust($tint-color, $lightness: -5%);
+$exercice-answer-toggle-hover-color: $tint-color-active;
 
 /*
  * Figure
  */
 
-$figure-border-color: palette.$light-gray;
-$figure-caption-color: palette.$medium-gray;
+$figure-border-color: var(--color-border-default);
+$figure-caption-color: var(--color-text-strong);

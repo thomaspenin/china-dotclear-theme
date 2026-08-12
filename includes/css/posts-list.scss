@@ -1,7 +1,5 @@
 @use "colors";
 
-@use "sass:color";
-
 .posts-list .posts-list-item {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -61,7 +59,7 @@
   position: absolute;
   top: 0;
   left: 8px;
-  background-color: color.adjust(colors.$post-title-color, $alpha: -0.15);
+  background-color: colors.$post-title-overlay-color;
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;

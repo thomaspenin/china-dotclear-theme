@@ -22,9 +22,6 @@ msgstr "La recherche est effectuée sur les articles et les commentaires.<br/>Si
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Souscrire au fil des commentaires de cet article"
 
-msgid "INFO_HTML_TAGS_REMOVED"
-msgstr "Pour des raisons de sécurité, tout le marquage HTML à l'exception des liens est automatiquement enlevé des commentaires.<br/>Je peux être donc amené à éditer manuellement ces derniers après soumission pour que, par exemple, le pinyin soit rendu '<py>ma3</py>' au lieu de 'ma3'."
-
 msgid "Sub-categories"
 msgstr "Sous-catégories"
 
@@ -255,3 +252,9 @@ msgstr "Aller en page"
 
 msgid "wrote"
 msgstr "a écrit"
+
+msgid "Visit my personal website"
+msgstr "Visiter mon site personnel"
+
+msgid "View my Github"
+msgstr "Consulter mon Github"

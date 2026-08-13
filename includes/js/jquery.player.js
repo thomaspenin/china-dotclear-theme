@@ -13,9 +13,27 @@
  * @discussion To be called when the document is ready
  */
 function prepareAudioPlayers() {
+  function parseSources(text) {
+    return text
+      .split(",")
+      .map(function (value) {
+        return $.trim(value);
+      })
+      .filter(function (value) {
+        return value.length > 0;
+      });
+  }
+
+  function guessMimeType(source) {
+    var ext = source.split(".").pop().toLowerCase();
+    if (ext == "mp3") return "audio/mpeg";
+    if (ext == "m4a") return "audio/mp4";
+    return "audio/ogg";
+  }
+
   $(".player").each(function (index) {
     // Create a player for the media
-    var src = $(this).text().split(",");
+    var src = parseSources($(this).text());
     $(this)
       .contents()
       .replaceWith(function () {
@@ -24,10 +42,7 @@ function prepareAudioPlayers() {
           "Your browser does not support the audio tag.";
         for (var i = 0; i < src.length; i++) {
           var source = src[i];
-          var ext = source.split(".").pop();
-          var type = "audio/ogg";
-          if (ext == "mp3") type = "audio/mpeg";
-          if (ext == "m4a") type = "audio/mp4";
+          var type = guessMimeType(source);
 
           // Create the source
           result += '<source src="' + source + '" type="' + type + '"/>';
@@ -39,7 +54,7 @@ function prepareAudioPlayers() {
 
   $(".miniplayer").each(function (index) {
     // Create a player for the media
-    var src = $(this).text().split(",");
+    var src = parseSources($(this).text());
     $(this)
       .contents()
       .replaceWith(function () {
@@ -48,10 +63,7 @@ function prepareAudioPlayers() {
           "Your browser does not support the audio tag.";
         for (var i = 0; i < src.length; i++) {
           var source = src[i];
-          var ext = source.split(".").pop();
-          var type = "audio/ogg";
-          if (ext == "mp3") type = "audio/mpeg";
-          if (ext == "m4a") type = "audio/mp4";
+          var type = guessMimeType(source);
 
           // Create the source
           result += '<source src="' + source + '" type="' + type + '"/>';
@@ -62,13 +74,13 @@ function prepareAudioPlayers() {
 
     // Add a play button
     var audioPlayer = $(this).children(".audioPlayer")[0];
-    $(this).append(
-      '<span class="playButton glyphicon glyphicon-play-circle"></span>',
-    );
+    $(this).append('<i class="playButton ph ph-play-circle"></i>');
     var playButton = $(this).children(".playButton");
     playButton.click(function () {
       if (audioPlayer.paused || audioPlayer.ended) {
         audioPlayer.play();
+      } else {
+        audioPlayer.pause();
       }
     });
   });

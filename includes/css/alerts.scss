@@ -1,3 +1,5 @@
+@use "paths";
+
 /* Error and information messages */
 
 .error,
@@ -5,9 +7,14 @@
 .hint,
 .warning,
 .vocabulary {
+  --alert-icon-size: 1.4em;
+  --alert-icon-left: 8px;
+  --alert-icon-gap: 8px;
   margin: 12px auto 5px;
   padding: 8px;
-  padding-left: 32px;
+  padding-left: calc(
+    var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap)
+  );
   border-radius: 4px;
 }
 
@@ -16,77 +23,93 @@
 }
 
 .error {
-  background-color: #f2dede;
-  border: 1px solid #ebccd1;
+  --alert-base-color: var(--color-alert-error);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 18%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
   position: relative;
-  font-weight: bold;
-  color: #a94442;
-}
-
-.information:before {
-  font-family: "Glyphicons Halflings";
-  font-weight: normal;
-  font-style: normal;
-  color: #a94442;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  text-decoration: inherit;
-  content: "\e083";
+  color: var(--color-alert-error);
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/warning-circle.svg");
 }
 
 .information {
-  background-color: #d9edf7;
-  border: 1px solid #bce8f1;
+  --alert-base-color: var(--color-alert-info);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 16%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
   position: relative;
-}
-
-.information:before {
-  font-family: "Glyphicons Halflings";
-  font-weight: normal;
-  font-style: normal;
-  color: #31708f;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  text-decoration: inherit;
-  content: "\e086";
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/info.svg");
 }
 
 .hint {
-  background-color: #dff0d8;
-  border: 1px solid #d6e9c6;
+  --alert-base-color: var(--color-alert-hint);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 16%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
   position: relative;
-}
-
-.hint:before {
-  font-family: "Glyphicons Halflings";
-  font-weight: normal;
-  font-style: normal;
-  color: #3c763d;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  text-decoration: inherit;
-  content: "\e084";
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/check-circle.svg");
 }
 
 .warning {
-  background-color: #fcf8e3;
-  border: 1px solid #faebcc;
+  --alert-base-color: var(--color-alert-warning);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 18%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
   position: relative;
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/warning.svg");
 }
 
+.error:before,
+.information:before,
+.hint:before,
 .warning:before {
-  font-family: "Glyphicons Halflings";
-  font-weight: normal;
-  font-style: normal;
-  color: #8a6d3b;
+  content: "";
   position: absolute;
-  left: 8px;
-  top: 8px;
-  text-decoration: inherit;
-  content: "\e209";
+  left: var(--alert-icon-left);
+  top: 0.4em;
+  width: var(--alert-icon-size);
+  height: var(--alert-icon-size);
+  background-color: var(--alert-icon-color);
+  -webkit-mask-image: var(--alert-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: var(--alert-icon-size) var(--alert-icon-size);
+  mask-image: var(--alert-icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: var(--alert-icon-size) var(--alert-icon-size);
 }
 
 .vocabulary {

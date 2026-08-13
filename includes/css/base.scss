@@ -88,17 +88,14 @@ pre {
   padding: 3rem;
   background-color: colors.$pre-background-color;
   border-radius: 4px;
+  color: colors.$primary-text-color;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 code {
-  color: colors.$code-text-color;
   background-color: colors.$code-background-color;
   font-size: 80%;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 blockquote {

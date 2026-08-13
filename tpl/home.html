@@ -119,30 +119,30 @@
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Voyage,<br/>Impressions</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
 	<div class="item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/civilization.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Civilisation,<br/>Vie quotidienne</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
 	  <div class="item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/language.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Langue,<br/>Littérature</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
 	</div>
 
 	<!-- Controls -->
 	<a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
-	  <span class="glyphicon glyphicon-chevron-left"></span>
+    <span><i class="ph ph-caret-left"></i></span>
 	</a>
 	<a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
-	  <span class="glyphicon glyphicon-chevron-right"></span>
+	  <i class="ph ph-caret-right"></i>
 	</a>
       </div>
 
@@ -208,7 +208,7 @@
           <tpl:Categories level="1">
             <div class="title-row row">
               <div id="category-{{tpl:CategoryShortURL}}" class="col-xs-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"> <small class="hidden-xs">Articles datés des évènements relatés</small></tpl:CategoryIf></h2></div>
-              <div class="col-xs-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="hidden-xs"> dans {{tpl:CategoryTitle}}</span>&nbsp;<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></div>
+              <div class="col-xs-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="hidden-xs"> dans {{tpl:CategoryTitle}}</span>&nbsp;<i class="ph ph-caret-right"></i></a></div>
             </div>
             <div class="thumbnail-row row">
             <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
@@ -255,17 +255,15 @@
                   </div>
                   <div class="category">
                     <tpl:EntryIf has_category="1">
-                      <a href="{{tpl:EntryCategoryURL}}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;{{tpl:EntryCategory}}</a>
+                      <a href="{{tpl:EntryCategoryURL}}"><i class="ph ph-globe-hemisphere-east"></i>&nbsp;{{tpl:EntryCategory}}</a>
                     </tpl:EntryIf>
                   </div>
                   <div class="posts-thumbnail-item-footer row">
                     <div class="post-metadata-left col-xs-8">
-                      <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
+                      <i class="ph ph-clock"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                     </div>
                     <div class="post-metadata-right col-xs-4">
-                      <a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><span class='facebook icon-bold'></span></a>
-                      <a href="https://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><span class='twitter icon-bold'></span></a>
-                      <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
+                      <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><i class="ph ph-chat"></i>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
                     </div>
                   </div>
                 </div>

@@ -8,6 +8,7 @@ Changelog
   - Prettify the code
   - Add a dark mode (auto-toggled based on the browser)
   - The theme download page now points to the Github repository
+  - Use Phosphor Icons to replace my custom "Orchid" font and GlyphIcons
 
 * v2.5.0 (2026-07-26)
   - Fix compatibility issue with Dotclear ≥ 2.36

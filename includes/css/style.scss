@@ -5,7 +5,6 @@
 @use "colors";
 @use "fonts";
 @use "layout";
-@import url("#{paths.$fonts-folder-path}/orchid-font.css");
 
 // Base styles
 @include meta.load-css("base");
@@ -43,3 +42,4 @@
 @include meta.load-css("exercices");
 @include meta.load-css("figure");
 @include meta.load-css("image-lazy-loading");
+@include meta.load-css("license");

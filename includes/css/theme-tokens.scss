@@ -37,6 +37,11 @@
   --color-footer-subheading-hover: #b8b8b8;
 
   --color-answer-bg: #c4f9c4;
+
+  --color-alert-info: #007fb3;
+  --color-alert-hint: #2b9b3a;
+  --color-alert-warning: #d18a00;
+  --color-alert-error: #cf2f2a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,5 +82,10 @@
     --color-footer-subheading-hover: #eaf5ea;
 
     --color-answer-bg: #223822;
+
+    --color-alert-info: #57d3ff;
+    --color-alert-hint: #73ef86;
+    --color-alert-warning: #ffd15c;
+    --color-alert-error: #ff7974;
   }
 }

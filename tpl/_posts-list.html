@@ -22,10 +22,10 @@
                 <div class="post-read-more col-md-4"><a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">»&nbsp;{{tpl:lang More}}</a></div>
                 <div class="post-metadata col-md-8">
                 <tpl:EntryIf has_category="1">
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
+                <i class="ph ph-globe-hemisphere-east" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
                 </tpl:EntryIf>
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
-                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;<a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="Commenter" one="1&nbsp;commentaire" more="%s&nbsp;commentaires"}}</a>
+                <i class="ph ph-clock" aria-hidden="true"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
+                <i class="ph ph-chat" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="Commenter" one="1&nbsp;commentaire" more="%s&nbsp;commentaires"}}</a>
                 </div>
               </div>
             </div>

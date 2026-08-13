@@ -22,9 +22,6 @@ msgstr "Search goes through both articles and comments.<br/>If you did not find 
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Subscribe to the comment feed for this article only"
 
-msgid "INFO_HTML_TAGS_REMOVED"
-msgstr "For security reasons, all HTML tags but links are removed from the comments.<br/>I may therefore manually edit your comments after your submission so that, for instance, pinyin can be rendered '<py>ma3</py>' instead of 'ma3'."
-
 msgid "Sub-categories"
 msgstr "Sub-categories"
 
@@ -246,3 +243,9 @@ msgstr "Go to page"
 
 msgid "wrote"
 msgstr "wrote"
+
+msgid "Visit my personal website"
+msgstr "Visit my personal website"
+
+msgid "View my Github"
+msgstr "View my Github"

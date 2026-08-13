@@ -1,39 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:BlogLanguage}}" lang="{{tpl:BlogLanguage}}">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xml:lang="{{tpl:BlogLanguage}}"
+  lang="{{tpl:BlogLanguage}}"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+    <title>{{tpl:lang Tags}} - {{tpl:BlogName encode_html="1"}}</title>
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-<title>{{tpl:lang Tags}} - {{tpl:BlogName encode_html="1"}}</title>
+    {{tpl:include src="_head.html"}}
+  </head>
 
-{{tpl:include src="_head.html"}}
+  <body>
+    <div id="page" class="container">
+      <!-- Top bar present on all pages -->
+      {{tpl:include src="_top.html"}}
 
-</head>
+      <div class="tags middle">
+        <!-- Title -->
+        <div class="page-title">
+          <h1>{{tpl:lang Tags}}</h1>
+        </div>
 
-<body>
-  <div id="page" class="container">
-    <!-- Top bar present on all pages -->
-    {{tpl:include src="_top.html"}}
+        <div id="tag-info" class="container">
+          <p>
+            <i class="ph ph-info"></i> {{tpl:lang The following tag cloud
+            represents the concepts that are covered by the articles published
+            on the site. The bigger the tag, the more important the concept. You
+            may click any of these tags to get to associated articles.}}
+          </p>
+        </div>
 
-    <div class="tags middle">
-      <!-- Title -->
-      <div class="page-title">
-	<h1>{{tpl:lang Tags}}</h1>
+        <div class="tag-cloud-container container">
+          <div class="tag-cloud-frame col-md-6 col-md-offset-3">
+            {{tpl:include src="_tag-cloud.html"}}
+          </div>
+        </div>
       </div>
-      
-      <div id="tag-info" class="container">
-        <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{tpl:lang The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles.}}</p>
-      </div>
 
-      <div class="tag-cloud-container container">
-        <div class="tag-cloud-frame col-md-6 col-md-offset-3">
-          {{tpl:include src="_tag-cloud.html"}}
-	</div>
-      </div>
+      <!-- Footer (present on all pages) -->
+      {{tpl:include src="_footer.html"}}
     </div>
-
-    <!-- Footer (present on all pages) -->
-    {{tpl:include src="_footer.html"}}
-  </div> <!-- End #page -->
-</body>
+    <!-- End #page -->
+  </body>
 </html>

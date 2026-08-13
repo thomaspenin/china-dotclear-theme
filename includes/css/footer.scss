@@ -81,10 +81,6 @@
 
 // --- "About" part of the footer ---
 
-#footer-about .media {
-  border-bottom: 1px solid colors.$footer-border-color;
-}
-
 #footer-about-profile {
   margin-top: 24px;
   margin-right: 5px;
@@ -103,17 +99,17 @@
   color: colors.$footer-sub-h3-hover-color;
 }
 
-#footer-about-links {
+#footer .footer-about-links {
   color: colors.$footer-sub-h3-color;
   margin-top: 10px;
   font-size: 125%;
 }
 
-#footer-about-links a {
+#footer .footer-about-links a {
   color: colors.$footer-sub-h3-color;
 }
 
-#footer-about-links a:hover {
+#footer .footer-about-links a:hover {
   color: colors.$footer-sub-h3-hover-color;
   text-decoration: none;
 }

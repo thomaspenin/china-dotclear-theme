@@ -1,4 +1,6 @@
-// Adapted from http://maketea.co.uk/2013/05/04/responsive-image-placeholders.html
+// Adapted from "Responsive Image Placeholders" by Matt Hinchliffe
+// Original Github: https://github.com/i-like-robots/Responsive-Image-Placeholders
+// License: Creative Commons Attribution-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-sa/3.0/)
 
 var deferImage = function (element) {
   var i, len, attr;

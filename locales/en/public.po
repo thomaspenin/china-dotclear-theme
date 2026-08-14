@@ -249,3 +249,6 @@ msgstr "Visit my personal website"
 
 msgid "View my Github"
 msgstr "View my Github"
+
+msgid "THEME_CODE_AVAILABILITY"
+msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources. Vous pouvez soit télécharger la dernière version publiée, soit cloner le dépôt afin d’obtenir la dernière version en cours de développement."

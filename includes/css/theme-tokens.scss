@@ -1,6 +1,25 @@
 :root {
   color-scheme: light dark;
 
+  --font-size-body: clamp(1rem, calc(1rem + 0.5vw), 1.3125rem);
+  --line-height-body: 1.4286;
+  --font-size-h1: 2.1875rem;
+  --line-height-h1: 3rem;
+  --font-size-h2: 1.75rem;
+  --line-height-h2: 2.3125rem;
+  --font-size-h3: 1.4375rem;
+  --line-height-h3: 2rem;
+  --font-size-h4: 1.3125rem;
+  --line-height-h4: 1.875rem;
+  --font-size-lead: 1.4375rem;
+  --line-height-lead: 2rem;
+  --font-size-feature: 1.875rem;
+  --font-size-emphasis: 1.125rem;
+  --font-size-supporting: 1.0625rem;
+  --font-size-compact: 0.875rem;
+  --font-size-toc: 0.8125rem;
+  --font-size-toc-nested: 0.75rem;
+
   --color-accent: #228b22;
   --color-accent-hover: #176117;
   --color-accent-active: #1f7d1f;

@@ -6,27 +6,20 @@
 // --- Variables ---
 
 // Base typography
-$base-font-size: 62.5%; // To easily map to pixels
 $base-text-alignment: left; // For more readability
-$body-font-size: 2.1rem; // 21px
-$body-line-spacing: 3rem; // 30px => better lisibility + space for bigger Chinese
 
 // --- Base element styling ---
-
-html {
-  font-size: $base-font-size;
-}
 
 body {
   font-family:
     fonts.$primary-western-font, fonts.$fallback-western-font1,
     fonts.$primary-chinese-font, fonts.$fallback-western-font2;
   text-align: $base-text-alignment;
-  font-size: $body-font-size;
+  font-size: var(--font-size-body);
   font-weight: 300;
   background-color: transparent;
   color: colors.$body-background-color;
-  line-height: $body-line-spacing;
+  line-height: var(--line-height-body);
 }
 
 #page {
@@ -36,8 +29,8 @@ body {
 }
 
 p {
-  margin-bottom: 1.5rem;
-  margin-top: 1.2rem;
+  margin-bottom: 15px;
+  margin-top: 12px;
 }
 
 h1,
@@ -45,29 +38,29 @@ h2,
 h3,
 h4 {
   font-weight: 500;
-  margin-bottom: 1.6rem;
-  margin-top: 2.5rem;
+  margin-bottom: 16px;
+  margin-top: 25px;
 }
 
 h1 {
-  font-size: 3.5rem;
-  line-height: 4.8rem;
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
 }
 
 h2 {
-  font-size: 2.8rem;
-  line-height: 3.7rem;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
 }
 
 h3 {
-  font-size: 2.3rem;
-  line-height: 3.2rem;
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
 }
 
 h4 {
   color: colors.$h4-text-color;
-  font-size: 2.1rem;
-  line-height: 3rem;
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
 }
 
 u {
@@ -82,10 +75,10 @@ del {
 pre {
   font-family: fonts.$primary-code-font, fonts.$fallback-code-font;
   font-size: 100%; // To compensate bootstrap
-  margin-top: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-top: 12px;
+  margin-bottom: 15px;
   border: none;
-  padding: 3rem;
+  padding: 30px;
   background-color: colors.$pre-background-color;
   border-radius: 4px;
   color: colors.$primary-text-color;
@@ -101,11 +94,11 @@ code {
 blockquote {
   border-left: 4px solid colors.$tint-color;
   margin-left: 2px; // To compensate the border width
-  padding-left: 2rem;
+  padding-left: 20px;
   padding-right: 0;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
-  font-size: $body-font-size;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: var(--font-size-body);
 }
 
 .footnote {
@@ -116,8 +109,8 @@ blockquote {
 // Lead paragraph
 
 .lead {
-  font-size: 2.3rem;
-  line-height: 3.2rem;
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-lead);
 }
 
 // Custom colored bullets (one day, this will be easy with the ::marker pseudo-element). The :not(.nav) exception is to play well with Bootstrap nav items

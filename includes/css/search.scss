@@ -2,7 +2,7 @@
 
 .search .search-info {
   background-color: colors.$search-info-bg-color;
-  font-size: 17px;
+  font-size: var(--font-size-supporting);
   padding: 15px;
 }
 

@@ -15,7 +15,7 @@
 #home-content .posts-list .category-title {
   float: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: var(--font-size-compact);
 }
 
 #home-content .posts-list .all-articles {
@@ -23,7 +23,7 @@
   display: inline-block;
   vertical-align: bottom;
   text-align: right;
-  font-size: 14px;
+  font-size: var(--font-size-compact);
   padding-bottom: 12px;
 }
 

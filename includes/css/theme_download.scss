@@ -2,7 +2,7 @@
 
 .download #download-pitch.container {
   background-color: colors.$download-pitch-bg-color;
-  font-size: 17px;
+  font-size: var(--font-size-supporting);
   padding: 15px;
 }
 

@@ -50,7 +50,7 @@
 
 #post-excerpt.container {
   background-color: colors.$post-excerpt-bg-color;
-  font-size: 17px;
+  font-size: var(--font-size-supporting);
   padding: 15px;
 }
 

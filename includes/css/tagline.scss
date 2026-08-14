@@ -1,7 +1,5 @@
-@use "colors";
-
 #tagline {
-  background-color: colors.$tagline-bg-color;
+  background-color: var(--color-surface-soft);
   padding-bottom: 0;
 }
 

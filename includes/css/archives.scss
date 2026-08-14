@@ -1,7 +1,5 @@
-@use "colors";
-
 .archives .date-range-picker {
-  background-color: colors.$date-range-picker-bg-color;
+  background-color: var(--color-surface-soft);
   padding: 20px 0;
 }
 

@@ -1,7 +1,5 @@
-@use "colors";
-
 .tags #tag-info {
-  background-color: colors.$tag-info-bg-color;
+  background-color: var(--color-surface-soft);
   padding: 15px;
 }
 
@@ -11,8 +9,8 @@
 }
 
 .tags .tag-cloud-frame {
-  border: 1px solid colors.$tag-info-bg-color;
-  background-color: colors.$tag-info-bg-color;
+  border: 1px solid var(--color-surface-soft);
+  background-color: var(--color-surface-soft);
   padding: 10px;
   border-radius: 2px;
 }

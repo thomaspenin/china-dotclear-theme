@@ -1,13 +1,12 @@
-@use "colors";
 @use "paths";
 
 #footer {
   padding: 0;
-  border-top: 2px solid colors.$footer-border-color;
+  border-top: 2px solid var(--color-border-strong);
 }
 
 #footer .container {
-  background-color: colors.$footer-background-color;
+  background-color: var(--color-surface-footer);
   padding-bottom: 10px;
 }
 
@@ -19,16 +18,16 @@
 #footer #poweredBy {
   text-align: center;
   padding: 10px;
-  background-color: colors.$footer-powered-by-background-color;
-  color: colors.$footer-powered-by-text-color;
+  background-color: var(--color-surface-footer-powered);
+  color: var(--color-text-on-dark);
 }
 
 #footer .container h3 {
-  color: colors.$footer-h3-color;
+  color: var(--color-footer-heading);
 }
 
 #footer .container .footer-sub-h3 {
-  color: colors.$footer-sub-h3-color;
+  color: var(--color-footer-subheading);
   font-size: 0.66em;
 }
 
@@ -84,33 +83,33 @@
 #footer-about-profile {
   margin-top: 24px;
   margin-right: 5px;
-  filter: drop-shadow(1px 1px 5px colors.$footer-border-color);
+  filter: drop-shadow(1px 1px 5px var(--color-border-strong));
 }
 
 #footer-about-description p {
-  color: colors.$footer-sub-h3-color;
+  color: var(--color-footer-subheading);
 }
 
 #footer-about-description a.twitter-link {
-  color: colors.$footer-sub-h3-color;
+  color: var(--color-footer-subheading);
 }
 
 #footer .container .footer-sub-h3 a.twitter-link:hover {
-  color: colors.$footer-sub-h3-hover-color;
+  color: var(--color-footer-subheading-hover);
 }
 
 #footer .footer-about-links {
-  color: colors.$footer-sub-h3-color;
+  color: var(--color-footer-subheading);
   margin-top: 10px;
   font-size: 125%;
 }
 
 #footer .footer-about-links a {
-  color: colors.$footer-sub-h3-color;
+  color: var(--color-footer-subheading);
 }
 
 #footer .footer-about-links a:hover {
-  color: colors.$footer-sub-h3-hover-color;
+  color: var(--color-footer-subheading-hover);
   text-decoration: none;
 }
 

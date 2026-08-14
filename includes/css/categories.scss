@@ -1,9 +1,7 @@
-@use "colors";
-
 .categories #category-summary .subcategories {
   margin-left: 100px;
 }
 
 .categories #category-summary {
-  background-color: colors.$category-summary-bg-color;
+  background-color: var(--color-surface-soft);
 }

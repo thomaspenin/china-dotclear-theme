@@ -1,9 +1,7 @@
-@use "colors";
-
 .posts-list .posts-list-item {
   padding-bottom: 20px;
   padding-top: 20px;
-  border-bottom: 1px solid colors.$posts-list-item-border-color;
+  border-bottom: 1px solid var(--color-border-default);
 }
 
 .posts-list .posts-list-item .media-object {
@@ -15,7 +13,7 @@
 }
 
 .posts-list .posts-list-item-footer {
-  color: colors.$post-metadata-color;
+  color: var(--color-post-metadata);
 }
 
 .posts-list .thumbnail-row {
@@ -46,11 +44,11 @@
 }
 
 .posts-list .posts-thumbnail-item .caption a {
-  color: colors.$post-title-color;
+  color: var(--color-post-title);
 }
 
 .posts-list .posts-thumbnail-item .caption a:hover {
-  color: colors.$post-title-hover-color;
+  color: var(--color-post-title-hover);
   text-decoration: none;
 }
 
@@ -59,7 +57,7 @@
   position: absolute;
   top: 0;
   left: 8px;
-  background-color: colors.$post-title-overlay-color;
+  background-color: var(--color-post-category-overlay);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -69,7 +67,7 @@
 }
 
 .posts-list .posts-thumbnail-item .category:hover {
-  background-color: colors.$post-title-hover-color;
+  background-color: var(--color-post-title-hover);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -80,12 +78,12 @@
 .posts-list .posts-thumbnail-item .category a {
   display: inline-block;
   padding: 5px 9px;
-  color: colors.$post-title-color;
+  color: var(--color-post-title);
 }
 
 .posts-list .posts-thumbnail-item .category a:hover {
   text-decoration: none;
-  color: colors.$post-title-hover-color;
+  color: var(--color-post-title-hover);
 }
 
 .posts-list .posts-thumbnail-item .link:hover {
@@ -102,9 +100,9 @@
 }
 
 .posts-list .posts-thumbnail-item-footer {
-  color: colors.$post-metadata-color;
+  color: var(--color-post-metadata);
   padding: 9px 0;
-  border-top: 1px solid colors.$posts-list-item-border-color;
+  border-top: 1px solid var(--color-border-default);
   font-size: 80%;
   margin: 0;
 }
@@ -123,7 +121,7 @@
 }
 
 .posts-list .post-metadata-right a {
-  color: colors.$post-metadata-color;
+  color: var(--color-post-metadata);
 }
 
 .posts-list .post-metadata-right a:after {
@@ -134,7 +132,7 @@
 }
 
 .posts-list .post-metadata-right a:hover {
-  color: colors.$post-metadata-hover-color;
+  color: var(--color-post-metadata-hover);
   text-decoration: none;
 }
 

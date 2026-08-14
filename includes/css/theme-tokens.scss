@@ -1,3 +1,5 @@
+@use "palette";
+
 :root {
   color-scheme: light dark;
 
@@ -20,92 +22,95 @@
   --font-size-toc: 0.8125rem;
   --font-size-toc-nested: 0.75rem;
 
-  --color-accent: #228b22;
-  --color-accent-hover: #176117;
-  --color-accent-active: #186118;
+  --color-accent: #{palette.$green};
+  --color-accent-hover: #{palette.$green-hover};
+  --color-accent-active: #{palette.$green-active};
+  // Text/icon color drawn on top of an accent-colored background
+  --color-on-accent: #{palette.$white};
 
-  --color-text-primary: #373737;
-  --color-text-muted: #808080;
-  --color-text-strong: #505050;
-  --color-text-on-dark: #dedede;
-  --color-text-code: #c7254e;
-  --color-text-footnote: #808080;
+  --color-text-primary: #{palette.$strong-gray};
+  --color-text-muted: #{palette.$gray};
+  --color-text-strong: #{palette.$medium-gray};
+  --color-text-on-dark: #{palette.$very-light-gray};
+  --color-text-code: #{palette.$rose};
+  --color-text-footnote: #{palette.$gray};
 
-  --color-surface-page: #ffffff;
-  --color-surface-subtle: #f5f5f5;
-  --color-surface-soft: #cccccc;
-  --color-surface-muted: #dedede;
-  --color-surface-code-inline: #f9f2f4;
-  --color-surface-topbar: #373737;
-  --color-surface-topbar-hover: #272727;
-  --color-surface-footer: #373737;
-  --color-surface-footer-powered: #505050;
+  --color-surface-page: #{palette.$white};
+  --color-surface-subtle: #{palette.$extremely-light-gray};
+  --color-surface-soft: #{palette.$light-gray};
+  --color-surface-muted: #{palette.$very-light-gray};
+  --color-surface-code-inline: #{palette.$light-rose};
+  --color-surface-topbar: #{palette.$strong-gray};
+  --color-surface-topbar-hover: #{palette.$very-strong-gray};
+  --color-surface-footer: #{palette.$strong-gray};
+  --color-surface-footer-powered: #{palette.$medium-gray};
 
-  --color-border-default: #cccccc;
-  --color-border-strong: #505050;
-  --color-border-muted: #808080;
-  --color-shadow-page: #808080;
+  --color-border-default: #{palette.$light-gray};
+  --color-border-strong: #{palette.$medium-gray};
+  --color-border-muted: #{palette.$gray};
+  --color-shadow-page: #{palette.$gray};
 
-  --color-post-title: #373737;
-  --color-post-title-hover: #272727;
-  --color-post-metadata: #808080;
-  --color-post-metadata-hover: #272727;
-  --color-post-category-overlay: rgba(55, 55, 55, 0.85);
+  --color-post-title: #{palette.$strong-gray};
+  --color-post-title-hover: #{palette.$very-strong-gray};
+  --color-post-metadata: #{palette.$gray};
+  --color-post-metadata-hover: #{palette.$very-strong-gray};
+  --color-post-category-overlay: #{rgba(palette.$strong-gray, 0.85)};
 
-  --color-footer-heading: #dedede;
-  --color-footer-subheading: #dedede;
-  --color-footer-subheading-hover: #b8b8b8;
+  --color-footer-heading: #{palette.$very-light-gray};
+  --color-footer-subheading: #{palette.$very-light-gray};
+  --color-footer-subheading-hover: #{palette.$soft-gray};
 
-  --color-answer-bg: #c4f9c4;
+  --color-answer-bg: #{palette.$very-light-green};
 
-  --color-alert-info: #007fb3;
-  --color-alert-hint: #2b9b3a;
-  --color-alert-warning: #d18a00;
-  --color-alert-error: #cf2f2a;
+  --color-alert-info: #{palette.$teal};
+  --color-alert-hint: #{palette.$forest-green};
+  --color-alert-warning: #{palette.$amber};
+  --color-alert-error: #{palette.$brick-red};
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-accent: #59b759;
-    --color-accent-hover: #82cb82;
-    --color-accent-active: #4cab4c;
+    --color-accent: #{palette.$dark-mode-green};
+    --color-accent-hover: #{palette.$dark-mode-green-hover};
+    --color-accent-active: #{palette.$dark-mode-green-active};
+    --color-on-accent: #{palette.$very-strong-gray};
 
-    --color-text-primary: #dadada;
-    --color-text-muted: #ababab;
-    --color-text-strong: #c5c5c5;
-    --color-text-on-dark: #e8e8e8;
-    --color-text-code: #ff8aa7;
-    --color-text-footnote: #b5b5b5;
+    --color-text-primary: #{palette.$pale-gray-6};
+    --color-text-muted: #{palette.$pale-gray-2};
+    --color-text-strong: #{palette.$pale-gray-4};
+    --color-text-on-dark: #{palette.$pale-gray-8};
+    --color-text-code: #{palette.$dark-mode-rose};
+    --color-text-footnote: #{palette.$pale-gray-3};
 
-    --color-surface-page: #1c201b;
-    --color-surface-subtle: #232823;
-    --color-surface-soft: #2f352f;
-    --color-surface-code-inline: #352730;
-    --color-surface-topbar: #111511;
-    --color-surface-topbar-hover: #1a1f1a;
-    --color-surface-footer: #141914;
-    --color-surface-footer-powered: #232b23;
+    --color-surface-page: #{palette.$charcoal-5};
+    --color-surface-subtle: #{palette.$charcoal-6};
+    --color-surface-soft: #{palette.$charcoal-9};
+    --color-surface-code-inline: #{palette.$dark-mode-rose-bg};
+    --color-surface-topbar: #{palette.$charcoal-2};
+    --color-surface-topbar-hover: #{palette.$charcoal-4};
+    --color-surface-footer: #{palette.$charcoal-3};
+    --color-surface-footer-powered: #{palette.$charcoal-7};
 
-    --color-border-default: #3a443a;
-    --color-border-strong: #4b554b;
-    --color-border-muted: #2a302a;
-    --color-shadow-page: #101310;
+    --color-border-default: #{palette.$charcoal-10};
+    --color-border-strong: #{palette.$charcoal-11};
+    --color-border-muted: #{palette.$charcoal-8};
+    --color-shadow-page: #{palette.$charcoal-1};
 
-    --color-post-title: #e0e0e0;
-    --color-post-title-hover: #f3f3f3;
-    --color-post-metadata: #a9b0a9;
-    --color-post-metadata-hover: #f0f3f0;
-    --color-post-category-overlay: rgba(224, 224, 224, 0.2);
+    --color-post-title: #{palette.$pale-gray-7};
+    --color-post-title-hover: #{palette.$pale-gray-11};
+    --color-post-metadata: #{palette.$pale-gray-1};
+    --color-post-metadata-hover: #{palette.$pale-gray-10};
+    --color-post-category-overlay: #{rgba(palette.$pale-gray-7, 0.2)};
 
-    --color-footer-heading: #e8e8e8;
-    --color-footer-subheading: #c8d1c8;
-    --color-footer-subheading-hover: #eaf5ea;
+    --color-footer-heading: #{palette.$pale-gray-8};
+    --color-footer-subheading: #{palette.$pale-gray-5};
+    --color-footer-subheading-hover: #{palette.$pale-gray-9};
 
-    --color-answer-bg: #223822;
+    --color-answer-bg: #{palette.$dark-mode-answer-bg};
 
-    --color-alert-info: #57d3ff;
-    --color-alert-hint: #73ef86;
-    --color-alert-warning: #ffd15c;
-    --color-alert-error: #ff7974;
+    --color-alert-info: #{palette.$dark-mode-teal};
+    --color-alert-hint: #{palette.$dark-mode-forest-green};
+    --color-alert-warning: #{palette.$dark-mode-amber};
+    --color-alert-error: #{palette.$dark-mode-brick-red};
   }
 }

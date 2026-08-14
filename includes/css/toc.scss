@@ -1,5 +1,3 @@
-@use "colors";
-
 // Table of content
 
 // Bootstrap's Affix plugin was removed since Bootstrap 4; "position: sticky" gives an
@@ -24,7 +22,7 @@
 
 /* all links */
 .bs-docs-sidebar .nav > li > a {
-  color: #999;
+  color: var(--color-text-muted);
   border-left: 2px solid transparent;
   padding: 4px 20px;
   font-size: var(--font-size-toc);
@@ -43,10 +41,10 @@
 .bs-docs-sidebar .nav > .active > a,
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
-  color: colors.$tint-color;
+  color: var(--color-accent);
   text-decoration: none;
   background-color: transparent;
-  border-left-color: colors.$tint-color;
+  border-left-color: var(--color-accent);
 }
 /* all active links */
 .bs-docs-sidebar .nav > .active > a,

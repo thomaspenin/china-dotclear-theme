@@ -1,7 +1,5 @@
-@use "colors";
-
 .search .search-info {
-  background-color: colors.$search-info-bg-color;
+  background-color: var(--color-surface-soft);
   font-size: var(--font-size-supporting);
   padding: 15px;
 }

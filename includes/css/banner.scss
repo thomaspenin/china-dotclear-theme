@@ -1,17 +1,15 @@
-@use "colors";
-
 .banner a:link,
 .banner a:visited,
 .banner a:hover,
 .banner a:active {
-  color: colors.$banner-link-color;
+  color: var(--color-surface-page);
 }
 
 .banner .modal a:link,
 .banner .modal a:visited,
 .banner .modal a:hover,
 .banner .modal a:active {
-  color: colors.$banner-modal-link-color;
+  color: var(--color-accent);
 }
 
 .banner .modal {

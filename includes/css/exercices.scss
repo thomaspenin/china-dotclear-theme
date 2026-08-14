@@ -1,5 +1,3 @@
-@use "colors";
-
 ol.exercices {
   counter-reset: my-counter; /* Initiate a counter */
   margin-left: 0; /* Remove the default left margin */
@@ -26,8 +24,8 @@ ol.exercices > li.exercice:before {
   width: 2em;
   padding: 4px;
   border-radius: 3px;
-  color: #fff;
-  background: colors.$exercice-number-bg-color;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
   font-weight: bold;
   text-align: center;
 }
@@ -35,13 +33,13 @@ ol.exercices > li.exercice:before {
 .exercices .answer {
   margin-top: 5px;
   border-radius: 5px;
-  color: colors.$exercice-answer-color;
+  color: var(--color-accent);
 }
 
 .exercices .answer .expandable {
-  background: colors.$exercice-answer-bg-color;
+  background: var(--color-answer-bg);
   border-radius: 3px;
-  box-shadow: 0 4px 4px -4px #555555 inset;
+  box-shadow: 0 4px 4px -4px var(--color-shadow-page) inset;
   padding: 5px;
 }
 
@@ -63,7 +61,7 @@ ol.exercices > li.exercice:before {
 
 .exercices .visibilityToggle {
   position: absolute;
-  background: colors.$exercice-answer-bg-color;
+  background: var(--color-answer-bg);
   padding: 3px 5px;
   bottom: 0;
   right: 0;
@@ -73,10 +71,10 @@ ol.exercices > li.exercice:before {
 }
 
 .exercices .visibilityToggle {
-  color: colors.$exercice-answer-toggle-color;
+  color: var(--color-accent);
 }
 
 .exercices .visibilityToggle:hover {
-  color: colors.$exercice-answer-toggle-hover-color;
+  color: var(--color-accent-active);
   cursor: pointer;
 }

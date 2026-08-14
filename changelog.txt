@@ -6,6 +6,7 @@ Changelog
   - Update the base style for a better visibility
   - No longer embed a KaiTi font. In addition to be legally cleaner, it avoids a large download
   - Prettify the code
+  - Reorganize colors around a palette and semantic tokens
   - Add a dark mode (auto-toggled based on the browser)
   - The theme download page now points to the Github repository
   - Use Phosphor Icons to replace my custom "Orchid" font and GlyphIcons

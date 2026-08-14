@@ -1,9 +1,7 @@
-@use "colors";
-
 .miniplayer .playButton {
   cursor: pointer;
 }
 
 .miniplayer .playButton:hover {
-  color: colors.$player-hover-color;
+  color: var(--color-accent);
 }

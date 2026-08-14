@@ -1,7 +1,6 @@
 @use "fonts";
 @use "layout";
 @use "paths";
-@use "colors";
 
 #top .navbar-brand {
   display: inline-block;
@@ -10,11 +9,11 @@
   padding-left: 20px;
   padding-right: 10px;
   font-size: 140%;
-  background: colors.$top-bar-background-color
+  background: var(--color-surface-topbar)
     url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   padding-left: 46px;
-  color: colors.$top-bar-text-color;
+  color: var(--color-text-on-dark);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -27,7 +26,7 @@
 }
 
 #top .navbar-brand:hover {
-  background: colors.$top-bar-background-color-hover
+  background: var(--color-surface-topbar-hover)
     url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
   background-size: 32px 32px;
   -webkit-transition: background-color 250ms linear;
@@ -68,11 +67,11 @@
 
 #top .container {
   padding: 0;
-  background-color: colors.$top-bar-background-color;
+  background-color: var(--color-surface-topbar);
 }
 
 #top .navbar-toggler {
-  color: colors.$top-bar-text-color;
+  color: var(--color-text-on-dark);
   font-size: 32px;
   height: layout.$top-bar-height;
   width: layout.$top-bar-height; // Square
@@ -89,7 +88,7 @@
 }
 
 #top .navbar-toggler:hover {
-  background-color: colors.$top-bar-background-color-hover;
+  background-color: var(--color-surface-topbar-hover);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -105,7 +104,7 @@
   padding-top: 0;
   padding-bottom: 0;
   height: layout.$top-bar-height;
-  color: colors.$top-bar-text-color;
+  color: var(--color-text-on-dark);
   font-family: "Lato", sans-serif;
   background-color: transparent;
   -webkit-transition: background-color 250ms linear;
@@ -126,7 +125,7 @@
 }
 
 #top .navbar-nav li a:hover {
-  background-color: colors.$top-bar-background-color-hover;
+  background-color: var(--color-surface-topbar-hover);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;

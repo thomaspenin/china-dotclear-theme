@@ -1,7 +1,5 @@
-@use "colors";
-
 .download #download-pitch.container {
-  background-color: colors.$download-pitch-bg-color;
+  background-color: var(--color-surface-soft);
   font-size: var(--font-size-supporting);
   padding: 15px;
 }

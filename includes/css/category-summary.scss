@@ -1,7 +1,5 @@
-@use "colors";
-
 #category-summary {
-  background-color: colors.$category-summary-bg-color;
+  background-color: var(--color-surface-soft);
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 20px;

@@ -1,11 +1,9 @@
-@use "colors";
-
 #home-content {
   padding: 0;
 }
 
 .home.middle {
-  background-color: colors.$home-middle-background-color;
+  background-color: var(--color-surface-muted);
 }
 
 #home-content .posts-list .title-row {

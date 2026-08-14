@@ -18,7 +18,7 @@ function preparePinyinOnHover() {
     if (pinyin && pinyin.length > 0) {
       $(this).replaceWith(function () {
         return (
-          "<span data-toggle='tooltip' class='pinyinTooltip' title=\"" +
+          "<span data-bs-toggle='tooltip' class='pinyinTooltip' title=\"" +
           accentPinyin(pinyin) +
           '">' +
           $(this).text() +
@@ -33,7 +33,7 @@ function preparePinyinOnHover() {
     if (pinyin && pinyin.length > 0) {
       $(this).replaceWith(function () {
         return (
-          "<span data-toggle='tooltip' class='pinyinTooltip' title=\"" +
+          "<span data-bs-toggle='tooltip' class='pinyinTooltip' title=\"" +
           accentPinyin(pinyin) +
           '">' +
           $(this).text() +

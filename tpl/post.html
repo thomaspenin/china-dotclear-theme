@@ -53,7 +53,7 @@
       </tpl:EntryIf>
       <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
       <p class="post-metadata">{{tpl:lang By}} <b>{{tpl:EntryAuthorDisplayName}}</b> &bull; {{tpl:EntryDate format="le %d %B %Y"}}</p>
-      <a class="comment-count" href="#comments" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}}&nbsp;<i class="ph ph-caret-down"></i></a>
+      <a class="comment-count" href="#comments" data-bs-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}}&nbsp;<i class="ph ph-caret-down"></i></a>
     </div>
 
     <div class="middle">
@@ -79,7 +79,7 @@
 
 	<!-- Pagination -->
 	<nav class="previous-next-posts">
-	  <ul class="pager">
+	  <ul class="d-flex list-unstyled">
 	    <tpl:EntryPrevious>
 	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
 	    </tpl:EntryPrevious>
@@ -90,10 +90,9 @@
 	</nav>
       </div>
       <div class="col-md-4">
-	<nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
+	<nav class=" post-info bs-docs-sidebar d-none d-md-block">
 	  <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
 	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
-	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.resize.js"></script>
 	  <script type="text/javascript">
 	    $(function() {
 	      // Generate the toc
@@ -105,44 +104,20 @@
 		stocFooter: "",
 		listType: "ul",
 		rootListId: "toc",
-		rootListClass: "nav nav-stacked",
-		subListClass: "nav nav-stacked",
+		rootListClass: "nav",
+		subListClass: "nav",
 		smoothScroll: 0
 	      });
 
 	      // Chinese text should appear bigger in the generated code if it is not already the case
 	      $(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
 
-	      // Setup scrollspy for toc
-	      $('body').scrollspy({
+	      // Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
+	      new bootstrap.ScrollSpy(document.body, {
 		target: '.bs-docs-sidebar',
-		offset: 50 // Height of the top bar
-	      });
-
-	      // "Affix" allows the sidebar to float when it is within a top and a bottom offset
-	      $('.bs-docs-sidebar').affix(refreshAffix());
-
-	      // Resizing the comments form shall have an effect on Affix
-	      $('#comments').resize(function() {
-		$('.bs-docs-sidebar').data('bs.affix').options = refreshAffix();
+		rootMargin: '0px 0px -80%'
 	      });
 	    });
-
-	    // "Affix" allows the sidebar to float when it is within a top and a bottom offset. This methods computes the "offset" parameter for the affix() function
-	    function refreshAffix() {
-	      return {
-		offset: {
-		  top: function () {
-		    return (this.top = $(".post-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
-		  },
-		  bottom: function () {
-		    return (this.bottom = $("#comments").outerHeight(true) + 					    $('#footer').outerHeight(true)
-                                        + $("#pagination-posts").outerHeight(true) + $("#post-footer").outerHeight(true)
-                                        + 20 /* Padding of the container */);
-		  }
-		}
-	      };
-	    }
 	  </script>
 	</nav>
       </div>

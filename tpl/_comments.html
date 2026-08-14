@@ -19,14 +19,14 @@
 
 	<tpl:CommentsHeader></tpl:CommentsHeader>
 
-	<li id="c{{tpl:CommentID}}" class="media">
-	  <a class="pull-left media-top" href="#">
+	<li id="c{{tpl:CommentID}}" class="d-flex">
+	  <a class="flex-shrink-0 media-top" href="#">
 	    <span {{tpl:CommentIfMe return="class='comment-image me'"}}/>
 	  </a>
-	  <div class="media-body">
+	  <div class="media-body flex-grow-1 ms-3">
 	    <div class="row">
-	      <div class="comment-author col-xs-6"><h4>{{tpl:CommentAuthorLink}}</h4></div>
-	      <div class="comment-metadata col-xs-6">
+	      <div class="comment-author col-6"><h4>{{tpl:CommentAuthorLink}}</h4></div>
+	      <div class="comment-metadata col-6">
 		<i class="ph ph-clock" aria-hidden="true"></i> {{tpl:CommentDate format="%d %B %Y"}} {{tpl:lang at}} {{tpl:CommentTime}}
 	      </div>
 	    </div>
@@ -43,11 +43,11 @@
       </tpl:Comments>
 
       <!-- Input area for a new comment -->
-	<li class="media">
-	  <a class="pull-left media-top" href="#">
+	<li class="d-flex">
+	  <a class="flex-shrink-0 media-top" href="#">
 	    <span/>
 	  </a>
-	  <div class="media-body">
+	  <div class="media-body flex-grow-1 ms-3">
 	    <!-- To inform the user if something went wrong -->
 	    <div id="feedback">
 	      <tpl:SysIfFormError>

@@ -2,20 +2,11 @@
 
 // Table of content
 
-.fixed {
-  position: fixed;
-}
-
-.bs-docs-sidebar.affix {
-  position: fixed; /* to stop the div from scrolling */
-  top: 50px; // Height of the top bar     /* to fix the div at the top its containing element */
-  //right: 0;        /* to fix the div at the right of its containing element */
-}
-
-.bs-docs-sidebar.affix-bottom {
-  position: relative; /* to stop the div from scrolling */
-  bottom: 0; /* to fix the div at the top its containing element */
-  //right: 0;        /* to fix the div at the right of its containing element */
+// Bootstrap's Affix plugin was removed since Bootstrap 4; "position: sticky" gives an
+// equivalent float-within-bounds behavior, naturally stopping at the bottom of the column.
+.bs-docs-sidebar {
+  position: sticky;
+  top: 50px; // Height of the top bar
 }
 
 /* sidebar */
@@ -23,6 +14,12 @@
   padding-left: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* Bootstrap 5's .nav is a flex row by default (and the old .nav-stacked class it replaces
+   is gone); force the generated TOC list back to a vertical stack. */
+.bs-docs-sidebar .nav {
+  display: block;
 }
 
 /* all links */

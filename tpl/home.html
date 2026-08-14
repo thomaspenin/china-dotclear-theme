@@ -50,41 +50,28 @@
   <script type="text/javascript">
   $(function () {
     // Start the carousel with a custom speed
-    $('#homeCarousel').carousel({
-        interval: 5000
+    var homeCarouselEl = document.getElementById("homeCarousel");
+    var homeCarousel = new bootstrap.Carousel(homeCarouselEl, {
+      interval: 5000
     });
 
-    // If a credit modal is shown, stop the carousel, restart it when the modal disapears
-    $('.credit-modal').on('show.bs.modal', function () {
-      $('#homeCarousel').carousel('pause');
-    }).on('hidden.bs.modal', function () {
-      $('#homeCarousel').carousel('cycle');
+    // If a credit modal is shown, stop the carousel, restart it when the modal disapears.
+    // Bootstrap 5's modal events are native CustomEvents, which jQuery's .on() cannot catch
+    // (it treats the dot in "show.bs.modal" as a namespace), so bind them natively instead.
+    document.querySelectorAll(".credit-modal").forEach(function (modalEl) {
+      modalEl.addEventListener("show.bs.modal", function () {
+        homeCarousel.pause();
+      });
+      modalEl.addEventListener("hidden.bs.modal", function () {
+        homeCarousel.cycle();
+      });
     });
-
-    /*var row=$('.portfolio');
-    $.each(row, function() {
-        var maxh=0;
-        $.each($(this).find('div[class^="col-"]'), function() {
-            if($(this).height() > maxh)
-                maxh=$(this).height();
-        });
-        $.each($(this).find('div[class^="col-"]'), function() {
-            $(this).height(maxh);
-        });
-    });*/
 
     // Or use this to Open link in same window (similar to target=_blank)
     $(".thumbnail .link").click(function() {
         window.location = $(this).find("a.entry-link").attr("href");
         return false;
     });
- /*
-    // Show URL on Mouse Hover
-    $(".thumbnail .link").hover(function() {
-        window.status = $(this).find("a.entry-link").attr("href");
-    }, function() {
-        window.status = "";
-    });*/
   })
   </script>
 </head>
@@ -98,50 +85,50 @@
     <div class="banner">
       <div id="homeCarousel" class="carousel slide">
 	<!-- Indicators -->
-	<ol class="carousel-indicators hidden-xs">
-	  <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-	  <li data-target="#homeCarousel" data-slide-to="1"></li>
-	  <li data-target="#homeCarousel" data-slide-to="2"></li>
-	  <li data-target="#homeCarousel" data-slide-to="3"></li>
-	</ol>
+	<div class="carousel-indicators d-none d-sm-flex">
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+	</div>
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
-	  <div class="item active">
+	  <div class="carousel-item active">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/welcome.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Tradition,<br/>Modernité</span></h3>
 	      <p></p>
 	    </div>
 	  </div>
-	  <div class="item">
+	  <div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/travel.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Voyage,<br/>Impressions</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit2"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
-	<div class="item">
+	<div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/civilization.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Civilisation,<br/>Vie quotidienne</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit3"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
-	  <div class="item">
+	  <div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/language.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Langue,<br/>Littérature</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit4"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
 	</div>
 
 	<!-- Controls -->
-	<a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
+	<a class="carousel-control-prev d-none d-sm-flex" href="#homeCarousel" data-bs-slide="prev">
     <span><i class="ph ph-caret-left"></i></span>
 	</a>
-	<a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
+	<a class="carousel-control-next d-none d-sm-flex" href="#homeCarousel" data-bs-slide="next">
 	  <i class="ph ph-caret-right"></i>
 	</a>
       </div>
@@ -152,7 +139,7 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/kimon/709588049">Spirit Way, Ming Xiaoling Mausoleum</a> originalement créée par <a href="https://www.flickr.com/photos/kimon/">Kimon Berlin</a> (license <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
@@ -162,7 +149,7 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/makzhou/5098855312">Lunch feast on a wedding day</a> originalement créée par <a href="https://www.flickr.com/photos/makzhou/">makzhou</a> (license <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
@@ -172,7 +159,7 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/83732213@N00/8198924387">“仁义教化”@钻石之叶</a> originalement créée par <a href="https://www.flickr.com/photos/83732213@N00/">Zhang Ting</a> (license <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
@@ -207,8 +194,8 @@
         <div class="posts-list container">
           <tpl:Categories level="1">
             <div class="title-row row">
-              <div id="category-{{tpl:CategoryShortURL}}" class="col-xs-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"> <small class="hidden-xs">Articles datés des évènements relatés</small></tpl:CategoryIf></h2></div>
-              <div class="col-xs-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="hidden-xs"> dans {{tpl:CategoryTitle}}</span>&nbsp;<i class="ph ph-caret-right"></i></a></div>
+              <div id="category-{{tpl:CategoryShortURL}}" class="col-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"> <small class="d-none d-sm-inline">Articles datés des évènements relatés</small></tpl:CategoryIf></h2></div>
+              <div class="col-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="d-none d-sm-inline"> dans {{tpl:CategoryTitle}}</span>&nbsp;<i class="ph ph-caret-right"></i></a></div>
             </div>
             <div class="thumbnail-row row">
             <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
@@ -216,10 +203,10 @@
               <!-- On small viewport, potential issue if the cards have not the same size when back to the line -->
               <tpl:LoopPosition start="2" modulo="2">
                 <!-- Add the extra clearfix for only the required viewport -->
-                <div class="clearfix visible-xs-block"></div>
+                <div class="clearfix d-block d-sm-none"></div>
               </tpl:LoopPosition>
 
-              <div class="col-sm-3 col-xs-6 posts-thumbnail-item">
+              <div class="col-6 col-sm-3 posts-thumbnail-item">
                 <div class="thumbnail">
                   <div class="link">
                     <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
@@ -259,10 +246,10 @@
                     </tpl:EntryIf>
                   </div>
                   <div class="posts-thumbnail-item-footer row">
-                    <div class="post-metadata-left col-xs-8">
+                    <div class="post-metadata-left col-8">
                       <i class="ph ph-clock"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                     </div>
-                    <div class="post-metadata-right col-xs-4">
+                    <div class="post-metadata-right col-4">
                       <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><i class="ph ph-chat"></i>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
                     </div>
                   </div>

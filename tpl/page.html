@@ -63,7 +63,7 @@
 	  {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 	</div>
 	<div class="col-md-3">
-	  <nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
+	  <nav class=" post-info bs-docs-sidebar d-none d-md-block">
 	    <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
 	    <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
 	    <script type="text/javascript">
@@ -77,31 +77,19 @@
 		  stocFooter: "",
 		  listType: "ul",
 		  rootListId: "toc",
-		  rootListClass: "nav nav-stacked",
-		  subListClass: "nav nav-stacked",
+		  rootListClass: "nav",
+		  subListClass: "nav",
 		  smoothScroll: 0
 		});
 
 		// Chinese text should appear bigger in the generated code if it is not already the case
 		$(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
 
-		// Setup scrollspy for toc
-		$('body').scrollspy({
+		// Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
+		new bootstrap.ScrollSpy(document.body, {
 		  target: '.bs-docs-sidebar',
-		  offset: 50 // Height of the top bar
+		  rootMargin: '0px 0px -80%'
 		});
-
-		// "Affix" allows the sidebar to float when it is within a top and a bottom offset
-		$('.bs-docs-sidebar').affix({
-		  offset: {
-		    top: function () {
-		      return (this.top = $(".page-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
-		    }
-		  , bottom: function () {
-		      return (this.bottom = $('.footer').outerHeight(true) + 20 /* Padding of the container */);
-		    }
-		  }
-		})
 	      });
 	    </script>
 	  </nav>

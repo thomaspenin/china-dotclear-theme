@@ -12,8 +12,27 @@
 }
 
 .btn-primary {
-  background-color: colors.$tint-color;
-  border-color: colors.$tint-color-active;
+  --bs-btn-color: var(--color-text-primary);
+  --bs-btn-bg: var(--color-accent);
+  --bs-btn-border-color: var(--color-accent);
+  --bs-btn-hover-color: var(--color-text-primary);
+  --bs-btn-hover-bg: var(--color-accent-hover);
+  --bs-btn-hover-border-color: var(--color-accent-hover);
+  --bs-btn-active-color: var(--color-text-primary);
+  --bs-btn-active-bg: var(--color-accent-active);
+  --bs-btn-active-border-color: var(--color-accent-active);
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--color-text-primary);
+  --bs-btn-bg: var(--color-surface-soft);
+  --bs-btn-border-color: var(--color-border-muted);
+  --bs-btn-hover-color: var(--color-surface-subtle);
+  --bs-btn-hover-bg: var(--color-text-primary);
+  --bs-btn-hover-border-color: var(--color-text-primary);
+  --bs-btn-active-color: var(--color-surface-page);
+  --bs-btn-active-bg: var(--color-text-primary);
+  --bs-btn-active-border-color: var(--color-text-primary);
 }
 
 // Use the right colors for pagination controls

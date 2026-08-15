@@ -48,7 +48,7 @@
   {{tpl:include src="_head.html"}}
 
   <script type="text/javascript">
-  $(function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Start the carousel with a custom speed
     var homeCarouselEl = document.getElementById("homeCarousel");
     var homeCarousel = new bootstrap.Carousel(homeCarouselEl, {
@@ -56,8 +56,7 @@
     });
 
     // If a credit modal is shown, stop the carousel, restart it when the modal disapears.
-    // Bootstrap 5's modal events are native CustomEvents, which jQuery's .on() cannot catch
-    // (it treats the dot in "show.bs.modal" as a namespace), so bind them natively instead.
+    // Bootstrap 5's modal events are native CustomEvents, so bind them natively.
     document.querySelectorAll(".credit-modal").forEach(function (modalEl) {
       modalEl.addEventListener("show.bs.modal", function () {
         homeCarousel.pause();
@@ -68,11 +67,13 @@
     });
 
     // Or use this to Open link in same window (similar to target=_blank)
-    $(".thumbnail .link").click(function() {
-        window.location = $(this).find("a.entry-link").attr("href");
-        return false;
+    document.querySelectorAll(".thumbnail .link").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location = link.querySelector("a.entry-link").href;
+      });
     });
-  })
+  });
   </script>
 </head>
 

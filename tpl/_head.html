@@ -26,8 +26,6 @@
 />
 <!-- Theme CSS -->
 <link href="{{tpl:BlogThemeURL}}/includes/css/style.css" rel="stylesheet" />
-<!-- Javascript, jQuery must come FIRST for our custom jQuery plugins to work -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- Bootstrap JS bundle (includes Popper) -->
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -79,11 +77,11 @@
 
 <!-- Javascript to execute once the document is ready -->
 <script type="text/javascript">
-  $(document).ready(function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Prepare the pinyin that should appear when hovering <ch> or <chb> tags
     preparePinyinOnHover();
 
-    // Initialize tooltips (Bootstrap 5 JS is vanilla, not a jQuery plugin)
+    // Initialize tooltips
     document
       .querySelectorAll('[data-bs-toggle="tooltip"]')
       .forEach(function (el) {
@@ -97,20 +95,19 @@
 
     // Code for the button allowing the user to go back to top
     var pxShow = 10; //height on which the button will show
-    var fadeInTime = 1000; //how slow/fast you want the button to show
-    var fadeOutTime = 1000; //how slow/fast you want the button to hide
-    var scrollSpeed = 0; //how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-    jQuery(window).scroll(function () {
-      if (jQuery(window).scrollTop() >= pxShow) {
-        jQuery("#back-to-top").fadeIn(fadeInTime);
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= pxShow) {
+        document.querySelector("#back-to-top").style.display = "block";
       } else {
-        jQuery("#back-to-top").fadeOut(fadeOutTime);
+        document.querySelector("#back-to-top").style.display = "none";
       }
     });
-    jQuery("#back-to-top a").click(function () {
-      jQuery("html, body").animate({ scrollTop: 0 }, scrollSpeed);
-      return false;
-    });
+    document
+      .querySelector("#back-to-top a")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
 
     // Prepare the audio players
     prepareAudioPlayers();

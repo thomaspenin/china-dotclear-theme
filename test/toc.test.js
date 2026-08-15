@@ -333,6 +333,38 @@ test("buildToc's toc expands and collapses its branch when its header link is cl
   }
 });
 
+test("buildToc marks the first heading as current by default, before any scrollspy activation", () => {
+  const originalDocument = globalThis.document;
+
+  const target = new FakeElement("nav");
+  const source = new FakeElement("div");
+  const h2a = new FakeElement("h2");
+  h2a.textContent = "Section one";
+  const h2b = new FakeElement("h2");
+  h2b.textContent = "Section two";
+  source.querySelectorAll = makeQuerySelectorAll([h2a, h2b]);
+
+  globalThis.document = {
+    createElement: (tag) => new FakeElement(tag),
+    querySelector: (selector) => (selector === ".toc-target" ? target : source),
+    body: new FakeElement("body"),
+  };
+
+  try {
+    buildToc(".toc-target", { search: ".post-content" });
+
+    const rootList = target.children[0];
+    const [firstLink] = rootList.children[0].children;
+    const [secondLink] = rootList.children[1].children;
+
+    assert.equal(firstLink.classList.contains("toc-current"), true);
+    assert.equal(firstLink.getAttribute("aria-current"), "true");
+    assert.equal(secondLink.classList.contains("toc-current"), false);
+  } finally {
+    globalThis.document = originalDocument;
+  }
+});
+
 test("buildToc's toc auto-expands and highlights the active branch on scrollspy activation", () => {
   const originalDocument = globalThis.document;
 

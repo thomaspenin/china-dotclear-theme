@@ -182,12 +182,40 @@
   }
 
   /*!
+   * Returns the very first heading link rendered in a toc list, if any.
+   * @param {Element} rootList
+   * @returns {Element|null}
+   */
+  function getFirstLink(rootList) {
+    const firstItem = rootList.children[0];
+    return firstItem ? firstItem.children[0] || null : null;
+  }
+
+  /*!
    * Wires up the accordion (click-to-toggle) and scrollspy (auto-expand the
-   * active branch) behaviors on a rendered toc list.
+   * active branch) behaviors on a rendered toc list. A heading is always kept
+   * marked as current: the first one by default, until scrollspy activates another.
    * @param {Element} rootList
    */
   function attachTocInteractions(rootList) {
     let currentLink = null;
+
+    function markCurrent(link) {
+      // Keep our own persistent "current" marker instead of relying on
+      // bootstrap.ScrollSpy's own .active class, which it removes as soon as
+      // the heading scrolls out of its (narrow) observed root margin, well
+      // before the next heading is reached, causing the highlight to flicker.
+      if (currentLink && currentLink !== link) {
+        currentLink.classList.remove(CLASS_CURRENT);
+        currentLink.removeAttribute("aria-current");
+      }
+      link.classList.add(CLASS_CURRENT);
+      link.setAttribute("aria-current", "true");
+      currentLink = link;
+
+      collapseAllBranches(rootList);
+      expandAncestorBranches(link);
+    }
 
     rootList.addEventListener("click", function (event) {
       const link = event.target.closest("a");
@@ -210,23 +238,14 @@
           if (!activeLink || !rootList.contains(activeLink)) {
             return;
           }
-
-          // Keep our own persistent "current" marker instead of relying on
-          // bootstrap.ScrollSpy's own .active class, which it removes as soon as
-          // the heading scrolls out of its (narrow) observed root margin, well
-          // before the next heading is reached, causing the highlight to flicker.
-          if (currentLink && currentLink !== activeLink) {
-            currentLink.classList.remove(CLASS_CURRENT);
-            currentLink.removeAttribute("aria-current");
-          }
-          activeLink.classList.add(CLASS_CURRENT);
-          activeLink.setAttribute("aria-current", "true");
-          currentLink = activeLink;
-
-          collapseAllBranches(rootList);
-          expandAncestorBranches(activeLink);
+          markCurrent(activeLink);
         },
       );
+    }
+
+    const firstLink = getFirstLink(rootList);
+    if (firstLink) {
+      markCurrent(firstLink);
     }
   }
 

@@ -31,6 +31,7 @@ ol.exercices > li.exercice:before {
 }
 
 .exercices .answer {
+  clear: right;
   margin-top: 5px;
   border-radius: 5px;
   color: var(--color-accent);
@@ -54,19 +55,11 @@ ol.exercices > li.exercice:before {
   margin-top: 3px;
 }
 
-.exercices .arrow {
-  display: inline-block;
-  transform: rotate(-90deg);
-}
-
 .exercices .visibilityToggle {
-  position: absolute;
+  float: right;
   background: var(--color-answer-bg);
   padding: 3px 5px;
-  bottom: 0;
-  right: 0;
-  margin-right: 3px;
-  margin-bottom: 3px;
+  margin-left: 5px;
   border-radius: 3px;
 }
 

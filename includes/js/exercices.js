@@ -35,9 +35,10 @@ function configureExercices() {
     visibilityToggle.tabIndex = 0;
     visibilityToggle.setAttribute("aria-expanded", "false");
     visibilityToggle.innerHTML =
-      'Correction&nbsp;<span class="arrow">&laquo;</span>';
-    answer.parentNode.insertBefore(visibilityToggle, answer);
-    var arrow = visibilityToggle.querySelector(".arrow");
+      'Correction&nbsp;<i class="ph ph-caret-down" aria-hidden="true"></i>';
+    var question = answer.parentNode.querySelector(".question");
+    answer.parentNode.insertBefore(visibilityToggle, question || answer);
+    var icon = visibilityToggle.querySelector(".ph");
     var isAnimating = false;
 
     function toggleAnswer() {
@@ -67,8 +68,8 @@ function configureExercices() {
       visibilityToggle.setAttribute("aria-expanded", String(!isVisible));
       expandableSection.style.overflow = "hidden";
 
-      // Change the aspect of the button indicating the move
-      arrow.textContent = isVisible ? "«" : "»";
+      icon.classList.toggle("ph-caret-down", isVisible);
+      icon.classList.toggle("ph-caret-up", !isVisible);
 
       var animation = expandableSection.animate(keyframes, {
         duration: 200,

@@ -55,11 +55,11 @@
 	<div id="comments-sidebar" class="col-md-4">
           <div class="comments-feed">
             <p><a class="feed" type="application/atom+xml" href="{{tpl:TagFeedURL type="atom"}}"
-            title="{{tpl:lang This tag's articles Atom feed}}" class="feed"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Entries feed}}</a></p>
+            title="{{tpl:lang This tag's articles Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Entries feed}}</a></p>
 
             <tpl:SysIf operator="or" comments_active="1" pings_active="1">
             <p><a class="feed" type="application/atom+xml" href="{{tpl:TagFeedURL type="atom"}}/comments"
-            title="{{tpl:lang This tag's comments Atom feed}}" class="feed"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Comments feed}}</a></p>
+            title="{{tpl:lang This tag's comments Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a></p>
             </tpl:SysIf>
           </div>
         </div>

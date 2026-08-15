@@ -20,7 +20,7 @@
 
 4. Configure the blog via the "Blog settings":
    - Set the "Blog name". It is used as the main title in the main toolbar
-   - Set the "Blog description". It is used as the subtitle in the main toolbar. As it is an HTML field, please make sure to edit the source to avoid any `<p>` tags, as they would impact the layout of the toolbar. **Only keep a single raw text line, without any HTML tags.**
+   - Set the "Blog description". It is used as the subtitle in the main toolbar.
    - Set the default language
    - Set the time zone
    - Check "Display smilies on entries and comments"

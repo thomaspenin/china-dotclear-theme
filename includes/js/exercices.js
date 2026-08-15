@@ -1,4 +1,4 @@
-/*!
+/**
  * @instructions To create exercices, use code like the following one in the Dotclear XHTML editor:
  * 		   <ol>
  * 		     <li class="exercice">
@@ -14,7 +14,7 @@
  * and can be manually expanded by the user
  */
 
-/*!
+/**
  * @abstract Function to configure the exercices, i.e. prepare hidden answers
  * @discussion To be called when the document is ready
  */

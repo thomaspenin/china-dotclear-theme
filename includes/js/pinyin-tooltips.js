@@ -1,4 +1,4 @@
-/*!
+/**
  * @instructions Given the content of a <ch> or <chb> tag, provide the pinyin on hover if provided.
  * The full syntax to benefit from this functionality will then be of the sort:
  * 		<ch pinyin="ni3hao3">你好</ch>
@@ -7,7 +7,7 @@
  * otherwise, it will not transform it.
  */
 
-/*!
+/**
  * @abstract Function to create tooltips containing the pinyin that appear when hovering a <ch> or <chb> tag
  * @discussion To be called when the document is ready
  */

@@ -1,14 +1,6 @@
 /**
- * Vanilla JS replacement for the old jquery.stoc.js plugin: builds a nested
- * table of contents (nav list) from the headings found in a content
- * container, mirroring the approach used on Bootstrap's own docs pages
- * (a heading tree rendered as nested <ul>/<li> lists, paired with
- * bootstrap.ScrollSpy for the active-link highlighting).
- *
- * Sub-levels are collapsed by default (accordion behavior): clicking a
- * heading with children toggles its sub-list open/closed, and scrolling
- * into a section (via bootstrap.ScrollSpy's "activate.bs.scrollspy" event
- * on document.body) auto-expands the branch leading to the active heading.
+ * Builds a nested table of contents (nav list) from the headings found
+ * in a content container
  *
  * @note This code should be called after the document is ready.
  */
@@ -26,7 +18,7 @@
     subListClass: "", // Class applied to nested lists
   };
 
-  /*!
+  /**
    * Returns the numeric level of a heading element (h2 -> 2)
    * @param {Element} heading
    * @returns {number}
@@ -35,7 +27,7 @@
     return parseInt(heading.tagName.substring(1), 10);
   }
 
-  /*!
+  /**
    * Builds a CSS selector matching the heading levels to look for
    * @param {number} start
    * @param {number} depth
@@ -49,7 +41,7 @@
     return tags.join(", ");
   }
 
-  /*!
+  /**
    * Makes sure a heading element has an id to link to, generating one if needed
    * @param {Element} heading
    * @param {number} index
@@ -62,7 +54,7 @@
     return heading.id;
   }
 
-  /*!
+  /**
    * Groups a flat list of headings (with a numeric "level") into a nested
    * tree of { heading, children } nodes, based on their relative levels.
    * @param {Array<{level: number}>} headings
@@ -94,16 +86,12 @@
     return root;
   }
 
-  const CLASS_HAS_CHILDREN = "toc-has-children";
-  const CLASS_SUBLIST = "toc-collapse"; // collapsed by default, expanded via CLASS_SHOW
-  const CLASS_SHOW = "show";
   const CLASS_CURRENT = "toc-current"; // persistent highlight, unlike bootstrap's own .active
   const EVENT_SCROLLSPY_ACTIVATE = "activate.bs.scrollspy";
 
-  /*!
+  /**
    * Renders a heading tree (as produced by groupHeadingsIntoTree) into a
-   * nested <ul>/<ol> DOM structure. Branches with children are collapsed
-   * by default (class CLASS_SUBLIST) and expanded via attachTocInteractions.
+   * nested <ul>/<ol> DOM structure. All levels are rendered expanded.
    * @param {Array} tree
    * @param {object} options
    * @param {boolean} isRoot
@@ -115,9 +103,6 @@
 
     if (className) {
       list.className = className;
-    }
-    if (!isRoot) {
-      list.classList.add(CLASS_SUBLIST);
     }
     if (isRoot && options.rootListId) {
       list.id = options.rootListId;
@@ -131,8 +116,6 @@
       item.appendChild(link);
 
       if (node.children.length > 0) {
-        item.classList.add(CLASS_HAS_CHILDREN);
-        link.setAttribute("aria-expanded", "false");
         item.appendChild(renderTocTree(node.children, options, false));
       }
 
@@ -142,54 +125,7 @@
     return list;
   }
 
-  /*!
-   * Collapses every sub-level list under rootList
-   * @param {Element} rootList
-   */
-  function collapseAllBranches(rootList) {
-    Array.prototype.forEach.call(
-      rootList.querySelectorAll("." + CLASS_SUBLIST),
-      function (sublist) {
-        sublist.classList.remove(CLASS_SHOW);
-        const headerLink = sublist.previousElementSibling;
-        if (headerLink && headerLink.tagName === "A") {
-          headerLink.setAttribute("aria-expanded", "false");
-        }
-      },
-    );
-  }
-
-  /*!
-   * Expands the active link's own sub-list (if any) plus every collapsed
-   * sub-list containing it, climbing up from its branch to the root. Also
-   * expanding the link's own children avoids it being collapsed back right
-   * after being opened by a click, once scrollspy activates that same heading.
-   * @param {Element} link
-   */
-  function expandActiveBranch(link) {
-    const ownSublist = link.nextElementSibling;
-    if (ownSublist && ownSublist.classList.contains(CLASS_SUBLIST)) {
-      ownSublist.classList.add(CLASS_SHOW);
-      link.setAttribute("aria-expanded", "true");
-    }
-
-    let current = link;
-    while (current) {
-      const item = current.closest("li");
-      const parentList = item ? item.parentElement : null;
-      if (!parentList || !parentList.classList.contains(CLASS_SUBLIST)) {
-        break;
-      }
-      parentList.classList.add(CLASS_SHOW);
-      const headerLink = parentList.previousElementSibling;
-      if (headerLink && headerLink.tagName === "A") {
-        headerLink.setAttribute("aria-expanded", "true");
-      }
-      current = headerLink;
-    }
-  }
-
-  /*!
+  /**
    * Returns the very first heading link rendered in a toc list, if any.
    * @param {Element} rootList
    * @returns {Element|null}
@@ -199,10 +135,10 @@
     return firstItem ? firstItem.children[0] || null : null;
   }
 
-  /*!
-   * Wires up the accordion (click-to-toggle) and scrollspy (auto-expand the
-   * active branch) behaviors on a rendered toc list. A heading is always kept
-   * marked as current: the first one by default, until scrollspy activates another.
+  /**
+   * Wires up scrollspy-driven highlighting on a rendered toc list. A heading
+   * is always kept marked as current: the first one by default, until
+   * scrollspy activates another.
    * @param {Element} rootList
    */
   function attachTocInteractions(rootList) {
@@ -220,23 +156,7 @@
       link.classList.add(CLASS_CURRENT);
       link.setAttribute("aria-current", "true");
       currentLink = link;
-
-      collapseAllBranches(rootList);
-      expandActiveBranch(link);
     }
-
-    rootList.addEventListener("click", function (event) {
-      const link = event.target.closest("a");
-      if (!link || !rootList.contains(link)) {
-        return;
-      }
-
-      const sublist = link.nextElementSibling;
-      if (sublist && sublist.classList.contains(CLASS_SUBLIST)) {
-        const expanded = sublist.classList.toggle(CLASS_SHOW);
-        link.setAttribute("aria-expanded", String(expanded));
-      }
-    });
 
     if (typeof document !== "undefined" && document.body) {
       document.body.addEventListener(
@@ -257,7 +177,7 @@
     }
   }
 
-  /*!
+  /**
    * Builds a table of contents from the headings found in options.search,
    * and inserts it at the beginning of the target element.
    * @param {string|Element} target - Where to insert the generated toc

@@ -12,7 +12,7 @@
     4: { a: "à", e: "è", i: "ì", o: "ò", u: "ù", ü: "ǜ" },
   };
 
-  /*!
+  /**
    * Capitalizes the first letter of a string
    * @param {string} value - The string to capitalize
    * @returns {string} The string with the first letter capitalized
@@ -22,7 +22,7 @@
     return value.charAt(0).toUpperCase() + value.slice(1);
   }
 
-  /*!
+  /**
    * Normalizes letters in a string, replacing 'v' or 'V' with 'ü'
    * @param {string} value - The string to normalize
    * @returns {string} The normalized string
@@ -31,7 +31,7 @@
     return value.replace(/[vV]/g, "ü");
   }
 
-  /*!
+  /**
    * Detects the target vowel for tone marking in a Pinyin syllable
    * @param {string} syllable - The Pinyin syllable to analyze
    * @returns {string|null} The target vowel for tone marking, or null if none found
@@ -54,7 +54,7 @@
     return null;
   }
 
-  /*!
+  /**
    * Applies a tone mark to a Pinyin syllable based on the given tone number
    * @param {string} syllable - The Pinyin syllable to accentuate
    * @param {number|string} toneNumber - The tone number (1-4) to apply
@@ -81,7 +81,7 @@
     return normalized.slice(0, index) + mark + normalized.slice(index + 1);
   }
 
-  /*!
+  /**
    * Preserves the case of the original string when applying tone marks
    * @param {string} value - The string with tone marks applied
    * @param {string} original - The original string to preserve case from
@@ -108,7 +108,7 @@
     return value;
   }
 
-  /*!
+  /**
    * Accentuates Pinyin text by replacing tone numbers with appropriate diacritical marks
    * @param {string} value - The Pinyin text to accentuate
    * @returns {string} The accentuated Pinyin text
@@ -149,7 +149,7 @@
     return output;
   }
 
-  /*!
+  /**
    * Transforms all <py> and <pyb> elements in the DOM, accentuating their Pinyin text
    */
   function transformPinyin() {

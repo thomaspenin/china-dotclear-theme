@@ -13,33 +13,15 @@
  */
 function preparePinyinOnHover() {
   // Consider all "Chinese" tags on the page since they may be impacted
-  $("ch").each(function () {
-    var pinyin = $(this).attr("pinyin");
+  document.querySelectorAll("ch, chb").forEach(function (element) {
+    var pinyin = element.getAttribute("pinyin");
     if (pinyin && pinyin.length > 0) {
-      $(this).replaceWith(function () {
-        return (
-          "<span data-bs-toggle='tooltip' class='pinyinTooltip' title=\"" +
-          accentPinyin(pinyin) +
-          '">' +
-          $(this).text() +
-          "</span>"
-        );
-      });
-    }
-  });
-
-  $("chb").each(function () {
-    var pinyin = $(this).attr("pinyin");
-    if (pinyin && pinyin.length > 0) {
-      $(this).replaceWith(function () {
-        return (
-          "<span data-bs-toggle='tooltip' class='pinyinTooltip' title=\"" +
-          accentPinyin(pinyin) +
-          '">' +
-          $(this).text() +
-          "</span>"
-        );
-      });
+      var tooltip = document.createElement("span");
+      tooltip.setAttribute("data-bs-toggle", "tooltip");
+      tooltip.className = "pinyinTooltip";
+      tooltip.title = accentPinyin(pinyin);
+      tooltip.textContent = element.textContent;
+      element.replaceWith(tooltip);
     }
   });
 }

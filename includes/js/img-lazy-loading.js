@@ -1,6 +1,12 @@
-// Adapted from "Responsive Image Placeholders" by Matt Hinchliffe
-// Original Github: https://github.com/i-like-robots/Responsive-Image-Placeholders
-// License: Creative Commons Attribution-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-sa/3.0/)
+/**
+ * This code is used to lazy load images in the page.
+ *
+ * @note This code should be called after the document is ready.
+ *
+ * Adapted from "Responsive Image Placeholders" by Matt Hinchliffe
+ * Original Github: https://github.com/i-like-robots/Responsive-Image-Placeholders
+ * License: Creative Commons Attribution-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-sa/3.0/)
+ */
 
 var deferImage = function (element) {
   var i, len, attr;

@@ -37,7 +37,7 @@
 <!-- Script to resize Chinese text -->
 <script
   type="text/javascript"
-  src="{{tpl:BlogThemeURL}}/includes/js/jquery.ba-replacetext.js"
+  src="{{tpl:BlogThemeURL}}/includes/js/chinese-text.js"
 ></script>
 <!-- Load pinyin definitions -->
 <script
@@ -96,9 +96,7 @@
       });
 
     // Transform Chinese in the content but avoid some cases
-    $("body *")
-      .find(":not(pre):not(code):not(char):not(.blogTitle)")
-      .replaceText(/([\u3000-\uFFFF]+)/g, "<span class='zh'>$1</span>");
+    wrapChineseText(document.body);
 
     // Code for the button allowing the user to go back to top
     var pxShow = 10; //height on which the button will show

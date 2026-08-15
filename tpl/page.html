@@ -83,7 +83,7 @@
 		});
 
 		// Chinese text should appear bigger in the generated code if it is not already the case
-		$(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
+		wrapChineseText(document.querySelector(".bs-docs-sidebar"));
 
 		// Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
 		new bootstrap.ScrollSpy(document.body, {

@@ -20,6 +20,19 @@ This version was developed and tested with Dotclear ≥ 2.7 until Dotclear 2.29.
 
 TODO
 
-Significant improvement of the existing theme, it features many modernizations under the hood, including the support of the then latest Bootstrap 5, the dropping of the jQuery dependency, and the use of a more permissive license (MIT) to allow for easier adoption and contribution.
+Extensive rework of version 2, featuring a new font, improved readability and a much-needed dark mode.
+
+Under-the-hood, it comes with significant modernization, in particular:
+
+- Migration from LESS to SCSS
+- Migration to Bootstrap 5
+- Dropping of the jQuery dependency
+- No more download of a KaiTi font
+- Use of Phosphor icons instead of Glyphicons
+- Better management of the color palette and semantic tokens
+- Code cleanup and simplification
+- Availability of the code on Github
+
+Finally, the use of a more permissive license (MIT) is meant to allow for easier reuse of the theme, including for commercial purposes.
 
 This version was developed and tested with Dotclear ≥ 2.29.

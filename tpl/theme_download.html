@@ -8,39 +8,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
     <title>{{tpl:lang China Theme}} - {{tpl:BlogName encode_html="1"}}</title>
-
     {{tpl:include src="_head.html"}}
   </head>
 
   <body>
-    <div id="page" class="container">
+    <div id="page" class="container-fluid">
       <!-- Top bar present on all pages -->
       {{tpl:include src="_top.html"}}
 
-      <div class="download middle">
-        <!-- Title -->
-        <div class="page-title">
-          <h1>{{tpl:lang China Theme}}</h1>
-        </div>
+      <!-- Title -->
+      <div class="page-title">
+        <h1>{{tpl:lang China Theme}}</h1>
+      </div>
 
-        <div class="container lead">
+      <div class="container lead">
+        <p>
           {{tpl:lang This site is powered by
           <a href="https://dotclear.org/">Dotclear</a> and uses my own custom
           theme, called "China". Interested by this theme? Want to use it in
           your personnal projects? Here is the place to retrieve the code and
           get started!}}
-        </div>
+        </p>
+      </div>
 
-        <div class="container" id="main">
-          <div class="col-md-12">
-            <h2>{{tpl:lang Download the theme}}</h2>
-            <p>{{tpl:lang THEME_CODE_AVAILABILITY}}</p>
-            <p>
-              <details>
-                <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
-                </summary>
-                <pre class="license">
+      <div id="main" class="container">
+        <div class="col-md-12">
+          <h2>{{tpl:lang Download the theme}}</h2>
+          <p>{{tpl:lang THEME_CODE_AVAILABILITY}}</p>
+          <p>
+            <details>
+              <summary class="license-summary">
+                <i class="ph ph-scales"></i> MIT License
+              </summary>
+              <pre class="license">
 MIT License
 
 Copyright (c) 2026 Thomas PENIN
@@ -62,54 +62,53 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-              </pre
-                >
-              </details>
-            </p>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="
-                window.location.href =
-                  'https://github.com/thomaspenin/china-dotclear-theme/releases/latest'
-              "
+              </pre>
+            </details>
+          </p>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="
+              window.location.href =
+                'https://github.com/thomaspenin/china-dotclear-theme/releases/latest'
+            "
+          >
+            <i class="ph ph-download-simple"></i> Download the latest release
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="
+              window.location.href =
+                'https://github.com/thomaspenin/china-dotclear-theme.git'
+            "
+          >
+            <i class="ph ph-github-logo"></i> Clone the repository
+          </button>
+        </div>
+        <div class="col-md-12">
+          <h2>Standing on the shoulders of giants</h2>
+          <p>
+            In addition to <a href="https://dotclear.org/">Dotclear</a>, the
+            current version of the theme ({{tpl:ThemeVersion}}) relies on the
+            following open source components.
+          </p>
+          <h3>
+            <a
+              data-bs-toggle="tooltip"
+              data-placement="bottom"
+              title="Open website"
+              href="https://phosphoricons.com"
+              >Phosphor Icons</a
             >
-              <i class="ph ph-download-simple"></i> Download the latest release
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="
-                window.location.href =
-                  'https://github.com/thomaspenin/china-dotclear-theme.git'
-              "
-            >
-              <i class="ph ph-github-logo"></i> Clone the repository
-            </button>
-          </div>
-          <div class="col-md-12">
-            <h2>Standing on the shoulders of giants</h2>
-            <p>
-              In addition to <a href="https://dotclear.org/">Dotclear</a>, the
-              current version of the theme ({{tpl:ThemeVersion}}) relies on the
-              following open source components.
-            </p>
-            <h3>
-              <a
-                data-bs-toggle="tooltip"
-                data-placement="bottom"
-                title="Open website"
-                href="https://phosphoricons.com"
-                >Phosphor Icons</a
-              >
-            </h3>
-            <p>This icon set is used throughout the theme.</p>
-            <p>
-              <details>
-                <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
-                </summary>
-                <pre class="license">
+          </h3>
+          <p>This icon set is used throughout the theme.</p>
+          <p>
+            <details>
+              <summary class="license-summary">
+                <i class="ph ph-scales"></i> MIT License
+              </summary>
+              <pre class="license">
 MIT License
 
 Copyright (c) 2020 Phosphor Icons
@@ -132,44 +131,44 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre
-                >
-              </details>
-            </p>
-            <h3>Responsive Image Placeholders</h3>
-            <p>
-              Adapted from
-              <a
-                href="https://github.com/i-like-robots/Responsive-Image-Placeholders"
-                >Responsive Image Placeholders</a
               >
-              by Matt Hinchliffe, under the
-              <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                >Creative Commons Attribution-ShareAlike 3.0 Unported License</a
-              >. You can download the code of my adaptation
-              <a
-                href="https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js"
-                >here</a
-              >, under the same license.
-            </p>
-            <h3>
-              <a
-                data-bs-toggle="tooltip"
-                data-placement="bottom"
-                title="Open website"
-                href="https://getbootstrap.com/"
-                >Bootstrap</a
-              >
-            </h3>
-            <p>
-              This excellent HTML/CSS/JS framework provides most of the
-              responsive behavior of the theme.
-            </p>
-            <p>
-              <details>
-                <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
-                </summary>
-                <pre class="license">
+            </details>
+          </p>
+          <h3>Responsive Image Placeholders</h3>
+          <p>
+            Adapted from
+            <a
+              href="https://github.com/i-like-robots/Responsive-Image-Placeholders"
+              >Responsive Image Placeholders</a
+            >
+            by Matt Hinchliffe, under the
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/"
+              >Creative Commons Attribution-ShareAlike 3.0 Unported License</a
+            >. You can download the code of my adaptation
+            <a
+              href="https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js"
+              >here</a
+            >, under the same license.
+          </p>
+          <h3>
+            <a
+              data-bs-toggle="tooltip"
+              data-placement="bottom"
+              title="Open website"
+              href="https://getbootstrap.com/"
+              >Bootstrap</a
+            >
+          </h3>
+          <p>
+            This excellent HTML/CSS/JS framework provides most of the responsive
+            behavior of the theme.
+          </p>
+          <p>
+            <details>
+              <summary class="license-summary">
+                <i class="ph ph-scales"></i> MIT License
+              </summary>
+              <pre class="license">
 The MIT License (MIT)
 
 Copyright (c) 2011-2026 The Bootstrap Authors
@@ -191,26 +190,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre
-                >
-              </details>
-            </p>
-            <h3>Oxygen Icons</h3>
-            <p>
-              Used to beautify smileys written in articles and comments, this
-              set of icons is reused from the
-              <a href="https://kde.org/">KDE project</a>, under the reusing
-              conditions defined
-              <a href="https://techbase.kde.org/Projects/Oxygen/Licensing"
-                >here</a
-              >.
-            </p>
-            <p>
-              <details>
-                <summary class="license-summary">
-                  <i class="ph ph-scales"></i> GNU Lesser General Public
-                  License, version 3
-                </summary>
-                <pre class="license">
+              >
+            </details>
+          </p>
+          <h3>Oxygen Icons</h3>
+          <p>
+            Used to beautify smileys written in articles and comments, this set
+            of icons is reused from the
+            <a href="https://kde.org/">KDE project</a>, under the reusing
+            conditions defined
+            <a href="https://techbase.kde.org/Projects/Oxygen/Licensing">here</a
+            >.
+          </p>
+          <p>
+            <details>
+              <summary class="license-summary">
+                <i class="ph ph-scales"></i> GNU Lesser General Public License,
+                version 3
+              </summary>
+              <pre class="license">
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -377,10 +375,9 @@ apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 </pre
-                >
-              </details>
-            </p>
-          </div>
+              >
+            </details>
+          </p>
         </div>
       </div>
 

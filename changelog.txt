@@ -1,7 +1,7 @@
 Changelog
 =========
 
-* v3.0 (yyyy-mm-dd)
+* v3.0 "Green Orchid 2" (yyyy-mm-dd)
   - Port the style from less to sass and adapt deployment script to generate the CSS
   - Update the base style for a better visibility
   - No longer embed a KaiTi font. In addition to be legally cleaner, it avoids a large download
@@ -53,7 +53,7 @@ Changelog
 * v2.0.1 (2015-07-08)
   - Some small fixes following the move to production
 
-* v2.0 (2015-07-05)
+* v2.0 "Green Orchid" (2015-07-05)
   - Complete rewrite
   - New modern style
   - Now Bootstrap-based
@@ -132,5 +132,5 @@ Changelog
   - New style for tables with a header on the top. Use the "bordered-header-top" class.
   - A few spacing corrections
 
-* v1.0 (2013-09-10)
+* v1.0 "Happiness Red" (2013-09-10)
   - Initial release

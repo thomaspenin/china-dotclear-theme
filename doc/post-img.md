@@ -1,4 +1,4 @@
-# How to associate images to articles
+# Associate images to articles
 
 Such images will appear in two contexts:
 

@@ -279,10 +279,11 @@ test("buildToc inserts a nested list of links into the target element", () => {
     assert.equal(link.tagName, "A");
     assert.equal(link.href, "#toc-heading-0");
     assert.equal(link.textContent, "Section one");
-    assert.equal(link.getAttribute("aria-expanded"), "false");
+    // The first heading is current by default, so its own sub-list starts expanded
+    assert.equal(link.getAttribute("aria-expanded"), "true");
     assert.equal(nestedList.tagName, "UL");
-    assert.equal(nestedList.className, "nav toc-collapse");
-    assert.equal(nestedList.classList.contains("show"), false);
+    assert.equal(nestedList.className, "nav toc-collapse show");
+    assert.equal(nestedList.classList.contains("show"), true);
     assert.equal(nestedList.children.length, 1);
     assert.equal(nestedList.children[0].children[0].href, "#toc-heading-1");
 
@@ -296,16 +297,74 @@ test("buildToc inserts a nested list of links into the target element", () => {
   }
 });
 
+test("clicking a collapsed heading that scrolls into view stays expanded once scrollspy activates it", () => {
+  // Regression test: clicking a collapsed heading located before the currently
+  // active section used to expand it and scroll to it, but then immediately
+  // collapse again once scrollspy activated that same heading.
+  const originalDocument = globalThis.document;
+
+  const target = new FakeElement("nav");
+  const source = new FakeElement("div");
+  const h2a = new FakeElement("h2");
+  h2a.textContent = "Section one";
+  const h3a = new FakeElement("h3");
+  h3a.textContent = "Subsection one";
+  const h2b = new FakeElement("h2");
+  h2b.textContent = "Section two";
+  source.querySelectorAll = makeQuerySelectorAll([h2a, h3a, h2b]);
+
+  const body = new FakeElement("body");
+
+  globalThis.document = {
+    createElement: (tag) => new FakeElement(tag),
+    querySelector: (selector) => (selector === ".toc-target" ? target : source),
+    body,
+  };
+
+  try {
+    buildToc(".toc-target", { search: ".post-content" });
+
+    const rootList = target.children[0];
+    const [firstLink, firstSublist] = rootList.children[0].children;
+    const [secondLink] = rootList.children[1].children;
+
+    // The user is currently on section two, so section one's branch is collapsed
+    body.dispatchEvent({
+      type: "activate.bs.scrollspy",
+      relatedTarget: secondLink,
+    });
+    assert.equal(firstSublist.classList.contains("show"), false);
+
+    // Clicking section one's (collapsed) heading expands it and scrolls to it
+    rootList.dispatchEvent({ type: "click", target: firstLink });
+    assert.equal(firstSublist.classList.contains("show"), true);
+
+    // Scrollspy then activates section one itself: it must stay expanded
+    body.dispatchEvent({
+      type: "activate.bs.scrollspy",
+      relatedTarget: firstLink,
+    });
+    assert.equal(firstSublist.classList.contains("show"), true);
+    assert.equal(firstLink.getAttribute("aria-expanded"), "true");
+  } finally {
+    globalThis.document = originalDocument;
+  }
+});
+
 test("buildToc's toc expands and collapses its branch when its header link is clicked", () => {
   const originalDocument = globalThis.document;
 
   const target = new FakeElement("nav");
   const source = new FakeElement("div");
-  const h2 = new FakeElement("h2");
-  h2.textContent = "Section one";
-  const h3 = new FakeElement("h3");
-  h3.textContent = "Subsection";
-  source.querySelectorAll = makeQuerySelectorAll([h2, h3]);
+  const h2a = new FakeElement("h2");
+  h2a.textContent = "Section one";
+  const h3a = new FakeElement("h3");
+  h3a.textContent = "Subsection one";
+  const h2b = new FakeElement("h2");
+  h2b.textContent = "Section two";
+  const h3b = new FakeElement("h3");
+  h3b.textContent = "Subsection two";
+  source.querySelectorAll = makeQuerySelectorAll([h2a, h3a, h2b, h3b]);
 
   globalThis.document = {
     createElement: (tag) => new FakeElement(tag),
@@ -317,17 +376,26 @@ test("buildToc's toc expands and collapses its branch when its header link is cl
     buildToc(".toc-target", { search: ".post-content" });
 
     const rootList = target.children[0];
-    const [link, sublist] = rootList.children[0].children;
+    const [firstLink, firstSublist] = rootList.children[0].children;
+    const [secondLink, secondSublist] = rootList.children[1].children;
 
-    assert.equal(sublist.classList.contains("show"), false);
+    // The first (default current) heading's own branch starts expanded
+    assert.equal(firstSublist.classList.contains("show"), true);
+    // Any other heading's branch starts collapsed
+    assert.equal(secondSublist.classList.contains("show"), false);
 
-    rootList.dispatchEvent({ type: "click", target: link });
-    assert.equal(sublist.classList.contains("show"), true);
-    assert.equal(link.getAttribute("aria-expanded"), "true");
+    rootList.dispatchEvent({ type: "click", target: secondLink });
+    assert.equal(secondSublist.classList.contains("show"), true);
+    assert.equal(secondLink.getAttribute("aria-expanded"), "true");
 
-    rootList.dispatchEvent({ type: "click", target: link });
-    assert.equal(sublist.classList.contains("show"), false);
-    assert.equal(link.getAttribute("aria-expanded"), "false");
+    rootList.dispatchEvent({ type: "click", target: secondLink });
+    assert.equal(secondSublist.classList.contains("show"), false);
+    assert.equal(secondLink.getAttribute("aria-expanded"), "false");
+
+    // Clicking the default-expanded branch collapses it too
+    rootList.dispatchEvent({ type: "click", target: firstLink });
+    assert.equal(firstSublist.classList.contains("show"), false);
+    assert.equal(firstLink.getAttribute("aria-expanded"), "false");
   } finally {
     globalThis.document = originalDocument;
   }

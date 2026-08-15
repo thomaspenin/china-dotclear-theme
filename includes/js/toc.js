@@ -160,11 +160,19 @@
   }
 
   /*!
-   * Expands every collapsed sub-list containing the given link, climbing up
-   * from its own branch to the root.
+   * Expands the active link's own sub-list (if any) plus every collapsed
+   * sub-list containing it, climbing up from its branch to the root. Also
+   * expanding the link's own children avoids it being collapsed back right
+   * after being opened by a click, once scrollspy activates that same heading.
    * @param {Element} link
    */
-  function expandAncestorBranches(link) {
+  function expandActiveBranch(link) {
+    const ownSublist = link.nextElementSibling;
+    if (ownSublist && ownSublist.classList.contains(CLASS_SUBLIST)) {
+      ownSublist.classList.add(CLASS_SHOW);
+      link.setAttribute("aria-expanded", "true");
+    }
+
     let current = link;
     while (current) {
       const item = current.closest("li");
@@ -214,7 +222,7 @@
       currentLink = link;
 
       collapseAllBranches(rootList);
-      expandAncestorBranches(link);
+      expandActiveBranch(link);
     }
 
     rootList.addEventListener("click", function (event) {

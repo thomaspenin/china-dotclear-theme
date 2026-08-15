@@ -52,6 +52,7 @@
       </tpl:EntryIf>
 
       <div id="main">
+		<div class="row">
 	<div class="col-md-9 post-content">
 	  <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 	  {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
@@ -64,22 +65,19 @@
 	</div>
 	<div class="col-md-3">
 	  <nav class=" post-info bs-docs-sidebar d-none d-md-block">
-	    <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
-	    <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
+	    <!-- The script toc.js will insert the toc here, at the beginning of the info box, if there is something to show -->
+	    <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/toc.js"></script>
 	    <script type="text/javascript">
-	      $(function() {
+	      document.addEventListener("DOMContentLoaded", function () {
 		// Generate the toc
-		$(".bs-docs-sidebar").stoc({
+		buildToc(".bs-docs-sidebar", {
 		  search: ".post-content",
 		  depth: 3,
 		  start: 1,
-		  stocTitle: "",
-		  stocFooter: "",
 		  listType: "ul",
 		  rootListId: "toc",
 		  rootListClass: "nav",
-		  subListClass: "nav",
-		  smoothScroll: 0
+		  subListClass: "nav"
 		});
 
 		// Chinese text should appear bigger in the generated code if it is not already the case
@@ -93,6 +91,7 @@
 	      });
 	    </script>
 	  </nav>
+	</div>
 	</div>
       </div>
 

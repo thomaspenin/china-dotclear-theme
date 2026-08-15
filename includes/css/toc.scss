@@ -37,8 +37,10 @@
   font-size: var(--font-size-toc-nested);
 }
 
-/* active & hover links */
-.bs-docs-sidebar .nav > .active > a,
+/* current & hover links (toc.js keeps its own .toc-current marker instead of bootstrap.ScrollSpy's
+   .active, which it clears as soon as a heading scrolls out of its narrow observed root margin,
+   well before the next heading is reached) */
+.bs-docs-sidebar .nav a.toc-current,
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
   color: var(--color-accent);
@@ -46,24 +48,37 @@
   background-color: transparent;
   border-left-color: var(--color-accent);
 }
-/* all active links */
-.bs-docs-sidebar .nav > .active > a,
-.bs-docs-sidebar .nav > .active:hover > a,
-.bs-docs-sidebar .nav > .active:focus > a {
+/* all current links */
+.bs-docs-sidebar .nav > li > a.toc-current {
   font-weight: 700;
 }
-/* nested active links */
-.bs-docs-sidebar .nav .nav > .active > a,
-.bs-docs-sidebar .nav .nav > .active:hover > a,
-.bs-docs-sidebar .nav .nav > .active:focus > a {
+/* nested current links */
+.bs-docs-sidebar .nav .nav > li > a.toc-current {
   font-weight: 500;
 }
 
-/* hide inactive nested list */
-.bs-docs-sidebar .nav ul.nav {
+/* collapsed sub-level lists (accordion behavior, toggled by toc.js) */
+.bs-docs-sidebar .nav .toc-collapse {
   display: none;
 }
-/* show active nested list */
-.bs-docs-sidebar .nav > .active > ul.nav {
+.bs-docs-sidebar .nav .toc-collapse.show {
   display: block;
+}
+
+/* caret indicating a heading has a collapsible sub-level */
+.bs-docs-sidebar .toc-has-children > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bs-docs-sidebar .toc-has-children > a::after {
+  content: "";
+  flex: 0 0 auto;
+  margin-left: 8px;
+  border: 4px solid transparent;
+  border-top-color: currentColor;
+  transition: transform 0.15s ease-in-out;
+}
+.bs-docs-sidebar .toc-has-children > a[aria-expanded="true"]::after {
+  transform: rotate(180deg);
 }

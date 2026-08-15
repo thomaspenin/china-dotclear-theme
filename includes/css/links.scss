@@ -1,11 +1,22 @@
+@use "paths";
+
 /* External links (i.e. default) */
 
 .middle a[href^="http"]:after {
   display: inline-block;
-  background-image: url("index.php?tf=includes/images/links/external-link.png");
-  background-size: 13px 10px;
-  width: 13px;
-  height: 10px;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.2em;
+  vertical-align: -0.08em;
+  background-color: currentColor;
+  -webkit-mask-image: url("#{paths.$images-folder-path}/icons/phosphor/arrow-square-out.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url("#{paths.$images-folder-path}/icons/phosphor/arrow-square-out.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
   content: "";
 }
 
@@ -14,19 +25,13 @@
 .middle a[href^="http://voyage-est.com"]:after,
 .middle a[href^="https://www.voyage-est.com"]:after,
 .middle a[href^="http://localhost"]:after {
-  background-size: 0 0;
-  width: 0;
-  height: 0;
-  content: "";
+  display: none;
 }
 
 // Do not show external link that way for print
 @media print {
   .middle a[href^="http"]:after,
   a[href^="http"]:after {
-    background-size: 0 0;
-    width: 0;
-    height: 0;
-    content: "";
+    display: none;
   }
 }

@@ -7,7 +7,8 @@
     "build:css": "sass --no-source-map includes/css/style.scss includes/css/style.css",
     "deploy": "./deploy.sh dev",
     "deploy:dev": "./deploy.sh dev",
-    "deploy:prod": "./deploy.sh prod"
+    "deploy:prod": "./deploy.sh prod",
+    "test": "node --test test/*.test.js"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,3 @@
-.download #download-pitch.container {
-  background-color: var(--color-surface-soft);
-  font-size: var(--font-size-supporting);
-  padding: 15px;
-}
-
 // On tablet, display versions on 2 columns
 @media (min-width: 768px) {
   .download .file-list {

@@ -44,18 +44,6 @@
   right: 0;
 }
 
-// *** Post excerpt ***
-
-#post-excerpt.container {
-  background-color: var(--color-surface-soft);
-  font-size: var(--font-size-supporting);
-  padding: 15px;
-}
-
-#post-excerpt.container p:last-child {
-  margin: 0;
-}
-
 // *** Post content ***
 
 .post-content > p:first-child,

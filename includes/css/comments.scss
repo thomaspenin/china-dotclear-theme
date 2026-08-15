@@ -5,7 +5,9 @@
   opacity: 0;
   overflow: hidden;
   padding-bottom: 10px;
-  transition: max-height 250ms ease, opacity 150ms ease;
+  transition:
+    max-height 250ms ease,
+    opacity 150ms ease;
 }
 
 .comments #new-comment-expansion.is-open {

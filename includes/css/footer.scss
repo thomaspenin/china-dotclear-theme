@@ -1,25 +1,8 @@
 @use "paths";
 
 #footer {
-  padding: 0;
-  border-top: 2px solid var(--color-border-strong);
-}
-
-#footer .container {
+  border-top: 2px solid var(--color-accent);
   background-color: var(--color-surface-footer);
-  padding-bottom: 10px;
-}
-
-#footer .footer-menu.container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-#footer #poweredBy {
-  text-align: center;
-  padding: 10px;
-  background-color: var(--color-surface-footer-powered);
-  color: var(--color-text-on-dark);
 }
 
 #footer .container h3 {
@@ -31,51 +14,17 @@
   font-size: 0.66em;
 }
 
-#footer .content-license {
-  display: inline-block;
+// --- "Powered by" part of the footer ---
+
+#poweredBy {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--color-surface-footer-powered);
+  color: var(--color-text-on-dark);
+}
+
+#poweredBy .content-license {
   font-style: italic;
-}
-
-#footer .content-license a {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-
-#footer .content-license a:hover {
-  text-decoration: none;
-}
-
-#footer .license-cc {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("#{paths.$images-folder-path}/license/cc-32.png") no-repeat;
-  background-size: 16px 16px;
-}
-
-#footer .license-cc-by {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("#{paths.$images-folder-path}/license/by-32.png") no-repeat;
-  background-size: 16px 16px;
-}
-
-#footer .license-cc-nc {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("#{paths.$images-folder-path}/license/nc-32.png") no-repeat;
-  background-size: 16px 16px;
-}
-
-#footer .license-cc-sa {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("#{paths.$images-folder-path}/license/sa-32.png") no-repeat;
-  background-size: 16px 16px;
 }
 
 // --- "About" part of the footer ---
@@ -83,7 +32,6 @@
 #footer-about-profile {
   margin-top: 24px;
   margin-right: 5px;
-  filter: drop-shadow(1px 1px 5px var(--color-border-strong));
 }
 
 #footer-about-description p {
@@ -113,11 +61,18 @@
   text-decoration: none;
 }
 
+#footer .footer-about-links a:after {
+  display: none;
+}
+
 // --- Print ---
 
 // Do not display the footer when printing
 @media print {
   #footer {
+    display: none;
+  }
+  #poweredBy {
     display: none;
   }
 }

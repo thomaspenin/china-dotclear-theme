@@ -1,39 +1,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="MSSmartTagsPreventParsing" content="TRUE" />
-<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
-<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
-<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="dc.language" content="{{tpl:EntryLang}}" />
-<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<meta name="dc.type" content="text" />
-<meta name="dc.format" content="text/html" />
-<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
-<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
-<tpl:EntryPrevious><link rel="previous" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
-<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
-  
-{{tpl:include src="_head.html"}}
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+	<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+	<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+	<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
+	<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="dc.language" content="{{tpl:EntryLang}}" />
+	<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+	<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<meta name="dc.type" content="text" />
+	<meta name="dc.format" content="text/html" />
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
+	<tpl:EntryPrevious><link rel="previous" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+	{{tpl:include src="_head.html"}}
 </head>
 
 <body>
   {{tpl:EntryPingData}}
   
-  <div id="page" class="container">
-    <!-- Top bar present on all pages -->
+  <div id="page" class="container-fluid">
+    <!-- Top bar -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
@@ -56,8 +54,6 @@
       <a class="comment-count" href="#comments" data-bs-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}}&nbsp;<i class="ph ph-caret-down"></i></a>
     </div>
 
-    <div class="middle">
-
     <!-- Post excerpt if there is any -->
     <tpl:EntryIf extended="1">
     <div class="container lead">
@@ -65,7 +61,7 @@
     </div>
     </tpl:EntryIf>
 
-    <div class="container" id="main">
+    <div id="main" class="container">
 		<div class="row">
       <div class="col-md-8 post-content">
 	<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
@@ -123,10 +119,10 @@
 
     <div class="container" id="post-footer">
       <tpl:EntryIf has_attachment="1">
-      <div class="col-md-4 post-tags">
+      <div class="col-md-4 post-tags"></div>
       </tpl:EntryIf>
       <tpl:EntryIf has_attachment="0">
-      <div class="col-md-8 post-tags">
+      <div class="col-md-8 post-tags"></div>
       </tpl:EntryIf>
 	<tpl:EntryTags>
 	  <tpl:TagsHeader>
@@ -138,7 +134,6 @@
 	    </p>
 	  </tpl:TagsFooter>
 	</tpl:EntryTags>
-      </div>
       <tpl:EntryIf has_attachment="1">
       <div class="col-md-4 post-attachments">
 	<tpl:Attachments>
@@ -174,7 +169,6 @@
 	</a>
       </div>
     </div>
-  </div>
   </div>
 
     <!-- Footer (present on all pages) -->

@@ -85,8 +85,11 @@ msgstr "Voir l'image en plein écran"
 msgid "Download the source code of the theme"
 msgstr "Télécharger le code source du thème"
 
-msgid "Unless otherwise noticed, the license of the content of this site is"
-msgstr "Sauf précision contraire, le contenu de ce site est fourni sous licence"
+msgid "LICENSE"
+msgstr "Sauf précision contraire, le contenu de ce site est fourni sous licence <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr'>CC BY-NC-SA 4.0</a>"
+
+msgid "POWERED_BY_DOTCLEAR"
+msgstr "Propulsé par <a href='https://www.dotclear.org'>Dotclear</a>"
 
 msgid "Attachments"
 msgstr "Pièces jointes"

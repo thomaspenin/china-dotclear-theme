@@ -2,7 +2,7 @@
 
 /* External links (i.e. default) */
 
-.middle a[href^="http"]:after {
+body a[href^="http"]:after {
   display: inline-block;
   width: 0.85em;
   height: 0.85em;
@@ -22,15 +22,15 @@
 
 /* Internal links */
 
-.middle a[href^="http://voyage-est.com"]:after,
-.middle a[href^="https://www.voyage-est.com"]:after,
-.middle a[href^="http://localhost"]:after {
+body a[href^="http://voyage-est.com"]:after,
+body a[href^="https://www.voyage-est.com"]:after,
+body a[href^="http://localhost"]:after {
   display: none;
 }
 
 // Do not show external link that way for print
 @media print {
-  .middle a[href^="http"]:after,
+  body a[href^="http"]:after,
   a[href^="http"]:after {
     display: none;
   }

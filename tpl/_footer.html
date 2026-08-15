@@ -1,87 +1,93 @@
 <!-- Site footer -->
-<footer id="footer" class="col-md-12">
+<footer id="footer" class="container-fluid">
   <div class="footer-menu container">
-    <div class="col-md-3">
-      <h3>Pages principales</h3>
-      <p><a href="{{tpl:BlogURL}}">Accueil</a></p>
-      <p><a href="{{tpl:BlogURL}}pages/about">À propos</a></p>
-    </div>
-    <div class="col-md-3">
-      <h3>Catégories d'articles</h3>
-      <!-- Only consider the first-level categories -->
-      <tpl:Categories level="1">
-        <p>
-          <a href="{{tpl:CategoryURL}}"
-            >{{tpl:CategoryTitle encode_html="1"}}</a
-          >
-        </p>
-      </tpl:Categories>
-    </div>
-    <div id="footer-about" class="col-md-6">
-      <div class="d-flex">
-        <span class="flex-shrink-0"
-          ><img
-            id="footer-about-profile"
-            alt="author"
-            class="media-object"
-            src="{{tpl:BlogThemeURL}}/includes/images/about/profile-chinese-circled-128.png"
-            height="64"
-            width="64"
-          />
-        </span>
-        <div id="footer-about-description" class="media-body flex-grow-1 ms-3">
-          <h3>
-            Thomas Penin
-            <span class="footer-sub-h3"
-              >|
-              <a href="{{tpl:BlogURL}}pages/about"
-                >{{tpl:lang More...}}</a
-              ></span
-            >
-          </h3>
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Pages principales</h3>
+        <p><a href="{{tpl:BlogURL}}">Accueil</a></p>
+        <p><a href="{{tpl:BlogURL}}pages/about">À propos</a></p>
+      </div>
+      <div class="col-md-3">
+        <h3>Catégories d'articles</h3>
+        <!-- Only consider the first-level categories -->
+        <tpl:Categories level="1">
           <p>
-            Passionné de voyages, de langue et de culture chinoises, je vous
-            invite à travers mes articles à découvrir des aspects insoupçonnés
-            de l'Empire du Milieu, et du Monde Chinois en général. Embarquez
-            avec moi pour un fantastique <b>Voyage vers l'Est</b>&nbsp;!
+            <a href="{{tpl:CategoryURL}}"
+              >{{tpl:CategoryTitle encode_html="1"}}</a
+            >
           </p>
-          <p class="footer-about-links">
-            <a
-              href="{{tpl:BlogFeedURL}}"
-              data-bs-toggle="tooltip"
-              data-placement="top"
-              title="{{tpl:lang Articles feed}}"
-              ><i class="ph ph-rss"></i
-            ></a>
-            <a
-              href="https://fr.linkedin.com/in/thomas-penin-a12103ab"
-              data-bs-toggle="tooltip"
-              data-placement="top"
-              title="{{tpl:lang View my LinkedIn profile}}"
-              ><i class="ph ph-linkedin-logo"></i
-            ></a>
-            <a
-              href="https://www.thomaspenin.com"
-              data-bs-toggle="tooltip"
-              data-placement="top"
-              title="{{tpl:lang Visit my personal website}}"
-              ><i class="ph ph-globe-hemisphere-east"></i
-            ></a>
-            <a
-              href="https://github.com/thomaspenin"
-              data-bs-toggle="tooltip"
-              data-placement="top"
-              title="{{tpl:lang View my Github}}"
-              ><i class="ph ph-github-logo"></i
-            ></a>
-          </p>
+        </tpl:Categories>
+      </div>
+      <div id="footer-about" class="col-md-6">
+        <div class="d-flex">
+          <span class="flex-shrink-0"
+            ><img
+              id="footer-about-profile"
+              alt="author"
+              class="media-object"
+              src="{{tpl:BlogThemeURL}}/includes/images/about/profile-chinese-circled-128.png"
+              height="64"
+              width="64"
+            />
+          </span>
+          <div
+            id="footer-about-description"
+            class="media-body flex-grow-1 ms-3"
+          >
+            <h3>
+              Thomas Penin
+              <span class="footer-sub-h3"
+                >|
+                <a href="{{tpl:BlogURL}}pages/about"
+                  >{{tpl:lang More...}}</a
+                ></span
+              >
+            </h3>
+            <p>
+              Passionné de voyages, de langue et de culture chinoises, je vous
+              invite à travers mes articles à découvrir des aspects insoupçonnés
+              de l'Empire du Milieu, et du Monde Chinois en général. Embarquez
+              avec moi pour un fantastique <b>Voyage vers l'Est</b>&nbsp;!
+            </p>
+            <p class="footer-about-links">
+              <a
+                href="{{tpl:BlogFeedURL}}"
+                data-bs-toggle="tooltip"
+                data-placement="top"
+                title="{{tpl:lang Articles feed}}"
+                ><i class="ph ph-rss"></i
+              ></a>
+              <a
+                href="https://fr.linkedin.com/in/thomas-penin-a12103ab"
+                data-bs-toggle="tooltip"
+                data-placement="top"
+                title="{{tpl:lang View my LinkedIn profile}}"
+                ><i class="ph ph-linkedin-logo"></i
+              ></a>
+              <a
+                href="https://www.thomaspenin.com"
+                data-bs-toggle="tooltip"
+                data-placement="top"
+                title="{{tpl:lang Visit my personal website}}"
+                ><i class="ph ph-globe-hemisphere-east"></i
+              ></a>
+              <a
+                href="https://github.com/thomaspenin"
+                data-bs-toggle="tooltip"
+                data-placement="top"
+                title="{{tpl:lang View my Github}}"
+                ><i class="ph ph-github-logo"></i
+              ></a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div id="poweredBy" class="container">
-    {{tpl:SysPoweredBy}}&nbsp;&#149;&nbsp;Thème
+</footer>
+<div id="poweredBy" class="container-fluid">
+  <div class="container">
+    {{tpl:lang POWERED_BY_DOTCLEAR}}&nbsp;&#149;&nbsp;Thème
     <a
       href="{{tpl:BlogURL}}theme_download"
       title="{{tpl:lang Version}} {{tpl:ThemeVersion}}"
@@ -90,19 +96,9 @@
     créé avec <i class="ph ph-heart"></i> par
     <a href="{{tpl:BlogURL}}pages/about">Thomas Penin</a><br /><span
       class="content-license"
-      >{{tpl:lang Unless otherwise noticed, the license of the content of this
-      site is}}
-      <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr"
-        ><span class="license-cc" title="CC"></span>&nbsp;<span
-          class="license-cc-by"
-          title="BY"
-        ></span
-        >&nbsp;<span class="license-cc-nc" title="NC"></span>&nbsp;<span
-          class="license-cc-sa"
-          title="SA"
-        ></span></a
-    ></span>
+      >{{tpl:lang LICENSE}}</span
+    >
   </div>
-</footer>
+</div>
 
 {{tpl:SysBehavior behavior="publicFooterContent"}}

@@ -1,82 +1,139 @@
-// Script based on the "dcChristmas" theme version 1.0 by Mathieu M (http://www.html-edition.com/) (GNU/GPL)
+/**
+ * This code manages the "remember me" functionality for the comment form.
+ * It uses cookies to store the user's name, email, and website information
+ * when the "remember me" checkbox is checked.
+ *
+ * @note This code should be called after the document is ready.
+ */
 
-$(function () {
-  $(".new-comment-buttons").before(
-    '<div class="remember"><input type="checkbox" id="c_remember" name="c_remember" /> ' +
-      '<label for="c_remember">' +
-      post_remember_str +
-      "</label>" +
-      "</div>",
-  );
-  var cookie = readCookie($.cookie("comment_info"));
-  if (cookie != false) {
-    $("#c_name").val(cookie[0]);
-    $("#c_mail").val(cookie[1]);
-    $("#c_site").val(cookie[2]);
-    $("#c_remember").attr("checked", "checked");
+(function () {
+  var COOKIE_NAME = "comment_info";
+  var COOKIE_PATH = getCookiePath();
+
+  /**
+   * Gets the path for the cookie based on the top link element.
+   * @returns {string} The cookie path.
+   */
+  function getCookiePath() {
+    var topLink = document.querySelector("link[rel=top]");
+    var href = topLink && topLink.getAttribute("href");
+
+    if (!href) {
+      return "/";
+    }
+
+    try {
+      return new URL(href, window.location.href).pathname || "/";
+    } catch (error) {
+      return "/";
+    }
   }
 
-  $("#c_remember").click(function () {
-    if (this.checked) {
-      setCookie();
-    } else {
-      dropCookie();
-    }
-  });
-
-  $("#c_name").change(function () {
-    if ($("#c_remember").get(0).checked) {
-      setCookie();
-    }
-  });
-
-  $("#c_mail").change(function () {
-    if ($("#c_remember").get(0).checked) {
-      setCookie();
-    }
-  });
-
-  $("#c_site").change(function () {
-    if ($("#c_remember").get(0).checked) {
-      setCookie();
-    }
-  });
-
-  function setCookie() {
-    var name = $("#c_name").val();
-    var mail = $("#c_mail").val();
-    var site = $("#c_site").val();
-    var cpath = $("link[rel=top]").attr("href");
-    if (!cpath) {
-      cpath = "/";
-    } else {
-      cpath = cpath.replace(/.*:\/\/[^\/]*([^?]*).*/g, "$1");
-    }
-    $.cookie("comment_info", name + "\n" + mail + "\n" + site, {
+  /**
+   * Sets a cookie with the specified value and options.
+   * @param {string} value The value to set in the cookie.
+   */
+  function setCookie(value) {
+    window.cookieHelpers.set(COOKIE_NAME, value, {
       expires: 60,
-      path: cpath,
+      path: COOKIE_PATH,
     });
   }
 
+  /**
+   * Removes the cookie with the specified name and path.
+   */
   function dropCookie() {
-    var cpath = $("link[rel=top]").attr("href");
-    if (!cpath) {
-      cpath = "/";
-    } else {
-      cpath = cpath.replace(/.*:\/\/[^\/]*([^?]*).*/g, "$1");
-    }
-    $.cookie("comment_info", "", { expires: -60, path: cpath });
+    window.cookieHelpers.remove(COOKIE_NAME, {
+      path: COOKIE_PATH,
+    });
   }
 
-  function readCookie(c) {
-    if (!c) {
+  /**
+   * Reads the cookie value and splits it into parts (name, email, website).
+   * @param {string} value The value of the cookie.
+   * @returns {Array|string|boolean} The parsed cookie parts, or false if invalid.
+   */
+  function readCookie(value) {
+    if (!value) {
       return false;
     }
-    var s = c.split("\n");
-    if (s.length != 3) {
+
+    var parts = value.split("\n");
+    if (parts.length !== 3) {
       dropCookie();
       return false;
     }
-    return s;
+
+    return parts;
   }
-});
+
+  /**
+   * Initializes the "remember me" functionality for the comment form.
+   * It sets up event listeners for the checkbox and input fields to manage the cookie.
+   */
+  function initializeRememberMe() {
+    var formContainer = document.querySelector(".new-comment-buttons");
+    if (!formContainer) {
+      return;
+    }
+
+    var checkbox = document.getElementById("c_remember");
+    var nameField = document.getElementById("c_name");
+    var mailField = document.getElementById("c_mail");
+    var siteField = document.getElementById("c_site");
+
+    if (!checkbox || !nameField || !mailField || !siteField) {
+      var reminder = document.createElement("div");
+      reminder.className = "remember";
+      reminder.innerHTML =
+        '<input type="checkbox" id="c_remember" name="c_remember" /> ' +
+        '<label for="c_remember">' +
+        (window.post_remember_str || "") +
+        "</label>";
+      formContainer.parentNode.insertBefore(reminder, formContainer);
+      checkbox = document.getElementById("c_remember");
+      nameField = document.getElementById("c_name");
+      mailField = document.getElementById("c_mail");
+      siteField = document.getElementById("c_site");
+    }
+
+    if (!checkbox || !nameField || !mailField || !siteField) {
+      return;
+    }
+
+    var remembered = readCookie(window.cookieHelpers.get(COOKIE_NAME));
+    if (remembered !== false) {
+      nameField.value = remembered[0];
+      mailField.value = remembered[1];
+      siteField.value = remembered[2];
+      checkbox.checked = true;
+    }
+
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        setCookie(
+          nameField.value + "\n" + mailField.value + "\n" + siteField.value,
+        );
+      } else {
+        dropCookie();
+      }
+    });
+
+    [nameField, mailField, siteField].forEach(function (field) {
+      field.addEventListener("change", function () {
+        if (checkbox.checked) {
+          setCookie(
+            nameField.value + "\n" + mailField.value + "\n" + siteField.value,
+          );
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeRememberMe);
+  } else {
+    initializeRememberMe();
+  }
+})();

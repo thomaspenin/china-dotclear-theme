@@ -126,7 +126,10 @@
       </tpl:EntryIf>
 	<tpl:EntryTags>
 	  <tpl:TagsHeader>
-	    <h3>{{tpl:lang Tags}}</h3>
+		<div class="section-header d-flex align-items-baseline gap-3">
+			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Tags}}</h3>
+			<hr class="flex-grow-1 my-0 align-self-center"/>
+		</div>
 	    <p>
 	  </tpl:TagsHeader>
 	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
@@ -138,7 +141,10 @@
       <div class="col-md-4 post-attachments">
 	<tpl:Attachments>
 	  <tpl:AttachmentsHeader>
-	    <h3>{{tpl:lang Attachments}}</h3>
+		<div class="section-header d-flex align-items-baseline gap-3">
+			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Attachments}}</h3>
+			<hr class="flex-grow-1 my-0 align-self-center"/>
+		</div>
 	    <ul>
 	  </tpl:AttachmentsHeader>
 	  <li><i class="ph ph-file"></i>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
@@ -149,7 +155,10 @@
       </div>
       </tpl:EntryIf>
       <div class="col-md-4 post-share">
-	<h3>{{tpl:lang Share}}</h3>
+		<div class="section-header d-flex align-items-baseline gap-3">
+			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
+			<hr class="flex-grow-1 my-0 align-self-center"/>
+		</div>
 	<!-- Buttons from simplesharebuttons.com -->
 	<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
 	<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
@@ -160,16 +169,8 @@
     </div>
 
     <div class="container" id="comments">
-      <div class="col-md-8">
 	{{tpl:include src="_comments.html"}}
-      </div>
-      <div id="comments-sidebar" class="col-md-4">
-	<div class="comments-feed">
-	  <a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a>
-	</a>
-      </div>
-    </div>
-  </div>
+  	</div>
 
     <!-- Footer (present on all pages) -->
     {{tpl:include src="_footer.html"}}

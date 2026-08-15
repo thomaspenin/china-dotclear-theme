@@ -1,7 +1,11 @@
 <div class="comments">
 
-  <div class="comment-list-header">
-    <h3>{{tpl:lang Comments}}</h3>
+  <div class="section-header d-flex align-items-baseline gap-3">
+	<h3 class="flex-shrink-0 mb-0">{{tpl:lang Comments}}</h3>
+	<hr class="flex-grow-1 my-0 align-self-center"/>
+	<div class="comments-feed flex-shrink-0">
+	  <a class="feed" href="{{tpl:BlogFeedURL type='atom'}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><i class="ph ph-rss"></i>&nbsp;<span class="d-none d-sm-inline">{{tpl:lang Comments feed}}</span></a>
+	</div>
   </div>
 
   <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/post.js"></script>

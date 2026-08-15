@@ -42,7 +42,7 @@
 <!-- Load pinyin definitions -->
 <script
   type="text/javascript"
-  src="{{tpl:BlogThemeURL}}/includes/js/jquery.pinyin.js"
+  src="{{tpl:BlogThemeURL}}/includes/js/pinyin.js"
 ></script>
 <!-- Cookie management for the "remember me" functionality -->
 <script
@@ -82,9 +82,6 @@
   $(document).ready(function () {
     // Prepare the pinyin that should appear when hovering <ch> or <chb> tags
     preparePinyinOnHover();
-
-    // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
-    transformPinyin();
 
     // Initialize tooltips (Bootstrap 5 JS is vanilla, not a jQuery plugin)
     document

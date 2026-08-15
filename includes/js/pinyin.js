@@ -1431,14 +1431,15 @@ function accentPinyin(string) {
  */
 function transformPinyin() {
   // Change all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
-  $("py").each(function () {
-    $(this).replaceWith(function () {
-      return "<py>" + accentPinyin($(this).text()) + "</py>";
-    });
+  document.querySelectorAll("py, pyb").forEach(function (element) {
+    var replacement = document.createElement(element.tagName.toLowerCase());
+    replacement.textContent = accentPinyin(element.textContent);
+    element.replaceWith(replacement);
   });
-  $("pyb").each(function () {
-    $(this).replaceWith(function () {
-      return "<pyb>" + accentPinyin($(this).text()) + "</pyb>";
-    });
-  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", transformPinyin);
+} else {
+  transformPinyin();
 }

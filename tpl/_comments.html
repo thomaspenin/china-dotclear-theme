@@ -54,10 +54,13 @@
 		<!-- If there is an error, display it and show the form as it was so that it can be updated -->
 		<p class="alert alert-danger">{{tpl:SysFormError}}</p>
 		<script type="text/javascript">
-		  $(document).ready(function() {
-		    $("#c_content").height(66);
+		  document.addEventListener("DOMContentLoaded", function () {
+		    document.querySelector("#c_content").style.height = "66px";
 		    // Show the rest of the form
-		    $("#new-comment-expansion").toggle();
+		    var expansion = document.querySelector("#new-comment-expansion");
+		    expansion.classList.add("is-open");
+		    expansion.setAttribute("aria-hidden", "false");
+		    expansion.style.maxHeight = expansion.scrollHeight + "px";
 		  });
 		</script>
 	      </tpl:SysIfFormError>
@@ -76,42 +79,56 @@
 
 	      <!-- Javascript code to show the input fields -->
 	      <script type="text/javascript">
-		$(document).ready(function() {
-		  $("#c_content").focus(function() {
-		    if (!($("#new-comment-expansion").is(":visible") && $("#new-comment-expansion").parents(":hidden").length == 0)) {
+		document.addEventListener("DOMContentLoaded", function () {
+		  var content = document.querySelector("#c_content");
+		  var expansion = document.querySelector("#new-comment-expansion");
+		  var feedback = document.querySelector("#feedback");
+
+		  expansion.setAttribute("aria-hidden", expansion.classList.contains("is-open") ? "false" : "true");
+
+		  function openExpansion() {
+		    expansion.classList.add("is-open");
+		    expansion.setAttribute("aria-hidden", "false");
+		    expansion.style.maxHeight = expansion.scrollHeight + "px";
+		  }
+
+		  function closeExpansion() {
+		    expansion.classList.remove("is-open");
+		    expansion.setAttribute("aria-hidden", "true");
+		    expansion.style.maxHeight = "0";
+		  }
+
+		  content.addEventListener("focus", function () {
+		    if (!expansion.classList.contains("is-open")) {
 		      // Increase the height of the text area
-		      $("#c_content").height(64);
+		      content.style.height = "64px";
 		      // Show the rest of the form
-		      $("#new-comment-expansion").slideToggle();
+		      openExpansion();
 		      // Remove any error message
-		      $("#feedback .error").remove();
-		      $("#feedback .information").remove();
-		      $("#feedback .hint").remove();
-		      $("#feedback .warning").remove();
+		      feedback.querySelectorAll(".error, .information, .hint, .warning")
+			.forEach(function (message) { message.remove(); });
 		    }
 		  });
 
-		  $("#cancelButton").click(function() {
+		  document.querySelector("#cancelButton").addEventListener("click", function () {
 		    // Hide the rest of the form
-		    $("#new-comment-expansion").slideToggle();
+		    closeExpansion();
 		    // Clear the content and the informations
-		    $("#c_name").val("");
-		    $("#c_mail").val("");
-		    $("#c_site").val("");
-		    $("#c_content").val("");
-		    $("#c_answer").val("");
+		    ["#c_name", "#c_mail", "#c_site", "#c_content", "#c_answer"]
+		      .forEach(function (selector) {
+			    var field = document.querySelector(selector);
+			    if (field) field.value = "";
+		      });
 		    // Remove any error message
-		    $("#feedback .error").remove();
-		    $("#feedback .information").remove();
-		    $("#feedback .hint").remove();
-		    $("#feedback .warning").remove();
+		    feedback.querySelectorAll(".error, .information, .hint, .warning")
+		      .forEach(function (message) { message.remove(); });
 		    // Reset the size of the content field
-		    $("#c_content").height(66);
+		    content.style.height = "66px";
 		  });
 
-		  $('#submitButton').on('click', function () {
-		    $('#pr').submit();
-		  })
+		  document.querySelector("#submitButton").addEventListener("click", function () {
+		    document.querySelector("#pr").requestSubmit();
+		  });
 		});
 	      </script>
 

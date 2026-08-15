@@ -1,8 +1,21 @@
 @use "paths";
 
 .comments #new-comment-expansion {
-  display: none; /* Hidden by default, will be expanded with javascript */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
   padding-bottom: 10px;
+  transition: max-height 250ms ease, opacity 150ms ease;
+}
+
+.comments #new-comment-expansion.is-open {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comments #new-comment-expansion {
+    transition: none;
+  }
 }
 
 .comments .media-list {

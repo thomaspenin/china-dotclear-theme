@@ -1,5 +1,18 @@
 @use "paths";
 
+.comments .comment-list {
+  padding: 0px;
+}
+
+.comments .individual-comment,
+.comments .new-comment {
+  padding: 10px 0px;
+}
+
+.comments .individual-comment .media-body {
+  padding-top: 2px;
+}
+
 .comments #new-comment-expansion {
   max-height: 0;
   opacity: 0;
@@ -24,6 +37,10 @@
   padding-top: 5px;
 }
 
+.comments fieldset p:first-child {
+  margin-top: 0;
+}
+
 .comments textarea {
   height: 66px;
   resize: vertical;
@@ -33,6 +50,7 @@
 .comments textarea {
   padding: 0.3em 0.6em;
   width: 100%;
+  font-weight: 300;
 }
 
 .comments input#c_remember {
@@ -48,7 +66,7 @@
 }
 
 .comments label {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .comments .media-top span {
@@ -79,8 +97,4 @@
   width: 0;
   height: 0;
   content: "";
-}
-
-.comments .comment-author h4 {
-  margin-top: 5px;
 }

@@ -17,19 +17,19 @@
 
   <tpl:EntryIf operator="or" comments_active="1" show_comments="1">
     <tpl:EntryIf show_comments="1">
-      <ul class="media-list">
+      <ul class="media-list comment-list">
       <!-- Loop though the comments of the current post -->
       <tpl:Comments>
 
 	<tpl:CommentsHeader></tpl:CommentsHeader>
 
-	<li id="c{{tpl:CommentID}}" class="d-flex">
+	<li id="c{{tpl:CommentID}}" class="d-flex individual-comment">
 	  <a class="flex-shrink-0 media-top" href="#">
 	    <span {{tpl:CommentIfMe return="class='comment-image me'"}}/>
 	  </a>
 	  <div class="media-body flex-grow-1 ms-3">
 	    <div class="row">
-	      <div class="comment-author col-6"><h4>{{tpl:CommentAuthorLink}}</h4></div>
+	      <div class="comment-author col-6"><h5>{{tpl:CommentAuthorLink}}</h5></div>
 	      <div class="comment-metadata col-6">
 		<i class="ph ph-clock" aria-hidden="true"></i> {{tpl:CommentDate format="%d %B %Y"}} {{tpl:lang at}} {{tpl:CommentTime}}
 	      </div>
@@ -47,7 +47,7 @@
       </tpl:Comments>
 
       <!-- Input area for a new comment -->
-	<li class="d-flex">
+	<li class="d-flex new-comment">
 	  <a class="flex-shrink-0 media-top" href="#">
 	    <span/>
 	  </a>

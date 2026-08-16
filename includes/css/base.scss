@@ -164,17 +164,12 @@ pyb {
 input:hover,
 textarea:hover,
 input:focus,
-textarea:focus {
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
   border-color: var(--color-accent);
-}
-
-input.form-control:focus,
-input:focus,
-textarea:focus {
-  border-color: var(--color-accent);
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.075) inset,
-    0 0 4px var(--color-accent);
+  outline: none;
+  box-shadow: none; // Remove Bootstrap's colored focus ring, keep a solid border only
 }
 
 input,

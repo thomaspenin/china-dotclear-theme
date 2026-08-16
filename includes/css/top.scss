@@ -2,6 +2,10 @@
 @use "layout";
 @use "paths";
 
+#top {
+  font-size: var(--font-size-top);
+}
+
 #top .top-background {
   background: var(--color-surface-topbar);
 }
@@ -56,6 +60,10 @@
 
 // Adaptation for the small screen menu
 @media (max-width: 767px) {
+  #top .navbar-toggler {
+    float: right;
+  }
+
   #top .small-screen-menu {
     clear: both;
   }

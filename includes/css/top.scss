@@ -2,6 +2,10 @@
 @use "layout";
 @use "paths";
 
+#top .top-background {
+  background: var(--color-surface-topbar);
+}
+
 #top .navbar-brand {
   display: inline-block;
   height: layout.$top-bar-height;

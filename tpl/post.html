@@ -73,17 +73,7 @@
 	<!-- # --BEHAVIOR-- publicEntryAfterContent -->
 	{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 
-	<!-- Pagination -->
-	<nav class="previous-next-posts">
-	  <ul class="d-flex list-unstyled">
-	    <tpl:EntryPrevious>
-	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
-	    </tpl:EntryPrevious>
-	    <tpl:EntryNext>
-	      <li class="next"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}} <span aria-hidden="true">&rarr;</span></a></li>
-	    </tpl:EntryNext>
-	  </ul>
-	</nav>
+	
       </div>
       <div class="col-md-4">
 	<nav class=" post-info bs-docs-sidebar d-none d-md-block">
@@ -118,6 +108,17 @@
     </div>
 
     <div class="container" id="post-footer">
+		<!-- Pagination -->
+	
+	  <ul class="nav nav-fill previous-next-posts">
+	    <tpl:EntryPrevious>
+	      <li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}"><i class="ph ph-caret-left"></i>&nbsp;{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></p></li>
+	    </tpl:EntryPrevious>
+	    <tpl:EntryNext>
+	      <li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}&nbsp;<i class="ph ph-caret-right"></i></a></p></li>
+	    </tpl:EntryNext>
+	  </ul>
+	
       <div class="row align-items-start">
       <tpl:EntryIf has_attachment="1">
       <div class="col-12 col-md-4 post-tags">

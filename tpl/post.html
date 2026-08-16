@@ -118,11 +118,12 @@
     </div>
 
     <div class="container" id="post-footer">
+      <div class="row align-items-start">
       <tpl:EntryIf has_attachment="1">
-      <div class="col-md-4 post-tags"></div>
+      <div class="col-12 col-lg-4 post-tags">
       </tpl:EntryIf>
       <tpl:EntryIf has_attachment="0">
-      <div class="col-md-8 post-tags"></div>
+      <div class="col-12 col-sm-6 post-tags">
       </tpl:EntryIf>
 	<tpl:EntryTags>
 	  <tpl:TagsHeader>
@@ -137,8 +138,9 @@
 	    </p>
 	  </tpl:TagsFooter>
 	</tpl:EntryTags>
+      </div>
       <tpl:EntryIf has_attachment="1">
-      <div class="col-md-4 post-attachments">
+      <div class="col-12 col-sm-6 col-lg-4 post-attachments">
 	<tpl:Attachments>
 	  <tpl:AttachmentsHeader>
 		<div class="section-header d-flex align-items-baseline gap-3">
@@ -154,17 +156,23 @@
 	</tpl:Attachments>
       </div>
       </tpl:EntryIf>
-      <div class="col-md-4 post-share">
+      <tpl:EntryIf has_attachment="1">
+      <div class="col-12 col-sm-6 col-lg-4 post-share">
+      </tpl:EntryIf>
+      <tpl:EntryIf has_attachment="0">
+      <div class="col-12 col-sm-6 post-share">
+      </tpl:EntryIf>
 		<div class="section-header d-flex align-items-baseline gap-3">
 			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
 			<hr class="flex-grow-1 my-0 align-self-center"/>
 		</div>
-	<!-- Buttons from simplesharebuttons.com -->
-	<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
-	<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
-	<a href="https://plus.google.com/share?url={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/google.png" alt="Google+" title="Google+" /></a>
-	<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
-	<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
+		<!-- Buttons from simplesharebuttons.com -->
+		<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
+		<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
+		<a href="https://plus.google.com/share?url={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/google.png" alt="Google+" title="Google+" /></a>
+		<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
+		<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
+      </div>
       </div>
     </div>
 

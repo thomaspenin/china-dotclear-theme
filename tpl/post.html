@@ -120,7 +120,7 @@
     <div class="container" id="post-footer">
       <div class="row align-items-start">
       <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-lg-4 post-tags">
+      <div class="col-12 col-md-4 post-tags">
       </tpl:EntryIf>
       <tpl:EntryIf has_attachment="0">
       <div class="col-12 col-sm-6 post-tags">
@@ -140,7 +140,7 @@
 	</tpl:EntryTags>
       </div>
       <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-sm-6 col-lg-4 post-attachments">
+      <div class="col-12 col-sm-6 col-md-4 post-attachments">
 	<tpl:Attachments>
 	  <tpl:AttachmentsHeader>
 		<div class="section-header d-flex align-items-baseline gap-3">
@@ -157,7 +157,7 @@
       </div>
       </tpl:EntryIf>
       <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-sm-6 col-lg-4 post-share">
+      <div class="col-12 col-sm-6 col-md-4 post-share">
       </tpl:EntryIf>
       <tpl:EntryIf has_attachment="0">
       <div class="col-12 col-sm-6 post-share">
@@ -179,10 +179,10 @@
       </div>
       </div>
     </div>
-
-    <div class="container" id="comments">
-	{{tpl:include src="_comments.html"}}
-  	</div>
+	
+	<div class="container" id="comments">
+		{{tpl:include src="_comments.html"}}
+	</div>
 
     <!-- Footer (present on all pages) -->
     {{tpl:include src="_footer.html"}}

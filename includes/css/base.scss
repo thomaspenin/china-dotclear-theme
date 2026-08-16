@@ -112,48 +112,16 @@ blockquote {
   line-height: var(--line-height-lead);
 }
 
-// Custom colored bullets (one day, this will be easy with the ::marker pseudo-element). The :not(.nav) exception is to play well with Bootstrap nav items
+// Colored bullets
 
-ul:not(.nav) {
-  list-style: none;
-}
-
-ul:not(.nav) > li::before {
-  content: "•";
+ul > li::marker {
   color: var(--color-accent);
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
 }
 
-ul:not(.nav) > li > ul > li::before {
-  content: "○";
-}
+// Colored list numbers
 
-ul:not(.nav) > li > ul > li > ul > li::before {
-  content: "▪";
-}
-
-// Custom colored list numbers (one day, this will be easy with the ::marker pseudo-element)
-
-ol {
-  list-style: none;
-  counter-reset: li;
-}
-
-ol > li::before {
-  content: "." counters(li, ".");
+ol > li::marker {
   color: var(--color-accent);
-  display: inline-block;
-  width: 1em;
-  margin-left: -1.5em;
-  margin-right: 0.5em;
-  text-align: right;
-  direction: rtl;
-}
-
-ol > li {
-  counter-increment: li;
 }
 
 // Chinese text

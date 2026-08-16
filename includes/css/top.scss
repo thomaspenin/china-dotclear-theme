@@ -57,7 +57,7 @@
 // Adaptation for the small screen menu
 @media (max-width: 767px) {
   #top .small-screen-menu {
-    margin-top: layout.$top-bar-height;
+    clear: both;
   }
 
   #top .small-screen-menu > nav {

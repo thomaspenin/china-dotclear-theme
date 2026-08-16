@@ -56,135 +56,137 @@
 		</div>
 	</div>
 
-    <!-- Post excerpt if there is any -->
-    <tpl:EntryIf extended="1">
-    <div class="container lead">
-      {{tpl:EntryExcerpt}}
-    </div>
-    </tpl:EntryIf>
-
-    <div id="main" class="container">
-		<div class="row">
-      <div class="col-md-8 post-content">
-	<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
-	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
-
-	<!-- The blog post itself -->
-	{{tpl:EntryContent}}
-	  
-	<!-- # --BEHAVIOR-- publicEntryAfterContent -->
-	{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
-
-	
-      </div>
-      <div class="col-md-4 table-of-contents">
-	<nav class=" post-info bs-docs-sidebar d-none d-md-block">
-	  <!-- The script toc.js will insert the toc here, at the beginning of the info box, if there is something to show -->
-	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/toc.js"></script>
-	  <script type="text/javascript">
-	    document.addEventListener("DOMContentLoaded", function () {
-	      // Generate the toc
-	      buildToc(".bs-docs-sidebar", {
-		search: ".post-content",
-		depth: 3,
-		start: 1,
-		listType: "ul",
-		rootListId: "toc",
-		rootListClass: "nav",
-		subListClass: "nav"
-	      });
-
-	      // Chinese text should appear bigger in the generated code if it is not already the case
-	      wrapChineseText(document.querySelector(".bs-docs-sidebar"));
-
-	      // Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
-	      new bootstrap.ScrollSpy(document.body, {
-		target: '.bs-docs-sidebar',
-		rootMargin: '0px 0px -80%'
-	      });
-	    });
-	  </script>
-	</nav>
-      </div>
-	  </div>
-    </div>
-
-    <div class="container" id="post-footer">
-		<!-- Pagination -->
-	
-	  <ul class="nav nav-fill previous-next-posts">
-	    <tpl:EntryPrevious>
-	      <li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}"><i class="ph ph-caret-left"></i>&nbsp;{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></p></li>
-	    </tpl:EntryPrevious>
-	    <tpl:EntryNext>
-	      <li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}&nbsp;<i class="ph ph-caret-right"></i></a></p></li>
-	    </tpl:EntryNext>
-	  </ul>
-	
-      <div class="row align-items-start">
-      <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-md-4 post-tags">
-      </tpl:EntryIf>
-      <tpl:EntryIf has_attachment="0">
-      <div class="col-12 col-sm-6 post-tags">
-      </tpl:EntryIf>
-	<tpl:EntryTags>
-	  <tpl:TagsHeader>
-		<div class="section-header d-flex align-items-baseline gap-3">
-			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Tags}}</h3>
-			<hr class="flex-grow-1 my-0 align-self-center"/>
+	<div class="middle">
+		<!-- Post excerpt if there is any -->
+		<tpl:EntryIf extended="1">
+		<div class="container lead">
+		{{tpl:EntryExcerpt}}
 		</div>
-	    <p>
-	  </tpl:TagsHeader>
-	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
-	  <tpl:TagsFooter>
-	    </p>
-	  </tpl:TagsFooter>
-	</tpl:EntryTags>
-      </div>
-      <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-sm-6 col-md-4 post-attachments">
-	<tpl:Attachments>
-	  <tpl:AttachmentsHeader>
-		<div class="section-header d-flex align-items-baseline gap-3">
-			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Attachments}}</h3>
-			<hr class="flex-grow-1 my-0 align-self-center"/>
+		</tpl:EntryIf>
+
+		<div id="main" class="container">
+			<div class="row">
+		<div class="col-md-8 post-content">
+		<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+		<!-- The blog post itself -->
+		{{tpl:EntryContent}}
+		
+		<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+		{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+
+		
 		</div>
-	    <ul>
-	  </tpl:AttachmentsHeader>
-	  <li><i class="ph ph-file"></i>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
-	  <tpl:AttachmentsFooter>
-	    </ul>
-	  </tpl:AttachmentsFooter>
-	</tpl:Attachments>
-      </div>
-      </tpl:EntryIf>
-      <tpl:EntryIf has_attachment="1">
-      <div class="col-12 col-sm-6 col-md-4 post-share">
-      </tpl:EntryIf>
-      <tpl:EntryIf has_attachment="0">
-      <div class="col-12 col-sm-6 post-share">
-      </tpl:EntryIf>
-		<div class="section-header d-flex align-items-baseline gap-3">
-			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
-			<hr class="flex-grow-1 my-0 align-self-center"/>
+		<div class="col-md-4 table-of-contents">
+		<nav class=" post-info bs-docs-sidebar d-none d-md-block">
+		<!-- The script toc.js will insert the toc here, at the beginning of the info box, if there is something to show -->
+		<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/toc.js"></script>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+			// Generate the toc
+			buildToc(".bs-docs-sidebar", {
+			search: ".post-content",
+			depth: 3,
+			start: 1,
+			listType: "ul",
+			rootListId: "toc",
+			rootListClass: "nav",
+			subListClass: "nav"
+			});
+
+			// Chinese text should appear bigger in the generated code if it is not already the case
+			wrapChineseText(document.querySelector(".bs-docs-sidebar"));
+
+			// Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
+			new bootstrap.ScrollSpy(document.body, {
+			target: '.bs-docs-sidebar',
+			rootMargin: '0px 0px -80%'
+			});
+			});
+		</script>
+		</nav>
 		</div>
-		<p class="share-links">
-			<a href="mailto:?subject={{tpl:EntryTitle encode_html="1"}}&body={{tpl:EntryURL}}" aria-label="Email" title="Email"><i class="ph ph-envelope" aria-hidden="true"></i></a>
-		<a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
-		<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
-		<a href="https://www.pinterest.com/pin/create/button/?url={{tpl:EntryURL}}&description={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Pinterest" title="Pinterest"><i class="ph ph-pinterest-logo" aria-hidden="true"></i></a>
-		<a href="https://bsky.app/intent/compose?text={{tpl:EntryTitle encode_html="1"}}%20{{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Bluesky" title="Bluesky"><span class="share-icon share-icon-bluesky" aria-hidden="true"></span></a>
-		<a href="https://www.linkedin.com/sharing/share-offsite/?url={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
-		<a href="https://www.reddit.com/submit?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Reddit" title="Reddit"><i class="ph ph-reddit-logo" aria-hidden="true"></i></a>
-		<a href="https://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Weibo" title="Weibo"><span class="share-icon share-icon-weibo" aria-hidden="true"></span></a>
-		</p>
-      </div>
-      </div>
-    </div>
-	
-	<div class="container" id="comments">
-		{{tpl:include src="_comments.html"}}
+		</div>
+		</div>
+
+		<div class="container" id="post-footer">
+			<!-- Pagination -->
+		
+		<ul class="nav nav-fill previous-next-posts">
+			<tpl:EntryPrevious>
+			<li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}"><i class="ph ph-caret-left"></i>&nbsp;{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></p></li>
+			</tpl:EntryPrevious>
+			<tpl:EntryNext>
+			<li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}&nbsp;<i class="ph ph-caret-right"></i></a></p></li>
+			</tpl:EntryNext>
+		</ul>
+		
+		<div class="row align-items-start">
+		<tpl:EntryIf has_attachment="1">
+		<div class="col-12 col-md-4 post-tags">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0">
+		<div class="col-12 col-sm-6 post-tags">
+		</tpl:EntryIf>
+		<tpl:EntryTags>
+		<tpl:TagsHeader>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Tags}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<p>
+		</tpl:TagsHeader>
+		<a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
+		<tpl:TagsFooter>
+			</p>
+		</tpl:TagsFooter>
+		</tpl:EntryTags>
+		</div>
+		<tpl:EntryIf has_attachment="1">
+		<div class="col-12 col-sm-6 col-md-4 post-attachments">
+		<tpl:Attachments>
+		<tpl:AttachmentsHeader>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Attachments}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<ul>
+		</tpl:AttachmentsHeader>
+		<li><i class="ph ph-file"></i>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
+		<tpl:AttachmentsFooter>
+			</ul>
+		</tpl:AttachmentsFooter>
+		</tpl:Attachments>
+		</div>
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="1">
+		<div class="col-12 col-sm-6 col-md-4 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0">
+		<div class="col-12 col-sm-6 post-share">
+		</tpl:EntryIf>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<p class="share-links">
+				<a href="mailto:?subject={{tpl:EntryTitle encode_html="1"}}&body={{tpl:EntryURL}}" aria-label="Email" title="Email"><i class="ph ph-envelope" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+			<a href="https://www.pinterest.com/pin/create/button/?url={{tpl:EntryURL}}&description={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Pinterest" title="Pinterest"><i class="ph ph-pinterest-logo" aria-hidden="true"></i></a>
+			<a href="https://bsky.app/intent/compose?text={{tpl:EntryTitle encode_html="1"}}%20{{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Bluesky" title="Bluesky"><span class="share-icon share-icon-bluesky" aria-hidden="true"></span></a>
+			<a href="https://www.linkedin.com/sharing/share-offsite/?url={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+			<a href="https://www.reddit.com/submit?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Reddit" title="Reddit"><i class="ph ph-reddit-logo" aria-hidden="true"></i></a>
+			<a href="https://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Weibo" title="Weibo"><span class="share-icon share-icon-weibo" aria-hidden="true"></span></a>
+			</p>
+		</div>
+		</div>
+		</div>
+		
+		<div class="container" id="comments">
+			{{tpl:include src="_comments.html"}}
+		</div>
 	</div>
 
     <!-- Footer (present on all pages) -->

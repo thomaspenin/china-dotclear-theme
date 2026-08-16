@@ -166,12 +166,16 @@
 			<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
 			<hr class="flex-grow-1 my-0 align-self-center"/>
 		</div>
-		<!-- Buttons from simplesharebuttons.com -->
-		<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
-		<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
-		<a href="https://plus.google.com/share?url={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/google.png" alt="Google+" title="Google+" /></a>
-		<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
-		<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
+		<p class="share-links">
+			<a href="mailto:?subject={{tpl:EntryTitle encode_html="1"}}&body={{tpl:EntryURL}}" aria-label="Email" title="Email"><i class="ph ph-envelope" aria-hidden="true"></i></a>
+		<a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
+		<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+		<a href="https://www.pinterest.com/pin/create/button/?url={{tpl:EntryURL}}&description={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Pinterest" title="Pinterest"><i class="ph ph-pinterest-logo" aria-hidden="true"></i></a>
+		<a href="https://bsky.app/intent/compose?text={{tpl:EntryTitle encode_html="1"}}%20{{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Bluesky" title="Bluesky"><span class="share-icon share-icon-bluesky" aria-hidden="true"></span></a>
+		<a href="https://www.linkedin.com/sharing/share-offsite/?url={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+		<a href="https://www.reddit.com/submit?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Reddit" title="Reddit"><i class="ph ph-reddit-logo" aria-hidden="true"></i></a>
+		<a href="https://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Weibo" title="Weibo"><span class="share-icon share-icon-weibo" aria-hidden="true"></span></a>
+		</p>
       </div>
       </div>
     </div>

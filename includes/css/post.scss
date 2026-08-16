@@ -8,6 +8,7 @@
 }
 
 .post-title a.comment-count {
+  font-size: 75%;
   display: inline-block;
   position: absolute;
   padding: 5px 8px;
@@ -15,6 +16,8 @@
   right: 0;
   outline: none;
   background-color: var(--color-surface-topbar);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;
@@ -35,14 +38,14 @@
 .post-title .post-category {
   position: absolute;
   padding: 5px 8px;
-  top: 0;
+  top: 4px;
   left: 0;
 }
 
 .post-title .post-navigation {
   position: absolute;
   padding: 5px 8px;
-  top: 0;
+  top: 4px;
   right: 0;
 }
 

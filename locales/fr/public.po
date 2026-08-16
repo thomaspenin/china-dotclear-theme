@@ -203,10 +203,10 @@ msgid "Start searching"
 msgstr "Lancer la recherche"
 
 msgid "Previous entry"
-msgstr "Article précédent"
+msgstr "Article précédent&nbsp;:"
 
 msgid "Next entry"
-msgstr "Article suivant"
+msgstr "Article suivant&nbsp;:"
 
 msgid "Category"
 msgstr "Catégorie"

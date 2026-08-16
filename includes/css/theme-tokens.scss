@@ -22,11 +22,14 @@
   --font-size-toc: 1rem;
   --font-size-toc-nested: 0.9rem;
 
+  --border-radius: 8px;
+
   --color-accent: #{palette.$green};
   --color-accent-hover: #{palette.$green-hover};
   --color-accent-active: #{palette.$green-active};
   // Text/icon color drawn on top of an accent-colored background
   --color-on-accent: #{palette.$white};
+  --color-always-light: #{palette.$white};
 
   --color-text-primary: #{palette.$strong-gray};
   --color-text-muted: #{palette.$gray};
@@ -74,6 +77,7 @@
     --color-accent-hover: #{palette.$dark-mode-green-hover};
     --color-accent-active: #{palette.$dark-mode-green-active};
     --color-on-accent: #{palette.$very-strong-gray};
+    --color-always-light: #{palette.$white};
 
     --color-text-primary: #{palette.$pale-gray-6};
     --color-text-muted: #{palette.$pale-gray-2};

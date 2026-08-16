@@ -1,187 +1,261 @@
 <div class="comments">
-
   <div class="section-header d-flex align-items-baseline gap-3">
-	<h3 class="flex-shrink-0 mb-0">{{tpl:lang Comments}}</h3>
-	<hr class="flex-grow-1 my-0 align-self-center"/>
-	<div class="comments-feed flex-shrink-0">
-	  <a class="feed" href="{{tpl:BlogFeedURL type='atom'}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><i class="ph ph-rss"></i>&nbsp;<span class="d-none d-sm-inline">{{tpl:lang Comments feed}}</span></a>
-	</div>
+    <h3 class="flex-shrink-0 mb-0">{{tpl:lang Comments}}</h3>
+    <hr class="flex-grow-1 my-0 align-self-center" />
+    <div class="comments-feed flex-shrink-0">
+      <a
+        class="feed"
+        href="{{tpl:BlogFeedURL type='atom'}}/comments/{{tpl:EntryID}}"
+        title="{{tpl:lang Subscribe to the comment feed for this article only}}"
+        ><i class="ph ph-rss"></i>&nbsp;<span class="d-none d-sm-inline"
+          >{{tpl:lang Comments feed}}</span
+        ></a
+      >
+    </div>
   </div>
 
-  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/post.js"></script>
+  <script
+    type="text/javascript"
+    src="{{tpl:BlogThemeURL}}/includes/js/post.js"
+  ></script>
   <script type="text/javascript">
     //<![CDATA[
-    var post_remember_str = '{{tpl:lang Remember me on this blog}}';
+    var post_remember_str = "{{tpl:lang Remember me on this blog}}";
     //]]>
   </script>
 
   <tpl:EntryIf operator="or" comments_active="1" show_comments="1">
     <tpl:EntryIf show_comments="1">
       <ul class="media-list comment-list">
-      <!-- Loop though the comments of the current post -->
-      <tpl:Comments>
+        <!-- Loop though the comments of the current post -->
+        <tpl:Comments>
+          <tpl:CommentsHeader></tpl:CommentsHeader>
 
-	<tpl:CommentsHeader></tpl:CommentsHeader>
+          <li id="c{{tpl:CommentID}}" class="d-flex individual-comment">
+            <a class="flex-shrink-0 media-top" href="#">
+              <span {{tpl:CommentIfMe return="class='comment-image me'" }} />
+            </a>
+            <div class="media-body flex-grow-1 ms-3">
+              <div class="row">
+                <div class="comment-author col-6">
+                  <h5>{{tpl:CommentAuthorLink}}</h5>
+                </div>
+                <div class="comment-metadata col-6">
+                  <i class="ph ph-clock" aria-hidden="true"></i>
+                  {{tpl:CommentDate format="%d %B %Y"}} {{tpl:lang at}}
+                  {{tpl:CommentTime}}
+                </div>
+              </div>
+              <div class="comment-text">
+                {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+                {{tpl:CommentContent}} {{tpl:SysBehavior
+                behavior="publicCommentAfterContent"}}
+              </div>
+            </div>
+          </li>
 
-	<li id="c{{tpl:CommentID}}" class="d-flex individual-comment">
-	  <a class="flex-shrink-0 media-top" href="#">
-	    <span {{tpl:CommentIfMe return="class='comment-image me'"}}/>
-	  </a>
-	  <div class="media-body flex-grow-1 ms-3">
-	    <div class="row">
-	      <div class="comment-author col-6"><h5>{{tpl:CommentAuthorLink}}</h5></div>
-	      <div class="comment-metadata col-6">
-		<i class="ph ph-clock" aria-hidden="true"></i> {{tpl:CommentDate format="%d %B %Y"}} {{tpl:lang at}} {{tpl:CommentTime}}
-	      </div>
-	    </div>
-	    <div class="comment-text">
-	      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
-	      {{tpl:CommentContent}}
-	      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
-	    </div>
-	  </div>
-	</li>
-	    
-	<tpl:CommentsFooter></tpl:CommentsFooter>
-	  
-      </tpl:Comments>
+          <tpl:CommentsFooter></tpl:CommentsFooter>
+        </tpl:Comments>
 
-      <!-- Input area for a new comment -->
-	<li class="d-flex new-comment">
-	  <a class="flex-shrink-0 media-top" href="#">
-	    <span/>
-	  </a>
-	  <div class="media-body flex-grow-1 ms-3">
-	    <!-- To inform the user if something went wrong -->
-	    <div id="feedback">
-	      <tpl:SysIfFormError>
-		<!-- If there is an error, display it and show the form as it was so that it can be updated -->
-		<p class="alert alert-danger">{{tpl:SysFormError}}</p>
-		<script type="text/javascript">
-		  document.addEventListener("DOMContentLoaded", function () {
-		    document.querySelector("#c_content").style.height = "66px";
-		    // Show the rest of the form
-		    var expansion = document.querySelector("#new-comment-expansion");
-		    expansion.classList.add("is-open");
-		    expansion.setAttribute("aria-hidden", "false");
-		    expansion.style.maxHeight = expansion.scrollHeight + "px";
-		  });
-		</script>
-	      </tpl:SysIfFormError>
-	      
-	      <tpl:SysIfCommentPending>
-		<!-- In case the comment is waiting for approval, tell the user -->
-		<p class="alert alert-info">{{tpl:lang Your comment has been submitted and will be reviewed for publication.}}</p>
-	      </tpl:SysIfCommentPending>
-	    </div>
+        <!-- Input area for a new comment -->
+        <li class="d-flex new-comment">
+          <a class="flex-shrink-0 media-top" href="#">
+            <span />
+          </a>
+          <div class="media-body flex-grow-1 ms-3">
+            <!-- To inform the user if something went wrong -->
+            <div id="feedback">
+              <tpl:SysIfFormError>
+                <!-- If there is an error, display it and show the form as it was so that it can be updated -->
+                <p class="alert alert-danger">{{tpl:SysFormError}}</p>
+                <script type="text/javascript">
+                  document.addEventListener("DOMContentLoaded", function () {
+                    document.querySelector("#c_content").style.height = "66px";
+                    // Show the rest of the form
+                    var expansion = document.querySelector(
+                      "#new-comment-expansion",
+                    );
+                    expansion.classList.add("is-open");
+                    expansion.setAttribute("aria-hidden", "false");
+                    expansion.style.maxHeight = expansion.scrollHeight + "px";
+                  });
+                </script>
+              </tpl:SysIfFormError>
 
-	    <form action="{{tpl:EntryURL}}#pr" method="post" id="pr">
-	    <fieldset>
-	      <p class="commentTextInputArea">
-		<textarea name="c_content" id="c_content" placeholder="{{tpl:lang Let a comment!}}" rows="2">{{tpl:CommentPreviewContent encode_html="1" remove_html="1"}}</textarea>
-	      </p>
+              <tpl:SysIfCommentPending>
+                <!-- In case the comment is waiting for approval, tell the user -->
+                <p class="alert alert-info">
+                  {{tpl:lang Your comment has been submitted and will be
+                  reviewed for publication.}}
+                </p>
+              </tpl:SysIfCommentPending>
+            </div>
 
-	      <!-- Javascript code to show the input fields -->
-	      <script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", function () {
-		  var content = document.querySelector("#c_content");
-		  var expansion = document.querySelector("#new-comment-expansion");
-		  var feedback = document.querySelector("#feedback");
+            <form action="{{tpl:EntryURL}}#pr" method="post" id="pr">
+              <fieldset>
+                <p class="commentTextInputArea">
+                  <textarea
+                    name="c_content"
+                    id="c_content"
+                    placeholder="{{tpl:lang Let a comment!}}"
+                    rows="2"
+                  >
+{{tpl:CommentPreviewContent encode_html="1" remove_html="1"}}</textarea
+                  >
+                </p>
 
-		  expansion.setAttribute("aria-hidden", expansion.classList.contains("is-open") ? "false" : "true");
+                <!-- Javascript code to show the input fields -->
+                <script type="text/javascript">
+                  document.addEventListener("DOMContentLoaded", function () {
+                    var content = document.querySelector("#c_content");
+                    var expansion = document.querySelector(
+                      "#new-comment-expansion",
+                    );
+                    var feedback = document.querySelector("#feedback");
 
-		  function openExpansion() {
-		    expansion.classList.add("is-open");
-		    expansion.setAttribute("aria-hidden", "false");
-		    expansion.style.maxHeight = expansion.scrollHeight + "px";
-		  }
+                    expansion.setAttribute(
+                      "aria-hidden",
+                      expansion.classList.contains("is-open")
+                        ? "false"
+                        : "true",
+                    );
 
-		  function closeExpansion() {
-		    expansion.classList.remove("is-open");
-		    expansion.setAttribute("aria-hidden", "true");
-		    expansion.style.maxHeight = "0";
-		  }
+                    function openExpansion() {
+                      expansion.classList.add("is-open");
+                      expansion.setAttribute("aria-hidden", "false");
+                      expansion.style.maxHeight = expansion.scrollHeight + "px";
+                    }
 
-		  content.addEventListener("focus", function () {
-		    if (!expansion.classList.contains("is-open")) {
-		      // Increase the height of the text area
-		      content.style.height = "64px";
-		      // Show the rest of the form
-		      openExpansion();
-		      // Remove any error message
-		      feedback.querySelectorAll(".error, .information, .hint, .warning")
-			.forEach(function (message) { message.remove(); });
-		    }
-		  });
+                    function closeExpansion() {
+                      expansion.classList.remove("is-open");
+                      expansion.setAttribute("aria-hidden", "true");
+                      expansion.style.maxHeight = "0";
+                    }
 
-		  document.querySelector("#cancelButton").addEventListener("click", function () {
-		    // Hide the rest of the form
-		    closeExpansion();
-		    // Clear the content and the informations
-		    ["#c_name", "#c_mail", "#c_site", "#c_content", "#c_answer"]
-		      .forEach(function (selector) {
-			    var field = document.querySelector(selector);
-			    if (field) field.value = "";
-		      });
-		    // Remove any error message
-		    feedback.querySelectorAll(".error, .information, .hint, .warning")
-		      .forEach(function (message) { message.remove(); });
-		    // Reset the size of the content field
-		    content.style.height = "66px";
-		  });
+                    content.addEventListener("focus", function () {
+                      if (!expansion.classList.contains("is-open")) {
+                        // Increase the height of the text area
+                        content.style.height = "64px";
+                        // Show the rest of the form
+                        openExpansion();
+                        // Remove any error message
+                        feedback
+                          .querySelectorAll(
+                            ".error, .information, .hint, .warning",
+                          )
+                          .forEach(function (message) {
+                            message.remove();
+                          });
+                      }
+                    });
 
-		  document.querySelector("#submitButton").addEventListener("click", function () {
-		    document.querySelector("#pr").requestSubmit();
-		  });
-		});
-	      </script>
+                    document
+                      .querySelector("#cancelButton")
+                      .addEventListener("click", function () {
+                        // Hide the rest of the form
+                        closeExpansion();
+                        // Clear the content and the informations
+                        [
+                          "#c_name",
+                          "#c_mail",
+                          "#c_site",
+                          "#c_content",
+                          "#c_answer",
+                        ].forEach(function (selector) {
+                          var field = document.querySelector(selector);
+                          if (field) field.value = "";
+                        });
+                        // Remove any error message
+                        feedback
+                          .querySelectorAll(
+                            ".error, .information, .hint, .warning",
+                          )
+                          .forEach(function (message) {
+                            message.remove();
+                          });
+                        // Reset the size of the content field
+                        content.style.height = "66px";
+                      });
 
-	      <!-- Part that will be shown when the user clicks the input field -->
-	      <div id="new-comment-expansion">
-		<!-- For plugin makers... -->
-		{{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
+                    document
+                      .querySelector("#submitButton")
+                      .addEventListener("click", function () {
+                        document.querySelector("#pr").requestSubmit();
+                      });
+                  });
+                </script>
 
-		<p class="field">
-		  <input name="c_name" id="c_name" type="text" placeholder="{{tpl:lang Name (required)}}" maxlength="255"
-		value="{{tpl:CommentPreviewName encode_html="1"}}" />
-		</p>
-		
-		<p class="field">
-		  <input name="c_mail" id="c_mail" type="text" placeholder="{{tpl:lang Email (required, but will not be published)}}" maxlength="255"
-		value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
-		</p>
-		
-		<p class="field">
-		  <input name="c_site" id="c_site" type="text" placeholder="{{tpl:lang Website}}" maxlength="255"
-		value="{{tpl:CommentPreviewSite encode_html="1"}}" />
-		</p>
+                <!-- Part that will be shown when the user clicks the input field -->
+                <div id="new-comment-expansion">
+                  <!-- For plugin makers... -->
+                  {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
 
-		<?php
-		  // This is to avoid PHP complaining that the values are not set with the captcha plugin
-		  if (!isset($_POST['c_question_hash']))
-		  {
-		    $_POST['c_question_hash'] = "";
-		  }
-		  if (!isset($_POST['c_answer']))
-		  {
-		    $_POST['c_answer'] = "";
-		  }
-		?>
+                  <p class="field">
+                    <input
+                      name="c_name"
+                      id="c_name"
+                      type="text"
+                      placeholder="{{tpl:lang Name (required)}}"
+                      maxlength="255"
+                      value="{{tpl:CommentPreviewName encode_html='1'}}"
+                    />
+                  </p>
 
-		<!-- For plugin makers... -->
-		{{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
-	      
-		<div class="new-comment-controls">
-		  <div class="new-comment-buttons">
-		    <button type="button" id="cancelButton" title="{{tpl:lang Cancel the redaction of the comment}}" class="btn btn-secondary">{{tpl:lang Cancel}}</button>
-		    <button type="button" id="submitButton" class="btn btn-primary">{{tpl:lang Send}}</button>
-		  </div>
-		</div>
-	      </div>
-	    </fieldset>
-	    </form>
-	  </div>
-	</li>
+                  <p class="field">
+                    <input
+                      name="c_mail"
+                      id="c_mail"
+                      type="text"
+                      placeholder="{{tpl:lang Email (required, but will not be published)}}"
+                      maxlength="255"
+                      value="{{tpl:CommentPreviewEmail encode_html='1'}}"
+                    />
+                  </p>
+
+                  <p class="field">
+                    <input
+                      name="c_site"
+                      id="c_site"
+                      type="text"
+                      placeholder="{{tpl:lang Website}}"
+                      maxlength="255"
+                      value="{{tpl:CommentPreviewSite encode_html='1'}}"
+                    />
+                  </p>
+
+                  <?php // This is to avoid PHP complaining that the values are
+                  not set with the captcha plugin if
+                  (!isset($_POST['c_question_hash'])) {
+                  $_POST['c_question_hash'] = ""; } if
+                  (!isset($_POST['c_answer'])) { $_POST['c_answer'] = ""; } ?>
+
+                  <!-- For plugin makers... -->
+                  {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
+
+                  <div class="new-comment-controls">
+                    <div class="new-comment-buttons">
+                      <button
+                        type="button"
+                        id="cancelButton"
+                        title="{{tpl:lang Cancel the redaction of the comment}}"
+                        class="btn btn-secondary"
+                      >
+                        {{tpl:lang Cancel}}
+                      </button>
+                      <button
+                        type="button"
+                        id="submitButton"
+                        class="btn btn-primary"
+                      >
+                        {{tpl:lang Send}}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </li>
       </ul>
     </tpl:EntryIf>
   </tpl:EntryIf>

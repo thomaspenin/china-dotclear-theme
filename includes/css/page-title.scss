@@ -1,21 +1,16 @@
 @use "paths";
 
-/*
- * "China" theme for Dotclear
- * --------------------------
- * Author: Thomas PENIN
- * Website: https://www.voyage-est.com
- * License: GNU/GPL
- */
-
-.page-title {
+.page-title-background {
   background: var(--color-accent)
     url("#{paths.$images-folder-path}/title/Title-background.png") no-repeat
     left bottom;
   background-size: cover;
-  color: var(--color-surface-page);
+}
+
+.page-title {
+  color: var(--color-always-light);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  padding-top: 28px;
+  padding-top: 40px;
   padding-bottom: 28px;
   position: relative;
   display: table; // For the case there is only one h1 (see below)
@@ -24,7 +19,7 @@
 }
 
 .page-title a {
-  color: var(--color-surface-page);
+  color: var(--color-always-light);
 }
 
 .page-title h1 {

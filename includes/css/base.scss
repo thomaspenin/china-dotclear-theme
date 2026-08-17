@@ -39,6 +39,8 @@ h4 {
   font-weight: 500;
   margin-bottom: 16px;
   margin-top: 25px;
+  // Keep anchor-jumped headings (e.g. toc links) below the fixed top bar
+  scroll-margin-top: calc(#{layout.$top-bar-height} + 10px);
 }
 
 h1 {

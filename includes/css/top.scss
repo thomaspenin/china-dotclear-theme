@@ -120,6 +120,10 @@
   margin: 0;
 }
 
+#top .navbar-nav li + li {
+  margin-top: 0;
+}
+
 #top .navbar-nav li a {
   display: flex;
   align-items: center;

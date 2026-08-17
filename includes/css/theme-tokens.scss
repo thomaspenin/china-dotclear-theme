@@ -55,6 +55,7 @@
   --color-border-strong: #{palette.$medium-gray};
   --color-border-muted: #{palette.$gray};
   --color-shadow-page: #{palette.$gray};
+  --color-shadow-thumbnail: #{rgba(palette.$gray, 0.2)};
 
   --color-post-title: #{palette.$strong-gray};
   --color-post-title-hover: #{palette.$very-strong-gray};
@@ -104,6 +105,7 @@
     --color-border-strong: #{palette.$charcoal-11};
     --color-border-muted: #{palette.$charcoal-8};
     --color-shadow-page: #{palette.$charcoal-1};
+    --color-shadow-thumbnail: #{rgba(palette.$charcoal-1, 0.2)};
 
     --color-post-title: #{palette.$pale-gray-7};
     --color-post-title-hover: #{palette.$pale-gray-11};

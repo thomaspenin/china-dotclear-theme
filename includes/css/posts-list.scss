@@ -28,9 +28,10 @@
 
 .posts-list .posts-thumbnail-item .thumbnail {
   border-radius: var(--border-radius);
+  background-color: var(--color-surface-page);
   padding: 0;
   border: none;
-  box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px 2px 2px 1px var(--color-shadow-thumbnail);
 }
 
 .posts-list .posts-thumbnail-item img {
@@ -39,8 +40,9 @@
 }
 
 .posts-list .posts-thumbnail-item .caption h3 {
+  padding: 10px 8px;
   margin: 0;
-  font-size: 130%;
+  line-height: 1.2;
 }
 
 .posts-list .posts-thumbnail-item .caption a {
@@ -103,7 +105,7 @@
   color: var(--color-post-metadata);
   padding: 9px 0;
   border-top: 1px solid var(--color-border-default);
-  font-size: 80%;
+  font-size: 60%;
   margin: 0;
 }
 

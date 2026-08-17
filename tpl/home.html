@@ -66,11 +66,17 @@
       });
     });
 
-    // Or use this to Open link in same window (similar to target=_blank)
-    document.querySelectorAll(".thumbnail .link").forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location = link.querySelector("a.entry-link").href;
+    // Make the whole card clickable, except for its own links (comment count,
+    // category, title) which keep their normal navigation.
+    document.querySelectorAll(".posts-thumbnail-item .thumbnail").forEach(function (card) {
+      card.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+          return;
+        }
+        var entryLink = card.querySelector("a.entry-link");
+        if (entryLink) {
+          window.location = entryLink.href;
+        }
       });
     });
   });

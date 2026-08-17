@@ -23,7 +23,7 @@
   -o-transition: background-color 250ms linear;
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 #back-to-top a:hover {

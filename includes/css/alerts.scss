@@ -15,7 +15,7 @@
   padding-left: calc(
     var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap)
   );
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 }
 
 .vocabulary {

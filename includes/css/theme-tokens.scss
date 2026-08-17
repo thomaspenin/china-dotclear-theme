@@ -34,6 +34,7 @@
   --color-always-light: #{palette.$white};
 
   --color-text-primary: #{palette.$strong-gray};
+  --color-text-on-primary: #{palette.$white};
   --color-text-muted: #{palette.$gray};
   --color-text-strong: #{palette.$medium-gray};
   --color-text-on-dark: #{palette.$very-light-gray};
@@ -82,6 +83,7 @@
     --color-always-light: #{palette.$white};
 
     --color-text-primary: #{palette.$pale-gray-6};
+    --color-text-on-primary: #{palette.$white};
     --color-text-muted: #{palette.$pale-gray-2};
     --color-text-strong: #{palette.$pale-gray-4};
     --color-text-on-dark: #{palette.$pale-gray-8};

@@ -78,20 +78,20 @@ class tplThemeVersionTpl
  * Translate and format a string from the theme's public.po file.
  *
  * Usage in a template:
- *   {{tpl:ArgLang string="Example %s" arg1="value"}}
+ *   {{tpl:ArgLang string="Example %s %s" arg1="value" arg2="(version %v)"}}
  *
  * The string attribute is the complete translation key, including its
  * formatting placeholders. Arguments are numbered arg1, arg2, and so on.
  * The supported placeholders are:
  *   %s - a regular string argument, such as arg1="value"
  *   %u - the current BlogURL in an argument, such as arg1="%u/tags"
- *
- * A %u argument is expanded at render time and has its trailing slash
- * normalized before an optional suffix is appended.
+ *   %v — the current version of the theme
  * 
  * Usage in po files:
- *   msgid "Example %s"
- *   msgstr "Exemple %s"
+ *   msgid "Example %s %s"
+ *   msgstr "Exemple %s %s"
+ * 
+ * This will give "Example value (version 3.0)"
  */
 $core->tpl->addValue('ArgLang', array('tplArgLang','ArgLang'));
 
@@ -107,7 +107,15 @@ class tplArgLang
     {
       if (preg_match('/^arg([1-9][0-9]*)$/', $name, $matches))
       {
-        if (strpos($value, '%u') !== false)
+        if (strpos($value, '%v') !== false)
+        {
+          $parts = explode('%v', $value);
+          $version = '$core->themes->moduleInfo($core->blog->settings->system->theme,"version")';
+          $args[(int) $matches[1] - 1] = var_export($parts[0], true).'.'.$version;
+          if (isset($parts[1]))
+            $args[(int) $matches[1] - 1] .= '.'.var_export($parts[1], true);
+        }
+        elseif (strpos($value, '%u') !== false)
         {
           $parts = explode('%u', $value);
           $url = 'rtrim($core->blog->url,\'/\')';

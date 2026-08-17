@@ -262,5 +262,41 @@ msgstr "Visiter mon site personnel"
 msgid "View my Github"
 msgstr "Consulter mon Github"
 
+msgid "China Theme"
+msgstr "Thème China"
+
 msgid "THEME_CODE_AVAILABILITY"
-msgstr "The theme is available on GitHub, under the MIT license (see below), except when noted otherwise on specific source files or for third-party components listed here under. You can either download the latest release or clone the repository to get the latest development version."
+msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour les composants tiers répertoriés ci-dessous. Vous pouvez soit télécharger la dernière version, soit cloner le dépôt afin d’obtenir la version de développement la plus récente."
+
+msgid "THEME_DOWNLOAD_LEAD"
+msgstr "Ce site fonctionne avec <a href='https://dotclear.org/'>Dotclear</a> et utilise mon propre thème personnalisé, appelé «&nbsp;China&nbsp;». Ce thème vous intéresse&nbsp;? Vous souhaitez l’utiliser dans vos projets personnels&nbsp;? Vous êtes au bon endroit pour récupérer le code et vous lancer&nbsp;!"
+
+msgid "Download the theme"
+msgstr "Télécharger le thème"
+
+msgid "BOOTSTRAP_INTRO"
+msgstr "<a href='https://getbootstrap.com/'>Bootstrap</a> est le framework HTML/CSS/JS qui fournit l’essentiel du comportement responsive du thème."
+
+msgid "MIT License"
+msgstr "License MIT"
+
+msgid "Download the latest release"
+msgstr "Télécharger la dernière version"
+
+msgid "Clone the repository"
+msgstr "Cloner le dépôt"
+
+msgid "Standing on the shoulders of giants"
+msgstr "Debout sur les épaules de géants"
+
+msgid "FOSS_COMPONENTS_INTRO %s"
+msgstr "En plus de <a href='https://dotclear.org/'>Dotclear</a>, la version actuelle du thème (%s) s’appuie sur les composants open source suivants&nbsp;:"
+
+msgid "PHOSPHOR_INTRO"
+msgstr "Le set d’icônes <a href='https://phosphoricons.com'>Phosphor Icons</a> est utilisé dans l’ensemble du thème."
+
+msgid "OXYGEN_INTRO"
+msgstr "Utilisé pour embellir les smileys présents dans les articles et les commentaires, ce jeu d’icônes est repris du <a href='https://kde.org/'>projet KDE</a>, selon les conditions définies <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>ici</a>."
+
+msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
+msgstr "Adapté de <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> de Matt Hinchliffe, sous licence <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported</a>. Vous pouvez télécharger le code de mon adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>ici</a>, sous la même licence."

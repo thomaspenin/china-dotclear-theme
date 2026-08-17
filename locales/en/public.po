@@ -253,5 +253,41 @@ msgstr "Visit my personal website"
 msgid "View my Github"
 msgstr "View my Github"
 
+msgid "China Theme"
+msgstr "China Theme"
+
 msgid "THEME_CODE_AVAILABILITY"
 msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour les composants tiers mentionné ci-dessous. Vous pouvez soit télécharger la dernière version publiée, soit cloner le dépôt afin d’obtenir la dernière version en cours de développement."
+
+msgid "THEME_DOWNLOAD_LEAD"
+msgstr "This site is powered by <a href='https://dotclear.org/'>Dotclear</a> and uses my own custom theme, called &quot;China&quot;. Interested by this theme? Want to use it in your personnal projects? Here is the place to retrieve the code and get started!"
+
+msgid "Download the theme"
+msgstr "Download the theme"
+
+msgid "BOOTSTRAP_INTRO"
+msgstr "<a href='https://getbootstrap.com/'>Bootstrap</a> is the HTML/CSS/JS framework that provides most of the responsive behavior of the theme."
+
+msgid "MIT License"
+msgstr "MIT License"
+
+msgid "Download the latest release"
+msgstr "Download the latest release"
+
+msgid "Clone the repository"
+msgstr "Clone the repository"
+
+msgid "Standing on the shoulders of giants"
+msgstr "Standing on the shoulders of giants"
+
+msgid "FOSS_COMPONENTS_INTRO %s"
+msgstr "In addition to <a href='https://dotclear.org/'>Dotclear</a>, the current version of the theme (%s) relies on the following open source components:"
+
+msgid "PHOSPHOR_INTRO"
+msgstr "The <a href='https://phosphoricons.com'>Phosphor Icons</a> icon set is used throughout the theme."
+
+msgid "OXYGEN_INTRO"
+msgstr "Used to beautify smileys written in articles and comments, this set of icons is reused from the <a href='https://kde.org/'>KDE project</a>, under the conditions defined <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>here</a>."
+
+msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
+msgstr "Adapted from <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> by Matt Hinchliffe, under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. You can download the code of my adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>here</a>, under the same license."

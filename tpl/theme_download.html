@@ -25,13 +25,7 @@
 
       <div class="middle">
         <div class="container lead">
-          <p>
-            {{tpl:lang This site is powered by
-            <a href="https://dotclear.org/">Dotclear</a> and uses my own custom
-            theme, called "China". Interested by this theme? Want to use it in
-            your personnal projects? Here is the place to retrieve the code and
-            get started!}}
-          </p>
+          <p>{{tpl:lang THEME_DOWNLOAD_LEAD}}</p>
         </div>
 
         <div id="main" class="container">
@@ -41,7 +35,7 @@
             <p>
               <details>
                 <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
+                  <i class="ph ph-scales"></i> {{tpl:lang MIT License}}
                 </summary>
                 <pre class="license">
   MIT License
@@ -76,7 +70,8 @@
                   'https://github.com/thomaspenin/china-dotclear-theme/releases/latest'
               "
             >
-              <i class="ph ph-download-simple"></i> Download the latest release
+              <i class="ph ph-download-simple"></i> {{tpl:lang Download the
+              latest release}}
             </button>
             <button
               type="button"
@@ -86,33 +81,19 @@
                   'https://github.com/thomaspenin/china-dotclear-theme.git'
               "
             >
-              <i class="ph ph-github-logo"></i> Clone the repository
+              <i class="ph ph-github-logo"></i> {{tpl:lang Clone the
+              repository}}
             </button>
           </div>
           <div class="col-md-12">
-            <h2>Standing on the shoulders of giants</h2>
-            <p>
-              In addition to <a href="https://dotclear.org/">Dotclear</a>, the
-              current version of the theme ({{tpl:ThemeVersion}}) relies on the
-              following open source components.
-            </p>
-            <h3>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="bottom"
-                title="Open website"
-                href="https://getbootstrap.com/"
-                >Bootstrap</a
-              >
-            </h3>
-            <p>
-              This excellent HTML/CSS/JS framework provides most of the
-              responsive behavior of the theme.
-            </p>
+            <h2>{{tpl:lang Standing on the shoulders of giants}}</h2>
+            <p>{{tpl:ArgLang string="FOSS_COMPONENTS_INTRO %s" arg1="%v"}}</p>
+            <h3>Bootstrap</h3>
+            <p>{{tpl:lang BOOTSTRAP_INTRO}}</p>
             <p>
               <details>
                 <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
+                  <i class="ph ph-scales"></i> {{tpl:lang MIT License}}
                 </summary>
                 <pre class="license">
   The MIT License (MIT)
@@ -139,20 +120,12 @@
                 >
               </details>
             </p>
-            <h3>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="bottom"
-                title="Open website"
-                href="https://phosphoricons.com"
-                >Phosphor Icons</a
-              >
-            </h3>
-            <p>This icon set is used throughout the theme.</p>
+            <h3>Phosphor Icons</h3>
+            <p>{{tpl:lang PHOSPHOR_INTRO}}</p>
             <p>
               <details>
                 <summary class="license-summary">
-                  <i class="ph ph-scales"></i> MIT License
+                  <i class="ph ph-scales"></i> {{tpl:lang MIT License}}
                 </summary>
                 <pre class="license">
   MIT License
@@ -181,15 +154,7 @@
               </details>
             </p>
             <h3>Oxygen Icons</h3>
-            <p>
-              Used to beautify smileys written in articles and comments, this
-              set of icons is reused from the
-              <a href="https://kde.org/">KDE project</a>, under the reusing
-              conditions defined
-              <a href="https://techbase.kde.org/Projects/Oxygen/Licensing"
-                >here</a
-              >.
-            </p>
+            <p>{{tpl:lang OXYGEN_INTRO}}</p>
             <p>
               <details>
                 <summary class="license-summary">
@@ -367,21 +332,7 @@
               </details>
             </p>
             <h3>Responsive Image Placeholders</h3>
-            <p>
-              Adapted from
-              <a
-                href="https://github.com/i-like-robots/Responsive-Image-Placeholders"
-                >Responsive Image Placeholders</a
-              >
-              by Matt Hinchliffe, under the
-              <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                >Creative Commons Attribution-ShareAlike 3.0 Unported License</a
-              >. You can download the code of my adaptation
-              <a
-                href="https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js"
-                >here</a
-              >, under the same license.
-            </p>
+            <p>{{tpl:lang RESPONSIVE_IMAGE_PLACEHOLDER_INTRO}}</p>
           </div>
         </div>
       </div>

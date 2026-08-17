@@ -156,6 +156,18 @@
   min-width: 0;
 }
 
+#top .top-search-form .form-control:hover,
+#top .top-search-form .form-control:focus,
+#top .top-search-form .form-control:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: none;
+}
+
+#top .top-search-form .btn {
+  --bs-btn-font-size: 1rem;
+}
+
 @media (min-width: 768px) {
   #top .top-search-form {
     flex: 0 1 200px;

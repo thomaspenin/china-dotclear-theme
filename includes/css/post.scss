@@ -15,7 +15,9 @@
   bottom: 0;
   right: 0;
   outline: none;
-  background-color: var(--color-surface-topbar);
+  text-shadow: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-page);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   -webkit-transition: background-color 250ms linear;
@@ -27,7 +29,8 @@
 
 .post-title a.comment-count:hover {
   text-decoration: none;
-  background-color: var(--color-surface-topbar-hover);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-subtle);
   -webkit-transition: background-color 250ms linear;
   -moz-transition: background-color 250ms linear;
   -o-transition: background-color 250ms linear;

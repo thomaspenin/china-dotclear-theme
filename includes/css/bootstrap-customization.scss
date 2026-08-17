@@ -1,41 +1,60 @@
 // Use the right colors for buttons
 
 .btn {
-  --bs-btn-font-size: var(--font-size-body);
+  --bs-btn-font-size: var(--font-size-button);
   font-weight: 300;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-color: var(--color-accent-active);
-  border-color: var(--color-accent-active);
-}
+// Hover/active states are a slight tint/shade of the base color (via color-mix)
+// rather than a jump to an unrelated color, and work the same way in both
+// light and dark mode since they mix relative to the current theme's tokens.
 
 .btn-primary {
   --bs-btn-color: var(--color-text-primary);
   --bs-btn-bg: var(--color-accent);
   --bs-btn-border-color: var(--color-accent);
   --bs-btn-hover-color: var(--color-text-primary);
-  --bs-btn-hover-bg: var(--color-accent-hover);
-  --bs-btn-hover-border-color: var(--color-accent-hover);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--color-accent), black 10%);
+  --bs-btn-hover-border-color: color-mix(
+    in srgb,
+    var(--color-accent),
+    black 10%
+  );
   --bs-btn-active-color: var(--color-text-primary);
-  --bs-btn-active-bg: var(--color-accent-active);
-  --bs-btn-active-border-color: var(--color-accent-active);
+  --bs-btn-active-bg: color-mix(in srgb, var(--color-accent), black 18%);
+  --bs-btn-active-border-color: color-mix(
+    in srgb,
+    var(--color-accent),
+    black 18%
+  );
 }
 
 .btn-secondary {
   --bs-btn-color: var(--color-text-primary);
   --bs-btn-bg: var(--color-surface-soft);
-  --bs-btn-border-color: var(--color-border-muted);
-  --bs-btn-hover-color: var(--color-surface-subtle);
-  --bs-btn-hover-bg: var(--color-text-primary);
-  --bs-btn-hover-border-color: var(--color-text-primary);
-  --bs-btn-active-color: var(--color-surface-page);
-  --bs-btn-active-bg: var(--color-text-primary);
-  --bs-btn-active-border-color: var(--color-text-primary);
+  --bs-btn-border-color: var(--color-surface-soft);
+  --bs-btn-hover-color: var(--color-text-primary);
+  --bs-btn-hover-bg: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 12%
+  );
+  --bs-btn-hover-border-color: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 12%
+  );
+  --bs-btn-active-color: var(--color-text-primary);
+  --bs-btn-active-bg: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 22%
+  );
+  --bs-btn-active-border-color: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 22%
+  );
 }
 
 // Use the right color for the hover state of nav links

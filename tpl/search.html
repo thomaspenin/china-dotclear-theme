@@ -57,34 +57,29 @@
 
     <div class="search middle">
 
-      <div class="lead">
-	<tpl:SysIf search_count="==1">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
-	</tpl:SysIf>
-	<tpl:SysIf search_count="&gt;1">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> results."}}</p>
-	</tpl:SysIf>
+      <div class="lead container">
+        <tpl:SysIf search_count="==1">
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
+        </tpl:SysIf>
+        <tpl:SysIf search_count="&gt;1">
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> results."}}</p>
+        </tpl:SysIf>
       </div>
 
       <div class="container" id="results">
-	<tpl:SysIf search_count="&gt;0">
-	<div class="col-md-8">
-	  {{tpl:include src="_posts-list.html"}}
-	</div>
-	</tpl:SysIf>
-	<tpl:SysIf search_count="&gt;0">
-	<div class="col-md-4 search-sidebar">
-	</tpl:SysIf>
-	<tpl:SysIf search_count="==0">
-          
-        <div class="text-center">
-          <p><i class="ph ph-smiley-x-eyes"></i></p>
-          <h3>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</h3>
+        <tpl:SysIf search_count="&gt;0">
+          <div class="container">
+            {{tpl:include src="_posts-list.html"}}
+          </div>
+        </tpl:SysIf>
+        <tpl:SysIf search_count="==0">
+          <div class="text-center">
+            <p><i class="ph ph-smiley-x-eyes"></i></p>
+            <h3>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</h3>
+          </div>
+          <div class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s %s" arg1="%u/categories" arg2="%u/tags" arg3="%u/archive"}}</div>
+        </tpl:SysIf>
         </div>
-        <div class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s %s" arg1="%u/categories" arg2="%u/tags" arg3="%u/archive"}}</div>
-      
-	</tpl:SysIf>
-	</div>
       </div>
     </div>
 

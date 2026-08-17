@@ -8,10 +8,10 @@
 .warning,
 .vocabulary {
   --alert-icon-size: 1.4em;
-  --alert-icon-left: 8px;
-  --alert-icon-gap: 8px;
+  --alert-icon-left: 12px;
+  --alert-icon-gap: 12px;
   margin: 12px auto 5px;
-  padding: 8px;
+  padding: 12px;
   padding-left: calc(
     var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap)
   );
@@ -98,7 +98,7 @@
   content: "";
   position: absolute;
   left: var(--alert-icon-left);
-  top: 0.4em;
+  top: 0.6em;
   width: var(--alert-icon-size);
   height: var(--alert-icon-size);
   background-color: var(--alert-icon-color);
@@ -190,7 +190,12 @@ ol.information,
 ol.hint,
 ol.warning,
 ol.vocabulary {
-  padding-left: 48px;
+  // Icon-clearing padding plus room for the bullet/number itself,
+  // otherwise markers render too close to (or under) the icon.
+  padding-left: calc(
+    var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap) +
+      20px
+  );
 }
 
 div.error ul:first-child,

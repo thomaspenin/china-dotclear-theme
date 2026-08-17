@@ -5,7 +5,7 @@
 }
 
 .posts-list .posts-list-item .media-object {
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .posts-list .posts-list-item .media-body h3 {
@@ -27,15 +27,15 @@
 }
 
 .posts-list .posts-thumbnail-item .thumbnail {
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   padding: 0;
   border: none;
   box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .posts-list .posts-thumbnail-item img {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .posts-list .posts-thumbnail-item .caption h3 {
@@ -53,7 +53,7 @@
 }
 
 .posts-list .posts-thumbnail-item .category {
-  border-top-left-radius: 3px;
+  border-top-left-radius: var(--border-radius);
   position: absolute;
   top: 0;
   left: 8px;

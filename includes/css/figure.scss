@@ -20,7 +20,7 @@ figure img {
   padding-right: 4px;
 }
 
-figure > *:only-child img {
+figure:not(:has(figcaption)) img {
   border-radius: var(--border-radius);
   border-bottom: 1px solid var(--color-border-default);
   padding-bottom: 4px;

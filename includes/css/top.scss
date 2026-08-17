@@ -156,20 +156,63 @@
   box-shadow: none;
 }
 
+// Border lives on the input-group wrapper (not the input itself) so the
+// field is fully outlined on all sides, including the edge hidden behind
+// the search button; hovering/focusing only changes its color.
 #top .top-search-form .input-group {
   min-width: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
-#top .top-search-form .form-control:hover,
+#top .top-search-form .input-group:hover,
+#top .top-search-form .input-group:focus-within {
+  border-color: var(--color-accent);
+}
+
+// Bootstrap's .form-control hardcodes a light background/text color, unlike
+// the plain inputs used for comments which stay theme-aware via the generic
+// `input, textarea` rule in base.scss. Align it with the same tokens so the
+// search field also follows light/dark mode (the search button keeps its
+// own .btn-secondary styling untouched).
+#top .top-search-form .form-control {
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
+  border: none;
+  box-shadow: none;
+}
+
+#top .top-search-form .form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
 #top .top-search-form .form-control:focus,
 #top .top-search-form .form-control:focus-visible {
-  border-color: var(--color-accent);
   outline: none;
   box-shadow: none;
 }
 
 #top .top-search-form .btn {
   --bs-btn-font-size: 1rem;
+  border: none;
+  // Nest inside the wrapper's 1px border: an equal corner radius would clip
+  // to a squarer corner than the wrapper's own, leaving a visible mismatch.
+  --bs-btn-border-radius: calc(var(--border-radius) - 1px);
+}
+
+// Bootstrap's input-group normally overlaps a 1px border between the field
+// and the button, compensating with a negative margin and a z-index bump on
+// focus; since the border now lives on the wrapper only, that overlap/bump
+// makes the button appear to shift on click, so cancel both.
+#top .top-search-form .input-group > .btn {
+  margin-left: 0;
+}
+
+#top .top-search-form .input-group > .form-control:focus,
+#top .top-search-form .input-group > .btn:focus {
+  z-index: auto;
 }
 
 @media (min-width: 768px) {

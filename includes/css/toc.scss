@@ -1,8 +1,12 @@
 // Table of content
 
+@use "layout";
+
 .bs-docs-sidebar {
   position: sticky;
-  top: 50px; // Height of the top bar
+  top: calc(
+    #{layout.$top-bar-height} + 15px
+  ); // Top bar height + breathing room
   padding-left: 20px;
   margin-top: 30px;
   margin-bottom: 20px;

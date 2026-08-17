@@ -41,26 +41,29 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title">
-      <h1>{{tpl:lang All articles}}</h1>
+    <div class="page-title-background">
+      <div class="page-title">
+        <h1>{{tpl:lang All articles}}</h1>
+      </div>
     </div>
 
     <div class="archives middle">
 
-      <div class="date-range-picker">
-	<div class="period-picker container">
+      <div class="date-range-picker-background">
+      <div class="date-range-picker container">
+	<div class="period-picker row">
 	  <div class="previous-period col-md-4">{{tpl:lang To see articles' summaries, choose a period:}}</div>
 	  <div class="choice-period col-md-4">
 	    <tpl:Archives>
 	      <tpl:ArchivesHeader>
 	      
 	      <form method="get" action="{{tpl:BlogArchiveURL}}" id="archives">
-		<select name="archives" onchange="location = this.options[this.selectedIndex].value;">
+		<select class="form-select" name="archives" onchange="location = this.options[this.selectedIndex].value;">
 		  <option selected disabled>{{tpl:lang Date range choice}}</option>
 		  <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (titles only)}}</option>
 		</tpl:ArchivesHeader>
@@ -78,8 +81,9 @@
 	  <div class="next-period col-md-4"></div>
 	</div>
       </div>
+      </div>
 
-      <div class="all-posts-list">
+      <div class="all-posts-list container">
       <tpl:Archives>
         <div class="month-posts">
             <tpl:Entries>

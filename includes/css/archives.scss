@@ -1,6 +1,10 @@
-.archives .date-range-picker {
-  background-color: var(--color-surface-soft);
+.archives.middle {
+  padding: 0;
+}
+
+.archives .date-range-picker-background {
   padding: 20px 0;
+  background-color: var(--color-surface-soft);
 }
 
 .archives .period-picker.container {

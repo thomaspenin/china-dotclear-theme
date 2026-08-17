@@ -131,6 +131,10 @@
   line-height: layout.$top-bar-height;
 }
 
+#top .navbar-nav .nav-item .nav-link {
+  padding: 0px 12px;
+}
+
 #top .top-search-form {
   box-shadow: none;
 }

@@ -29,32 +29,36 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title">
-      <h1><a href="{{tpl:ArchiveURL}}">{{tpl:lang Articles publiés en}} {{tpl:ArchiveDate format="%B %Y"}}</a></h1>
-    </div>
+	<div class="page-title-background">
+		<div class="page-title">
+		<h1><a href="{{tpl:ArchiveURL}}">{{tpl:lang Articles publiés en}} {{tpl:ArchiveDate format="%B %Y"}}</a></h1>
+		</div>
+	</div>
 
     <div class="archives middle">
 
+	<div class="date-range-picker-background">
       <div class="date-range-picker">
 	<div class="period-picker container">
+		<div class="row">
 	  <div class="previous-period col-sm-4">
-	    <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev">&#171; {{tpl:ArchiveDate encode_html="1"}}</a></tpl:ArchivePrevious>
+	    <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev"><i class="ph ph-caret-left"></i>&nbsp;<span class="archive-navigation-date">{{tpl:ArchiveDate encode_html="1"}}</span></a></tpl:ArchivePrevious>
 	  </div>
 	  <div class="choice-period col-sm-4">
 	    <tpl:Archives>
 	      <tpl:ArchivesHeader>
 		<form method="get" action="{{tpl:BlogArchiveURL}}" id="archives">
-		  <select name="archives" onchange="location = this.options[this.selectedIndex].value;">
+		  <select class="form-select" name="archives" onchange="location = this.options[this.selectedIndex].value;">
 		    <option selected disabled>{{tpl:lang Date range choice}}</option>
 		    <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (all articles)}}</option>
 		  </tpl:ArchivesHeader>
 		  <tpl:ArchivesYearHeader><optgroup label="{{tpl:ArchiveDate format="%Y"}}"></tpl:ArchivesYearHeader>
-		    <option value="{{tpl:ArchiveURL}}">
+		    <option class="archive-month-option" value="{{tpl:ArchiveURL}}">
 		      {{tpl:ArchiveDate encode_html="1" format="%B" lower_case="1"}} ({{tpl:ArchiveEntriesCount}})
 		    </option>
 		  <tpl:ArchivesYearFooter></optgroup></tpl:ArchivesYearFooter>
@@ -65,13 +69,17 @@
 	    </tpl:Archives>
 	  </div>
 	  <div class="next-period col-sm-4">
-	    <tpl:ArchiveNext><a href="{{tpl:ArchiveURL}}" class="next">{{tpl:ArchiveDate encode_html="1"}} &#187;</a></tpl:ArchiveNext>
+	    <tpl:ArchiveNext><a href="{{tpl:ArchiveURL}}" class="next"><span class="archive-navigation-date">{{tpl:ArchiveDate encode_html="1"}}</span>&nbsp;<i class="ph ph-caret-right"></i></a></tpl:ArchiveNext>
 	  </div>
 	</div>
+	</div>
       </div>
+	</div>
 
       <!-- Include the list of the posts that were published in this time frame -->
-      {{tpl:include src="_posts-list.html"}}
+      <div class="container">
+	  {{tpl:include src="_posts-list.html"}}
+      </div>
     
     </div>
 

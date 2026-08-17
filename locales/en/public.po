@@ -257,7 +257,7 @@ msgid "China Theme"
 msgstr "China Theme"
 
 msgid "THEME_CODE_AVAILABILITY"
-msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour les composants tiers mentionné ci-dessous. Vous pouvez soit télécharger la dernière version publiée, soit cloner le dépôt afin d’obtenir la dernière version en cours de développement."
+msgstr "The theme is available on GitHub, under the MIT license (see below), except when noted otherwise on specific source files or for some of the third-party components listed here under. You can either download the latest release or clone the repository to get the latest development version."
 
 msgid "THEME_DOWNLOAD_LEAD"
 msgstr "This site is powered by <a href='https://dotclear.org/'>Dotclear</a> and uses my own custom theme, called &quot;China&quot;. Interested by this theme? Want to use it in your personnal projects? Here is the place to retrieve the code and get started!"

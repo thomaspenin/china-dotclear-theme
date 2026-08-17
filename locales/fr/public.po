@@ -266,7 +266,7 @@ msgid "China Theme"
 msgstr "Thème China"
 
 msgid "THEME_CODE_AVAILABILITY"
-msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour les composants tiers répertoriés ci-dessous. Vous pouvez soit télécharger la dernière version, soit cloner le dépôt afin d’obtenir la version de développement la plus récente."
+msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour certains des composants tiers mentionné ci-dessous. Vous pouvez soit télécharger la dernière version publiée, soit cloner le dépôt afin d’obtenir la dernière version en cours de développement."
 
 msgid "THEME_DOWNLOAD_LEAD"
 msgstr "Ce site fonctionne avec <a href='https://dotclear.org/'>Dotclear</a> et utilise mon propre thème personnalisé, appelé «&nbsp;China&nbsp;». Ce thème vous intéresse&nbsp;? Vous souhaitez l’utiliser dans vos projets personnels&nbsp;? Vous êtes au bon endroit pour récupérer le code et vous lancer&nbsp;!"
@@ -296,7 +296,7 @@ msgid "PHOSPHOR_INTRO"
 msgstr "Le set d’icônes <a href='https://phosphoricons.com'>Phosphor Icons</a> est utilisé dans l’ensemble du thème."
 
 msgid "OXYGEN_INTRO"
-msgstr "Utilisé pour embellir les smileys présents dans les articles et les commentaires, ce jeu d’icônes est repris du <a href='https://kde.org/'>projet KDE</a>, selon les conditions définies <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>ici</a>."
+msgstr "Utilisé pour embellir les smileys présents dans les articles et les commentaires, ce set d’icônes est repris du <a href='https://kde.org/'>projet KDE</a>, selon les conditions définies <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>ici</a>."
 
 msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
 msgstr "Adapté de <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> de Matt Hinchliffe, sous licence <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported</a>. Vous pouvez télécharger le code de mon adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>ici</a>, sous la même licence."

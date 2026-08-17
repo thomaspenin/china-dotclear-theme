@@ -23,8 +23,12 @@ A China-inspired [Dotclear](https://www.dotclear.org/) theme for the blog "[Voya
 
 ## License and third-parties
 
-The theme is licensed under the [MIT license](./LICENSE.md), **except when indicated otherwise on specific source files** or for the third-party components, which are covered by their own respective licenses.
+The theme is licensed under the [MIT license](./LICENSE.md), **except when indicated otherwise on specific source files** or for some third-party components that are covered by different licenses.
 
-It uses the following third-party open source components:
+The theme relies on the following third-party open source components:
 
-TODO
+- **[Dotclear](https://www.dotclear.org/)** as the underlying blogging platform, licensed under the [GNU Affero General Public License](https://codeberg.org/Dotclear/dotclear/src/branch/master/LICENSE).
+- **[Bootstrap](https://getbootstrap.com/)** (linked via CDN) for the front-end framework, licensed under the [MIT license](https://github.com/twbs/bootstrap/blob/main/LICENSE).
+- **[Phosphor Icons](https://phosphoricons.com/)** (linked via CDN and with some icons embedded [here](./includes/images/icons/phosphor)) for the icon set, licensed under the [MIT license](https://github.com/phosphor-icons/web/blob/master/LICENSE).
+- **[Oxygen Icons](https://kde.org/)** (included [here](./smilies/)) for the smileys, licensed under the [GNU LGPL v3 license](https://www.gnu.org/licenses/lgpl-3.0.html) and used under the reusing conditions defined [here](https://techbase.kde.org/Projects/Oxygen/Licensing).
+- **[Responsive Image Placeholders](https://github.com/i-like-robots/Responsive-Image-Placeholders)**, originally by Matt Hinchliffe, and released under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/). You can download the code of my adaptation [here](./includes/js/img-lazy-loading.js), under the same license.

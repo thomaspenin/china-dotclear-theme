@@ -25,19 +25,23 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <div class="p404 middle">
-      <!-- Title -->
+    <!-- Title -->
+    <div class="page-title-background">
       <div class="page-title">
-	<h1>{{tpl:lang Document not found}}</h1>
+        <h1>{{tpl:lang Document not found}}</h1>
       </div>
-
-      <div class="warning">
-        <i class="ph ph-link-break"></i>
-        <p><b>{{tpl:lang The page you asked for does not exist.}}</b></p>
+    </div>
+    
+    <div class="p404 middle">
+      <div class="container">
+        <div class="text-center">
+          <p><i class="ph ph-link-break"></i></p>
+          <h3>{{tpl:lang The page you asked for does not exist.}}</h3>
+        </div>
         <p>{{tpl:lang If you came here by clicking a link, this may not be correct.}}</p>
         <p>{{tpl:lang To find what you are looking for, you may:}}
         <ul>

@@ -5,7 +5,7 @@
       <a
         href="{{tpl:BlogURL}}"
         data-bs-toggle="tooltip"
-        data-placement="bottom"
+        data-bs-placement="bottom"
         title="{{tpl:lang Home page}}"
         class="navbar-brand float-start"
       >
@@ -20,28 +20,29 @@
         data-bs-target=".navbar-collapse"
       >
         <i class="ph ph-list"></i>
+        <i class="ph ph-x"></i>
       </button>
       <button
         class="navbar-toggler"
         onclick="window.scrollTo({ top: 0, behavior: 'auto' })"
         data-bs-toggle="tooltip"
-        data-placement="bottom"
+        data-bs-placement="bottom"
         title="{{tpl:lang Back to the top of the page}}"
       >
         <i class="ph ph-caret-up"></i>
       </button>
       <div class="small-screen-menu">
         <nav class="navbar-collapse collapse" role="navigation">
-          <ul class="navbar-nav nav">
+          <ul class="navbar-nav nav ms-auto">
             <li class="nav-item">
               <a
                 href="{{tpl:BlogArchiveURL}}"
                 data-bs-toggle="tooltip"
-                data-placement="bottom"
+                data-bs-placement="bottom"
                 title="{{tpl:lang Browse the list of articles published on the site}}"
                 class="nav-link"
                 ><i class="ph ph-note-pencil"></i
-                ><span class="d-inline d-md-none d-lg-inline"
+                ><span class="d-inline d-md-none d-lg-none d-xl-inline"
                   >&nbsp;&nbsp;{{tpl:lang Articles}}</span
                 ></a
               >
@@ -50,11 +51,11 @@
               <a
                 href="{{tpl:BlogURL}}categories"
                 data-bs-toggle="tooltip"
-                data-placement="bottom"
+                data-bs-placement="bottom"
                 title="{{tpl:lang Browse the different categories}}"
                 class="nav-link"
                 ><i class="ph ph-globe-hemisphere-east"></i
-                ><span class="d-inline d-md-none d-lg-inline"
+                ><span class="d-inline d-md-none d-lg-none d-xl-inline"
                   >&nbsp;&nbsp;{{tpl:lang Categories}}</span
                 ></a
               >
@@ -63,11 +64,11 @@
               <a
                 href="{{tpl:BlogURL}}tags"
                 data-bs-toggle="tooltip"
-                data-placement="bottom"
+                data-bs-placement="bottom"
                 title="{{tpl:lang Search for articles using keywords}}"
                 class="nav-link"
                 ><i class="ph ph-tag"></i
-                ><span class="d-inline d-md-none d-lg-inline"
+                ><span class="d-inline d-md-none d-lg-none d-xl-inline"
                   >&nbsp;&nbsp;{{tpl:lang Tags}}</span
                 ></a
               >
@@ -76,18 +77,18 @@
               <a
                 href="{{tpl:BlogURL}}pages/about"
                 data-bs-toggle="tooltip"
-                data-placement="bottom"
+                data-bs-placement="bottom"
                 title="{{tpl:lang Know more about the site and its author}}"
                 class="nav-link"
                 ><i class="ph ph-user"></i
-                ><span class="d-inline d-md-none d-lg-inline"
+                ><span class="d-inline d-md-none d-lg-none d-xl-inline"
                   >&nbsp;&nbsp;{{tpl:lang About}}</span
                 ></a
               >
             </li>
           </ul>
           <form
-            class="top-search-form ms-auto"
+            class="top-search-form"
             role="search"
             method="get"
             action="{{tpl:BlogURL}}"

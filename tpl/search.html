@@ -44,20 +44,20 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <div class="search middle">
-      <!-- Title -->
+    <!-- Title -->
+     <div class="page-title-background">
       <div class="page-title">
-	<h1>{{tpl:lang Search}}</h1>
+        <h1>{{tpl:lang Search}}</h1>
       </div>
+    </div>
+
+    <div class="search middle">
 
       <div class="lead">
-	<tpl:SysIf search_count="==0">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</p>
-	</tpl:SysIf>
 	<tpl:SysIf search_count="==1">
 	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
 	</tpl:SysIf>
@@ -76,12 +76,14 @@
 	<div class="col-md-4 search-sidebar">
 	</tpl:SysIf>
 	<tpl:SysIf search_count="==0">
-	<div class="col-md-12 search-sidebar">
+          
+        <div class="text-center">
+          <p><i class="ph ph-smiley-x-eyes"></i></p>
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <strong>&quot;%1$s&quot;</strong> returned no result."}}</p>
+        </div>
+        <p class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s" arg1="%u/tags" arg2="%u/categories"}}</p>
+      
 	</tpl:SysIf>
-	  <div class="alert alert-info alert-dismissible" role="alert">
-	    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	    <i class="ph ph-info"></i> {{tpl:lang INFO_SEARCH_RESULTS}}
-	  </div>
 	</div>
       </div>
     </div>

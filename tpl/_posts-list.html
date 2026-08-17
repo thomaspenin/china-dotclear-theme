@@ -6,7 +6,7 @@
           <div class="d-flex">
             <div class="flex-shrink-0">
               <tpl:MyMetaIf type="ENTRY_IMAGE" defined="true" >
-                <img class="media-object" src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_IMAGE"}}" width="90" height="90"/>	
+                <img class="media-object" src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="90" height="90"/>
 			  </tpl:MyMetaIf>
 			  <tpl:MyMetaIf type="ENTRY_IMAGE" defined="false" >
                 <img class="media-object" src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="90" height="90"/>
@@ -43,14 +43,14 @@
 	      <tpl:PaginationIf start="1">
 	      <li class="page-item disabled">
 		<a class="page-link" href="#" aria-label="Previous">
-		  <span aria-hidden="true">&laquo;</span>
+		  <span aria-hidden="true"><i class="ph ph-caret-left"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf start="0">
 	      <li class="page-item">
-		<a class="page-link" href="{{tpl:PaginationURL offset="-1"}}#pl" aria-label="Previous">
-		  <span aria-hidden="true">&laquo;</span>
+		<a class="page-link" href="{{tpl:PaginationURL offset='-1'}}#pl" aria-label="Previous">
+		  <span aria-hidden="true"><i class="ph ph-caret-left"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf> 
@@ -58,14 +58,14 @@
 	      <tpl:PaginationIf end="1">
 	      <li class="page-item disabled">
 		<a class="page-link" href="#" aria-label="Next">
-		  <span aria-hidden="true">&raquo;</span>
+		  <span aria-hidden="true"><i class="ph ph-caret-right"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf end="0">
 	      <li class="page-item">
-		<a class="page-link" href="{{tpl:PaginationURL offset="+1"}}#pl" aria-label="Next">
-		  <span aria-hidden="true">&raquo;</span>
+		<a class="page-link" href="{{tpl:PaginationURL offset='+1'}}#pl" aria-label="Next">
+		  <span aria-hidden="true"><i class="ph ph-caret-right"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>

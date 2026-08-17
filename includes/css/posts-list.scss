@@ -129,12 +129,15 @@
 
 .posts-list .post-metadata-right a .icon-bold {
   font-size: 100%;
-  margin-left: 0.8ex;
 }
 
 .posts-list .post-metadata {
   text-align: right;
   font-size: var(--font-size-small);
+}
+
+.posts-list .post-metadata i:not(:first-of-type) {
+  margin-left: 15px;
 }
 
 .posts-list > nav {

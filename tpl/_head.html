@@ -93,6 +93,20 @@
     // Transform Chinese in the content but avoid some cases
     wrapChineseText(document.body);
 
+    // Capitalize archive month names in the native select control
+    document
+      .querySelectorAll(
+        "#archives .archive-month-option, .archives .all-posts-list .month-posts strong",
+      )
+      .forEach(function (element) {
+        element.textContent = element.textContent.replace(
+          /^(\s*)(\S)/,
+          function (match, whitespace, firstCharacter) {
+            return whitespace + firstCharacter.toLocaleUpperCase();
+          },
+        );
+      });
+
     // Code for the button allowing the user to go back to top
     var pxShow = 10; //height on which the button will show
     window.addEventListener("scroll", function () {

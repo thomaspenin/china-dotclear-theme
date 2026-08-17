@@ -63,17 +63,17 @@
 	      <tpl:ArchivesHeader>
 	      
 	      <form method="get" action="{{tpl:BlogArchiveURL}}" id="archives">
-		<select class="form-select" name="archives" onchange="location = this.options[this.selectedIndex].value;">
-		  <option selected disabled>{{tpl:lang Date range choice}}</option>
-		  <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (titles only)}}</option>
-		</tpl:ArchivesHeader>
-		<tpl:ArchivesYearHeader><optgroup label="{{tpl:ArchiveDate format="%Y"}}"></tpl:ArchivesYearHeader>
-		  <option value="{{tpl:ArchiveURL}}">
-			{{tpl:ArchiveDate encode_html="1" format="%B"}} ({{tpl:ArchiveEntriesCount}})
-		  </option>
-		<tpl:ArchivesYearFooter></optgroup></tpl:ArchivesYearFooter>
-		<tpl:ArchivesFooter>
-		</select>
+          <select class="form-select" name="archives" onchange="location = this.options[this.selectedIndex].value;">
+            <option selected disabled>{{tpl:lang Date range choice}}</option>
+            <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (titles only)}}</option>
+          </tpl:ArchivesHeader>
+          <tpl:ArchivesYearHeader><optgroup label="{{tpl:ArchiveDate format="%Y"}}"></tpl:ArchivesYearHeader>
+            <option class="archive-month-option" value="{{tpl:ArchiveURL}}">
+            {{tpl:ArchiveDate encode_html="1" format="%B"}} ({{tpl:ArchiveEntriesCount}})
+            </option>
+          <tpl:ArchivesYearFooter></optgroup></tpl:ArchivesYearFooter>
+          <tpl:ArchivesFooter>
+          </select>
 	      </form>
 	      </tpl:ArchivesFooter>
 	    </tpl:Archives>
@@ -88,7 +88,7 @@
         <div class="month-posts">
             <tpl:Entries>
             <tpl:EntriesHeader>
-                <p><strong>{{tpl:ArchiveDate upper_case="1"}}</strong></p>
+                <p><strong>{{tpl:ArchiveDate}}</strong></p>
                 <ul>
             </tpl:EntriesHeader>
             <li><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></li>

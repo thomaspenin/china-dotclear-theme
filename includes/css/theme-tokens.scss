@@ -18,7 +18,7 @@
   --font-size-feature: 1.875rem;
   --font-size-emphasis: 1.125rem;
   --font-size-supporting: 1.0625rem;
-  --font-size-compact: 0.875rem;
+  --font-size-compact: 1rem;
   --font-size-toc: 1rem;
   --font-size-toc-nested: 0.9rem;
   --font-size-top: 1rem;
@@ -93,6 +93,7 @@
     --color-surface-page: #{palette.$charcoal-5};
     --color-surface-subtle: #{palette.$charcoal-6};
     --color-surface-soft: #{palette.$charcoal-9};
+    --color-surface-muted: #{palette.$charcoal-7};
     --color-surface-code-inline: #{palette.$dark-mode-rose-bg};
     --color-surface-topbar: #{palette.$charcoal-2};
     --color-surface-topbar-hover: #{palette.$charcoal-4};

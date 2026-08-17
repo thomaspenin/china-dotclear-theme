@@ -78,7 +78,7 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
@@ -167,29 +167,38 @@
       </div>
     </div>
 
+  <!-- Section containing the tagline and categories -->
+   <div class="categories-background container-fluid">
+    <div class="categories container">
+      <!-- Tagline of the site -->
+        <div id="tagline">
+          <h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
+        </div>
+        <!-- We only consider categories of the first level -->
+        <tpl:Categories level="1">
+          <tpl:CategoriesHeader>
+            <!-- Presentation of the main categories -->
+            <div id="category-summary">
+              <div class="row">
+          </tpl:CategoriesHeader>
+          <div class="col-sm-6 content">
+            <h2><a href="#category-{{tpl:CategoryShortURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h2>
+            <div class="category-description">{{tpl:CategoryDescription}}</div>
+          </div>
+          <tpl:CategoriesFooter>
+              </div>
+            </div>
+          </tpl:CategoriesFooter> 
+        </tpl:Categories>
+    </div>
+  </div>
 
   <!-- Middle content section -->
-  <div class="middle home">
+  <div class="middle home container">
 
-      <!-- Tagline of the site -->
-      <div id="tagline">
-	<h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
-      </div>
+      
 
-      <!-- We only consider categories of the first level -->
-      <tpl:Categories level="1">
-	<tpl:CategoriesHeader>
-	  <!-- Presentation of the main categories -->
-	  <div class="container" id="category-summary">
-	</tpl:CategoriesHeader>
-	<div class="col-sm-6 content">
-	  <h3><a href="#category-{{tpl:CategoryShortURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
-	  <div class="category-description">{{tpl:CategoryDescription}}</div>
-	</div>
-	<tpl:CategoriesFooter>
-	  </div>
-	</tpl:CategoriesFooter> 
-      </tpl:Categories>
+      
 
       <div id="home-content">
         <div class="posts-list container">

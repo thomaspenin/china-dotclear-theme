@@ -21,7 +21,7 @@
   padding: 10px;
   background-color: var(--color-surface-footer-powered);
   color: var(--color-text-on-dark);
-  font-size: 80%;
+  font-size: var(--font-size-small);
 }
 
 #poweredBy .content-license {

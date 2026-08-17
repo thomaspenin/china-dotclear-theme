@@ -88,7 +88,7 @@
 .comments .comment-metadata {
   color: var(--color-post-metadata);
   text-align: right;
-  font-size: 80%;
+  font-size: var(--font-size-small);
 }
 
 // No arrow for external links when looking at the author of a comment

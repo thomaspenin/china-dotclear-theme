@@ -28,7 +28,7 @@ figure:not(:has(figcaption)) img {
 
 figcaption {
   text-align: center;
-  font-size: 80%;
+  font-size: var(--font-size-small);
   color: var(--color-text-strong);
   display: table-caption;
   caption-side: bottom;

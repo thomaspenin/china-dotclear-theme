@@ -1,15 +1,5 @@
 <?php
 
-# -- BEGIN LICENSE BLOCK ----------------------------------
-#
-# "China" theme for Dotclear
-# --------------------------
-# Author: Thomas PENIN
-# Website: https://www.voyage-est.com
-# License: GNU/GPL
-#
-# -- END LICENSE BLOCK ------------------------------------
-
 if (!defined('DC_RC_PATH')) { return; }
 
 $this->registerModule(

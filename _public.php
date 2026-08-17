@@ -1,14 +1,5 @@
 <?php
 
-# -- BEGIN LICENSE BLOCK ----------------------------------
-#
-# "China" theme for Dotclear
-# --------------------------
-# Author: Thomas PENIN
-# Website: https://www.voyage-est.com
-# License: GNU/GPL
-# -- END LICENSE BLOCK ------------------------------------
-
 if (!defined('DC_RC_PATH')) { return; }
 
 # Language additions
@@ -16,7 +7,10 @@ l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
 
 // --- Alias management ---
 
-// Register our alias handler
+/**
+ * Register a URL alias handler for the theme. This allows the theme to serve
+ * custom templates based on URL aliases.
+ */
 $core->url->register('alias','','^(.*)$',array('urlAlias','alias'));
 
 /**
@@ -57,7 +51,13 @@ class urlAlias extends dcUrlHandlers
 
 // --- Retrieve the current version of the theme ---
 
-$core->tpl->addValue('ThemeVersion',array('tplThemeVersionTpl','ThemeVersion'));
+/**
+ * Retrieve the current version of the theme
+ * 
+ * Usage in a template:
+ *   {{tpl:ThemeVersion}}
+ */
+$core->tpl->addValue('ThemeVersion', array('tplThemeVersionTpl','ThemeVersion'));
 
 class tplThemeVersionTpl
 {

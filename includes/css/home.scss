@@ -1,3 +1,9 @@
+@use "layout";
+
+#home-content .posts-list .category-title {
+  scroll-margin-top: calc(#{layout.$top-bar-height} + 10px);
+}
+
 #tagline {
   padding: 25px 0px;
 }

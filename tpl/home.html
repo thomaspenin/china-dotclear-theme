@@ -52,7 +52,8 @@
     // Start the carousel with a custom speed
     var homeCarouselEl = document.getElementById("homeCarousel");
     var homeCarousel = new bootstrap.Carousel(homeCarouselEl, {
-      interval: 5000
+      interval: 5000,
+      ride: true
     });
 
     // If a credit modal is shown, stop the carousel, restart it when the modal disapears.

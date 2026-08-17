@@ -79,9 +79,9 @@
           
         <div class="text-center">
           <p><i class="ph ph-smiley-x-eyes"></i></p>
-          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <strong>&quot;%1$s&quot;</strong> returned no result."}}</p>
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</p>
         </div>
-        <p class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s" arg1="%u/tags" arg2="%u/categories"}}</p>
+        <div class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s %s" arg1="%u/categories" arg2="%u/tags" arg3="%u/archive"}}</div>
       
 	</tpl:SysIf>
 	</div>

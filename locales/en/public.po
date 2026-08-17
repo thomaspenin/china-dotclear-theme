@@ -16,8 +16,11 @@ msgstr "More..."
 msgid "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
 msgstr "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
 
-msgid "INFO_SEARCH_RESULTS %s %s"
-msgstr "Search goes through both articles and comments.<br/>If you did not find what you were looking for, you may also use <a href='%s'>tag</a> and <a href='%s'>category</a> navigation."
+msgid "INFO_SEARCH_RESULTS %s %s %s"
+msgstr "<p>Search goes through both articles and comments.</p><p>Alternatively, you may also:</p><ul><li>Browse the posts by <a href='%s'>category</a> or <a href='%s'>keywords</a>,</li><li>Browse the list of <a href='%s'>all articles</a> organized by publication date.</li></ul>"
+
+msgid "INFO_404 %s %s %s"
+msgstr "<p>If you came here by clicking a link, this may not be correct.</p><p>To find what you are looking for, you may:<ul><li>Browse the posts by <a href='%s'>category</a> or <a href='%s'>keywords</a>,</a></li><li>Launch a search via the field in the top bar,</li><li>Browse the list of <a href='%s'>all articles</a> organized by publication date.</li></ul>"
 
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Subscribe to the comment feed for this article only"

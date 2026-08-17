@@ -42,13 +42,7 @@
           <p><i class="ph ph-link-break"></i></p>
           <h3>{{tpl:lang The page you asked for does not exist.}}</h3>
         </div>
-        <p>{{tpl:lang If you came here by clicking a link, this may not be correct.}}</p>
-        <p>{{tpl:lang To find what you are looking for, you may:}}
-        <ul>
-          <li>Parcourir les articles par <a href="{{tpl:BlogURL}}categories">catégorie</a> ou <a href="{{tpl:BlogURL}}tags">mots-clés,</a></li>
-          <li>Lancer une recherche depuis le champ situé dans la barre du haut,</li>
-          <li>Accéder à la liste de <a href="{{tpl:BlogArchiveURL}}" title="Tous les articles">tous les articles</a> organisés par date de publication.</li>
-        </ul>
+        <div class="information">{{tpl:ArgLang string="INFO_404 %s %s %s" arg1="%u/categories" arg2="%u/tags" arg3="%u/archive"}}</div>
       </div>
     </div>
 

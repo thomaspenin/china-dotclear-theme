@@ -300,3 +300,6 @@ msgstr "Next page"
 
 msgid "Previous page"
 msgstr "Previous page"
+
+msgid "of"
+msgstr "of"

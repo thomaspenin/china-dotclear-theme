@@ -1,3 +1,9 @@
+@use "layout";
+
+#pl {
+  scroll-margin-top: calc(#{layout.$top-bar-height} + 10px);
+}
+
 .posts-list .posts-list-item {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -150,4 +156,12 @@
 
 .posts-list .pagination li + li {
   margin-top: 0;
+}
+
+.posts-list .pagination .nav-link.disabled {
+  color: var(--color-text-muted);
+}
+
+.posts-list .pagination .page-counter {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 }

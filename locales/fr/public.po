@@ -309,3 +309,6 @@ msgstr "Page suivante"
 
 msgid "Previous page"
 msgstr "Page précédente"
+
+msgid "of"
+msgstr "sur"

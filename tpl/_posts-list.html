@@ -42,7 +42,7 @@
 	    <ul class="nav nav-fill pagination">
 	      <tpl:PaginationIf start="1">
 	      <li class="nav-item disabled">
-		<a class="page-link" href="#" aria-label="Previous">
+		<a class="nav-link disabled" href="#" aria-label="Previous" aria-disabled="true" tabindex="-1">
 		  <span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
 		</a>
 	      </li>
@@ -53,11 +53,11 @@
 			<span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
 			</a>
 	      </li>
-	      </tpl:PaginationIf> 
-	      {{tpl:PaginationLinks max="5"}}
+	      </tpl:PaginationIf>
+		  <li class="nav-item page-counter">{{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}</li>
 	      <tpl:PaginationIf end="1">
 	      <li class="nav-item disabled">
-		<a class="page-link" href="#" aria-label="Next">
+		<a class="nav-link disabled" href="#" aria-label="Next" aria-disabled="true" tabindex="-1">
 		  <span aria-hidden="true">{{tpl:lang Next page}}<i class="ph ph-caret-right"></i></span>
 		</a>
 	      </li>

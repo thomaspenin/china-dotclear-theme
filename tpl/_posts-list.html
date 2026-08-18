@@ -39,34 +39,34 @@
 	<!-- Navigation across the different pages -->
 	<tpl:Pagination>
 	  <nav>
-	    <ul class="pagination">
+	    <ul class="nav nav-fill pagination">
 	      <tpl:PaginationIf start="1">
-	      <li class="page-item disabled">
+	      <li class="nav-item disabled">
 		<a class="page-link" href="#" aria-label="Previous">
-		  <span aria-hidden="true"><i class="ph ph-caret-left"></i></span>
+		  <span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf start="0">
-	      <li class="page-item">
-		<a class="page-link" href='{{tpl:PaginationURL offset="-1"}}#pl' aria-label="Previous">
-		  <span aria-hidden="true"><i class="ph ph-caret-left"></i></span>
-		</a>
+	      <li class="nav-item">
+			<a class="nav-link active" href='{{tpl:PaginationURL offset="-1"}}#pl' aria-label="Previous">
+			<span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
+			</a>
 	      </li>
 	      </tpl:PaginationIf> 
 	      {{tpl:PaginationLinks max="5"}}
 	      <tpl:PaginationIf end="1">
-	      <li class="page-item disabled">
+	      <li class="nav-item disabled">
 		<a class="page-link" href="#" aria-label="Next">
-		  <span aria-hidden="true"><i class="ph ph-caret-right"></i></span>
+		  <span aria-hidden="true">{{tpl:lang Next page}}<i class="ph ph-caret-right"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf end="0">
-	      <li class="page-item">
-		<a class="page-link" href='{{tpl:PaginationURL offset="+1"}}#pl' aria-label="Next">
-		  <span aria-hidden="true"><i class="ph ph-caret-right"></i></span>
-		</a>
+	      <li class="nav-item">
+			<a class="nav-link active" href='{{tpl:PaginationURL offset="+1"}}#pl' aria-label="Next">
+			<span aria-hidden="true">{{tpl:lang Next page}}<i class="ph ph-caret-right"></i></span>
+			</a>
 	      </li>
 	      </tpl:PaginationIf>
 	    </ul>

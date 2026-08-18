@@ -143,3 +143,11 @@
 .posts-list > nav {
   text-align: center;
 }
+
+.posts-list .pagination {
+  margin-top: 15px;
+}
+
+.posts-list .pagination li + li {
+  margin-top: 0;
+}

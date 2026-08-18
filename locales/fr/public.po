@@ -303,3 +303,9 @@ msgstr "Utilisé pour embellir les smileys présents dans les articles et les co
 
 msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
 msgstr "Adapté de <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> de Matt Hinchliffe, sous licence <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported</a>. Vous pouvez télécharger le code de mon adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>ici</a>, sous la même licence."
+
+msgid "Next page"
+msgstr "Page suivante"
+
+msgid "Previous page"
+msgstr "Page précédente"

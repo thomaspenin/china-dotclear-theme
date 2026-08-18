@@ -65,21 +65,6 @@
   color: var(--color-accent-hover);
 }
 
-// Use the right colors for pagination controls
-.pagination .page-item.active .page-link {
-  background-color: var(--color-accent-active);
-  border-color: var(--color-accent-active);
-  color: var(--color-surface-page);
-}
-
-.pagination .page-link {
-  color: var(--color-accent);
-}
-
-.pagination .page-link:hover {
-  color: var(--color-accent-active);
-}
-
 // Close control on info shall not be too "close" from the text
 
 .btn-close {

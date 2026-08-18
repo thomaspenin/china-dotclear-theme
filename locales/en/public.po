@@ -294,3 +294,9 @@ msgstr "Used to beautify smileys written in articles and comments, this set of i
 
 msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
 msgstr "Adapted from <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> by Matt Hinchliffe, under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. You can download the code of my adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>here</a>, under the same license."
+
+msgid "Next page"
+msgstr "Next page"
+
+msgid "Previous page"
+msgstr "Previous page"

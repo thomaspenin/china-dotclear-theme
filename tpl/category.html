@@ -46,17 +46,35 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <div class="category middle">
-      <!-- Title -->
+    <!-- Title -->
+    <div class="page-title-background">
       <div class="page-title">
-	<h1><tpl:CategoryParents><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> &rsaquo; </tpl:CategoryParents>{{tpl:CategoryTitle encode_html="1"}}</h1>
+        <h1><a href="{{tpl:BlogURL}}categories">{{tpl:lang Categories}}</a> &rsaquo; <tpl:CategoryParents><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> &rsaquo; </tpl:CategoryParents>{{tpl:CategoryTitle encode_html="1"}}</h1>
       </div>
+    </div>
+    
+    <div class="category middle">
+      <div class="container">
+<div class="row">
+        <div class="col-md-6 text-center">
+            <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}"
+            title="{{tpl:lang This category's entries Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Entries feed}}</a></p>
+              </div>
+          <div class="col-md-6 text-center">
+            <tpl:SysIf operator="or" comments_active="1" pings_active="1">
+            <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}/comments"
+            title="{{tpl:lang This category's comments Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a></p>
+            </tpl:SysIf>
+          
+          </div>
+        </div>
+        </div>
 
-      <div id="category-summary">
+      <div class="container" id="category-summary">
 	<div class="category-description">{{tpl:CategoryDescription}}</div>
 	<tpl:CategoryFirstChildren>
 	  <tpl:CategoriesHeader>
@@ -83,24 +101,14 @@
 	</tpl:CategoryFirstChildren>
       </div>
 
+  <div class="container">
       <tpl:CategoryIf has_entries="1">
-      <div class="container" id="entries">
-	<div class="col-md-8">
-	  {{tpl:include src="_posts-list.html"}}
-	</div>
-	<div id="comments-sidebar" class="col-md-4">
-          <div class="comments-feed">
-            <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}"
-            title="{{tpl:lang This category's entries Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Entries feed}}</a></p>
-
-            <tpl:SysIf operator="or" comments_active="1" pings_active="1">
-            <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}/comments"
-            title="{{tpl:lang This category's comments Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a></p>
-            </tpl:SysIf>
-          </div>
+        <div id="entries">
+        {{tpl:include src="_posts-list.html"}}
         </div>
-      </div>
       </tpl:CategoryIf>
+    </div>
+    </div>
     </div>
 
     <!-- Footer (present on all pages) -->

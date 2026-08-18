@@ -65,7 +65,7 @@
 		</tpl:EntryIf>
 
 		<div id="main" class="container">
-			<div class="row">
+			<div class="row post-layout">
 		<div class="col-md-8 post-content">
 		<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
@@ -85,7 +85,7 @@
 		<script type="text/javascript">
 			document.addEventListener("DOMContentLoaded", function () {
 			// Generate the toc
-			buildToc(".bs-docs-sidebar", {
+			const tocBuilt = buildToc(".bs-docs-sidebar", {
 			search: ".post-content",
 			depth: 3,
 			start: 1,
@@ -94,6 +94,12 @@
 			rootListClass: "nav",
 			subListClass: "nav"
 			});
+
+			if (!tocBuilt) {
+				document.querySelector(".table-of-contents").classList.add("d-none");
+				document.querySelector(".post-content").classList.replace("col-md-8", "col-md-12");
+				return;
+			}
 
 			// Chinese text should appear bigger in the generated code if it is not already the case
 			wrapChineseText(document.querySelector(".bs-docs-sidebar"));

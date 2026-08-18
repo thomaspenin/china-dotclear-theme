@@ -149,6 +149,10 @@
   text-decoration: none;
 }
 
+#post-footer li + li {
+  margin-top: 0;
+}
+
 // Do not display certain elements when printing
 @media print {
   .post-title .post-category {

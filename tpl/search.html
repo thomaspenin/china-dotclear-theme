@@ -68,9 +68,7 @@
 
       <div class="container">
         <tpl:SysIf search_count="&gt;0">
-          <div class="container">
-            {{tpl:include src="_posts-list.html"}}
-          </div>
+          {{tpl:include src="_posts-list.html"}}
         </tpl:SysIf>
         <tpl:SysIf search_count="==0">
           <div class="text-center">

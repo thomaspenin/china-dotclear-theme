@@ -5,9 +5,12 @@
 }
 
 .posts-list .posts-list-item {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-bottom: 1px solid var(--color-border-default);
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.posts-list .posts-list-item .post-wrapper p:first-child {
+  margin-top: 0;
 }
 
 .posts-list .posts-list-item .media-object {
@@ -109,14 +112,6 @@
   padding-right: 9px;
 }
 
-.posts-list .post-metadata-left {
-  text-align: left;
-}
-
-.posts-list .post-metadata-right {
-  text-align: right;
-}
-
 .posts-list .post-metadata-right a {
   color: var(--color-post-metadata);
 }
@@ -138,7 +133,7 @@
 }
 
 .posts-list .post-metadata {
-  text-align: right;
+  //text-align: right;
   font-size: var(--font-size-small);
 }
 

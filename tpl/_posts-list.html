@@ -3,6 +3,7 @@
       <div class="posts-list" id="pl">
       </tpl:EntriesHeader>
 	<div class="posts-list-item">
+		<h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
           <div class="d-flex">
             <div class="flex-shrink-0">
               <tpl:MyMetaIf type="ENTRY_IMAGE" defined="true" >
@@ -13,21 +14,18 @@
 			  </tpl:MyMetaIf>
             </div>
             <div class="media-body flex-grow-1 ms-3">
-              <h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
               <div class="post-wrapper">
                 <!-- Show the excerpt if any -->
                 <tpl:EntryIf extended="1">{{tpl:EntryExcerpt remove_html="0"}}</tpl:EntryIf>
                 <!-- If there is no excerpt, show the post content -->
                 <tpl:EntryIf extended="0"><p>{{tpl:EntryContent remove_html="1" cut_string="400"}}</p></tpl:EntryIf>
-                
               </div>
               <div class="posts-list-item-footer row">
-                <div class="post-read-more col-md-4"><a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">»&nbsp;{{tpl:lang More}}</a></div>
-                <div class="post-metadata col-md-8">
+                <div class="post-metadata">
+				<i class="ph ph-clock" aria-hidden="true"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                 <tpl:EntryIf has_category="1">
                 <i class="ph ph-globe-hemisphere-east" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
                 </tpl:EntryIf>
-                <i class="ph ph-clock" aria-hidden="true"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                 <i class="ph ph-chat" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="Commenter" one="1&nbsp;commentaire" more="%s&nbsp;commentaires"}}</a>
                 </div>
               </div>

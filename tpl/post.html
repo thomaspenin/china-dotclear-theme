@@ -129,6 +129,7 @@
 		</ul>
 		
 		<div class="row align-items-start">
+		<tpl:EntryIf has_tags="1">
 		<tpl:EntryIf has_attachment="1">
 		<div class="col-12 col-md-4 post-tags">
 		</tpl:EntryIf>
@@ -149,6 +150,7 @@
 		</tpl:TagsFooter>
 		</tpl:EntryTags>
 		</div>
+		</tpl:EntryIf>
 		<tpl:EntryIf has_attachment="1">
 		<div class="col-12 col-sm-6 col-md-4 post-attachments">
 		<tpl:Attachments>
@@ -166,11 +168,17 @@
 		</tpl:Attachments>
 		</div>
 		</tpl:EntryIf>
-		<tpl:EntryIf has_attachment="1">
+		<tpl:EntryIf has_attachment="1" has_tags="1" operator="and">
 		<div class="col-12 col-sm-6 col-md-4 post-share">
 		</tpl:EntryIf>
-		<tpl:EntryIf has_attachment="0">
+		<tpl:EntryIf has_attachment="1" has_tags="0" operator="and">
+		<div class="col-12 col-md-6 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0" has_tags="1" operator="and">
 		<div class="col-12 col-sm-6 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0" has_tags="0" operator="and">
+		<div class="col-12 post-share">
 		</tpl:EntryIf>
 			<div class="section-header d-flex align-items-baseline gap-3">
 				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>

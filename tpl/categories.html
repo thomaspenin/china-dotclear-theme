@@ -29,52 +29,58 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title">
-      <h1>{{tpl:lang Categories}}</h1>
+    <div class="page-title-background">
+      <div class="page-title container">
+        <h1>{{tpl:lang Categories}}</h1>
+      </div>
     </div>
 
     <div class="categories middle">
+      
+      
       <!-- We only consider categories of the first level -->
       <tpl:Categories level="1">
-	<tpl:CategoriesHeader>
-	  <!-- Presentation of the main categories -->
-	  <div class="container" id="category-summary">
-	</tpl:CategoriesHeader>
-	<div class="col-md-6 content">
-	  <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
-	  <div class="category-description">{{tpl:CategoryDescription}}</div>
-	  <tpl:CategoryFirstChildren>
-	    <tpl:CategoriesHeader>
-	      <div class="subcategories">
-	      <p><b>{{tpl:lang Sub-categories}}</b></p>
-	      <ul>
-	    </tpl:CategoriesHeader>
-	    <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
-	      <tpl:CategoryFirstChildren>
-		<tpl:CategoriesHeader>
-		  <div class="subsubcategories">
-		  <ul>
-		</tpl:CategoriesHeader>
-		<li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
-		<tpl:CategoriesFooter>
-		  </ul>
-		  </div>
-		</tpl:CategoriesFooter>
-	      </tpl:CategoryFirstChildren>
-	    <tpl:CategoriesFooter>
-	      </ul>
-	      </div>
-	    </tpl:CategoriesFooter>
-	  </tpl:CategoryFirstChildren>
-	</div>
-	<tpl:CategoriesFooter>
-	  </div>
-	</tpl:CategoriesFooter> 
+        <tpl:CategoriesHeader>
+          <!-- Presentation of the main categories -->
+          <div class="container" id="category-summary">
+            <div class="row">
+        </tpl:CategoriesHeader>
+        <div class="col-md-6 content">
+          <h3><a href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
+          <div class="category-description">{{tpl:CategoryDescription}}</div>
+          <tpl:CategoryFirstChildren>
+            <tpl:CategoriesHeader>
+              <div class="subcategories">
+              <p><b>{{tpl:lang Sub-categories}}</b></p>
+              <ul>
+            </tpl:CategoriesHeader>
+            <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
+              <tpl:CategoryFirstChildren>
+          <tpl:CategoriesHeader>
+            <div class="subsubcategories">
+            <ul>
+          </tpl:CategoriesHeader>
+          <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
+          <tpl:CategoriesFooter>
+            </ul>
+            </div>
+          </tpl:CategoriesFooter>
+              </tpl:CategoryFirstChildren>
+            <tpl:CategoriesFooter>
+              </ul>
+              </div>
+            </tpl:CategoriesFooter>
+          </tpl:CategoryFirstChildren>
+        </div>
+        <tpl:CategoriesFooter>
+          </div>
+          </div>
+        </tpl:CategoriesFooter> 
       </tpl:Categories>
     </div>
 

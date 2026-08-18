@@ -18,7 +18,7 @@ This version was developed and tested with Dotclear ≥ 2.7 until Dotclear 2.29.
 
 ## Version 3 "Green Orchid 2"
 
-TODO
+![Version 3 of the theme](theme-versions/screenshot_3.x.jpg)
 
 Extensive rework of version 2, featuring a new font, improved readability and a much-needed dark mode.
 

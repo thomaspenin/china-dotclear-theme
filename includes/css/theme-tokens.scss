@@ -42,11 +42,12 @@
   --color-text-code: #{palette.$rose};
   --color-text-footnote: #{palette.$gray};
 
-  --color-surface-page: #{palette.$white};
+  --color-surface-page: #{palette.$pale-gray-11};
   --color-surface-subtle: #{palette.$extremely-light-gray};
   --color-surface-soft: #{palette.$light-gray};
   --color-surface-muted: #{palette.$very-light-gray};
   --color-surface-code-inline: #{palette.$light-rose};
+  --color-surface-input: #{palette.$white};
   --color-surface-topbar: #{palette.$strong-gray};
   --color-surface-topbar-hover: #{palette.$very-strong-gray};
   --color-surface-footer: #{palette.$strong-gray};
@@ -97,6 +98,7 @@
     --color-surface-soft: #{palette.$charcoal-9};
     --color-surface-muted: #{palette.$charcoal-7};
     --color-surface-code-inline: #{palette.$dark-mode-rose-bg};
+    --color-surface-input: #{palette.$charcoal-2};
     --color-surface-topbar: #{palette.$charcoal-2};
     --color-surface-topbar-hover: #{palette.$charcoal-4};
     --color-surface-footer: #{palette.$charcoal-3};

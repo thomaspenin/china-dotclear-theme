@@ -16,7 +16,8 @@
   padding-top: 15px;
 }
 
-.posts-list .posts-list-item .card-item {
+// Base card look, reused by the simple posts-list and the post's previous/next nav (post.scss).
+.card-item {
   border: 1px solid var(--color-border-default);
   border-radius: var(--border-radius);
   background-color: var(--color-surface-page);
@@ -24,7 +25,7 @@
   padding: 12px;
 }
 
-.posts-list .posts-list-item .card-item:hover {
+.card-item:hover {
   cursor: pointer;
   // Rather than a solid border; add a subtle shadow with the accent color to indicate hover
   box-shadow: 0 0 5px 1px var(--color-accent);

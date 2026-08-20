@@ -153,6 +153,63 @@
   margin-top: 0;
 }
 
+.previous-next-posts {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.previous-next-posts .nav-post-col-next {
+  margin-left: auto;
+}
+
+.previous-next-posts .nav-post {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.previous-next-posts .nav-post-col-next .nav-post {
+  justify-content: flex-end;
+}
+
+.previous-next-posts .nav-chevron {
+  flex-shrink: 0;
+  font-size: var(--font-size-h3);
+  color: var(--color-text-muted);
+}
+
+.previous-next-posts .nav-thumb img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+.previous-next-posts .nav-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.previous-next-posts .nav-post-col-next .nav-text {
+  text-align: right;
+}
+
+.previous-next-posts .nav-label {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.previous-next-posts .nav-title {
+  font-size: var(--font-size-emphasis);
+  color: var(--color-post-title);
+}
+
+.previous-next-posts .nav-post:hover .nav-title {
+  color: var(--color-post-title-hover);
+}
+
 // Do not display certain elements when printing
 @media print {
   .post-title .post-category {

@@ -206,9 +206,15 @@ msgid "Start searching"
 msgstr "Lancer la recherche"
 
 msgid "Previous entry"
-msgstr "Article précédent&nbsp;:"
+msgstr "Article précédent"
 
 msgid "Next entry"
+msgstr "Article suivant"
+
+msgid "Previous entry:"
+msgstr "Article précédent&nbsp;:"
+
+msgid "Next entry:"
 msgstr "Article suivant&nbsp;:"
 
 msgid "Category"

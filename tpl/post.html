@@ -43,10 +43,10 @@
 		</div>
 		<div class="post-navigation">
 		<tpl:EntryPrevious>
-		<a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-left"></i></a>
+		<a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry:}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-left"></i></a>
 		</tpl:EntryPrevious>
 		<tpl:EntryNext>
-		<a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-right"></i></a>
+		<a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry:}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-right"></i></a>
 		</tpl:EntryNext>
 		</div>
 		</tpl:EntryIf>
@@ -119,14 +119,46 @@
 		<div class="container" id="post-footer">
 			<!-- Pagination -->
 		
-		<ul class="nav nav-fill previous-next-posts">
+		<div class="row g-3 previous-next-posts">
 			<tpl:EntryPrevious>
-			<li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}"><i class="ph ph-caret-left"></i>&nbsp;{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></p></li>
+			<div class="col-6 nav-post-col nav-post-col-prev">
+				<a class="card-item nav-post" href="{{tpl:EntryURL}}">
+					<i class="ph ph-caret-left nav-chevron" aria-hidden="true"></i>
+					<div class="nav-thumb flex-shrink-0">
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="true">
+							<img src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="false">
+							<img src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+					</div>
+					<div class="nav-text">
+						<span class="nav-label">{{tpl:lang Previous entry}}</span>
+						<span class="nav-title">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</span>
+					</div>
+				</a>
+			</div>
 			</tpl:EntryPrevious>
 			<tpl:EntryNext>
-			<li class="nav-item"><p><a class="nav-link active" href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}}&nbsp;<i class="ph ph-caret-right"></i></a></p></li>
+			<div class="col-6 nav-post-col nav-post-col-next">
+				<a class="card-item nav-post" href="{{tpl:EntryURL}}">
+					<div class="nav-text">
+						<span class="nav-label">{{tpl:lang Next entry}}</span>
+						<span class="nav-title">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</span>
+					</div>
+					<div class="nav-thumb flex-shrink-0">
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="true">
+							<img src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="false">
+							<img src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+					</div>
+					<i class="ph ph-caret-right nav-chevron" aria-hidden="true"></i>
+				</a>
+			</div>
 			</tpl:EntryNext>
-		</ul>
+		</div>
 		
 		<div class="row align-items-start">
 		<tpl:EntryIf has_tags="1">

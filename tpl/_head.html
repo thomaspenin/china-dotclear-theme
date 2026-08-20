@@ -134,6 +134,20 @@
     for (var i = 0, len = placeholders.length; i < len; i++) {
       deferImage(placeholders[i]);
     }
+
+    // Make whole entry cards clickable, except for their own links (comment
+    // count, category, title) which keep their normal navigation.
+    document.querySelectorAll(".clickable-card").forEach(function (card) {
+      card.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+          return;
+        }
+        var entryLink = card.querySelector("a.entry-link");
+        if (entryLink) {
+          window.location = entryLink.href;
+        }
+      });
+    });
   });
 </script>
 

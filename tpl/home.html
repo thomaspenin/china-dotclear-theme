@@ -67,19 +67,6 @@
       });
     });
 
-    // Make the whole card clickable, except for its own links (comment count,
-    // category, title) which keep their normal navigation.
-    document.querySelectorAll(".posts-thumbnail-item .thumbnail").forEach(function (card) {
-      card.addEventListener("click", function (event) {
-        if (event.target.closest("a")) {
-          return;
-        }
-        var entryLink = card.querySelector("a.entry-link");
-        if (entryLink) {
-          window.location = entryLink.href;
-        }
-      });
-    });
   });
   </script>
 </head>
@@ -219,7 +206,7 @@
             </tpl:LoopPosition>
 
             <div class="col-6 col-sm-3 posts-thumbnail-item">
-              <div class="thumbnail">
+              <div class="thumbnail clickable-card">
                 <div class="link">
                   <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
                     <div class="defer-image image-ratio:4x3">

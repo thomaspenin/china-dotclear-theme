@@ -161,7 +161,7 @@
 // the search button; hovering/focusing only changes its color.
 #top .top-search-form .input-group {
   min-width: 0;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--border-radius);
   overflow: hidden;
   transition: border-color 0.5s ease;

@@ -10,6 +10,9 @@ figure img {
   display: block;
   max-width: 100%;
   height: auto;
+  // Always white so transparent images stay legible in dark mode too, but only under the image itself, not the padding
+  background-color: var(--color-always-light);
+  background-clip: content-box;
   border-top: 1px solid var(--color-border-default);
   border-left: 1px solid var(--color-border-default);
   border-right: 1px solid var(--color-border-default);

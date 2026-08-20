@@ -176,6 +176,7 @@ textarea:focus-visible {
   border-color: var(--color-accent);
   outline: none;
   box-shadow: none; // Remove Bootstrap's colored focus ring, keep a solid border only
+  transition: border-color 0.5s ease;
 }
 
 input,

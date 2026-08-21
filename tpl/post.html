@@ -38,6 +38,7 @@
     <div class="page-title-background">
 		<div class="page-title post-title container">
 		<tpl:EntryIf has_category="1">
+		<div class="post-title-header">
 		<div class="post-category">
 		<a href="{{tpl:BlogURL}}"><i class="ph ph-house"></i></a> › <tpl:EntryCategoriesBreadcrumb><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> › </tpl:EntryCategoriesBreadcrumb><a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
 		</div>
@@ -48,6 +49,7 @@
 		<tpl:EntryNext>
 		<a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry:}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-right"></i></a>
 		</tpl:EntryNext>
+		</div>
 		</div>
 		</tpl:EntryIf>
 		<h1>{{tpl:EntryTitle encode_html="1"}}</h1>

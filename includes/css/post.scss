@@ -38,18 +38,38 @@
   transition: background-color 250ms linear;
 }
 
+// Grow past the generic .page-title fixed height when the category/nav row
+// wraps onto several lines (long breadcrumb on narrow screens).
+.page-title.post-title {
+  height: auto;
+  min-height: 150px;
+}
+
+.post-title .post-title-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+// .page-title's own padding-top already clears the background, so these only
+// need horizontal padding (no top padding piling up on top of it).
 .post-title .post-category {
-  position: absolute;
-  padding: 5px 8px;
-  top: 4px;
-  left: 0;
+  padding: 0 8px;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .post-title .post-navigation {
-  position: absolute;
-  padding: 5px 8px;
-  top: 4px;
-  right: 0;
+  padding: 0 8px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+// The header row's own margin-bottom already separates it from the title.
+.post-title .post-title-header + h1 {
+  margin-top: 0;
 }
 
 // *** Post content ***
@@ -235,11 +255,7 @@
 
 // Do not display certain elements when printing
 @media print {
-  .post-title .post-category {
-    display: none;
-  }
-
-  .post-title .post-navigation {
+  .post-title .post-title-header {
     display: none;
   }
 

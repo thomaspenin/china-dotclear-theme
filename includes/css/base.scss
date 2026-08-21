@@ -130,6 +130,11 @@ ol > li::marker {
   color: var(--color-accent);
 }
 
+// Phosphor icons sit slightly above the text baseline by default
+.ph {
+  vertical-align: -0.15em;
+}
+
 // Chinese text
 
 .zh {

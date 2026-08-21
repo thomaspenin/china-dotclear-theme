@@ -4,8 +4,13 @@
       </tpl:EntriesHeader>
 	<div class="posts-list-item">
 	  <div class="card-item clickable-card">
-          <div class="d-flex">
-            <div class="flex-shrink-0">
+          <div class="d-flex list-card-body<tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true"> list-has-large-image</tpl:MyMetaIf>">
+            <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
+              <div class="list-thumb-large defer-image image-ratio:4x3">
+                <div data-src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_LARGE_IMAGE"}}" data-alt="{{tpl:EntryTitle}}"></div>
+              </div>
+            </tpl:MyMetaIf>
+            <div class="flex-shrink-0 list-thumb-small">
               <tpl:MyMetaIf type="ENTRY_IMAGE" defined="true" >
                 <img class="media-object" src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="90" height="90" alt="{{tpl:EntryTitle encode_html="1"}}"/>
 			  </tpl:MyMetaIf>
@@ -27,7 +32,9 @@
             <div class="post-metadata-left">
               <i class="ph ph-clock" aria-hidden="true"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
               <tpl:EntryIf has_category="1">
+              <span class="list-category">
               <i class="ph ph-globe-hemisphere-east" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
+              </span>
               </tpl:EntryIf>
             </div>
             <div class="post-metadata-right">

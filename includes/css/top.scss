@@ -154,6 +154,12 @@
   padding: 10px 0px;
   min-width: 0;
   box-shadow: none;
+  // Mobile-first: full-width form would otherwise touch the viewport edges,
+  // so give it the same side gutter as a Bootstrap .container (the value
+  // inherited from the ancestor #top .container); reset again at >=768px
+  // below, where the form sits inline in the navbar instead of edge-to-edge.
+  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
 }
 
 // Border lives on the input-group wrapper (not the input itself) so the

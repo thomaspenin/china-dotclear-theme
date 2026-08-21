@@ -57,57 +57,45 @@
       </div>
     </div>
     
-    <div class="category middle">
+    <div class="category-feed-background">
       <div class="container">
-<div class="row">
-        <div class="col-md-6 text-center">
+        <div class="row">
+          <div class="col-md-6 text-center">
             <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}"
-            title="{{tpl:lang This category's entries Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Entries feed}}</a></p>
-              </div>
+            title="{{tpl:lang This category's entries Atom feed}}"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Entries feed}}</a></p>
+          </div>
           <div class="col-md-6 text-center">
             <tpl:SysIf operator="or" comments_active="1" pings_active="1">
-            <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}/comments"
-            title="{{tpl:lang This category's comments Atom feed}}" class="feed"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a></p>
+              <p><a class="feed" type="application/atom+xml" href="{{tpl:CategoryFeedURL type="atom"}}/comments"
+              title="{{tpl:lang This category's comments Atom feed}}"><i class="ph ph-rss"></i>&nbsp;{{tpl:lang Comments feed}}</a></p>
             </tpl:SysIf>
-          
           </div>
         </div>
-        </div>
-
-      <div class="container" id="category-summary">
-	<tpl:CategoryFirstChildren>
-	  <tpl:CategoriesHeader>
-	    <div class="subcategories">
-	    <p><b>{{tpl:lang Sub-categories}}</b></p>
-	    <ul>
-	  </tpl:CategoriesHeader>
-	  <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
-	    <tpl:CategoryFirstChildren>
-	      <tpl:CategoriesHeader>
-		<div class="subsubcategories">
-		<ul>
-	      </tpl:CategoriesHeader>
-	      <li><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
-	      <tpl:CategoriesFooter>
-		</ul>
-		</div>
-	      </tpl:CategoriesFooter>
-	    </tpl:CategoryFirstChildren>
-	  <tpl:CategoriesFooter>
-	    </ul>
-	    </div>
-	  </tpl:CategoriesFooter>
-	</tpl:CategoryFirstChildren>
       </div>
+    </div>
 
-  <div class="container">
-      <tpl:CategoryIf has_entries="1">
-        <div id="entries">
-        {{tpl:include src="_posts-list.html"}}
+    <div class="category middle">
+      <div class="subcategories container">
+        <tpl:CategoryFirstChildren>
+            <tpl:CategoriesHeader>
+              <div class="subcategories-frame">
+                <p><b>{{tpl:lang Sub-categories}}</b></p>
+                <div class="row">
+            </tpl:CategoriesHeader>
+            <div class="col-6 col-md-3"><a href="{{tpl:CategoryURL}}"><i class="ph ph-squares-four"></i>&nbsp;{{tpl:CategoryTitle encode_html="1"}}</a></div>
+            <tpl:CategoriesFooter>
+                </div>
+              </div>
+            </tpl:CategoriesFooter>
+          </tpl:CategoryFirstChildren>
         </div>
-      </tpl:CategoryIf>
-    </div>
-    </div>
+
+        <tpl:CategoryIf has_entries="1">
+          <div class="container" id="entries">
+            {{tpl:include src="_posts-list.html"}}
+          </div>
+        </tpl:CategoryIf>
+      </div>
     </div>
 
     <!-- Footer (present on all pages) -->

@@ -1,6 +1,6 @@
 {
   "name": "china-dotclear-theme",
-  "version": "1.0.0",
+  "version": "3.0",
   "description": "A China-inspired theme for the blog \"Voyage vers l'Est\"",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/thomaspenin/china-dotclear-theme.git"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "devDependencies": {
     "sass": "^1.102.0"
   }

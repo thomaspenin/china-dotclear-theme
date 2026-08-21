@@ -198,14 +198,7 @@
           </div>
           <div class="thumbnail-row row">
           <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
-
-            <!-- On small viewport, potential issue if the cards have not the same size when back to the line -->
-            <tpl:LoopPosition start="2" modulo="2">
-              <!-- Add the extra clearfix for only the required viewport -->
-              <div class="clearfix d-block d-sm-none"></div>
-            </tpl:LoopPosition>
-
-            <div class="col-6 col-sm-3 posts-thumbnail-item">
+            <div class="col-6 col-md-3 posts-thumbnail-item">
               <div class="thumbnail clickable-card">
                 <div class="link">
                   <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">

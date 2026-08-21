@@ -87,11 +87,21 @@
 .posts-list .thumbnail-row {
   padding-left: 7px;
   padding-right: 8px;
+  // Vertical spacing between wrapped rows (2-per-row / 1-per-row on narrower viewports)
+  row-gap: 15px;
 }
 
 .posts-list .posts-thumbnail-item {
   padding-left: 8px;
   padding-right: 7px;
+}
+
+// Switch from 2 to 1 card per row lower than Bootstrap's sm breakpoint (576px)
+@media (max-width: 400px) {
+  .posts-list .posts-thumbnail-item {
+    flex: 0 0 100%;
+    width: 100%;
+  }
 }
 
 .posts-list .posts-thumbnail-item .thumbnail {

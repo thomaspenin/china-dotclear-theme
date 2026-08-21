@@ -57,12 +57,33 @@
   width: 18px;
 }
 
-.comments .new-comment-buttons {
-  text-align: right;
+.comments .new-comment-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.comments #cancelButton {
-  margin-right: 5px;
+.comments .remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.comments .new-comment-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+}
+
+// Fixed viewport breakpoint (rather than flex-wrap) so the row/column switch
+// stays a single, predictable transition regardless of the page grid reflowing
+@media (max-width: 480px) {
+  .comments .new-comment-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .comments label {

@@ -77,7 +77,8 @@
                     );
                     expansion.classList.add("is-open");
                     expansion.setAttribute("aria-hidden", "false");
-                    expansion.style.maxHeight = expansion.scrollHeight + "px";
+                    // Fixed cap larger than any content so wrapping on resize never gets clipped
+                    expansion.style.maxHeight = "1000px";
                   });
                 </script>
               </tpl:SysIfFormError>
@@ -123,7 +124,8 @@
                     function openExpansion() {
                       expansion.classList.add("is-open");
                       expansion.setAttribute("aria-hidden", "false");
-                      expansion.style.maxHeight = expansion.scrollHeight + "px";
+                      // Fixed cap larger than any content so wrapping on resize never gets clipped
+                      expansion.style.maxHeight = "1000px";
                     }
 
                     function closeExpansion() {

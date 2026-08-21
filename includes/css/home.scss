@@ -14,26 +14,30 @@
 
 .home.middle {
   background-color: var(--color-surface-muted);
-  padding-bottom: 25px;
+  padding-bottom: 40px;
 }
 
 #home-content .posts-list .title-row {
-  font-size: 0;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#home-content .posts-list .title-row:first-child {
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 #home-content .posts-list .category-title {
-  float: none;
-  display: inline-block;
   font-size: var(--font-size-compact);
 }
 
+#home-content .posts-list .category-title h2 {
+  margin: 0;
+}
+
 #home-content .posts-list .all-articles {
-  float: none;
-  display: inline-block;
-  vertical-align: bottom;
   text-align: right;
   font-size: var(--font-size-compact);
-  padding-bottom: 12px;
 }
 
 #home-content .posts-list .all-articles a:hover {

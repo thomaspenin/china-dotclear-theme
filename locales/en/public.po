@@ -70,8 +70,8 @@ msgstr "Tags"
 msgid "About"
 msgstr "About"
 
-msgid "To see articles' summaries, choose a period:"
-msgstr "To see articles' summaries, choose a period:"
+msgid "Choose a period:"
+msgstr "Choose a period:"
 
 msgid "All »"
 msgstr "All »"

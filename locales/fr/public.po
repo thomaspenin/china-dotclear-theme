@@ -14,16 +14,16 @@ msgid "More..."
 msgstr "Plus..."
 
 msgid "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
-msgstr "Le nuage de mots clés représente les concepts couverts par les articles publiés sur le site. Plus le mot clé est écrit gros, plus le concept qu'il représente est important. Vous pouvez cliquer sur un mot clé pour obtenir les articles correspondants."
+msgstr "Le nuage de mots-clés représente les concepts couverts par les articles publiés sur le site. Plus le mot-clé est écrit gros, plus le concept qu'il représente est important. Vous pouvez cliquer sur un mot-clé pour obtenir les articles correspondants."
 
-msgid "INFO_SEARCH_RESULTS"
-msgstr "La recherche est effectuée sur les articles et les commentaires.<br/>Si vous ne trouvez pas ce que vous cherchez, vous pouvez essayer la navigation par tag ou par catégorie."
+msgid "INFO_SEARCH_RESULTS %s %s %s"
+msgstr "<p>La recherche est effectuée sur les articles et les commentaires.</p><p>Alternativement, vous pouvez aussi&nbsp;:</p><ul><li>Parcourir les articles par <a href='%s'>catégorie</a> ou <a href='%s'>mots-clés</a>,</li><li>Accéder à la liste de <a href='%s'>tous les articles</a> organisés par date de publication.</li></ul>"
+
+msgid "INFO_404 %s %s %s"
+msgstr "<p>Si vous avez suivi un lien jusqu'ici, il se peut qu'il soit erroné.</p><p>Pour trouver ce que vous cherchez, vous pouvez&nbsp;:<ul><li>Parcourir les articles par <a href='%s'>catégorie</a> ou <a href='%s'>mots-clés</a>,</a></li><li>Lancer une recherche depuis le champ situé dans la barre du haut,</li><li>Accéder à la liste de <a href='%s'>tous les articles</a> organisés par date de publication.</li></ul>"
 
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Souscrire au fil des commentaires de cet article"
-
-msgid "INFO_HTML_TAGS_REMOVED"
-msgstr "Pour des raisons de sécurité, tout le marquage HTML à l'exception des liens est automatiquement enlevé des commentaires.<br/>Je peux être donc amené à éditer manuellement ces derniers après soumission pour que, par exemple, le pinyin soit rendu '<py>ma3</py>' au lieu de 'ma3'."
 
 msgid "Sub-categories"
 msgstr "Sous-catégories"
@@ -41,7 +41,7 @@ msgid "Browse the different categories"
 msgstr "Parcourir les différentes catégories"
 
 msgid "Search for articles using keywords"
-msgstr "Rechercher des articles par mots clés"
+msgstr "Rechercher des articles par mots-clés"
 
 msgid "Know more about the site and its author"
 msgstr "En savoir plus sur le site et son auteur"
@@ -73,8 +73,8 @@ msgstr "Mots-clés"
 msgid "About"
 msgstr "À propos"
 
-msgid "To see articles' summaries, choose a period:"
-msgstr "Pour afficher le résumé des articles, choisissez une période&nbsp;:"
+msgid "Choose a period:"
+msgstr "Choix d'une période&nbsp;:"
 
 msgid "All »"
 msgstr "Tous »"
@@ -88,8 +88,11 @@ msgstr "Voir l'image en plein écran"
 msgid "Download the source code of the theme"
 msgstr "Télécharger le code source du thème"
 
-msgid "Unless otherwise noticed, the license of the content of this site is"
-msgstr "Sauf précision contraire, le contenu de ce site est fourni sous licence"
+msgid "LICENSE"
+msgstr "Sauf précision contraire, le contenu de ce site est fourni sous licence <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr'>CC BY-NC-SA 4.0</a>"
+
+msgid "POWERED_BY_DOTCLEAR"
+msgstr "Propulsé par <a href='https://www.dotclear.org'>Dotclear</a>"
 
 msgid "Attachments"
 msgstr "Pièces jointes"
@@ -101,7 +104,7 @@ msgid "Articles feed"
 msgstr "Fil des articles"
 
 msgid "This tag's articles Atom feed"
-msgstr "Flux Atom des articles associés à ce mot clé"
+msgstr "Flux Atom des articles associés à ce mot-clé"
 
 msgid "This category's articles Atom feed"
 msgstr "Flux Atom des articles de cette catégorie"
@@ -208,6 +211,12 @@ msgstr "Article précédent"
 msgid "Next entry"
 msgstr "Article suivant"
 
+msgid "Previous entry:"
+msgstr "Article précédent&nbsp;:"
+
+msgid "Next entry:"
+msgstr "Article suivant&nbsp;:"
+
 msgid "Category"
 msgstr "Catégorie"
 
@@ -255,3 +264,57 @@ msgstr "Aller en page"
 
 msgid "wrote"
 msgstr "a écrit"
+
+msgid "Visit my personal website"
+msgstr "Visiter mon site personnel"
+
+msgid "View my Github"
+msgstr "Consulter mon Github"
+
+msgid "China Theme"
+msgstr "Thème China"
+
+msgid "THEME_CODE_AVAILABILITY"
+msgstr "Le thème est disponible sur GitHub sous licence MIT (voir ci-dessous), sauf indication contraire dans certains fichiers sources ou pour certains des composants tiers mentionné ci-dessous. Vous pouvez soit télécharger la dernière version publiée, soit cloner le dépôt afin d’obtenir la dernière version en cours de développement."
+
+msgid "THEME_DOWNLOAD_LEAD"
+msgstr "Ce site fonctionne avec <a href='https://dotclear.org/'>Dotclear</a> et utilise mon propre thème personnalisé, appelé «&nbsp;China&nbsp;». Ce thème vous intéresse&nbsp;? Vous souhaitez l’utiliser dans vos projets personnels&nbsp;? Vous êtes au bon endroit pour récupérer le code et vous lancer&nbsp;!"
+
+msgid "Download the theme"
+msgstr "Télécharger le thème"
+
+msgid "BOOTSTRAP_INTRO"
+msgstr "<a href='https://getbootstrap.com/'>Bootstrap</a> est le framework HTML/CSS/JS qui fournit l’essentiel du comportement responsive du thème."
+
+msgid "MIT License"
+msgstr "License MIT"
+
+msgid "Download the latest release"
+msgstr "Télécharger la dernière version"
+
+msgid "Clone the repository"
+msgstr "Cloner le dépôt"
+
+msgid "Standing on the shoulders of giants"
+msgstr "Debout sur les épaules de géants"
+
+msgid "FOSS_COMPONENTS_INTRO %s"
+msgstr "En plus de <a href='https://dotclear.org/'>Dotclear</a>, la version actuelle du thème (%s) s’appuie sur les composants open source suivants&nbsp;:"
+
+msgid "PHOSPHOR_INTRO"
+msgstr "Le set d’icônes <a href='https://phosphoricons.com'>Phosphor Icons</a> est utilisé dans l’ensemble du thème."
+
+msgid "OXYGEN_INTRO"
+msgstr "Utilisé pour embellir les smileys présents dans les articles et les commentaires, ce set d’icônes est repris du <a href='https://kde.org/'>projet KDE</a>, selon les conditions définies <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>ici</a>."
+
+msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
+msgstr "Adapté de <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> de Matt Hinchliffe, sous licence <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported</a>. Vous pouvez télécharger le code de mon adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>ici</a>, sous la même licence."
+
+msgid "Next page"
+msgstr "Page suivante"
+
+msgid "Previous page"
+msgstr "Page précédente"
+
+msgid "of"
+msgstr "sur"

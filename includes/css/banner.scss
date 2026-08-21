@@ -1,0 +1,96 @@
+// Always white (regardless of light/dark mode) with the same drop shadow as
+// .page-title, since these sit on top of a photo rather than a plain surface.
+.banner a:link,
+.banner a:visited,
+.banner a:hover,
+.banner a:active {
+  color: var(--color-always-light);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.banner .modal a:link,
+.banner .modal a:visited,
+.banner .modal a:hover,
+.banner .modal a:active {
+  color: var(--color-accent);
+  text-shadow: none;
+}
+
+.banner .modal {
+  text-align: left;
+}
+
+// Bootstrap's own --bs-modal-bg/color default to a fixed white/black and
+// don't follow prefers-color-scheme, so set them from our theme tokens.
+.banner .modal-content {
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
+}
+
+// Images fill the width of the carousel/viewport instead of relying on their
+// natural size.
+.banner .carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner .carousel-indicators {
+  // Extra room below the dots so the credit link doesn't overlap them.
+  margin-bottom: 1.8rem;
+}
+
+.banner .carousel-control-prev,
+.banner .carousel-control-next {
+  width: 7.5%; // half of Bootstrap's default 15%
+  opacity: 0.9;
+}
+
+.banner .carousel-control-prev:hover,
+.banner .carousel-control-next:hover,
+.banner .carousel-control-prev:focus,
+.banner .carousel-control-next:focus {
+  opacity: 1;
+}
+
+.banner .carousel-control-prev .ph,
+.banner .carousel-control-next .ph {
+  font-size: 3rem;
+}
+
+.banner a.carousel-credit {
+  text-decoration: none;
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 5px;
+  text-align: center;
+  outline: none;
+  font-size: 70%;
+  font-weight: 400;
+}
+
+.banner a.carousel-credit:hover {
+  opacity: 1;
+}
+
+.banner .carousel-caption h3 {
+  text-align: center;
+  font-size: var(--font-size-feature);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.banner .carousel-caption h3 .caption-container {
+  display: inline-block;
+  text-align: left;
+}
+
+// Do not show the banner when printing
+@media print {
+  .banner {
+    display: none;
+  }
+}

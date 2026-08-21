@@ -1,71 +1,127 @@
 <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Base font -->
-<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<!-- Font for pinyin -->
-<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Web fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Muli:300,500|Inconsolata:700|Ubuntu:300"
+  rel="stylesheet"
+/>
 <!-- Cursive font for the tagline -->
-<link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+<link
+  href="https://fonts.googleapis.com/css?family=Damion"
+  rel="stylesheet"
+  type="text/css"
+/>
+<!-- Phosphor Icons -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+/>
 <!-- Bootstrap CSS -->
-<link href="{{tpl:BlogThemeURL}}/includes/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+  crossorigin="anonymous"
+/>
 <!-- Theme CSS -->
-<link href="{{tpl:BlogThemeURL}}/includes/css/style.css" rel="stylesheet">
-<!-- Javascript, jQuery must come FIRST for Boostrap plugins to work -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<!-- Bootstrap JS plugins -->
-<script src="{{tpl:BlogThemeURL}}/includes/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+<link href="{{tpl:BlogThemeURL}}/includes/css/style.css" rel="stylesheet" />
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"
+></script>
 <!-- Script to resize Chinese text -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.ba-replacetext.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/chinese-text.js"
+></script>
 <!-- Load pinyin definitions -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.pinyin.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/pinyin.js"
+></script>
 <!-- Cookie management for the "remember me" functionality -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.cookie.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/cookie.js"
+></script>
 <!-- Load script to prepare the media players -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.player.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/player.js"
+></script>
 <!-- Load script to prepare the exercices -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.exercices.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/exercices.js"
+></script>
 <!-- Load script to create pinyin tooltips when hovering "ch" or "chb" tags -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.chinese.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/pinyin-tooltips.js"
+></script>
 <!-- Load script to lazy load images -->
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/img-lazy-loading.js"></script>
+<script
+  type="text/javascript"
+  src="{{tpl:BlogThemeURL}}/includes/js/img-lazy-loading.js"
+></script>
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="{{tpl:BlogThemeURL}}/includes/images/logo/orchid-64.png" />
+<link
+  rel="icon"
+  type="image/png"
+  href="{{tpl:BlogThemeURL}}/includes/images/logo/orchid-64.png"
+/>
 
 <!-- Javascript to execute once the document is ready -->
 <script type="text/javascript">
-  $(document).ready(function()
-  {
+  document.addEventListener("DOMContentLoaded", function () {
     // Prepare the pinyin that should appear when hovering <ch> or <chb> tags
     preparePinyinOnHover();
 
-    // Transform all the pinyin that is of the form ni3hao3 in "py" and "pyb" markup to accented pinyin
-    transformPinyin();
-
     // Initialize tooltips
-    $('[data-toggle="tooltip"]').tooltip({
-      delay: { "show": 1000, "hide": 0 }
-    });
+    document
+      .querySelectorAll('[data-bs-toggle="tooltip"]')
+      .forEach(function (el) {
+        new bootstrap.Tooltip(el, {
+          delay: { show: 1000, hide: 0 },
+        });
+      });
 
     // Transform Chinese in the content but avoid some cases
-    $("body *").find(':not(pre):not(code):not(char):not(.blogTitle)').replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
+    wrapChineseText(document.body);
+
+    // Capitalize archive month names in the native select control
+    document
+      .querySelectorAll(
+        "#archives .archive-month-option, .archives .all-posts-list .month-posts strong, .archive-navigation-date",
+      )
+      .forEach(function (element) {
+        element.textContent = element.textContent.replace(
+          /^(\s*)(\S)/,
+          function (match, whitespace, firstCharacter) {
+            return whitespace + firstCharacter.toLocaleUpperCase();
+          },
+        );
+      });
 
     // Code for the button allowing the user to go back to top
-    var pxShow      = 10; //height on which the button will show
-    var fadeInTime  = 1000; //how slow/fast you want the button to show
-    var fadeOutTime = 1000; //how slow/fast you want the button to hide
-    var scrollSpeed = 0; //how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-    jQuery(window).scroll(function() {
-      if(jQuery(window).scrollTop() >= pxShow) {
-	jQuery("#back-to-top").fadeIn(fadeInTime);
+    var pxShow = 10; //height on which the button will show
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= pxShow) {
+        document.querySelector("#back-to-top").style.display = "block";
       } else {
-	jQuery("#back-to-top").fadeOut(fadeOutTime);
+        document.querySelector("#back-to-top").style.display = "none";
       }
     });
-    jQuery('#back-to-top a').click(function() {
-      jQuery('html, body').animate({scrollTop:0}, scrollSpeed);
-      return false;
-    });
+    document
+      .querySelector("#back-to-top a")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
 
     // Prepare the audio players
     prepareAudioPlayers();
@@ -74,12 +130,26 @@
     configureExercices();
 
     // Lazy-load the images
-    var placeholders = document.querySelectorAll('.defer-image');
+    var placeholders = document.querySelectorAll(".defer-image");
     for (var i = 0, len = placeholders.length; i < len; i++) {
-        deferImage(placeholders[i]);
+      deferImage(placeholders[i]);
     }
-  })
+
+    // Make whole entry cards clickable, except for their own links (comment
+    // count, category, title) which keep their normal navigation.
+    document.querySelectorAll(".clickable-card").forEach(function (card) {
+      card.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+          return;
+        }
+        var entryLink = card.querySelector("a.entry-link");
+        if (entryLink) {
+          window.location = entryLink.href;
+        }
+      });
+    });
+  });
 </script>
 
-{{tpl:include src="user_head.html"}}
-{{tpl:SysBehavior behavior="publicHeadContent"}}
+{{tpl:include src="user_head.html"}} {{tpl:SysBehavior
+behavior="publicHeadContent"}}

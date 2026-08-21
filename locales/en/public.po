@@ -16,14 +16,14 @@ msgstr "More..."
 msgid "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
 msgstr "The following tag cloud represents the concepts that are covered by the articles published on the site. The bigger the tag, the more important the concept. You may click any of these tags to get to associated articles."
 
-msgid "INFO_SEARCH_RESULTS"
-msgstr "Search goes through both articles and comments.<br/>If you did not find what you were looking for, you may also use tag and category navigation."
+msgid "INFO_SEARCH_RESULTS %s %s %s"
+msgstr "<p>Search goes through both articles and comments.</p><p>Alternatively, you may also:</p><ul><li>Browse the posts by <a href='%s'>category</a> or <a href='%s'>keywords</a>,</li><li>Browse the list of <a href='%s'>all articles</a> organized by publication date.</li></ul>"
+
+msgid "INFO_404 %s %s %s"
+msgstr "<p>If you came here by clicking a link, this may not be correct.</p><p>To find what you are looking for, you may:<ul><li>Browse the posts by <a href='%s'>category</a> or <a href='%s'>keywords</a>,</a></li><li>Launch a search via the field in the top bar,</li><li>Browse the list of <a href='%s'>all articles</a> organized by publication date.</li></ul>"
 
 msgid "Subscribe to the comment feed for this article only"
 msgstr "Subscribe to the comment feed for this article only"
-
-msgid "INFO_HTML_TAGS_REMOVED"
-msgstr "For security reasons, all HTML tags but links are removed from the comments.<br/>I may therefore manually edit your comments after your submission so that, for instance, pinyin can be rendered '<py>ma3</py>' instead of 'ma3'."
 
 msgid "Sub-categories"
 msgstr "Sub-categories"
@@ -70,8 +70,8 @@ msgstr "Tags"
 msgid "About"
 msgstr "About"
 
-msgid "To see articles' summaries, choose a period:"
-msgstr "To see articles' summaries, choose a period:"
+msgid "Choose a period:"
+msgstr "Choose a period:"
 
 msgid "All »"
 msgstr "All »"
@@ -85,8 +85,11 @@ msgstr "View the picture full-screen"
 msgid "Download the source code of the theme"
 msgstr "Download the source code of the theme"
 
-msgid "Unless otherwise noticed, the license of the content of this site is"
-msgstr "Unless otherwise noticed, the license of the content of this site is"
+msgid "LICENSE"
+msgstr "Unless otherwise noticed, the license of the content of this site is <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed'>CC BY-NC-SA 4.0</a>"
+
+msgid "POWERED_BY_DOTCLEAR"
+msgstr "Powered by <a href='https://www.dotclear.org'>Dotclear</a>"
 
 msgid "Attachments"
 msgstr "Attachments"
@@ -199,6 +202,12 @@ msgstr "Previous entry"
 msgid "Next entry"
 msgstr "Next entry"
 
+msgid "Previous entry:"
+msgstr "Previous entry:"
+
+msgid "Next entry:"
+msgstr "Next entry:"
+
 msgid "Category"
 msgstr "Category"
 
@@ -246,3 +255,57 @@ msgstr "Go to page"
 
 msgid "wrote"
 msgstr "wrote"
+
+msgid "Visit my personal website"
+msgstr "Visit my personal website"
+
+msgid "View my Github"
+msgstr "View my Github"
+
+msgid "China Theme"
+msgstr "China Theme"
+
+msgid "THEME_CODE_AVAILABILITY"
+msgstr "The theme is available on GitHub, under the MIT license (see below), except when noted otherwise on specific source files or for some of the third-party components listed here under. You can either download the latest release or clone the repository to get the latest development version."
+
+msgid "THEME_DOWNLOAD_LEAD"
+msgstr "This site is powered by <a href='https://dotclear.org/'>Dotclear</a> and uses my own custom theme, called &quot;China&quot;. Interested by this theme? Want to use it in your personnal projects? Here is the place to retrieve the code and get started!"
+
+msgid "Download the theme"
+msgstr "Download the theme"
+
+msgid "BOOTSTRAP_INTRO"
+msgstr "<a href='https://getbootstrap.com/'>Bootstrap</a> is the HTML/CSS/JS framework that provides most of the responsive behavior of the theme."
+
+msgid "MIT License"
+msgstr "MIT License"
+
+msgid "Download the latest release"
+msgstr "Download the latest release"
+
+msgid "Clone the repository"
+msgstr "Clone the repository"
+
+msgid "Standing on the shoulders of giants"
+msgstr "Standing on the shoulders of giants"
+
+msgid "FOSS_COMPONENTS_INTRO %s"
+msgstr "In addition to <a href='https://dotclear.org/'>Dotclear</a>, the current version of the theme (%s) relies on the following open source components:"
+
+msgid "PHOSPHOR_INTRO"
+msgstr "The <a href='https://phosphoricons.com'>Phosphor Icons</a> icon set is used throughout the theme."
+
+msgid "OXYGEN_INTRO"
+msgstr "Used to beautify smileys written in articles and comments, this set of icons is reused from the <a href='https://kde.org/'>KDE project</a>, under the conditions defined <a href='https://techbase.kde.org/Projects/Oxygen/Licensing'>here</a>."
+
+msgid "RESPONSIVE_IMAGE_PLACEHOLDER_INTRO"
+msgstr "Adapted from <a href='https://github.com/i-like-robots/Responsive-Image-Placeholders'>Responsive Image Placeholders</a> by Matt Hinchliffe, under the <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. You can download the code of my adaptation <a href='https://github.com/thomaspenin/china-dotclear-theme/blob/main/includes/js/img-lazy-loading.js'>here</a>, under the same license."
+
+msgid "Next page"
+msgstr "Next page"
+
+msgid "Previous page"
+msgstr "Previous page"
+
+msgid "of"
+msgstr "of"

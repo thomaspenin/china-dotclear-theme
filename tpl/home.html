@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
 
-  <title>{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
+  <title>{{tpl:BlogName encode_html="1"}} - {{tpl:BlogDescription remove_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
   <meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogDescription cut_string="180" encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>" />
   <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
   <meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
@@ -48,49 +48,31 @@
   {{tpl:include src="_head.html"}}
 
   <script type="text/javascript">
-  $(function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Start the carousel with a custom speed
-    $('#homeCarousel').carousel({
-        interval: 5000
+    var homeCarouselEl = document.getElementById("homeCarousel");
+    var homeCarousel = new bootstrap.Carousel(homeCarouselEl, {
+      interval: 5000,
+      ride: true
     });
 
-    // If a credit modal is shown, stop the carousel, restart it when the modal disapears
-    $('.credit-modal').on('show.bs.modal', function () {
-      $('#homeCarousel').carousel('pause');
-    }).on('hidden.bs.modal', function () {
-      $('#homeCarousel').carousel('cycle');
+    // If a credit modal is shown, stop the carousel, restart it when the modal disapears.
+    // Bootstrap 5's modal events are native CustomEvents, so bind them natively.
+    document.querySelectorAll(".credit-modal").forEach(function (modalEl) {
+      modalEl.addEventListener("show.bs.modal", function () {
+        homeCarousel.pause();
+      });
+      modalEl.addEventListener("hidden.bs.modal", function () {
+        homeCarousel.cycle();
+      });
     });
 
-    /*var row=$('.portfolio');
-    $.each(row, function() {
-        var maxh=0;
-        $.each($(this).find('div[class^="col-"]'), function() {
-            if($(this).height() > maxh)
-                maxh=$(this).height();
-        });
-        $.each($(this).find('div[class^="col-"]'), function() {
-            $(this).height(maxh);
-        });
-    });*/
-
-    // Or use this to Open link in same window (similar to target=_blank)
-    $(".thumbnail .link").click(function() {
-        window.location = $(this).find("a.entry-link").attr("href");
-        return false;
-    });
- /*
-    // Show URL on Mouse Hover
-    $(".thumbnail .link").hover(function() {
-        window.status = $(this).find("a.entry-link").attr("href");
-    }, function() {
-        window.status = "";
-    });*/
-  })
+  });
   </script>
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
@@ -98,51 +80,51 @@
     <div class="banner">
       <div id="homeCarousel" class="carousel slide">
 	<!-- Indicators -->
-	<ol class="carousel-indicators hidden-xs">
-	  <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-	  <li data-target="#homeCarousel" data-slide-to="1"></li>
-	  <li data-target="#homeCarousel" data-slide-to="2"></li>
-	  <li data-target="#homeCarousel" data-slide-to="3"></li>
-	</ol>
+	<div class="carousel-indicators d-none d-sm-flex">
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	  <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+	</div>
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
-	  <div class="item active">
+	  <div class="carousel-item active">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/welcome.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Tradition,<br/>Modernité</span></h3>
 	      <p></p>
 	    </div>
 	  </div>
-	  <div class="item">
+	  <div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/travel.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Voyage,<br/>Impressions</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit2"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit2"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
-	<div class="item">
+	<div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/civilization.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Civilisation,<br/>Vie quotidienne</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit3"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit3"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
-	  <div class="item">
+	  <div class="carousel-item">
 	    <img src="{{tpl:BlogThemeURL}}/includes/images/carousel/language.png" alt="...">
 	    <div class="carousel-caption">
 	      <h3><span class="caption-container">Langue,<br/>Littérature</span></h3>
 	    </div>
-	    <a class="carousel-credit" href="" data-toggle="modal" data-target="#credit4"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;Crédit</a>
+	    <a class="carousel-credit" href="" data-bs-toggle="modal" data-bs-target="#credit4"><i class="ph ph-camera"></i>&nbsp;Crédit</a>
 	  </div>
 	</div>
 
 	<!-- Controls -->
-	<a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
-	  <span class="glyphicon glyphicon-chevron-left"></span>
+	<a class="carousel-control-prev d-none d-sm-flex" href="#homeCarousel" data-bs-slide="prev">
+    <span><i class="ph ph-caret-left"></i></span>
 	</a>
-	<a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
-	  <span class="glyphicon glyphicon-chevron-right"></span>
+	<a class="carousel-control-next d-none d-sm-flex" href="#homeCarousel" data-bs-slide="next">
+	  <i class="ph ph-caret-right"></i>
 	</a>
       </div>
 
@@ -152,7 +134,7 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/kimon/709588049">Spirit Way, Ming Xiaoling Mausoleum</a> originalement créée par <a href="https://www.flickr.com/photos/kimon/">Kimon Berlin</a> (license <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
@@ -162,7 +144,7 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/makzhou/5098855312">Lunch feast on a wedding day</a> originalement créée par <a href="https://www.flickr.com/photos/makzhou/">makzhou</a> (license <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
@@ -172,111 +154,99 @@
 	  <div class="modal-content">
 	    <div class="modal-body">Modification de l'image <a href="https://www.flickr.com/photos/83732213@N00/8198924387">“仁义教化”@钻石之叶</a> originalement créée par <a href="https://www.flickr.com/photos/83732213@N00/">Zhang Ting</a> (license <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)</div>
 	    <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 	    </div>
 	  </div>
 	</div>
       </div>
     </div>
 
+  <!-- Section containing the tagline and categories -->
+   <div class="categories-background container-fluid">
+    <div class="categories container">
+      <!-- Tagline of the site -->
+        <div id="tagline">
+          <h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
+        </div>
+        <!-- We only consider categories of the first level -->
+        <tpl:Categories level="1">
+          <tpl:CategoriesHeader>
+            <!-- Presentation of the main categories -->
+            <div id="category-summary">
+              <div class="row">
+          </tpl:CategoriesHeader>
+          <div class="col-sm-6 content">
+            <h2><a href="#category-{{tpl:CategoryShortURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h2>
+            <div class="category-description">{{tpl:CategoryDescription}}</div>
+          </div>
+          <tpl:CategoriesFooter>
+              </div>
+            </div>
+          </tpl:CategoriesFooter> 
+        </tpl:Categories>
+    </div>
+  </div>
 
   <!-- Middle content section -->
-  <div class="middle home">
-
-      <!-- Tagline of the site -->
-      <div id="tagline">
-	<h2><img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_open-64.png">&nbsp;À la découverte de la langue et de la culture chinoises&nbsp;<img width="32" height="32" src="{{tpl:BlogThemeURL}}/includes/images/tagline/quote_close-64.png"></h2>
-      </div>
-
-      <!-- We only consider categories of the first level -->
-      <tpl:Categories level="1">
-	<tpl:CategoriesHeader>
-	  <!-- Presentation of the main categories -->
-	  <div class="container" id="category-summary">
-	</tpl:CategoriesHeader>
-	<div class="col-sm-6 content">
-	  <h3><a href="#category-{{tpl:CategoryShortURL}}" title="{{tpl:CategoryTitle encode_html="1"}}">{{tpl:CategoryTitle encode_html="1"}}</a></h3>
-	  <div class="category-description">{{tpl:CategoryDescription}}</div>
-	</div>
-	<tpl:CategoriesFooter>
-	  </div>
-	</tpl:CategoriesFooter> 
-      </tpl:Categories>
-
-      <div id="home-content">
-        <div class="posts-list container">
-          <tpl:Categories level="1">
-            <div class="title-row row">
-              <div id="category-{{tpl:CategoryShortURL}}" class="col-xs-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"> <small class="hidden-xs">Articles datés des évènements relatés</small></tpl:CategoryIf></h2></div>
-              <div class="col-xs-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="hidden-xs"> dans {{tpl:CategoryTitle}}</span>&nbsp;<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></div>
-            </div>
-            <div class="thumbnail-row row">
-            <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
-
-              <!-- On small viewport, potential issue if the cards have not the same size when back to the line -->
-              <tpl:LoopPosition start="2" modulo="2">
-                <!-- Add the extra clearfix for only the required viewport -->
-                <div class="clearfix visible-xs-block"></div>
-              </tpl:LoopPosition>
-
-              <div class="col-sm-3 col-xs-6 posts-thumbnail-item">
-                <div class="thumbnail">
-                  <div class="link">
-                    <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
+  <div class="middle home container-fluid">
+    <div id="home-content">
+      <div class="posts-list container">
+        <tpl:Categories level="1">
+          <div class="title-row row align-items-baseline">
+            <div id="category-{{tpl:CategoryShortURL}}" class="col-6 category-title"><h2>{{tpl:CategoryTitle}}<tpl:CategoryIf url="Carnets-de-voyage"></tpl:CategoryIf></h2></div>
+            <div class="col-6 all-articles"><a href="{{tpl:CategoryURL}}">Tous les articles<span class="d-none d-sm-inline"> dans {{tpl:CategoryTitle}}</span>&nbsp;<i class="ph ph-caret-right"></i></a></div>
+          </div>
+          <div class="thumbnail-row row">
+          <tpl:Entries category="#self ?sub" no_context="1" lastn="4">
+            <div class="col-6 col-md-3 posts-thumbnail-item">
+              <div class="thumbnail clickable-card">
+                <div class="link">
+                  <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
+                    <div class="defer-image image-ratio:4x3">
+                      <div data-src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_LARGE_IMAGE"}}" data-alt="{{tpl:EntryTitle}}"></div>
+                    </div>
+                  </tpl:MyMetaIf>
+                  <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="false">
+                    <tpl:CategoryIf url="Carnets-de-voyage">
                       <div class="defer-image image-ratio:4x3">
-                        <div data-src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_LARGE_IMAGE"}}" data-alt="{{tpl:EntryTitle}}"></div>
+                        <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/travel-large.png" data-alt="{{tpl:EntryTitle}}"></div>
                       </div>
-                    </tpl:MyMetaIf>
-                    <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="false">
-                      <tpl:CategoryIf url="Carnets-de-voyage">
-                        <div class="defer-image image-ratio:4x3">
-                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/travel-large.png" data-alt="{{tpl:EntryTitle}}"></div>
-                        </div>
-                      </tpl:CategoryIf>
-                      <tpl:CategoryIf url="Blog">
-                        <div class="defer-image image-ratio:4x3">
-                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/blog-large.png" data-alt="{{tpl:EntryTitle}}"></div>
-                        </div>
-                      </tpl:CategoryIf>
-                      <tpl:CategoryIf url="Civilisation">
-                        <div class="defer-image image-ratio:4x3">
-                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/civilization-large.png" data-alt="{{tpl:EntryTitle}}"></div>
-                        </div>
-                      </tpl:CategoryIf>
-                      <tpl:CategoryIf url="Langue">
-                        <div class="defer-image image-ratio:4x3">
-                          <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/language-large.png" data-alt="{{tpl:EntryTitle}}"></div>
-                        </div>
-                      </tpl:CategoryIf>
-                    </tpl:MyMetaIf>
-                    <div class="caption">
-                      <h3><a class="entry-link" href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
-                    </div>
+                    </tpl:CategoryIf>
+                    <tpl:CategoryIf url="Blog">
+                      <div class="defer-image image-ratio:4x3">
+                        <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/blog-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                      </div>
+                    </tpl:CategoryIf>
+                    <tpl:CategoryIf url="Civilisation">
+                      <div class="defer-image image-ratio:4x3">
+                        <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/civilization-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                      </div>
+                    </tpl:CategoryIf>
+                    <tpl:CategoryIf url="Langue">
+                      <div class="defer-image image-ratio:4x3">
+                        <div data-src="{{tpl:BlogThemeURL}}/includes/images/categories-defaults/language-large.png" data-alt="{{tpl:EntryTitle}}"></div>
+                      </div>
+                    </tpl:CategoryIf>
+                  </tpl:MyMetaIf>
+                  <div class="caption">
+                    <h3><a class="entry-link" href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
                   </div>
-                  <div class="category">
-                    <tpl:EntryIf has_category="1">
-                      <a href="{{tpl:EntryCategoryURL}}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;{{tpl:EntryCategory}}</a>
-                    </tpl:EntryIf>
+                </div>
+                <div class="posts-thumbnail-item-footer row">
+                  <div class="post-metadata-left col-8">
+                    <i class="ph ph-clock"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
                   </div>
-                  <div class="posts-thumbnail-item-footer row">
-                    <div class="post-metadata-left col-xs-8">
-                      <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
-                    </div>
-                    <div class="post-metadata-right col-xs-4">
-                      <a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><span class='facebook icon-bold'></span></a>
-                      <a href="https://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><span class='twitter icon-bold'></span></a>
-                      <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
-                    </div>
+                  <div class="post-metadata-right col-4">
+                    <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><i class="ph ph-chat"></i>&nbsp;{{tpl:EntryCommentCount none="0" one="1" more="%s"}}</a>
                   </div>
                 </div>
               </div>
-            </tpl:Entries>
             </div>
-          </tpl:Categories>
-        </div>
+          </tpl:Entries>
+          </div>
+        </tpl:Categories>
       </div>
-
-
+    </div>
   </div>
 
     <!-- Footer (present on all pages) -->

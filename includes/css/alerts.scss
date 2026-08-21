@@ -1,0 +1,212 @@
+@use "paths";
+
+/* Error and information messages */
+
+.error,
+.information,
+.hint,
+.warning,
+.vocabulary {
+  --alert-icon-size: 1.4em;
+  --alert-icon-left: 12px;
+  --alert-icon-gap: 12px;
+  margin: 12px auto 5px;
+  padding: 12px;
+  padding-left: calc(
+    var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap)
+  );
+  border-radius: var(--border-radius);
+}
+
+.vocabulary {
+  padding-right: 32px;
+}
+
+.error {
+  --alert-base-color: var(--color-alert-error);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 18%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
+  position: relative;
+  color: var(--color-alert-error);
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/warning-circle.svg");
+}
+
+.information {
+  --alert-base-color: var(--color-alert-info);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 16%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
+  position: relative;
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/info.svg");
+}
+
+.hint {
+  --alert-base-color: var(--color-alert-hint);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 16%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
+  position: relative;
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/check-circle.svg");
+}
+
+.warning {
+  --alert-base-color: var(--color-alert-warning);
+  --alert-icon-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 86%,
+    var(--color-text-primary)
+  );
+  --alert-bg-color: color-mix(
+    in srgb,
+    var(--alert-base-color) 18%,
+    transparent
+  );
+  background-color: var(--alert-bg-color);
+  position: relative;
+  --alert-icon-url: url("#{paths.$images-folder-path}/icons/phosphor/warning.svg");
+}
+
+.error:before,
+.information:before,
+.hint:before,
+.warning:before {
+  content: "";
+  position: absolute;
+  left: var(--alert-icon-left);
+  top: 0.6em;
+  width: var(--alert-icon-size);
+  height: var(--alert-icon-size);
+  background-color: var(--alert-icon-color);
+  -webkit-mask-image: var(--alert-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: var(--alert-icon-size) var(--alert-icon-size);
+  mask-image: var(--alert-icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: var(--alert-icon-size) var(--alert-icon-size);
+}
+
+.vocabulary {
+  position: relative;
+  text-align: left;
+}
+
+// On tablets, show vocabulary on 2 columns
+@media (min-width: 768px) {
+  .vocabulary {
+    -moz-column-count: 2; /* Firefox */
+    -webkit-column-count: 2; /* Safari and Chrome */
+    column-count: 2;
+  }
+}
+
+// On desktop, show vocabulary on 3 columns
+@media (min-width: 992px) {
+  .vocabulary {
+    -moz-column-count: 3; /* Firefox */
+    -webkit-column-count: 3; /* Safari and Chrome */
+    column-count: 3;
+  }
+}
+
+// Avoid splitting individual items across columns
+.vocabulary > p {
+  overflow: hidden; /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+}
+
+/* The first p/ul/ol child of a message has no top margin */
+.error p:first-child,
+.information p:first-child,
+.hint p:first-child,
+.warning p:first-child,
+.vocabulary p:first-child,
+.error ul:first-child,
+.information ul:first-child,
+.hint ul:first-child,
+.warning ul:first-child,
+.vocabulary ul:first-child,
+.error ol:first-child,
+.information ol:first-child,
+.hint ol:first-child,
+.warning ol:first-child,
+.vocabulary ol:first-child {
+  margin-top: 0;
+}
+
+/* The last p/ul/ol child of a message has no bottom margin */
+.error p:last-child,
+.information p:last-child,
+.hint p:last-child,
+.warning p:last-child,
+.vocabulary p:last-child,
+.error ul:last-child,
+.information ul:last-child,
+.hint ul:last-child,
+.warning ul:last-child,
+.vocabulary ul:last-child,
+.error ol:last-child,
+.information ol:last-child,
+.hint ol:last-child,
+.warning ol:last-child,
+.vocabulary ol:last-child {
+  margin-bottom: 0;
+}
+
+ul.error,
+ul.information,
+ul.hint,
+ul.warning,
+ul.vocabulary,
+ol.error,
+ol.information,
+ol.hint,
+ol.warning,
+ol.vocabulary {
+  // Icon-clearing padding plus room for the bullet/number itself,
+  // otherwise markers render too close to (or under) the icon.
+  padding-left: calc(
+    var(--alert-icon-left) + var(--alert-icon-size) + var(--alert-icon-gap) +
+      20px
+  );
+}
+
+div.error ul:first-child,
+div.information ul:first-child,
+div.hint ul:first-child,
+div.warning ul:first-child,
+div.vocabulary ul:first-child,
+div.error ol:first-child,
+div.information ol:first-child,
+div.hint ol:first-child,
+div.warning ol:first-child,
+div.vocabulary ol:first-child {
+  padding-left: 16px;
+}

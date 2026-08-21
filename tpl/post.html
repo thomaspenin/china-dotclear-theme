@@ -1,212 +1,241 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="MSSmartTagsPreventParsing" content="TRUE" />
-<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
-<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
-<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="dc.language" content="{{tpl:EntryLang}}" />
-<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<meta name="dc.type" content="text" />
-<meta name="dc.format" content="text/html" />
-<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
-<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
-<tpl:EntryPrevious><link rel="previous" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
-<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
-  
-{{tpl:include src="_head.html"}}
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+	<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+	<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+	<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
+	<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="dc.language" content="{{tpl:EntryLang}}" />
+	<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+	<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<meta name="dc.type" content="text" />
+	<meta name="dc.format" content="text/html" />
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
+	<tpl:EntryPrevious><link rel="previous" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+	{{tpl:include src="_head.html"}}
 </head>
 
 <body>
   {{tpl:EntryPingData}}
   
-  <div id="page" class="container">
-    <!-- Top bar present on all pages -->
+  <div id="page" class="container-fluid">
+    <!-- Top bar -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title post-title">
-      <tpl:EntryIf has_category="1">
-      <div class="post-category">
-	<a href="{{tpl:BlogURL}}"><span class="glyphicon glyphicon-home"></span></a> › <tpl:EntryCategoriesBreadcrumb><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> › </tpl:EntryCategoriesBreadcrumb><a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
-      </div>
-      <div class="post-navigation">
-	<tpl:EntryPrevious>
-	  <a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry}}"><span class="glyphicon glyphicon-chevron-left"></span></a>
-	</tpl:EntryPrevious>
-	<tpl:EntryNext>
-	  <a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry}}"><span class="glyphicon glyphicon-chevron-right"></span></a>
-	</tpl:EntryNext>
-      </div>
-      </tpl:EntryIf>
-      <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
-      <p class="post-metadata">{{tpl:lang By}} <b>{{tpl:EntryAuthorDisplayName}}</b> &bull; {{tpl:EntryDate format="le %d %B %Y"}}</p>
-      <a class="comment-count" href="#comments" data-toggle="tooltip" data-placement="bottom" title="{{tpl:lang Jump to comments section}}">{{tpl:EntryCommentCount none="No comment" one="1 comment"}}&nbsp;<span class="glyphicon glyphicon-menu-down"></span></a>
-    </div>
+    <div class="page-title-background">
+		<div class="page-title post-title container">
+		<tpl:EntryIf has_category="1">
+		<div class="post-title-header">
+		<div class="post-category">
+		<a href="{{tpl:BlogURL}}"><i class="ph ph-squares-four"></i></a> <i class="ph ph-caret-right"></i> <tpl:EntryCategoriesBreadcrumb><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a> <i class="ph ph-caret-right"></i> </tpl:EntryCategoriesBreadcrumb><a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
+		</div>
+		<div class="post-navigation">
+		<tpl:EntryPrevious>
+		<a class="previous-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Previous entry:}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-left"></i></a>
+		</tpl:EntryPrevious>
+		<tpl:EntryNext>
+		<a class="next-entry" href="{{tpl:EntryURL}}" title="{{tpl:lang Next entry:}} {{tpl:EntryTitle encode_html="1" cut_string="50"}}"><i class="ph ph-caret-right"></i></a>
+		</tpl:EntryNext>
+		</div>
+		</div>
+		</tpl:EntryIf>
+		<h1>{{tpl:EntryTitle encode_html="1"}}</h1>
+		<p class="post-metadata">{{tpl:lang By}} <b>{{tpl:EntryAuthorDisplayName}}</b> &bull; {{tpl:EntryDate format="le %d %B %Y"}}</p>
+		<a class="comment-count" href="#comments" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{tpl:lang Jump to comments section}}"><i class="ph ph-chat"></i>&nbsp;{{tpl:EntryCommentCount none="No comment" one="1 comment"}}&nbsp;<i class="ph ph-caret-down"></i></a>
+		</div>
+	</div>
 
-    <div class="middle">
+	<div class="middle">
+		<!-- Post excerpt if there is any -->
+		<tpl:EntryIf extended="1">
+		<div class="container lead">
+		{{tpl:EntryExcerpt}}
+		</div>
+		</tpl:EntryIf>
 
-    <!-- Post excerpt if there is any -->
-    <tpl:EntryIf extended="1">
-    <div id="post-excerpt" class="container">
-      {{tpl:EntryExcerpt}}
-    </div>
-    </tpl:EntryIf>
+		<div id="main" class="container">
+			<div class="row post-layout">
+		<div class="col-md-8 post-content">
+		<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
 
-    <div class="container" id="main">
+		<!-- The blog post itself -->
+		{{tpl:EntryContent}}
+		
+		<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+		{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 
-      <div class="col-md-8 post-content">
-	<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
-	{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+		
+		</div>
+		<div class="col-md-4 table-of-contents">
+		<nav class=" post-info bs-docs-sidebar d-none d-md-block">
+		<!-- The script toc.js will insert the toc here, at the beginning of the info box, if there is something to show -->
+		<script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/toc.js"></script>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+			// Generate the toc
+			const tocBuilt = buildToc(".bs-docs-sidebar", {
+			search: ".post-content",
+			depth: 3,
+			start: 1,
+			listType: "ul",
+			rootListId: "toc",
+			rootListClass: "nav",
+			subListClass: "nav"
+			});
 
-	<!-- The blog post itself -->
-	{{tpl:EntryContent}}
-	  
-	<!-- # --BEHAVIOR-- publicEntryAfterContent -->
-	{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+			if (!tocBuilt) {
+				document.querySelector(".table-of-contents").classList.add("d-none");
+				document.querySelector(".post-content").classList.replace("col-md-8", "col-md-12");
+				return;
+			}
 
-	<!-- Pagination -->
-	<nav class="previous-next-posts">
-	  <ul class="pager">
-	    <tpl:EntryPrevious>
-	      <li class="previous"><a href="{{tpl:EntryURL}}"><span aria-hidden="true">&larr;</span> {{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></li>
-	    </tpl:EntryPrevious>
-	    <tpl:EntryNext>
-	      <li class="next"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1" cut_string="50"}} <span aria-hidden="true">&rarr;</span></a></li>
-	    </tpl:EntryNext>
-	  </ul>
-	</nav>
-      </div>
-      <div class="col-md-4">
-	<nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
-	  <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
-	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
-	  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.resize.js"></script>
-	  <script type="text/javascript">
-	    $(function() {
-	      // Generate the toc
-	      $(".bs-docs-sidebar").stoc({
-		search: ".post-content",
-		depth: 3,
-		start: 1,
-		stocTitle: "",
-		stocFooter: "",
-		listType: "ul",
-		rootListId: "toc",
-		rootListClass: "nav nav-stacked",
-		subListClass: "nav nav-stacked",
-		smoothScroll: 0
-	      });
+			// Chinese text should appear bigger in the generated code if it is not already the case
+			wrapChineseText(document.querySelector(".bs-docs-sidebar"));
 
-	      // Chinese text should appear bigger in the generated code if it is not already the case
-	      $(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
+			// Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
+			new bootstrap.ScrollSpy(document.body, {
+			target: '.bs-docs-sidebar',
+			rootMargin: '0px 0px -80%'
+			});
+			});
+		</script>
+		</nav>
+		</div>
+		</div>
+		</div>
 
-	      // Setup scrollspy for toc
-	      $('body').scrollspy({
-		target: '.bs-docs-sidebar',
-		offset: 50 // Height of the top bar
-	      });
-
-	      // "Affix" allows the sidebar to float when it is within a top and a bottom offset
-	      $('.bs-docs-sidebar').affix(refreshAffix());
-
-	      // Resizing the comments form shall have an effect on Affix
-	      $('#comments').resize(function() {
-		$('.bs-docs-sidebar').data('bs.affix').options = refreshAffix();
-	      });
-	    });
-
-	    // "Affix" allows the sidebar to float when it is within a top and a bottom offset. This methods computes the "offset" parameter for the affix() function
-	    function refreshAffix() {
-	      return {
-		offset: {
-		  top: function () {
-		    return (this.top = $(".post-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
-		  },
-		  bottom: function () {
-		    return (this.bottom = $("#comments").outerHeight(true) + 					    $('#footer').outerHeight(true)
-                                        + $("#pagination-posts").outerHeight(true) + $("#post-footer").outerHeight(true)
-                                        + 20 /* Padding of the container */);
-		  }
-		}
-	      };
-	    }
-	  </script>
-	</nav>
-      </div>
-    </div>
-
-    <div class="container" id="post-footer">
-      <tpl:EntryIf has_attachment="1">
-      <div class="col-md-4 post-tags">
-      </tpl:EntryIf>
-      <tpl:EntryIf has_attachment="0">
-      <div class="col-md-8 post-tags">
-      </tpl:EntryIf>
-	<tpl:EntryTags>
-	  <tpl:TagsHeader>
-	    <h3>{{tpl:lang Tags}}</h3>
-	    <p>
-	  </tpl:TagsHeader>
-	  <a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
-	  <tpl:TagsFooter>
-	    </p>
-	  </tpl:TagsFooter>
-	</tpl:EntryTags>
-      </div>
-      <tpl:EntryIf has_attachment="1">
-      <div class="col-md-4 post-attachments">
-	<tpl:Attachments>
-	  <tpl:AttachmentsHeader>
-	    <h3>{{tpl:lang Attachments}}</h3>
-	    <ul>
-	  </tpl:AttachmentsHeader>
-	  <li><span class="glyphicon glyphicon-file"></span>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
-	  <tpl:AttachmentsFooter>
-	    </ul>
-	  </tpl:AttachmentsFooter>
-	</tpl:Attachments>
-      </div>
-      </tpl:EntryIf>
-      <div class="col-md-4 post-share">
-	<h3>{{tpl:lang Share}}</h3>
-	<!-- Buttons from simplesharebuttons.com -->
-	<p><a href="http://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/facebook.png" alt="Facebook" title="Facebook" /></a>
-	<a href="http://twitter.com/share?url={{tpl:EntryURL}}&text={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/twitter.png" alt="Twitter" title="Twitter" /></a>
-	<a href="https://plus.google.com/share?url={{tpl:EntryURL}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/google.png" alt="Google+" title="Google+" /></a>
-	<a href="http://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/weibo.png" alt="Weibo" title="Sina Weibo" /></a>
-	<a href="mailto:?Subject={{tpl:EntryTitle encode_html="1"}}&Body={{tpl:EntryURL}}"><img src="{{tpl:BlogThemeURL}}/includes/images/share-buttons/email.png" alt="E-mail" title="E-mail" /></a></p>
-      </div>
-    </div>
-
-    <div class="container" id="comments">
-      <div class="col-md-8">
-	{{tpl:include src="_comments.html"}}
-      </div>
-      <div id="comments-sidebar" class="col-md-4">
-	<div class="comments-feed">
-	  <a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}" title="{{tpl:lang Subscribe to the comment feed for this article only}}"><img width="16" height="16" src="{{tpl:BlogThemeURL}}/includes/images/rss/rss-32.png"/>&nbsp;{{tpl:lang Comments feed}}</a>
-	</a>
-      </div>
-      <div class="alert alert-info" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{tpl:lang INFO_HTML_TAGS_REMOVED}}
-      </div>
-    </div>
-  </div>
-  </div>
+		<div class="container" id="post-footer">
+			<!-- Pagination -->
+		
+		<div class="row g-3 previous-next-posts">
+			<tpl:EntryPrevious>
+			<div class="col-6 nav-post-col nav-post-col-prev">
+				<a class="card-item nav-post" href="{{tpl:EntryURL}}">
+					<i class="ph ph-caret-left nav-chevron" aria-hidden="true"></i>
+					<div class="nav-thumb flex-shrink-0">
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="true">
+							<img src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="false">
+							<img src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+					</div>
+					<div class="nav-text">
+						<span class="nav-label">{{tpl:lang Previous entry}}</span>
+						<span class="nav-title">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</span>
+					</div>
+				</a>
+			</div>
+			</tpl:EntryPrevious>
+			<tpl:EntryNext>
+			<div class="col-6 nav-post-col nav-post-col-next">
+				<a class="card-item nav-post" href="{{tpl:EntryURL}}">
+					<div class="nav-text">
+						<span class="nav-label">{{tpl:lang Next entry}}</span>
+						<span class="nav-title">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</span>
+					</div>
+					<div class="nav-thumb flex-shrink-0">
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="true">
+							<img src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+						<tpl:MyMetaIf type="ENTRY_IMAGE" defined="false">
+							<img src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="60" height="60" alt=""/>
+						</tpl:MyMetaIf>
+					</div>
+					<i class="ph ph-caret-right nav-chevron" aria-hidden="true"></i>
+				</a>
+			</div>
+			</tpl:EntryNext>
+		</div>
+		
+		<div class="row align-items-start">
+		<tpl:EntryIf has_tags="1">
+		<tpl:EntryIf has_attachment="1">
+		<div class="col-12 col-md-4 post-tags">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0">
+		<div class="col-12 col-sm-6 post-tags">
+		</tpl:EntryIf>
+		<tpl:EntryTags>
+		<tpl:TagsHeader>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Tags}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<p>
+		</tpl:TagsHeader>
+		<a href="{{tpl:TagURL}}">{{tpl:TagID}}</a><tpl:LoopPosition start="1" length="-1">, </tpl:LoopPosition>
+		<tpl:TagsFooter>
+			</p>
+		</tpl:TagsFooter>
+		</tpl:EntryTags>
+		</div>
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="1">
+		<div class="col-12 col-sm-6 col-md-4 post-attachments">
+		<tpl:Attachments>
+		<tpl:AttachmentsHeader>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Attachments}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<ul>
+		</tpl:AttachmentsHeader>
+		<li><i class="ph ph-file"></i>&nbsp;<a href="{{tpl:AttachmentURL}}">{{tpl:AttachmentTitle}}</a></li>
+		<tpl:AttachmentsFooter>
+			</ul>
+		</tpl:AttachmentsFooter>
+		</tpl:Attachments>
+		</div>
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="1" has_tags="1" operator="and">
+		<div class="col-12 col-sm-6 col-md-4 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="1" has_tags="0" operator="and">
+		<div class="col-12 col-md-6 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0" has_tags="1" operator="and">
+		<div class="col-12 col-sm-6 post-share">
+		</tpl:EntryIf>
+		<tpl:EntryIf has_attachment="0" has_tags="0" operator="and">
+		<div class="col-12 post-share">
+		</tpl:EntryIf>
+			<div class="section-header d-flex align-items-baseline gap-3">
+				<h3 class="flex-shrink-0 mb-0">{{tpl:lang Share}}</h3>
+				<hr class="flex-grow-1 my-0 align-self-center"/>
+			</div>
+			<p class="share-links">
+				<a href="mailto:?subject={{tpl:EntryTitle encode_html="1"}}&body={{tpl:EntryURL}}" aria-label="Email" title="Email"><i class="ph ph-envelope" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/sharer.php?u={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+			<a href="https://www.pinterest.com/pin/create/button/?url={{tpl:EntryURL}}&description={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Pinterest" title="Pinterest"><i class="ph ph-pinterest-logo" aria-hidden="true"></i></a>
+			<a href="https://bsky.app/intent/compose?text={{tpl:EntryTitle encode_html="1"}}%20{{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="Bluesky" title="Bluesky"><span class="share-icon share-icon-bluesky" aria-hidden="true"></span></a>
+			<a href="https://www.linkedin.com/sharing/share-offsite/?url={{tpl:EntryURL}}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+			<a href="https://www.reddit.com/submit?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Reddit" title="Reddit"><i class="ph ph-reddit-logo" aria-hidden="true"></i></a>
+			<a href="https://service.weibo.com/share/share.php?url={{tpl:EntryURL}}&title={{tpl:EntryTitle encode_html="1"}}" target="_blank" rel="noopener" aria-label="Weibo" title="Weibo"><span class="share-icon share-icon-weibo" aria-hidden="true"></span></a>
+			</p>
+		</div>
+		</div>
+		</div>
+		
+		<div class="container" id="comments">
+			{{tpl:include src="_comments.html"}}
+		</div>
+	</div>
 
     <!-- Footer (present on all pages) -->
     {{tpl:include src="_footer.html"}}

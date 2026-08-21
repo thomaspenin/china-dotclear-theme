@@ -1,0 +1,121 @@
+@use "paths";
+
+.comments .comment-list {
+  padding: 0px;
+}
+
+.comments .individual-comment,
+.comments .new-comment {
+  padding: 10px 0px;
+}
+
+.comments .individual-comment .media-body {
+  padding-top: 2px;
+}
+
+.comments #new-comment-expansion {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-bottom: 10px;
+  transition:
+    max-height 250ms ease,
+    opacity 150ms ease;
+}
+
+.comments #new-comment-expansion.is-open {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comments #new-comment-expansion {
+    transition: none;
+  }
+}
+
+.comments .media-list {
+  padding-top: 5px;
+}
+
+.comments fieldset p:first-child {
+  margin-top: 0;
+}
+
+.comments textarea {
+  height: 66px;
+  resize: vertical;
+}
+
+.comments input,
+.comments textarea {
+  padding: 0.3em 0.6em;
+  width: 100%;
+  font-weight: 300;
+}
+
+.comments input#c_remember {
+  width: 18px;
+}
+
+.comments .new-comment-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.comments .remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.comments .new-comment-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+}
+
+// Fixed viewport breakpoint (rather than flex-wrap) so the row/column switch
+// stays a single, predictable transition regardless of the page grid reflowing
+@media (max-width: 480px) {
+  .comments .new-comment-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.comments label {
+  font-weight: 300;
+}
+
+.comments .media-top span {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: transparent
+    url("#{paths.$images-folder-path}/comments/comments-placeholder-64.png")
+    no-repeat;
+  background-size: 32px 32px;
+}
+
+.comments .media-top span.me {
+  background: transparent
+    url("#{paths.$images-folder-path}/comments/comments-me-64.png") no-repeat;
+  background-size: 32px 32px;
+}
+
+.comments .comment-metadata {
+  color: var(--color-post-metadata);
+  text-align: right;
+  font-size: var(--font-size-small);
+}
+
+// No arrow for external links when looking at the author of a comment
+.comments .comment-author a:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}

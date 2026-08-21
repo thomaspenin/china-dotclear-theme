@@ -1,0 +1,45 @@
+figure,
+figure > div /* remove in future version, once all "figure-frame" removed */ {
+  display: table;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  // Always white so transparent images stay legible in dark mode too, but only under the image itself, not the padding
+  background-color: var(--color-always-light);
+  background-clip: content-box;
+  border-top: 1px solid var(--color-border-default);
+  border-left: 1px solid var(--color-border-default);
+  border-right: 1px solid var(--color-border-default);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+figure:not(:has(figcaption)) img {
+  border-radius: var(--border-radius);
+  border-bottom: 1px solid var(--color-border-default);
+  padding-bottom: 4px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--color-text-strong);
+  display: table-caption;
+  caption-side: bottom;
+
+  border-bottom: 1px solid var(--color-border-default);
+  border-left: 1px solid var(--color-border-default);
+  border-right: 1px solid var(--color-border-default);
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  padding: 4px;
+}

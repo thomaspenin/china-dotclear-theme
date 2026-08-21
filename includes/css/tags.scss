@@ -1,0 +1,20 @@
+.tags .tag-cloud-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tags .tag-cloud-frame {
+  border: 1px solid var(--color-surface-soft);
+  background-color: var(--color-surface-soft);
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
+
+.tags.middle {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.tag-feed-background {
+  background-color: var(--color-surface-soft);
+}

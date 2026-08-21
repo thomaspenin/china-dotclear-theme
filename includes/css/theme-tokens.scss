@@ -1,0 +1,128 @@
+@use "palette";
+
+:root {
+  color-scheme: light dark;
+
+  --font-size-body: clamp(1rem, calc(1rem + 0.5vw), 1.3125rem);
+  --line-height-body: 1.4286;
+  --font-size-h1: 2.1875rem;
+  --line-height-h1: 3rem;
+  --font-size-h2: 1.75rem;
+  --line-height-h2: 2.3125rem;
+  --font-size-h3: 1.4375rem;
+  --line-height-h3: 2rem;
+  --font-size-h4: 1.3125rem;
+  --line-height-h4: 1.875rem;
+  --font-size-lead: 1.6rem;
+  --line-height-lead: 2rem;
+  --font-size-feature: 1.875rem;
+  --font-size-emphasis: 1.125rem;
+  --font-size-supporting: 1.0625rem;
+  --font-size-compact: 1rem;
+  --font-size-toc: 1rem;
+  --font-size-toc-nested: 0.9rem;
+  --font-size-top: 1rem;
+  --font-size-button: 1.15rem;
+  --font-size-small: calc(0.8 * var(--font-size-body));
+
+  --border-radius: 8px;
+
+  --color-accent: #{palette.$green};
+  --color-accent-hover: #{palette.$green-hover};
+  --color-accent-active: #{palette.$green-active};
+  // Text/icon color drawn on top of an accent-colored background
+  --color-on-accent: #{palette.$white};
+  --color-always-light: #{palette.$white};
+
+  --color-text-primary: #{palette.$strong-gray};
+  --color-text-on-primary: #{palette.$white};
+  --color-text-muted: #{palette.$gray};
+  --color-text-strong: #{palette.$medium-gray};
+  --color-text-on-dark: #{palette.$very-light-gray};
+  --color-text-code: #{palette.$rose};
+  --color-text-footnote: #{palette.$gray};
+
+  --color-surface-page: #{palette.$pale-gray-11};
+  --color-surface-subtle: #{palette.$extremely-light-gray};
+  --color-surface-soft: #{palette.$light-gray};
+  --color-surface-muted: #{palette.$very-light-gray};
+  --color-surface-code-inline: #{palette.$light-rose};
+  --color-surface-input: #{palette.$white};
+  --color-surface-topbar: #{palette.$strong-gray};
+  --color-surface-topbar-hover: #{palette.$very-strong-gray};
+  --color-surface-footer: #{palette.$strong-gray};
+  --color-surface-footer-powered: #{palette.$medium-gray};
+
+  --color-border-default: #{palette.$soft-gray};
+  --color-border-strong: #{palette.$medium-gray};
+  --color-border-muted: #{palette.$gray};
+  --color-shadow-page: #{palette.$gray};
+
+  --color-post-title: #{palette.$strong-gray};
+  --color-post-title-hover: #{palette.$very-strong-gray};
+  --color-post-metadata: #{palette.$gray};
+  --color-post-metadata-hover: #{palette.$very-strong-gray};
+  --color-post-category-overlay: #{rgba(palette.$strong-gray, 0.85)};
+
+  --color-footer-heading: #{palette.$very-light-gray};
+  --color-footer-subheading: #{palette.$very-light-gray};
+  --color-footer-subheading-hover: #{palette.$soft-gray};
+
+  --color-answer-bg: #{palette.$very-light-green};
+
+  --color-alert-info: #{palette.$teal};
+  --color-alert-hint: #{palette.$forest-green};
+  --color-alert-warning: #{palette.$amber};
+  --color-alert-error: #{palette.$brick-red};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #{palette.$dark-mode-green};
+    --color-accent-hover: #{palette.$dark-mode-green-hover};
+    --color-accent-active: #{palette.$dark-mode-green-active};
+    --color-on-accent: #{palette.$very-strong-gray};
+    --color-always-light: #{palette.$white};
+
+    --color-text-primary: #{palette.$pale-gray-6};
+    --color-text-on-primary: #{palette.$white};
+    --color-text-muted: #{palette.$pale-gray-2};
+    --color-text-strong: #{palette.$pale-gray-4};
+    --color-text-on-dark: #{palette.$pale-gray-8};
+    --color-text-code: #{palette.$dark-mode-rose};
+    --color-text-footnote: #{palette.$pale-gray-3};
+
+    --color-surface-page: #{palette.$charcoal-5};
+    --color-surface-subtle: #{palette.$charcoal-6};
+    --color-surface-soft: #{palette.$charcoal-9};
+    --color-surface-muted: #{palette.$charcoal-7};
+    --color-surface-code-inline: #{palette.$dark-mode-rose-bg};
+    --color-surface-input: #{palette.$charcoal-2};
+    --color-surface-topbar: #{palette.$charcoal-2};
+    --color-surface-topbar-hover: #{palette.$charcoal-4};
+    --color-surface-footer: #{palette.$charcoal-3};
+    --color-surface-footer-powered: #{palette.$charcoal-7};
+
+    --color-border-default: #{palette.$charcoal-10};
+    --color-border-strong: #{palette.$charcoal-11};
+    --color-border-muted: #{palette.$charcoal-8};
+    --color-shadow-page: #{palette.$charcoal-1};
+
+    --color-post-title: #{palette.$pale-gray-7};
+    --color-post-title-hover: #{palette.$pale-gray-11};
+    --color-post-metadata: #{palette.$pale-gray-1};
+    --color-post-metadata-hover: #{palette.$pale-gray-10};
+    --color-post-category-overlay: #{rgba(palette.$pale-gray-7, 0.2)};
+
+    --color-footer-heading: #{palette.$pale-gray-8};
+    --color-footer-subheading: #{palette.$pale-gray-5};
+    --color-footer-subheading-hover: #{palette.$pale-gray-9};
+
+    --color-answer-bg: #{palette.$dark-mode-answer-bg};
+
+    --color-alert-info: #{palette.$dark-mode-teal};
+    --color-alert-hint: #{palette.$dark-mode-forest-green};
+    --color-alert-warning: #{palette.$dark-mode-amber};
+    --color-alert-error: #{palette.$dark-mode-brick-red};
+  }
+}

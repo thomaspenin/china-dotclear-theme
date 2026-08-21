@@ -1,0 +1,106 @@
+// Use the right colors for buttons
+
+.btn {
+  --bs-btn-font-size: var(--font-size-button);
+  --bs-btn-border-radius: var(--border-radius);
+  font-weight: 300;
+}
+
+// Hover/active states are a slight tint/shade of the base color (via color-mix)
+// rather than a jump to an unrelated color, and work the same way in both
+// light and dark mode since they mix relative to the current theme's tokens.
+
+.btn-primary {
+  --bs-btn-color: var(--color-text-on-primary);
+  --bs-btn-bg: var(--color-accent);
+  --bs-btn-border-color: var(--color-accent);
+  --bs-btn-hover-color: var(--color-text-on-primary);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--color-accent), black 10%);
+  --bs-btn-hover-border-color: color-mix(
+    in srgb,
+    var(--color-accent),
+    black 10%
+  );
+  --bs-btn-active-color: var(--color-text-on-primary);
+  --bs-btn-active-bg: color-mix(in srgb, var(--color-accent), black 18%);
+  --bs-btn-active-border-color: color-mix(
+    in srgb,
+    var(--color-accent),
+    black 18%
+  );
+  font-weight: 400;
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--color-text-primary);
+  --bs-btn-bg: var(--color-surface-soft);
+  --bs-btn-border-color: var(--color-surface-soft);
+  --bs-btn-hover-color: var(--color-text-primary);
+  --bs-btn-hover-bg: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 12%
+  );
+  --bs-btn-hover-border-color: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 12%
+  );
+  --bs-btn-active-color: var(--color-text-primary);
+  --bs-btn-active-bg: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 22%
+  );
+  --bs-btn-active-border-color: color-mix(
+    in srgb,
+    var(--color-surface-soft),
+    var(--color-text-primary) 22%
+  );
+}
+
+// Use the right color for the hover state of nav links
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-accent-hover);
+}
+
+// Close control on info shall not be too "close" from the text
+
+.btn-close {
+  margin-left: 10px;
+}
+
+// Tables should follow the page's text color instead of Bootstrap's
+// hardcoded black, and let the page's own background show through.
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--color-text-primary);
+  --bs-table-striped-bg: color-mix(
+    in srgb,
+    var(--color-surface-page),
+    var(--color-text-primary) 5%
+  );
+  --bs-table-striped-color: var(--color-text-primary);
+  --bs-table-hover-bg: color-mix(
+    in srgb,
+    var(--color-surface-page),
+    var(--color-text-primary) 8%
+  );
+  --bs-table-hover-color: var(--color-text-primary);
+  --bs-table-border-color: color-mix(
+    in srgb,
+    var(--color-surface-page),
+    var(--color-text-primary) 20%
+  );
+}
+
+// Hack for Firefox to properly style responsive tables
+// See http://getbootstrap.com/css/#tables-responsive
+
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
+}

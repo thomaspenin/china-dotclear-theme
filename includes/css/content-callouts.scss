@@ -1,0 +1,47 @@
+// Callout boxes usable in article content, replacing the old Bootstrap 3
+// ".panel"/".panel-heading"/".panel-body" and ".well" markup (both removed from
+// Bootstrap since v4). These are plain custom classes with no Bootstrap dependency.
+
+// Used for the "Commentaires rétrospectifs" asides in the "Retour vers le Futur" series.
+.retro-comment {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius);
+  margin: 15px 0;
+}
+
+.retro-comment-title {
+  padding: 10px 15px;
+  background-color: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border-default);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  font-weight: 700;
+}
+
+.retro-comment-body {
+  padding: 15px;
+}
+
+.retro-comment-body > *:first-child {
+  margin-top: 0;
+}
+
+.retro-comment-body > *:last-child {
+  margin-bottom: 0;
+}
+
+// Generic highlighted box, e.g. for tips/usage notes within an article.
+.callout {
+  background-color: var(--color-surface-subtle);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.callout > *:first-child {
+  margin-top: 0;
+}
+
+.callout > *:last-child {
+  margin-bottom: 0;
+}

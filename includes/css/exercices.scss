@@ -1,0 +1,73 @@
+ol.exercices {
+  counter-reset: my-counter; /* Initiate a counter */
+  margin-left: 0; /* Remove the default left margin */
+  padding-left: 0; /* Remove the default left padding */
+}
+
+ol.exercices > li.exercice {
+  position: relative; /* Create a positioning context */
+  margin: 0 0 10px 2em; /* Give each list item a left margin to make room for the numbers */
+  padding: 3px; /* Add some spacing around the content */
+  padding-left: 8px;
+  list-style: none; /* Disable the normal item numbering */
+}
+
+ol.exercices > li.exercice:before {
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 2em;
+  padding: 4px;
+  border-radius: var(--border-radius);
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  font-weight: bold;
+  text-align: center;
+}
+
+.exercices .answer {
+  clear: right;
+  margin-top: 5px;
+  border-radius: var(--border-radius);
+  color: var(--color-accent);
+}
+
+.exercices .answer .expandable {
+  background: var(--color-answer-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 4px -4px var(--color-shadow-page) inset;
+  padding: 5px;
+}
+
+.exercices .answer ul,
+.exercices .answer ol {
+  padding-left: 20px;
+}
+
+.exercices .question ul,
+.exercices .question ol {
+  padding-left: 25px;
+  margin-top: 3px;
+}
+
+.exercices .visibilityToggle {
+  float: right;
+  background: var(--color-answer-bg);
+  padding: 3px 5px;
+  margin-left: 5px;
+  border-radius: var(--border-radius);
+}
+
+.exercices .visibilityToggle {
+  color: var(--color-accent);
+}
+
+.exercices .visibilityToggle:hover {
+  color: var(--color-accent-active);
+  cursor: pointer;
+}

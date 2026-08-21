@@ -1,14 +1,5 @@
 <?php
 
-# -- BEGIN LICENSE BLOCK ----------------------------------
-#
-# "China" theme for Dotclear
-# --------------------------
-# Author: Thomas PENIN
-# Website: https://www.voyage-est.com
-# License: GNU/GPL
-# -- END LICENSE BLOCK ------------------------------------
-
 if (!defined('DC_RC_PATH')) { return; }
 
 # Language additions
@@ -16,7 +7,10 @@ l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
 
 // --- Alias management ---
 
-// Register our alias handler
+/**
+ * Register a URL alias handler for the theme. This allows the theme to serve
+ * custom templates based on URL aliases.
+ */
 $core->url->register('alias','','^(.*)$',array('urlAlias','alias'));
 
 /**
@@ -55,62 +49,15 @@ class urlAlias extends dcUrlHandlers
   }
 }
 
-// --- List files in a folder matching a given pattern ---
-
-/*
- * <tpl:ListFiles folder="../test" pattern="/^china_.*.tar.gz/" prefix="china_"
- * suffix=".tar.gz"}}><tpl:ListFiles>
- * where "folder" is the path to the folder to inspect, "pattern" a regular expression
- * that the file names have to meet, "prefix" and "suffix" parts of the file name that
- * have to be removed to be added to the result.
- * Return results are an <ul> list, where each item is named "Version XX" ("XX"
- * corresponding to the name of the file removing the prefix and suffix) and is a link
- * pointing to the original file.
- */
-
-$core->tpl->addBlock('ListFiles',array('tplListFilesTpl','ListFiles'));
-
-class tplListFilesTpl
-{
-  public static function ListFiles($attr, $content)
-  {
-    // Get the current directory
-    $folder       = $attr['folder'];
-    $dir          = getcwd() . "/" . $folder;
-    $pattern      = $attr['pattern'];
-    $resultPrefix = "<ul>";
-    $resultSuffix = "</ul>";
-    $result       = "";
-    $prefix       = $attr['prefix'];
-    $suffix       = $attr['suffix'];
-
-    // List the files
-    $files = scandir($dir);
-
-    // Filter to keep the theme files
-    $filtered_files = preg_grep($pattern, $files);
-
-    // Print the list
-    foreach ($filtered_files as $value)
-    {
-      $version = $value;
-
-      if (substr($value, 0, strlen($prefix)) == $prefix) {
-	$version = substr($version, strlen($prefix));
-      }
-      $version = substr($version, 0, -strlen($suffix));
-
-      $result .= "<li><a href='" . $folder . "/" . $value . "'>Version $version</a></li>";
-    }
-
-    // Concat result
-    return $resultPrefix . $result . $resultSuffix;
-  }
-}
-
 // --- Retrieve the current version of the theme ---
 
-$core->tpl->addValue('ThemeVersion',array('tplThemeVersionTpl','ThemeVersion'));
+/**
+ * Retrieve the current version of the theme
+ * 
+ * Usage in a template:
+ *   {{tpl:ThemeVersion}}
+ */
+$core->tpl->addValue('ThemeVersion', array('tplThemeVersionTpl','ThemeVersion'));
 
 class tplThemeVersionTpl
 {
@@ -120,8 +67,81 @@ class tplThemeVersionTpl
     global $core;
     // Get the version of the current theme
     $version = $core->themes->moduleInfo($core->blog->settings->system->theme,"version");
-
+    
     return $version;
+    }
+}
+    
+// --- Translate a string with arguments (taken from po files) ---
+
+/**
+ * Translate and format a string from the theme's public.po file.
+ *
+ * Usage in a template:
+ *   {{tpl:ArgLang string="Example %s %s" arg1="value" arg2="(version %v)"}}
+ *
+ * The string attribute is the complete translation key, including its
+ * formatting placeholders. Arguments are numbered arg1, arg2, and so on.
+ * The supported placeholders are:
+ *   %s - a regular string argument, such as arg1="value"
+ *   %u - the current BlogURL in an argument, such as arg1="%u/tags"
+ *   %v — the current version of the theme
+ * 
+ * Usage in po files:
+ *   msgid "Example %s %s"
+ *   msgstr "Exemple %s %s"
+ * 
+ * This will give "Example value (version 3.0)"
+ */
+$core->tpl->addValue('ArgLang', array('tplArgLang','ArgLang'));
+
+class tplArgLang
+{
+  public static function ArgLang($attr)
+  {
+    if (empty($attr['string']))
+      return;
+
+    $args = array();
+    foreach ($attr as $name => $value)
+    {
+      if (preg_match('/^arg([1-9][0-9]*)$/', $name, $matches))
+      {
+        if (strpos($value, '%v') !== false)
+        {
+          $parts = explode('%v', $value);
+          $version = '$core->themes->moduleInfo($core->blog->settings->system->theme,"version")';
+          $args[(int) $matches[1] - 1] = var_export($parts[0], true).'.'.$version;
+          if (isset($parts[1]))
+            $args[(int) $matches[1] - 1] .= '.'.var_export($parts[1], true);
+        }
+        elseif (strpos($value, '%u') !== false)
+        {
+          $parts = explode('%u', $value);
+          $url = 'rtrim($core->blog->url,\'/\')';
+          $args[(int) $matches[1] - 1] = var_export($parts[0], true).'.'.$url;
+          if (isset($parts[1]))
+            $args[(int) $matches[1] - 1] .= '.'.var_export($parts[1], true);
+        }
+        else
+        {
+          $args[(int) $matches[1] - 1] = var_export($value, true);
+        }
+      }
+    }
+
+    if (!empty($args))
+    {
+      ksort($args);
+      $arguments = 'array('.implode(',', $args).')';
+      $output = 'vsprintf(__('.var_export($attr['string'], true).'),'.$arguments.')';
+    }
+    else
+    {
+      $output = '__('.var_export($attr['string'], true).')';
+    }
+
+    return '<?php global $core; echo '.$output.'; ?>';
   }
 }
 

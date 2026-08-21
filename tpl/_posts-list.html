@@ -3,67 +3,79 @@
       <div class="posts-list" id="pl">
       </tpl:EntriesHeader>
 	<div class="posts-list-item">
-          <div class="media">
-            <div class="media-left">
+	  <div class="card-item clickable-card">
+          <div class="d-flex list-card-body<tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true"> list-has-large-image</tpl:MyMetaIf>">
+            <tpl:MyMetaIf type="ENTRY_LARGE_IMAGE" defined="true">
+              <div class="list-thumb-large defer-image image-ratio:4x3">
+                <div data-src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_LARGE_IMAGE"}}" data-alt="{{tpl:EntryTitle}}"></div>
+              </div>
+            </tpl:MyMetaIf>
+            <div class="flex-shrink-0 list-thumb-small">
               <tpl:MyMetaIf type="ENTRY_IMAGE" defined="true" >
-                <img class="media-object" src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id="ENTRY_IMAGE"}}" width="90" height="90"/>
-              </tpl:MyMetaIf>
+                <img class="media-object" src="{{tpl:BlogPublicURL}}/{{tpl:EntryMyMetaValue id='ENTRY_IMAGE'}}" width="90" height="90" alt="{{tpl:EntryTitle encode_html="1"}}"/>
+			  </tpl:MyMetaIf>
+			  <tpl:MyMetaIf type="ENTRY_IMAGE" defined="false" >
+                <img class="media-object" src="{{tpl:BlogThemeURL}}/includes/images/no-thumbnail/no-thumbnail.png" width="90" height="90" alt=""/>
+			  </tpl:MyMetaIf>
             </div>
-            <div class="media-body">
-              <h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
+            <div class="media-body flex-grow-1 ms-3">
+              <h3><a class="entry-link" href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></h3>
               <div class="post-wrapper">
                 <!-- Show the excerpt if any -->
                 <tpl:EntryIf extended="1">{{tpl:EntryExcerpt remove_html="0"}}</tpl:EntryIf>
                 <!-- If there is no excerpt, show the post content -->
                 <tpl:EntryIf extended="0"><p>{{tpl:EntryContent remove_html="1" cut_string="400"}}</p></tpl:EntryIf>
-                
-              </div>
-              <div class="posts-list-item-footer row">
-                <div class="post-read-more col-md-4"><a class="read-more" title="{{tpl:lang Read the post}}" href="{{tpl:EntryURL}}">»&nbsp;{{tpl:lang More}}</a></div>
-                <div class="post-metadata col-md-8">
-                <tpl:EntryIf has_category="1">
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
-                </tpl:EntryIf>
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
-                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;<a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}">{{tpl:EntryCommentCount none="Commenter" one="1&nbsp;commentaire" more="%s&nbsp;commentaires"}}</a>
-                </div>
               </div>
             </div>
           </div>
+          <div class="posts-list-item-footer">
+            <div class="post-metadata-left">
+              <i class="ph ph-clock" aria-hidden="true"></i>&nbsp;{{tpl:EntryDate format="%d %B %Y"}}
+              <tpl:EntryIf has_category="1">
+              <span class="list-category">
+              <i class="ph ph-squares-four" aria-hidden="true"></i>&nbsp;<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory}}</a>
+              </span>
+              </tpl:EntryIf>
+            </div>
+            <div class="post-metadata-right">
+              <a href="{{tpl:EntryURL}}#comments" title="{{tpl:EntryCommentCount}}"><i class="ph ph-chat" aria-hidden="true"></i>&nbsp;{{tpl:EntryCommentCount none="Commenter" one="1&nbsp;commentaire" more="%s&nbsp;commentaires"}}</a>
+            </div>
+          </div>
+	  </div>
 	</div>
 
       <tpl:EntriesFooter>
 	<!-- Navigation across the different pages -->
 	<tpl:Pagination>
 	  <nav>
-	    <ul class="pagination">
+	    <ul class="nav nav-fill pagination">
 	      <tpl:PaginationIf start="1">
-	      <li class="disabled">
-		<a href="#" aria-label="Previous">
-		  <span aria-hidden="true">&laquo;</span>
+	      <li class="nav-item disabled">
+		<a class="nav-link disabled" href="#" aria-label="Previous" aria-disabled="true" tabindex="-1">
+		  <span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf start="0">
-	      <li>
-		<a href="{{tpl:PaginationURL offset="-1"}}#pl" aria-label="Previous">
-		  <span aria-hidden="true">&laquo;</span>
-		</a>
+	      <li class="nav-item">
+			<a class="nav-link active" href='{{tpl:PaginationURL offset="-1"}}#pl' aria-label="Previous">
+			<span aria-hidden="true"><i class="ph ph-caret-left"></i>{{tpl:lang Previous page}}</span>
+			</a>
 	      </li>
-	      </tpl:PaginationIf> 
-	      {{tpl:PaginationLinks max="5"}}
+	      </tpl:PaginationIf>
+		  <li class="nav-item page-counter">{{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}</li>
 	      <tpl:PaginationIf end="1">
-	      <li class="disabled">
-		<a href="#" aria-label="Next">
-		  <span aria-hidden="true">&raquo;</span>
+	      <li class="nav-item disabled">
+		<a class="nav-link disabled" href="#" aria-label="Next" aria-disabled="true" tabindex="-1">
+		  <span aria-hidden="true">{{tpl:lang Next page}}<i class="ph ph-caret-right"></i></span>
 		</a>
 	      </li>
 	      </tpl:PaginationIf>
 	      <tpl:PaginationIf end="0">
-	      <li>
-		<a href="{{tpl:PaginationURL offset="+1"}}#pl" aria-label="Next">
-		  <span aria-hidden="true">&raquo;</span>
-		</a>
+	      <li class="nav-item">
+			<a class="nav-link active" href='{{tpl:PaginationURL offset="+1"}}#pl' aria-label="Next">
+			<span aria-hidden="true">{{tpl:lang Next page}}<i class="ph ph-caret-right"></i></span>
+			</a>
 	      </li>
 	      </tpl:PaginationIf>
 	    </ul>

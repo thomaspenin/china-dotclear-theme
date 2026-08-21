@@ -5,3 +5,10 @@
 
 # File with configuration variables and secrets for the project
 .env
+
+# Generated during deployment
+includes/css/style.css
+includes/css/style.css.map
+
+# Node
+node_modules/

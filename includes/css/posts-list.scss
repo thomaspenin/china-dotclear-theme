@@ -1,0 +1,270 @@
+@use "layout";
+
+#pl {
+  scroll-margin-top: calc(#{layout.$top-bar-height} + 10px);
+}
+
+.category.middle,
+.tags.middle,
+.search.middle,
+.archives.middle {
+  background-color: var(--color-surface-muted);
+}
+
+.posts-list .posts-list-item {
+  // Matches the home page's row-gap between thumbnail rows
+  margin-bottom: 15px;
+}
+
+// Base card look, reused by the simple posts-list and the post's previous/next nav (post.scss).
+.card-item {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface-page);
+  padding: 12px;
+}
+
+.card-item:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-accent);
+  transition: border-color 0.5s ease;
+}
+
+.posts-list .posts-list-item .post-wrapper {
+  font-size: var(--font-size-small);
+}
+
+.posts-list .posts-list-item .post-wrapper p:first-child {
+  margin-top: 0;
+}
+
+.posts-list .posts-list-item .post-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.posts-list .posts-list-item .media-object {
+  border-radius: var(--border-radius);
+}
+
+.posts-list .posts-list-item .media-body h3 {
+  margin-top: 0;
+  font-size: var(--font-size-emphasis);
+}
+
+.posts-list .posts-list-item .media-body h3 a {
+  color: var(--color-post-title);
+}
+
+.posts-list .posts-list-item .media-body h3 a:hover {
+  color: var(--color-post-title-hover);
+  text-decoration: none;
+}
+
+.posts-list .posts-list-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--color-post-metadata);
+  margin-top: 10px;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-top: 9px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-top: 1px solid var(--color-border-default);
+  font-size: 60%; // Matches .posts-thumbnail-item-footer on the home page
+}
+
+.posts-list .posts-list-item-footer i:not(:first-of-type) {
+  margin-left: 15px;
+}
+
+.posts-list .posts-list-item-footer a {
+  color: var(--color-post-metadata);
+}
+
+.posts-list .posts-list-item-footer a:hover {
+  color: var(--color-post-metadata-hover);
+  text-decoration: none;
+}
+
+.posts-list .list-thumb-large {
+  display: none;
+}
+
+// Below the same custom threshold used for the home page's 1-per-row switch:
+// use the large thumbnail (when available) placed above the text, drop the
+// small thumbnail entirely (whether or not a large one replaces it), and
+// hide the category from the metadata.
+@media (max-width: 400px) {
+  .posts-list .list-card-body {
+    flex-direction: column;
+  }
+
+  .posts-list .list-thumb-small {
+    display: none;
+  }
+
+  .posts-list .list-card-body.list-has-large-image .list-thumb-large {
+    display: block;
+    margin: -12px -12px 10px -12px;
+    border-top-left-radius: calc(var(--border-radius) - 1px);
+    border-top-right-radius: calc(var(--border-radius) - 1px);
+    overflow: hidden;
+  }
+
+  .posts-list .media-body {
+    // Bootstrap's spacing utilities (ms-3) are generated with !important, so
+    // overriding them requires !important too, regardless of specificity.
+    margin-left: 0 !important;
+  }
+
+  .posts-list .list-category {
+    display: none;
+  }
+}
+
+.posts-list .thumbnail-row {
+  padding-left: 7px;
+  padding-right: 8px;
+  // Vertical spacing between wrapped rows (2-per-row / 1-per-row on narrower viewports)
+  row-gap: 15px;
+}
+
+.posts-list .posts-thumbnail-item {
+  padding-left: 8px;
+  padding-right: 7px;
+}
+
+// Switch from 2 to 1 card per row lower than Bootstrap's sm breakpoint (576px)
+@media (max-width: 400px) {
+  .posts-list .posts-thumbnail-item {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+
+.posts-list .list-category {
+  margin-left: 10px;
+}
+
+.posts-list .posts-thumbnail-item .thumbnail {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface-page);
+  padding: 0;
+  /* Equal card height per row (Bootstrap row stretches this column already);
+     the .link block below grows/shrinks so only the title varies in height. */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-list .posts-thumbnail-item .link {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.posts-list .posts-thumbnail-item img {
+  border-top-left-radius: calc(var(--border-radius) - 1px);
+  border-top-right-radius: calc(var(--border-radius) - 1px);
+}
+
+.posts-list .posts-thumbnail-item .link .defer-image {
+  flex: none;
+}
+
+.posts-list .posts-thumbnail-item .caption {
+  /* Fills whatever vertical space is left in .link, so the title is the part that grows/shrinks. */
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.posts-list .posts-thumbnail-item .caption h3 {
+  padding: 10px 8px;
+  margin: 0;
+  line-height: 1.2;
+  width: 100%;
+}
+
+.posts-list .posts-thumbnail-item .caption a {
+  color: var(--color-post-title);
+}
+
+.posts-list .posts-thumbnail-item .caption a:hover {
+  color: var(--color-post-title-hover);
+  text-decoration: none;
+}
+
+.posts-list .posts-thumbnail-item .thumbnail:hover {
+  cursor: pointer;
+}
+
+.posts-list .posts-thumbnail-item .thumbnail:hover {
+  border: 1px solid var(--color-accent);
+  transition: border-color 0.5s ease;
+}
+
+.posts-list .posts-thumbnail-item h3 {
+  font-size: var(--font-size-emphasis);
+  margin-top: 0;
+}
+
+.posts-list .posts-thumbnail-item-footer {
+  color: var(--color-post-metadata);
+  padding: 9px 0;
+  border-top: 1px solid var(--color-border-default);
+  font-size: 60%;
+  margin: 0;
+}
+
+.posts-list .posts-thumbnail-item-footer div[class*="col-"] {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.posts-list .post-metadata-right {
+  text-align: right;
+}
+
+.posts-list .post-metadata-right a {
+  color: var(--color-post-metadata);
+}
+
+.posts-list .post-metadata-right a:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}
+
+.posts-list .post-metadata-right a:hover {
+  color: var(--color-post-metadata-hover);
+  text-decoration: none;
+}
+
+.posts-list .post-metadata-right a .icon-bold {
+  font-size: 100%;
+}
+
+.posts-list > nav {
+  text-align: center;
+}
+
+.posts-list .pagination {
+  margin-top: 15px;
+}
+
+.posts-list .pagination li + li {
+  margin-top: 0;
+}
+
+.posts-list .pagination .nav-link.disabled {
+  color: var(--color-text-muted);
+}
+
+.posts-list .pagination .page-counter {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}

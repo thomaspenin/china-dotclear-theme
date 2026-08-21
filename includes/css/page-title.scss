@@ -1,0 +1,34 @@
+@use "paths";
+
+.page-title-background {
+  background: var(--color-accent)
+    url("#{paths.$images-folder-path}/title/Title-background.png") no-repeat
+    left bottom;
+  background-size: cover;
+}
+
+.page-title {
+  color: var(--color-always-light);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  padding-top: 15px;
+  padding-bottom: 28px;
+  position: relative;
+  display: table; // For the case there is only one h1 (see below)
+  width: 100%;
+  height: 150px;
+}
+
+.page-title a {
+  color: var(--color-always-light);
+}
+
+.page-title h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+// Center vertically when only one h1
+.page-title h1:only-child {
+  display: table-cell;
+  vertical-align: middle;
+}

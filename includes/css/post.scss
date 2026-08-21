@@ -1,0 +1,285 @@
+@use "paths";
+
+// *** Post header (specialization of page header) ***
+
+.post-title .post-metadata {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.post-title a.comment-count {
+  font-size: 75%;
+  display: inline-block;
+  position: absolute;
+  padding: 5px 8px;
+  bottom: 0;
+  right: 0;
+  outline: none;
+  text-shadow: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-page);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.post-title a.comment-count:hover {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-subtle);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+// Grow past the generic .page-title fixed height when the category/nav row
+// wraps onto several lines (long breadcrumb on narrow screens).
+.page-title.post-title {
+  height: auto;
+  min-height: 150px;
+}
+
+.post-title .post-title-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+// .page-title's own padding-top already clears the background, so these only
+// need horizontal padding (no top padding piling up on top of it).
+.post-title .post-category {
+  padding: 0 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.post-title .post-navigation {
+  padding: 0 8px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+// The header row's own margin-bottom already separates it from the title.
+.post-title .post-title-header + h1 {
+  margin-top: 0;
+}
+
+// *** Post content ***
+
+.post-content > p:first-child,
+.post-content > img:first-child,
+.post-content > ul:first-child,
+.post-content > ol:first-child,
+.post-content > figure:first-child {
+  margin-top: 15px;
+}
+
+// *** Post footer ***
+
+#post-footer.container {
+  padding-bottom: 0px;
+}
+
+#post-footer .post-attachments ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#post-footer .post-share a:after {
+  background-size: 0 0;
+  width: 0;
+  height: 0;
+  content: "";
+}
+
+#post-footer .post-share .share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#post-footer .post-share .share-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 2rem;
+  line-height: 1;
+  transition: color 250ms linear;
+}
+
+#post-footer .post-share .share-links a:hover,
+#post-footer .post-share .share-links a:focus-visible {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+#post-footer .post-share .share-links .share-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  overflow: visible;
+}
+
+#post-footer .post-share .share-links .share-icon-bluesky {
+  -webkit-mask-image: url("#{paths.$images-folder-path}/share-buttons/bluesky.svg");
+  mask-image: url("#{paths.$images-folder-path}/share-buttons/bluesky.svg");
+}
+
+#post-footer .post-share .share-links .share-icon-weibo {
+  -webkit-mask-image: url("#{paths.$images-folder-path}/share-buttons/weibo.svg");
+  mask-image: url("#{paths.$images-folder-path}/share-buttons/weibo.svg");
+}
+
+#pagination-posts {
+  background-color: var(--color-surface-page);
+}
+
+#comments-sidebar {
+  padding-top: 20px;
+}
+
+#comments-sidebar .comments-feed {
+  margin-bottom: 10px;
+}
+
+#comments-sidebar .comments-feed a {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#comments-sidebar .comments-feed a:hover {
+  text-decoration: none;
+}
+
+#post-footer li + li {
+  margin-top: 0;
+}
+
+.previous-next-posts {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.previous-next-posts .nav-post-col-next {
+  margin-left: auto;
+}
+
+.previous-next-posts .nav-post {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-surface-subtle);
+}
+
+.previous-next-posts .nav-post-col-next .nav-post {
+  justify-content: flex-end;
+}
+
+.previous-next-posts .nav-chevron {
+  flex-shrink: 0;
+  font-size: var(--font-size-h3);
+  color: var(--color-text-muted);
+}
+
+.previous-next-posts .nav-thumb img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+.previous-next-posts .nav-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.previous-next-posts .nav-post-col-next .nav-text {
+  text-align: right;
+}
+
+.previous-next-posts .nav-label {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.previous-next-posts .nav-title {
+  font-size: var(--font-size-emphasis);
+  color: var(--color-post-title);
+}
+
+.previous-next-posts .nav-post:hover .nav-title {
+  color: var(--color-post-title-hover);
+}
+
+// Below Bootstrap's sm breakpoint (576px), drop the thumbnail entirely and
+// just show the chevron next to the text.
+@media (max-width: 575.98px) {
+  .previous-next-posts .nav-thumb {
+    display: none;
+  }
+}
+
+// Below our custom small-card threshold (used elsewhere for narrow-screen
+// reflows), stack the two nav cards on separate lines instead of squeezing
+// them side by side.
+@media (max-width: 400px) {
+  .previous-next-posts .nav-post-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .previous-next-posts .nav-post-col-next {
+    margin-left: 0;
+  }
+}
+
+// Do not display certain elements when printing
+@media print {
+  .post-title .post-title-header {
+    display: none;
+  }
+
+  .post-title a.comment-count {
+    display: none;
+  }
+
+  .previous-next-posts {
+    display: none;
+  }
+
+  #post-footer {
+    display: none;
+  }
+
+  #comments {
+    display: none;
+  }
+
+  #comments-sidebar {
+    display: none;
+  }
+
+  .table-of-contents {
+    display: none;
+  }
+}

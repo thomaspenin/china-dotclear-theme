@@ -1,0 +1,99 @@
+.archives.middle {
+  padding: 0;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.date-range-picker-background {
+  padding: 20px 0;
+  background-color: var(--color-surface-soft);
+}
+
+.period-picker.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.period-picker.row,
+.period-picker .row {
+  align-items: center;
+}
+
+.previous-period {
+  text-align: left;
+}
+
+.choice-period {
+  text-align: center;
+}
+
+// Add vertical spacing between the previous/choice/next columns once they
+// stack on narrow screens (archive.html stacks below Bootstrap's md
+// breakpoint, archive_month.html below the sm breakpoint).
+@media (max-width: 767.98px) {
+  .previous-period,
+  .choice-period {
+    margin-bottom: 15px;
+  }
+}
+
+.choice-period .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23505050' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-color: var(--color-surface-input);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius);
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .choice-period .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234b554b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  }
+}
+
+.choice-period .form-select:hover,
+.choice-period .form-select:focus,
+.choice-period .form-select:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.5s ease;
+}
+
+.choice-period .form-select .archive-month-option {
+  text-transform: capitalize;
+}
+
+.next-period {
+  text-align: right;
+}
+
+.archives .all-posts-list .month-posts {
+  padding-bottom: 15px;
+
+  // Avoid splitting over multiple columns
+  overflow: hidden; /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+}
+
+.archives .all-posts-list .month-posts strong::first-letter {
+  text-transform: uppercase;
+}
+
+// On desktops, the list of articles is shown on two columns
+@media (min-width: 992px) {
+  .archives .all-posts-list {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
+}
+
+// Do not show some elements when printing
+@media print {
+  .archives .date-range-picker {
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+// Table of content
+
+@use "layout";
+
+.bs-docs-sidebar {
+  position: sticky;
+  top: calc(
+    #{layout.$top-bar-height} + 15px
+  ); // Top bar height + breathing room
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.bs-docs-sidebar .nav {
+  display: block;
+}
+
+.bs-docs-sidebar .nav > li > a {
+  display: block;
+  color: var(--color-text-muted);
+  border-left: 2px solid transparent;
+  padding: calc(4px + 0.15em) 20px;
+  font-size: var(--font-size-toc);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.bs-docs-sidebar .nav .nav > li > a {
+  padding-top: calc(1px + 0.15em);
+  padding-bottom: calc(1px + 0.15em);
+  padding-left: 30px;
+  font-size: var(--font-size-toc-nested);
+}
+
+.bs-docs-sidebar .nav a.toc-current,
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+  background-color: transparent;
+  border-left-color: var(--color-accent);
+}
+
+.bs-docs-sidebar .nav > li > a.toc-current {
+  font-weight: 700;
+}
+
+.bs-docs-sidebar .nav .nav > li > a.toc-current {
+  font-weight: 500;
+}

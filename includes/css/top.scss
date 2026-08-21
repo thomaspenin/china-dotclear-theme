@@ -1,0 +1,253 @@
+@use "fonts";
+@use "layout";
+@use "paths";
+
+#top {
+  font-size: var(--font-size-top);
+}
+
+#top .top-background {
+  background: var(--color-surface-topbar);
+}
+
+#top .navbar-brand {
+  display: inline-block;
+  height: layout.$top-bar-height;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 10px;
+  font-size: 140%;
+  background: var(--color-surface-topbar)
+    url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background-size: 32px 32px;
+  padding-left: 46px;
+  color: var(--color-text-on-dark);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .topbar-container {
+  width: 100%;
+}
+
+#top .navbar-brand:hover {
+  background: var(--color-surface-topbar-hover)
+    url("#{paths.$images-folder-path}/logo/orchid-64.png") no-repeat 10px 50%;
+  background-size: 32px 32px;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .navbar-brand .blogTitle {
+  vertical-align: middle;
+  line-height: layout.$top-bar-height;
+  font-size: 130%;
+  padding-right: 5px;
+}
+
+#top .navbar-brand .blogTagLine {
+  padding-right: 10px;
+  vertical-align: middle;
+  line-height: layout.$top-bar-height;
+  font-family: fonts.$title-font, cursive;
+}
+
+// Adaptation for the small screen menu
+@media (max-width: 767px) {
+  #top .navbar-toggler {
+    float: right;
+  }
+
+  #top .small-screen-menu {
+    clear: both;
+  }
+
+  #top .small-screen-menu > nav {
+    padding-top: 15px;
+  }
+}
+
+#top .container {
+  padding: 0;
+  background-color: var(--color-surface-topbar);
+}
+
+#top .navbar-toggler {
+  color: var(--color-text-on-dark);
+  font-size: 32px;
+  height: layout.$top-bar-height;
+  width: layout.$top-bar-height; // Square
+  border-radius: 0;
+  margin: 0;
+  padding: 2px 5px;
+  line-height: 32px;
+  background-color: transparent;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .navbar-toggler:hover {
+  background-color: var(--color-surface-topbar-hover);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .navbar-toggler .ph-x {
+  display: none;
+}
+
+#top .navbar-toggler[aria-expanded="true"] .ph-list {
+  display: none;
+}
+
+#top .navbar-toggler[aria-expanded="true"] .ph-x {
+  display: inline;
+}
+
+#top .navbar-nav {
+  margin: 0;
+}
+
+#top .navbar-nav li + li {
+  margin-top: 0;
+}
+
+#top .navbar-nav li a {
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: layout.$top-bar-height;
+  color: var(--color-text-on-dark);
+  background-color: transparent;
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .navbar-nav li a span {
+  display: inline-block;
+  height: layout.$top-bar-height;
+  line-height: layout.$top-bar-height;
+}
+
+#top .navbar-nav .nav-item .nav-link {
+  padding: 0px 12px;
+}
+
+#top .top-search-form {
+  width: 100%;
+  padding: 10px 0px;
+  min-width: 0;
+  box-shadow: none;
+  // Mobile-first: full-width form would otherwise touch the viewport edges,
+  // so give it the same side gutter as a Bootstrap .container (the value
+  // inherited from the ancestor #top .container); reset again at >=768px
+  // below, where the form sits inline in the navbar instead of edge-to-edge.
+  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+}
+
+// Border lives on the input-group wrapper (not the input itself) so the
+// field is fully outlined on all sides, including the edge hidden behind
+// the search button; hovering/focusing only changes its color.
+#top .top-search-form .input-group {
+  min-width: 0;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: border-color 0.5s ease;
+}
+
+#top .top-search-form .input-group:hover,
+#top .top-search-form .input-group:focus-within {
+  border-color: var(--color-accent);
+}
+
+// Bootstrap's .form-control hardcodes a light background/text color, unlike
+// the plain inputs used for comments which stay theme-aware via the generic
+// `input, textarea` rule in base.scss. Align it with the same tokens so the
+// search field also follows light/dark mode (the search button keeps its
+// own .btn-secondary styling untouched).
+#top .top-search-form .form-control {
+  background-color: var(--color-surface-input);
+  color: var(--color-text-primary);
+  border: none;
+  box-shadow: none;
+}
+
+#top .top-search-form .form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+#top .top-search-form .form-control:focus,
+#top .top-search-form .form-control:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+#top .top-search-form .btn {
+  --bs-btn-font-size: 1rem;
+  border: none;
+  // Nest inside the wrapper's 1px border: an equal corner radius would clip
+  // to a squarer corner than the wrapper's own, leaving a visible mismatch.
+  --bs-btn-border-radius: calc(var(--border-radius) - 1px);
+}
+
+// Bootstrap's input-group normally overlaps a 1px border between the field
+// and the button, compensating with a negative margin and a z-index bump on
+// focus; since the border now lives on the wrapper only, that overlap/bump
+// makes the button appear to shift on click, so cancel both.
+#top .top-search-form .input-group > .btn {
+  margin-left: 0;
+}
+
+#top .top-search-form .input-group > .form-control:focus,
+#top .top-search-form .input-group > .btn:focus {
+  z-index: auto;
+}
+
+@media (min-width: 768px) {
+  #top .top-search-form {
+    flex: 0 1 200px;
+    max-width: 200px;
+    padding: 0px;
+    margin-left: 10px;
+    padding-right: 10px; // to align with containers down below
+  }
+}
+
+#top .navbar-nav li a:hover {
+  background-color: var(--color-surface-topbar-hover);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#top .navbar-collapse {
+  border-top: 0;
+}
+
+// Do not display the top bar when printing
+@media print {
+  #top {
+    display: none;
+  }
+}

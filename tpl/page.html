@@ -1,57 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:BlogLanguage}}" lang="{{tpl:BlogLanguage}}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
-<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
-<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
-<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-<meta name="dc.language" content="{{tpl:EntryLang}}" />
-<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
-<meta name="dc.type" content="text" />
-<meta name="dc.format" content="text/html" />
-<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
-<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
-
-{{tpl:include src="_head.html"}}
-
-<script type="text/javascript" src="{{tpl:BlogThemeURL}}/../default/js/post.js"></script>
-<script type="text/javascript">
-  //<![CDATA[
-  var post_remember_str = '{{tpl:lang Remember me on this blog}}';
-  //]]>
-</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+	<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+	<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+	<meta name="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
+	<meta name="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+	<meta name="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="dc.language" content="{{tpl:EntryLang}}" />
+	<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+	<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+	<meta name="dc.date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+	<meta name="dc.type" content="text" />
+	<meta name="dc.format" content="text/html" />
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+	{{tpl:include src="_head.html"}}
 </head>
 
 <body>
   {{tpl:EntryPingData}}
-  <div id="page" class="container">
+
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title">
-      <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
+    <div class="page-title-background">
+      <div class="page-title">
+        <h1>{{tpl:EntryTitle encode_html="1"}}</h1>
+      </div>
     </div>
 
-    <div class="middle">
+	<div class="middle">
       <!-- Post excerpt if there is any -->
       <tpl:EntryIf extended="1">
-      <div id="post-excerpt">
+      <div class="container lead">
 	{{tpl:EntryExcerpt}}
       </div>
       </tpl:EntryIf>
 
-      <div id="main">
+      <div id="main" class="container">
+		<div class="row">
 	<div class="col-md-9 post-content">
 	  <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
 	  {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
@@ -63,52 +59,38 @@
 	  {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
 	</div>
 	<div class="col-md-3">
-	  <nav class=" post-info bs-docs-sidebar hidden-xs hidden-sm">
-	    <!-- The script jquery.stocs.js will insert the toc here, at the beginning of the info box, if there is something to show -->
-	    <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/jquery.stoc.js"></script>
+	  <nav class=" post-info bs-docs-sidebar d-none d-md-block">
+	    <!-- The script toc.js will insert the toc here, at the beginning of the info box, if there is something to show -->
+	    <script type="text/javascript" src="{{tpl:BlogThemeURL}}/includes/js/toc.js"></script>
 	    <script type="text/javascript">
-	      $(function() {
+	      document.addEventListener("DOMContentLoaded", function () {
 		// Generate the toc
-		$(".bs-docs-sidebar").stoc({
+		buildToc(".bs-docs-sidebar", {
 		  search: ".post-content",
 		  depth: 3,
 		  start: 1,
-		  stocTitle: "",
-		  stocFooter: "",
 		  listType: "ul",
 		  rootListId: "toc",
-		  rootListClass: "nav nav-stacked",
-		  subListClass: "nav nav-stacked",
-		  smoothScroll: 0
+		  rootListClass: "nav",
+		  subListClass: "nav"
 		});
 
 		// Chinese text should appear bigger in the generated code if it is not already the case
-		$(".bs-docs-sidebar *").find(":not(span.zh)").replaceText(/([\u3000-\uFFFF]+)/g,"<span class='zh'>$1</span>");
+		wrapChineseText(document.querySelector(".bs-docs-sidebar"));
 
-		// Setup scrollspy for toc
-		$('body').scrollspy({
+		// Setup scrollspy for toc (the sidebar itself floats via CSS "position: sticky", see toc.scss)
+		new bootstrap.ScrollSpy(document.body, {
 		  target: '.bs-docs-sidebar',
-		  offset: 50 // Height of the top bar
+		  rootMargin: '0px 0px -80%'
 		});
-
-		// "Affix" allows the sidebar to float when it is within a top and a bottom offset
-		$('.bs-docs-sidebar').affix({
-		  offset: {
-		    top: function () {
-		      return (this.top = $(".page-title").outerHeight(true) + $("#post-excerpt").outerHeight(true));
-		    }
-		  , bottom: function () {
-		      return (this.bottom = $('.footer').outerHeight(true) + 20 /* Padding of the container */);
-		    }
-		  }
-		})
 	      });
 	    </script>
 	  </nav>
 	</div>
-      </div>
+	</div>
 
     </div>
+	</div>
 
     <!-- Footer (present on all pages) -->
     {{tpl:include src="_footer.html"}}

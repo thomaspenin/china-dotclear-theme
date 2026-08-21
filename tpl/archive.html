@@ -41,36 +41,37 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
     <!-- Title -->
-    <div class="page-title">
-      <h1>{{tpl:lang All articles}}</h1>
+    <div class="page-title-background">
+      <div class="page-title">
+        <h1>{{tpl:lang All articles}}</h1>
+      </div>
     </div>
 
-    <div class="archives middle">
-
-      <div class="date-range-picker">
-	<div class="period-picker container">
-	  <div class="previous-period col-md-4">{{tpl:lang To see articles' summaries, choose a period:}}</div>
+      <div class="date-range-picker-background">
+      <div class="date-range-picker container">
+	<div class="period-picker row">
+	  <div class="previous-period col-md-4">{{tpl:lang Choose a period:}}</div>
 	  <div class="choice-period col-md-4">
 	    <tpl:Archives>
 	      <tpl:ArchivesHeader>
 	      
 	      <form method="get" action="{{tpl:BlogArchiveURL}}" id="archives">
-		<select name="archives" onchange="location = this.options[this.selectedIndex].value;">
-		  <option selected disabled>{{tpl:lang Date range choice}}</option>
-		  <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (titles only)}}</option>
-		</tpl:ArchivesHeader>
-		<tpl:ArchivesYearHeader><optgroup label="{{tpl:ArchiveDate format="%Y"}}"></tpl:ArchivesYearHeader>
-		  <option value="{{tpl:ArchiveURL}}">
-			{{tpl:ArchiveDate encode_html="1" format="%B"}} ({{tpl:ArchiveEntriesCount}})
-		  </option>
-		<tpl:ArchivesYearFooter></optgroup></tpl:ArchivesYearFooter>
-		<tpl:ArchivesFooter>
-		</select>
+          <select class="form-select" name="archives" onchange="location = this.options[this.selectedIndex].value;">
+            <option selected disabled>{{tpl:lang Date range choice}}</option>
+            <option value="{{tpl:BlogArchiveURL}}">{{tpl:lang No restriction (titles only)}}</option>
+          </tpl:ArchivesHeader>
+          <tpl:ArchivesYearHeader><optgroup label="{{tpl:ArchiveDate format="%Y"}}"></tpl:ArchivesYearHeader>
+            <option class="archive-month-option" value="{{tpl:ArchiveURL}}">
+            {{tpl:ArchiveDate encode_html="1" format="%B"}} ({{tpl:ArchiveEntriesCount}})
+            </option>
+          <tpl:ArchivesYearFooter></optgroup></tpl:ArchivesYearFooter>
+          <tpl:ArchivesFooter>
+          </select>
 	      </form>
 	      </tpl:ArchivesFooter>
 	    </tpl:Archives>
@@ -78,13 +79,15 @@
 	  <div class="next-period col-md-4"></div>
 	</div>
       </div>
+      </div>
 
-      <div class="all-posts-list">
+      <div class="archives middle">
+      <div class="all-posts-list container">
       <tpl:Archives>
         <div class="month-posts">
             <tpl:Entries>
             <tpl:EntriesHeader>
-                <p><strong>{{tpl:ArchiveDate upper_case="1"}}</strong></p>
+                <p><strong>{{tpl:ArchiveDate}}</strong></p>
                 <ul>
             </tpl:EntriesHeader>
             <li><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle}}</a></li>

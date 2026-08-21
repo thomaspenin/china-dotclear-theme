@@ -44,45 +44,40 @@
 </head>
 
 <body>
-  <div id="page" class="container">
+  <div id="page" class="container-fluid">
     <!-- Top bar present on all pages -->
     {{tpl:include src="_top.html"}}
 
-    <div class="search middle">
-      <!-- Title -->
+    <!-- Title -->
+     <div class="page-title-background">
       <div class="page-title">
-	<h1>{{tpl:lang Search}}</h1>
+        <h1>{{tpl:lang Search}}</h1>
+      </div>
+    </div>
+
+    <div class="search middle">
+
+      <div class="lead container">
+        <tpl:SysIf search_count="==1">
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
+        </tpl:SysIf>
+        <tpl:SysIf search_count="&gt;1">
+          <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> results."}}</p>
+        </tpl:SysIf>
       </div>
 
-      <div class="search-info">
-	<tpl:SysIf search_count="==0">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</p>
-	</tpl:SysIf>
-	<tpl:SysIf search_count="==1">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
-	</tpl:SysIf>
-	<tpl:SysIf search_count="&gt;1">
-	  <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> results."}}</p>
-	</tpl:SysIf>
-      </div>
-
-      <div class="container" id="results">
-	<tpl:SysIf search_count="&gt;0">
-	<div class="col-md-8">
-	  {{tpl:include src="_posts-list.html"}}
-	</div>
-	</tpl:SysIf>
-	<tpl:SysIf search_count="&gt;0">
-	<div class="col-md-4 search-sidebar">
-	</tpl:SysIf>
-	<tpl:SysIf search_count="==0">
-	<div class="col-md-12 search-sidebar">
-	</tpl:SysIf>
-	  <div class="alert alert-info" role="alert">
-	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{tpl:lang INFO_SEARCH_RESULTS}}
-	  </div>
-	</div>
+      <div class="container">
+        <tpl:SysIf search_count="&gt;0">
+          {{tpl:include src="_posts-list.html"}}
+        </tpl:SysIf>
+        <tpl:SysIf search_count="==0">
+          <div class="text-center">
+            <p><i class="ph ph-smiley-x-eyes"></i></p>
+            <h3>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</h3>
+          </div>
+          <div class="information">{{tpl:ArgLang string="INFO_SEARCH_RESULTS %s %s %s" arg1="%u/categories" arg2="%u/tags" arg3="%u/archive"}}</div>
+        </tpl:SysIf>
+        </div>
       </div>
     </div>
 

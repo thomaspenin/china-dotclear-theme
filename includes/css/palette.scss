@@ -1,0 +1,76 @@
+// Raw color palette. These are the only hex values allowed in the theme;
+// everything else must consume them through the semantic tokens defined in
+// theme-tokens.scss.
+
+// Grays
+$white: #ffffff;
+$extremely-light-gray: #f5f5f5;
+$very-light-gray: #dedede;
+$light-gray: #cccccc;
+$soft-gray: #b8b8b8;
+$gray: #808080;
+$medium-gray: #505050;
+$strong-gray: #373737;
+$very-strong-gray: #272727;
+$black: #000000;
+
+// Grays - dark mode surfaces (green-tinted near-black scale, darkest to lightest)
+$charcoal-1: #101310;
+$charcoal-2: #111511;
+$charcoal-3: #141914;
+$charcoal-4: #1a1f1a;
+$charcoal-5: #1c201b;
+$charcoal-6: #232823;
+$charcoal-7: #232b23;
+$charcoal-8: #2a302a;
+$charcoal-9: #2f352f;
+$charcoal-10: #3a443a;
+$charcoal-11: #4b554b;
+
+// Grays - dark mode text (light grays used on dark backgrounds, darkest to lightest)
+$pale-gray-1: #a9b0a9;
+$pale-gray-2: #ababab;
+$pale-gray-3: #b5b5b5;
+$pale-gray-4: #c5c5c5;
+$pale-gray-5: #c8d1c8;
+$pale-gray-6: #dadada;
+$pale-gray-7: #e0e0e0;
+$pale-gray-8: #e8e8e8;
+$pale-gray-9: #eaf5ea;
+$pale-gray-10: #f0f3f0;
+$pale-gray-11: #f3f3f3;
+
+// Greens - accent color (buttons, links) and the "hint" alert
+$very-light-green: #c4f9c4;
+$light-green: #32cd32;
+$green: #228b22;
+$green-hover: #176117;
+$green-active: #186118;
+$dark-mode-green: #59b759;
+$dark-mode-green-hover: #82cb82;
+$dark-mode-green-active: #4cab4c;
+$dark-mode-answer-bg: #223822;
+$forest-green: #2b9b3a;
+$dark-mode-forest-green: #73ef86;
+
+// Blues / Teals - "info" alert
+$very-light-blue: #c4c4f9;
+$light-blue: #3772ea;
+$blue: #134cde;
+$teal: #007fb3;
+$dark-mode-teal: #57d3ff;
+
+// Ambers - "warning" alert
+$amber: #d18a00;
+$dark-mode-amber: #ffd15c;
+
+// Reds / Roses - "error" alert and inline code
+$very-light-red: #f9c4c4;
+$light-red: #ea3838;
+$red: #f31f1f;
+$brick-red: #cf2f2a;
+$dark-mode-brick-red: #ff7974;
+$rose: #c7254e;
+$light-rose: #f9f2f4;
+$dark-mode-rose: #ff8aa7;
+$dark-mode-rose-bg: #352730;

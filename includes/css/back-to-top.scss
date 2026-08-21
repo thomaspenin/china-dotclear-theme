@@ -1,0 +1,45 @@
+/* Styling of the button that allows the user to go back to the top of the page */
+
+#back-to-top {
+  position: fixed;
+  left: 50%;
+  margin-left: 595px; /* Half of the page (585px) + a 10px margin */
+  bottom: 10px;
+  display: none; /*hide the button first*/
+  padding: 0;
+}
+
+#back-to-top a {
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  display: block;
+  width: 64px;
+  height: 64px;
+  color: var(--color-text-on-dark);
+  background-color: var(--color-surface-topbar);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  border-radius: var(--border-radius);
+}
+
+#back-to-top a:hover {
+  background-color: var(--color-surface-topbar-hover);
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+#back-to-top .ph {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 64px;
+  height: 64px;
+  font-size: var(--font-size-feature);
+}

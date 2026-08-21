@@ -12,8 +12,8 @@
 }
 
 .posts-list .posts-list-item {
-  padding-bottom: 15px;
-  padding-top: 15px;
+  // Matches the home page's row-gap between thumbnail rows
+  margin-bottom: 15px;
 }
 
 // Base card look, reused by the simple posts-list and the post's previous/next nav (post.scss).

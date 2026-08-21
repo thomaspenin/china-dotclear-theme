@@ -5,10 +5,11 @@ A China-inspired [Dotclear](https://www.dotclear.org/) theme for the blog "[Voya
 ## Documentation
 
 - [History of the theme](./doc/theme-history.md)
-- [Setup a development environment](./doc/dev-env-setup.md)
-- Setup a production environment (TODO)
-- [Deploy the theme](./doc/deploy-theme.md) (works for both dev and prod environments)
-- How to use
+- **Setup and deployment**
+  - [Setup a development environment](./doc/dev-env-setup.md)
+  - [Setup a production environment](./doc/prod-env-setup.md)
+  - [Deploy the theme](./doc/deploy-theme.md) (works for both dev and prod environments)
+- **How to use**
   - [Associate images to articles](./doc/post-img.md)
   - [Entries markup](./doc/entries-markup.md)
     - [Chinese text and pinyin](./doc/entries-markup.md#chinese-text-and-pinyin)

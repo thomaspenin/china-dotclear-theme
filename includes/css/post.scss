@@ -211,6 +211,28 @@
   color: var(--color-post-title-hover);
 }
 
+// Below Bootstrap's sm breakpoint (576px), drop the thumbnail entirely and
+// just show the chevron next to the text.
+@media (max-width: 575.98px) {
+  .previous-next-posts .nav-thumb {
+    display: none;
+  }
+}
+
+// Below our custom small-card threshold (used elsewhere for narrow-screen
+// reflows), stack the two nav cards on separate lines instead of squeezing
+// them side by side.
+@media (max-width: 400px) {
+  .previous-next-posts .nav-post-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .previous-next-posts .nav-post-col-next {
+    margin-left: 0;
+  }
+}
+
 // Do not display certain elements when printing
 @media print {
   .post-title .post-category {

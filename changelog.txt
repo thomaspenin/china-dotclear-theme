@@ -1,6 +1,8 @@
 Changelog
 =========
 
+* v3.2 (xxxx-xx-xx)
+
 * v3.1 (2026-08-22)
   - Add a link to the admin interface to the footer
   - Document how to display a small image and text on its right in articles

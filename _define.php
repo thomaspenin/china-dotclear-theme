@@ -6,7 +6,7 @@ $this->registerModule(
 	/* Name */			"China",
 	/* Description*/		"A custom theme for my Chinese blog",
 	/* Author */			"Thomas Penin",
-	/* Version */			'3.0',
+	/* Version */			'3.1',
 	/* Properties */		array(
 								'type' => 'theme'
 							)

@@ -1,6 +1,8 @@
 Changelog
 =========
 
+* v3.1 (xxxx-xx-xx)
+
 * v3.0 "Green Orchid 2" (2026-08-22)
   - Set the license to MIT
   - Port the style from LESS to SASS and adapt deployment script to generate the CSS

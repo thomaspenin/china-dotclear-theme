@@ -3,6 +3,7 @@ Changelog
 
 * v3.1 (xxxx-xx-xx)
   - Add a link to the admin interface to the footer
+  - :bug: Fix a syntax error that caused posts not to load in prod
 
 * v3.0 "Green Orchid 2" (2026-08-22)
   - Set the license to MIT

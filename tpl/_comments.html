@@ -225,8 +225,8 @@
                     />
                   </p>
 
-                  <?php // This is to avoid PHP complaining that the values are
-                  not set with the captcha plugin if
+                  <?php /* This is to avoid PHP complaining that the values are
+                  not set with the captcha plugin */ if
                   (!isset($_POST['c_question_hash'])) {
                   $_POST['c_question_hash'] = ""; } if
                   (!isset($_POST['c_answer'])) { $_POST['c_answer'] = ""; } ?>

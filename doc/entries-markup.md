@@ -158,3 +158,32 @@ Use the class `footnote` to style footnotes. For example:
   </p>
 </div>
 ```
+
+## Media display
+
+In some cases, one may want to display a small image on the left and text on the right.
+
+Here is how to do it:
+
+```html
+<div class="d-flex">
+  <div class="flex-shrink-0">
+    <p>
+      <img
+        alt="Brumes de l'aube"
+        class="flex-shrink-0"
+        src="/blogs/voyage-est/public/articles/Wallpapers_2016/.Brumes_de_l_aube_s.jpg"
+      />
+    </p>
+  </div>
+  <div class="flex-grow-1 ms-3">
+    <p>
+      Cette photo a été prise lors d'un séjour à 黄山 <py>Huang2shan1</py>, la
+      Montagne Jaune, en avril 2015. Après avoir passé une journée à crapahuter
+      dans les escaliers et une mauvaise nuit au sommet dans un hôtel à
+      l'isolation phonique inexistante, nous nous étions levés à 4h45 et
+      assister au lever du soleil&nbsp;!
+    </p>
+  </div>
+</div>
+```

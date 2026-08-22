@@ -71,7 +71,34 @@ class tplThemeVersionTpl
     return $version;
     }
 }
-    
+
+// --- Retrieve the admin URL of the blog ---
+
+/**
+ * Retrieve the admin URL of the current blog.
+ *
+ * $core->blog->url points to the public front-end entry point ("index.php?"),
+ * this markup instead points to the "admin" folder sitting next to it.
+ *
+ * Usage in a template:
+ *   {{tpl:BlogAdminURL}}
+ */
+$core->tpl->addValue('BlogAdminURL', array('tplBlogAdminURLTpl','BlogAdminURL'));
+
+class tplBlogAdminURLTpl
+{
+  public static function BlogAdminURL($attr)
+  {
+    // Global Dotclear core object
+    global $core;
+
+    // blog->url may end with "index.php" or "index.php?" depending on URL rewriting settings
+    $url = preg_replace('#/index\.php\??$#', '', rtrim($core->blog->url, '/'));
+
+    return $url.'/admin/';
+  }
+}
+
 // --- Translate a string with arguments (taken from po files) ---
 
 /**

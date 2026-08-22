@@ -1,7 +1,7 @@
 Changelog
 =========
 
-* v3.1 (xxxx-xx-xx)
+* v3.1 (2026-08-22)
   - Add a link to the admin interface to the footer
   - Document how to display a small image and text on its right in articles
   - :bug: Fix a syntax error that caused posts not to load in prod

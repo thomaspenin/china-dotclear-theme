@@ -1,15 +1,14 @@
-Changelog
-=========
+# Changelog
 
-* v3.2 (xxxx-xx-xx)
+- v3.2 (xxxx-xx-xx)
   - Improve the rendering of callout and code blocks, esp. in light mode
 
-* v3.1 (2026-08-22)
+- v3.1 (2026-08-22)
   - Add a link to the admin interface to the footer
   - Document how to display a small image and text on its right in articles
   - :bug: Fix a syntax error that caused posts not to load in prod
 
-* v3.0 "Green Orchid 2" (2026-08-22)
+- v3.0 "Green Orchid 2" (2026-08-22)
   - Set the license to MIT
   - Port the style from LESS to SASS and adapt deployment script to generate the CSS
   - Update the base style for a better visibility
@@ -25,47 +24,47 @@ Changelog
   - Much improved responsive design for smaller screens
   - Deploy minified CSS and JS for a lower footprint
 
-* v2.5.0 (2026-07-26)
-  - Fix compatibility issue with Dotclear ≥ 2.36
-  - Fix path to assets (images/fonts)
+- v2.5 (2026-07-26)
+  - :bug: Fix compatibility issue with Dotclear ≥ 2.36
+  - :bug: Fix path to assets (images/fonts)
 
-* v2.4.1 (2023-09-30)
+- v2.4.1 (2023-09-30)
   - Remove Google Analytics
-  - Fix broken comments since the removal of the default Dotclear theme
+  - :bug: Fix broken comments since the removal of the default Dotclear theme
 
-* v2.4 (2018-01-04)
+- v2.4 (2018-01-04)
   - HTTPS compatibility
 
-* v2.3.1 (2017-01-15)
-  - Fix the category label being hidden on the tiles of the home page
+- v2.3.1 (2017-01-15)
+  - :bug: Fix the category label being hidden on the tiles of the home page
 
-* v2.3 (2016-07-14)
-  - Fix a regression with responsive image sizes in Firefox, which now make them work properly for Chrome as a nice side-effect (what a long-overdue bug!)
+- v2.3 (2016-07-14)
   - Lazy loading of thumbnails on the home page, which allows reserving their size and avoid layout re-computation once they are loaded
-  - Fix a reflow bug for thumbnails on the home page for small screens when on the first line the first card was higher than the second one
   - Update screenshot for the Dotclear theme picker
+  - :bug: Fix a regression with responsive image sizes in Firefox, which now make them work properly for Chrome as a nice side-effect (what a long-overdue bug!)
+  - :bug: Fix a reflow bug for thumbnails on the home page for small screens when on the first line the first card was higher than the second one
 
-* v2.2 (2016-03-20)
+- v2.2 (2016-03-20)
   - Harmonize the spacing within the post list that varied depending on whether an excerpt existed or nothing
-  - Fix missing translations on the home page
-  - Fix "tiao2", "tiao3" and "tiao4" pinyin not being properly transformed
   - Fully reworked the home page, with post thumbnails for the last posts per category and add a streamlined welcome part
+  - :bug: Fix missing translations on the home page
+  - :bug: Fix "tiao2", "tiao3" and "tiao4" pinyin not being properly transformed
 
-* v2.1 (2015-07-30)
+- v2.1 (2015-07-30)
   - Add support and instructions on how to associate an image with an article so that it appears in post lists
   - Remove the background of the vocabulary environment (looks more professional this way)
-  - Fix the impossibility to download the theme (bad path)
   - Add a button to return to the top of the page (visible on smartphones) and improve the responsive menu
+  - :bug: Fix the impossibility to download the theme (bad path)
 
-* v2.0.2 (2015-07-25)
-  - Fix "ruan3" not being transformed properly into accented pinyin
-  - Fix an issue with links display when printing articles with external references
-  - Add a small padding to the top of posts if they start by <ul> or <ol> to be consistent with <p>
+- v2.0.2 (2015-07-25)
+  - Add a small padding to the top of posts if they start by `<ul>` or `<ol>` to be consistent with `<p>`
+  - :bug: Fix "ruan3" not being transformed properly into accented pinyin
+  - :bug: Fix an issue with links display when printing articles with external references
 
-* v2.0.1 (2015-07-08)
+- v2.0.1 (2015-07-08)
   - Some small fixes following the move to production
 
-* v2.0 "Green Orchid" (2015-07-05)
+- v2.0 "Green Orchid" (2015-07-05)
   - Complete rewrite
   - New modern style
   - Now Bootstrap-based
@@ -73,15 +72,15 @@ Changelog
   - Support for article printing
   - Now all users should see the right fonts (downloaded if needed)
 
-* v1.8.1 (2014-02-19)
+- v1.8.1 (2014-02-19)
   - Add Google Analytics support
 
-* v1.8 (2014-02-15)
+- v1.8 (2014-02-15)
   - Add support for the XD smiley
   - The <ch> tag is no more needed (and does nothing now except for pinyin on hover): Chinese is automatically identified and scaled to be legible! This even includes the comments (it was the bigger issue)!
   - Remove some old code from the dcChristmas theme that was no longer needed
 
-* v1.7 (2014-02-02)
+- v1.7 (2014-02-02)
   - Correct line spacing when mixing Chinese (written using the "<ch>" tag) and Latin text together
   - Update smiley list to be closer to current usages (mainly Facebook)
   - Changed emoticon theme to use Oxygen icons
@@ -89,17 +88,17 @@ Changelog
   - External links now also show a small arrow when written in comments
   - Update the theme preview image using real site content
 
-* v1.6 (2013-10-21)
+- v1.6 (2013-10-21)
   - Add a mention to tell people commenting articles that their email address will not be published
   - The list of all article titles is now provided on the archive page
-  - Fix highlighting of the tag cloud on hover not having the proper size when using long labels
   - Better harmonization of the style of the different gradients on the site (main bar vs. buttons vs. back-to-top)
   - Pinyin can now be precised to appear on a tooltip when hovering Chinese text written using "<ch>" or "<chb>" markup via a "pinyin" attribute
+  - :bug: Fix highlighting of the tag cloud on hover not having the proper size when using long labels
 
-* v1.5.1 (2013-10-06)
-  - Fix a regression that prevented most of jquery from working
+- v1.5.1 (2013-10-06)
+  - :bug: Fix a regression that prevented most of jquery from working
 
-* v1.5 (2013-10-06)
+- v1.5 (2013-10-06)
   - Some refinements for the blog footer
   - It is now possible to include links into the description of the images used by the slideshow, for instance to link them to a page
   - New button to allow showing images of the slideshow in full-screen
@@ -107,25 +106,25 @@ Changelog
   - Clean the name of some resource files
   - Add a button to the list of recent articles on the home page to go to the full list
 
-* v1.4 (2013-09-29)
+- v1.4 (2013-09-29)
   - It is now possible to write capitalized pinyin in the editor (ex: "Wo3") and have it transformed to accented pinyin
   - It is possible to choose the number of column for a vocabulary environment by adding a second class: one-col, two-cols, three-cols, four-cols or five-cols. Three columns stays the default, so if no additional class is mentionned, the environment will feature three columns.
-  - Fix a pinyin bug where "xiao" could not be accented.
+  - :bug: Fix a pinyin bug where "xiao" could not be accented.
 
-* v1.3.3 (2013-09-21)
-  - Fix pinyin not working properly with capital letters
+- v1.3.3 (2013-09-21)
+  - :bug: Fix pinyin not working properly with capital letters
 
-* v1.3.2 (2013-09-21)
+- v1.3.2 (2013-09-21)
   - Redirect to an archive folder to retrieve the source code of the theme to avoid polluting the Dotclear folder
 
-* v1.3.1 (2013-09-20)
-  - Fix alignment of the simplified media player
+- v1.3.1 (2013-09-20)
+  - :bug: Fix alignment of the simplified media player
 
-* v1.3 (2013-09-20)
+- v1.3 (2013-09-20)
   - Add the possibility to specify different media types for an audio player to account for the fact that some browsers do not implement the same multimedia support
   - Code cleaning
 
-* v1.2 (2013-09-16)
+- v1.2 (2013-09-16)
   - A new markup to create a player that can either be the full HTML 5 player or a simplified version with a single "Play" button
   - A new "exercices" environment
   - A new "vocabulary" environment
@@ -134,15 +133,15 @@ Changelog
   - New site footer with a mention of the license for the content
   - Some cosmetic changes
 
-* v1.1 (2013-09-13)
-  - Better Chinese rendering: use "<ch>" or "<chb>" markup to have chinese written in size 1.4 respectively in black and blue
-  - Better pinyin rendering: use "<py>" and "<pyb>" to have pinyin respectively written in black and blue
-  - In "<py>" and "<pyb>" markup, pinyin can be written in the form "ni3hao3". A JQuery script will transform it into accented pinyin on the page
-  - New "<char>" markup defining a character environment to present new characters so that all strokes can be spotted
+- v1.1 (2013-09-13)
+  - Better Chinese rendering: use `<ch>` or `<chb>` markup to have chinese written in size 1.4 respectively in black and blue
+  - Better pinyin rendering: use `<py>` and `<pyb>` to have pinyin respectively written in black and blue
+  - In `<py>` and `<pyb>` markup, pinyin can be written in the form "ni3hao3". A JQuery script will transform it into accented pinyin on the page
+  - New `<char>` markup defining a character environment to present new characters so that all strokes can be spotted
   - The text in lists is now justified
   - Paragraph and lists can now be written inside "warning", "information", "hint" or "error" blocks with less margin errors
   - New style for tables with a header on the top. Use the "bordered-header-top" class.
-  - A few spacing corrections
+  - :bug: Fix a few spacing corrections
 
-* v1.0 "Happiness Red" (2013-09-10)
+- v1.0 "Happiness Red" (2013-09-10)
   - Initial release

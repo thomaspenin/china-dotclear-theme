@@ -55,5 +55,5 @@ content. From there, upload/sync that folder to the production server with your 
 choice — actual FTP upload is not automated by this script.
 
 Before building anything, the script checks that the version number in `_define.php`,
-`package.json`, and the last (topmost) entry of `changelog.txt` are all identical, and aborts
+`package.json`, and the last (topmost) entry of `changelog.md` are all identical, and aborts
 otherwise. Bump all three together when releasing a new version.

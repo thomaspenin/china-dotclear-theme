@@ -77,15 +77,15 @@ check_versions_match() {
 
   define_version="$(sed -nE "s/.*\/\* Version \*\/[[:space:]]*'([^']+)'.*/\1/p" "$script_dir/_define.php")"
   package_version="$(sed -nE 's/^[[:space:]]*"version": *"([^"]+)".*/\1/p' "$script_dir/package.json" | head -n1)"
-  changelog_line="$(grep -m1 -E '^\* v' "$script_dir/changelog.txt" || true)"
-  changelog_version="$(printf '%s' "$changelog_line" | sed -E 's/^\* v([^ ]+).*/\1/')"
+  changelog_line="$(grep -m1 -E '^\- v' "$script_dir/changelog.md" || true)"
+  changelog_version="$(printf '%s' "$changelog_line" | sed -E 's/^\- v([^ ]+).*/\1/')"
 
   [[ -n "$define_version" ]] || die "Could not find the version in _define.php"
   [[ -n "$package_version" ]] || die "Could not find the version in package.json"
-  [[ -n "$changelog_version" ]] || die "Could not find the last entry's version in changelog.txt"
+  [[ -n "$changelog_version" ]] || die "Could not find the last entry's version in changelog.md"
 
   if [[ "$define_version" != "$package_version" || "$define_version" != "$changelog_version" ]]; then
-    die "Version mismatch: _define.php=$define_version, package.json=$package_version, changelog.txt=$changelog_version"
+    die "Version mismatch: _define.php=$define_version, package.json=$package_version, changelog.md=$changelog_version"
   fi
 }
 

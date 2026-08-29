@@ -2,7 +2,8 @@
 
 // Font variables
 $primary-western-font: "Muli"; // Web font
-$primary-chinese-font: "LocalKaiti"; // Too heavy for a Web font
+$primary-chinese-font:
+  "KaiTi", "楷体", "STKaiti", "华文楷体", "Kaiti SC", "楷体-简";
 $fallback-western-font1: "Arial"; // Standard local font
 $fallback-western-font2: sans-serif; // Default sans serif local font
 $title-font: "Damion"; // Web font
@@ -11,19 +12,3 @@ $fallback-pinyin-font1: "arial unicode ms";
 $fallback-pinyin-font2: sans-serif; // Default sans serif local font
 $primary-code-font: "Inconsolata"; // Web font
 $fallback-code-font: monospace; // Default monospace local font
-
-/* Chinese font. Try to use the local KaiTi to spare bandwidth.
- * If not available, it will thus use the default Chinese fallback
- * font on the system, but not download 30MB anymore!
- */
-@font-face {
-  font-family: "LocalKaiti";
-  src:
-    local("KaiTi"),
-    // Win
-    local("楷体"),
-    // Win
-    local("STKaiti"),
-    // Mac
-    local("华文楷体"); // Mac
-}

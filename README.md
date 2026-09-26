@@ -9,6 +9,7 @@ A China-inspired [Dotclear](https://www.dotclear.org/) theme for the blog "[Voya
   - [Setup a development environment](./doc/dev-env-setup.md)
   - [Setup a production environment](./doc/prod-env-setup.md)
   - [Deploy the theme](./doc/deploy-theme.md) (works for both dev and prod environments)
+  - [Release a new version of the theme](./doc/release-new-version.md)
 - **How to use**
   - [Associate images to articles](./doc/post-img.md)
   - [Entries markup](./doc/entries-markup.md)
@@ -21,6 +22,7 @@ A China-inspired [Dotclear](https://www.dotclear.org/) theme for the blog "[Voya
     - [Tables](./doc/entries-markup.md#tables)
     - [Video embeds](./doc/entries-markup.md#video-embeds)
     - [Footnotes](./doc/entries-markup.md#footnotes)
+    - [Media display (image next to text)](./doc/entries-markup.md#media-display)
 
 ## License and third-parties
 

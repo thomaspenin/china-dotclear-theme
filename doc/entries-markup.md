@@ -163,20 +163,16 @@ Use the class `footnote` to style footnotes. For example:
 
 In some cases, one may want to display a small image on the left and text on the right.
 
-Here is how to do it:
+Use `.media` on a wrapping `<div>` containing an `<img class="media-object">` (set its `alt`/`src` as usual) followed by a `<div class="media-body">` with the text content:
 
 ```html
-<div class="d-flex">
-  <div class="flex-shrink-0">
-    <p>
-      <img
-        alt="Brumes de l'aube"
-        class="flex-shrink-0"
-        src="/blogs/voyage-est/public/articles/Wallpapers_2016/.Brumes_de_l_aube_s.jpg"
-      />
-    </p>
-  </div>
-  <div class="flex-grow-1 ms-3">
+<div class="media">
+  <img
+    alt="Brumes de l'aube"
+    class="media-object"
+    src="/blogs/voyage-est/public/articles/Wallpapers_2016/.Brumes_de_l_aube_s.jpg"
+  />
+  <div class="media-body">
     <p>
       Cette photo a été prise lors d'un séjour à 黄山 <py>Huang2shan1</py>, la
       Montagne Jaune, en avril 2015. Après avoir passé une journée à crapahuter

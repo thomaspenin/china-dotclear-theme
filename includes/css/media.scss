@@ -1,0 +1,26 @@
+// "Media" component for article content: a small image next to a block of
+// text, wrapping the theme's usual d-flex + media-object/media-body hooks so
+// authors only need a single ".media" class in their post markup.
+.media {
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0;
+}
+
+.media .media-object {
+  flex-shrink: 0;
+  border-radius: var(--border-radius);
+}
+
+.media .media-body {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.media .media-body > *:first-child {
+  margin-top: 0;
+}
+
+.media .media-body > *:last-child {
+  margin-bottom: 0;
+}

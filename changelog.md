@@ -3,6 +3,7 @@
 - v3.2 (xxxx-xx-xx)
   - Improve the rendering of callout and code blocks, esp. in light mode
   - Add the ability to share posts on Mastodon
+  - New "Media" component for displaying a small image next to a block of text in articles
 
 - v3.1 (2026-08-22)
   - Add a link to the admin interface to the footer
